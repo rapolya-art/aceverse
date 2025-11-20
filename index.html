@@ -1,14 +1,17 @@
 <!DOCTYPE html>
 <html lang="uk">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="AI-агенти для автоматизації підтримки 24/7. Інтеграція AI для оптимізації чатів, дзвінків та зниження витрат.">
+    <meta name="description"
+        content="AI-агенти для автоматизації підтримки 24/7. Інтеграція AI для оптимізації чатів, дзвінків та зниження витрат.">
     <title>Pushraise - AI Support</title>
-    
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;500;600;700;900&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <style>
         * {
@@ -16,9 +19,11 @@
         }
     </style>
 </head>
+
 <body>
     <header>
-        <div class="logo"><img src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/logo.png" alt="PUSHRAISE" style="height: 70px;"></div>
+        <div class="logo"><img src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/logo.png" alt="PUSHRAISE"
+                style="height: 70px;"></div>
         <nav>
             <a href="#home">ГОЛОВНА</a>
             <a href="#solutions">РІШЕННЯ</a>
@@ -27,38 +32,20 @@
         </nav>
     </header>
 
-    <section class="video-hero">
-        <div class="siri-animation">
-            <div class="glow-orb"></div>
-            <div class="wave-container">
-                <div class="wave-bar"></div>
-                <div class="wave-bar"></div>
-                <div class="wave-bar"></div>
-                <div class="wave-bar"></div>
-                <div class="wave-bar"></div>
-                <div class="wave-bar"></div>
-                <div class="wave-bar"></div>
-                <div class="wave-bar"></div>
-                <div class="wave-bar"></div>
-                <div class="wave-bar"></div>
-                <div class="wave-bar"></div>
-                <div class="wave-bar"></div>
-                <div class="wave-bar"></div>
-                <div class="wave-bar"></div>
-                <div class="wave-bar"></div>
-                <div class="wave-bar"></div>
-                <div class="wave-bar"></div>
-            </div>
-        </div>
-        <div class="video-hero-overlay"></div>
-        <h1>AI-агенти для автоматизації<br>підтримки 24/7</h1>
+    <section class="video-hero" style="position: relative; overflow: hidden;">
+        <canvas id="heroCanvas"
+            style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 0;"></canvas>
+        <div class="video-hero-overlay" style="z-index: 1; pointer-events: none;"></div>
+        <h1 style="position: relative; z-index: 2;">AI-агенти для автоматизації<br>підтримки 24/7</h1>
     </section>
 
     <section id="home">
         <div class="circle-gradient"></div>
         <div class="container">
-            <p style="text-align: center; font-size: 20px; margin-bottom: 60px; color: #c4bbd3;">Інтеграція AI для оптимізації чатів, дзвінків та зниження витрат. Автоматизуємо до 90% типових запитів за допомогою наших рішень.</p>
-            
+            <p style="text-align: center; font-size: 20px; margin-bottom: 60px; color: #c4bbd3;">Інтеграція AI для
+                оптимізації чатів, дзвінків та зниження витрат. Автоматизуємо до 90% типових запитів за допомогою наших
+                рішень.</p>
+
             <div class="grid-4">
                 <div class="card">
                     <div class="card-blur-effect">
@@ -67,7 +54,8 @@
                         <div class="blob blob-3"></div>
                     </div>
                     <div class="card-icon">
-                        <img src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/24_7.png" alt="24/7" loading="lazy">
+                        <img src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/24_7.png" alt="24/7"
+                            loading="lazy">
                     </div>
                     <h3>24/7 Підтримка</h3>
                     <p style="color: #c4bbd3 !important;">Миттєві відповіді у будь-який час доби</p>
@@ -79,7 +67,8 @@
                         <div class="blob blob-1"></div>
                     </div>
                     <div class="card-icon">
-                        <img src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/cost.png" alt="Cost" loading="lazy">
+                        <img src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/cost.png" alt="Cost"
+                            loading="lazy">
                     </div>
                     <h3>Зниження витрат</h3>
                     <p style="color: #c4bbd3 !important;">До 70% економії на операційних витратах</p>
@@ -91,7 +80,8 @@
                         <div class="blob blob-2"></div>
                     </div>
                     <div class="card-icon">
-                        <img src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/scale.png" alt="Scale" loading="lazy">
+                        <img src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/scale.png" alt="Scale"
+                            loading="lazy">
                     </div>
                     <h3>Масштаб</h3>
                     <p style="color: #c4bbd3 !important;">Нові мови та канали за хвилини</p>
@@ -103,7 +93,8 @@
                         <div class="blob blob-2"></div>
                     </div>
                     <div class="card-icon">
-                        <img src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/omni.png" alt="Omni" loading="lazy">
+                        <img src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/omni.png" alt="Omni"
+                            loading="lazy">
                     </div>
                     <h3>Омніканальність</h3>
                     <p style="color: #c4bbd3 !important;">Єдина система для всіх каналів зв'язку</p>
@@ -121,9 +112,11 @@
         </div>
         <div class="container" style="text-align: center; position: relative; z-index: 1;">
             <h2 class="cta-title">ПРОТЕСТУЙТЕ НАШЕ РІШЕННЯ</h2>
-            <p class="cta-description" style="font-size: 20px; margin-bottom: 30px;">Почніть діалог з нашим AI-агентом прямо зараз. Дізнайтеся, як AI може відповісти на ваші запитання та кваліфікувати ваш проєкт.</p>
+            <p class="cta-description" style="font-size: 20px; margin-bottom: 30px;">Почніть діалог з нашим AI-агентом
+                прямо зараз. Дізнайтеся, як AI може відповісти на ваші запитання та кваліфікувати ваш проєкт.</p>
             <div style="display: flex; align-items: center; justify-content: center; gap: 15px; margin-top: 40px;">
-                <div style="width: 60px; height: 60px; background: linear-gradient(135deg, #a06ff6, #6b21ef); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 30px; animation: pulse 2s ease-in-out infinite; box-shadow: 0 10px 40px rgba(160, 111, 246, 0.5);">
+                <div
+                    style="width: 60px; height: 60px; background: linear-gradient(135deg, #a06ff6, #6b21ef); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 30px; animation: pulse 2s ease-in-out infinite; box-shadow: 0 10px 40px rgba(160, 111, 246, 0.5);">
                     👉
                 </div>
                 <p style="font-size: 18px; color: #fff; margin: 0;">
@@ -134,301 +127,55 @@
         </div>
     </section>
 
-    <!-- Iceberg Animation Section -->
-    <section style="position: relative; padding: 0; margin: 0; height: 400vh; background: #0e0918;">
-        <div class="viewport" style="position: sticky; top: 0; left: 0; width: 100%; height: 100vh; background: radial-gradient(circle at 50% 40%, #1f1c2e 0%, #0e0918 80%); overflow: hidden;">
-            <canvas id="icebergStage" style="width: 100%; height: 100%;"></canvas>
-            
-            <div class="ui-layer" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 10;">
-                <div class="counter-box" style="position: absolute; top: 40%; right: 5%; text-align: right; width: auto; transition: transform 0.1s;" id="icebergCounterBox">
-                    <h1 style="font-size: 50px; margin: 0; background: linear-gradient(to bottom, #fff, #a06ff6); -webkit-background-clip: text; -webkit-text-fill-color: transparent; filter: drop-shadow(0 0 20px rgba(160, 111, 246, 0.6));" id="icebergPercent">10%</h1>
-                    <p style="font-size: 12px; letter-spacing: 2px; color: #00d4ff; text-transform: uppercase; margin-top: 5px; font-weight: bold; text-shadow: 0 0 10px rgba(0, 212, 255, 0.5);">Business Efficiency</p>
-                </div>
-                <div class="scroll-hint" style="position: absolute; bottom: 40px; width: 100%; text-align: center; color: rgba(255, 255, 255, 0.4); animation: pulse 2s infinite; font-size: 12px; text-transform: uppercase; letter-spacing: 2px;" id="icebergScrollHint">SCROLL TO REVEAL</div>
-            </div>
-        </div>
-    </section>
 
-    <script>
-    (function() {
-        const canvas = document.getElementById('icebergStage');
-        if (!canvas) return;
-        
-        const ctx = canvas.getContext('2d');
-        const percentEl = document.getElementById('icebergPercent');
-        const counterBox = document.getElementById('icebergCounterBox');
-        const scrollHintEl = document.getElementById('icebergScrollHint');
-
-        let w, h, cx, cy;
-        let scrollP = 0;
-
-        const layers = [
-            { label: "AI Automated Processes", y: 400 },
-            { label: "AI Ads Performance", y: 320 },
-            { label: "AI Customer Support", y: 240 },
-            { label: "AI Content Generation", y: 160 },
-            { label: "AI SEO Optimization", y: 80 },
-            { label: "AI Marketing Workflow", y: 0 }
-        ];
-
-        const roughPointsLeft = [];
-        const roughPointsRight = [];
-        for(let i=0; i<=20; i++) {
-            roughPointsLeft.push(Math.random() * 40);
-            roughPointsRight.push(Math.random() * 40);
-        }
-
-        function resize() {
-            w = canvas.width = window.innerWidth;
-            h = canvas.height = window.innerHeight;
-            cx = w / 2;
-            cy = h * 0.55; 
-        }
-        window.addEventListener('resize', resize);
-        resize();
-
-        const icebergSection = canvas.closest('section');
-        if (!icebergSection) return;
-
-        function updateScroll() {
-            const rect = icebergSection.getBoundingClientRect();
-            const sectionHeight = icebergSection.offsetHeight - window.innerHeight;
-            
-            if (rect.top <= 0 && rect.bottom >= window.innerHeight) {
-                scrollP = Math.min(Math.abs(rect.top) / sectionHeight, 1);
-            } else if (rect.bottom < window.innerHeight) {
-                scrollP = 1;
-            } else {
-                scrollP = 0;
-            }
-            
-            const val = Math.round(10 + (scrollP * 90));
-            if (percentEl) percentEl.innerText = val + "%";
-            
-            if (counterBox) counterBox.style.transform = `translateY(${-scrollP * 20}px)`;
-            
-            if (scrollHintEl) scrollHintEl.style.opacity = scrollP > 0.1 ? 0 : 1;
-        }
-
-        window.addEventListener('scroll', updateScroll);
-        updateScroll();
-
-        function animate() {
-            ctx.clearRect(0, 0, w, h);
-
-            const tipBottomY = 480; 
-            const startY = cy; 
-            const endY = cy - tipBottomY - 50; 
-            const currentY = startY + (endY - startY) * scrollP;
-
-            // Подводная часть
-            ctx.save();
-            ctx.beginPath();
-            ctx.rect(0, cy, w, h - cy);
-            ctx.clip();
-
-            drawIcebergShape(cx, currentY, true);
-            drawLayers(cx, currentY, true);
-            
-            const depthGrad = ctx.createLinearGradient(0, cy, 0, h);
-            depthGrad.addColorStop(0, 'rgba(14, 9, 24, 0.5)');
-            depthGrad.addColorStop(1, 'rgba(0, 212, 255, 0.1)');
-            ctx.fillStyle = depthGrad;
-            ctx.fillRect(0, cy, w, h - cy);
-            ctx.restore();
-
-            // Надводная часть
-            ctx.save();
-            ctx.beginPath();
-            ctx.rect(0, 0, w, cy);
-            ctx.clip();
-
-            drawIcebergShape(cx, currentY, false);
-            drawLayers(cx, currentY, false);
-            
-            ctx.fillStyle = 'rgba(160, 111, 246, 0.05)';
-            ctx.fillRect(0, 0, w, cy);
-            ctx.restore();
-
-            drawWaterLine();
-            drawParticles();
-
-            requestAnimationFrame(animate);
-        }
-
-        function drawIcebergShape(x, y, isUnderwater) {
-            ctx.save();
-            ctx.translate(x, y);
-            ctx.beginPath();
-            
-            ctx.moveTo(0, -150);
-            ctx.lineTo(-40, -80);
-            ctx.lineTo(-80, -20);
-            ctx.lineTo(-100, 0); 
-
-            ctx.lineTo(-130 + r(0), 100);
-            ctx.lineTo(-150 + r(1), 250);
-            ctx.lineTo(-100 + r(2), 380);
-            ctx.lineTo(-20, 480); 
-            
-            ctx.lineTo(80 + r(3), 420);
-            ctx.lineTo(140 + r(4), 280);
-            ctx.lineTo(160 + r(5), 120);
-            ctx.lineTo(110, 0); 
-            
-            ctx.lineTo(70, -40);
-            ctx.lineTo(0, -150);
-
-            ctx.closePath();
-
-            if (isUnderwater) {
-                const g = ctx.createLinearGradient(0, -100, 0, 500);
-                g.addColorStop(0, '#2c3e50');
-                g.addColorStop(0.6, '#0e0918');
-                g.addColorStop(1, '#000000');
-                ctx.fillStyle = g;
-                ctx.fill();
-                
-                ctx.strokeStyle = 'rgba(0, 212, 255, 0.15)';
-                ctx.lineWidth = 1;
-                ctx.stroke();
-            } else {
-                const g = ctx.createLinearGradient(-100, -200, 100, 200);
-                g.addColorStop(0, '#ffffff');
-                g.addColorStop(0.4, '#e0f2fe');
-                g.addColorStop(1, '#7dd3fc');
-                ctx.fillStyle = g;
-                
-                ctx.shadowColor = 'rgba(255, 255, 255, 0.6)';
-                ctx.shadowBlur = 30;
-                ctx.fill();
-                
-                ctx.fillStyle = 'rgba(23, 37, 84, 0.1)';
-                ctx.beginPath();
-                ctx.moveTo(0, -150);
-                ctx.lineTo(20, 100);
-                ctx.lineTo(-40, 300);
-                ctx.lineTo(0, 480);
-                ctx.lineTo(-20, 480);
-                ctx.lineTo(-100, 0);
-                ctx.fill();
-            }
-            ctx.restore();
-        }
-        
-        function r(i) { return (roughPointsLeft[i] || 0) - 20; }
-
-        function drawLayers(x, y, isUnderwater) {
-            ctx.textAlign = 'center';
-            ctx.font = '600 13px "Source Code Pro"';
-
-            layers.forEach(layer => {
-                const layerY = y + layer.y; 
-                const isBelowWater = layerY > cy;
-
-                if (isUnderwater === isBelowWater) {
-                    const dist = Math.abs(layerY - cy);
-                    let alpha = Math.min(1, dist / 50); 
-
-                    const lineColor = isUnderwater ? `rgba(160, 111, 246, ${alpha})` : `rgba(14, 9, 24, ${alpha * 0.5})`;
-                    const textColor = isUnderwater ? `rgba(255, 255, 255, ${alpha})` : `rgba(14, 9, 24, ${alpha})`;
-                    const dotColor = isUnderwater ? '#00d4ff' : '#a06ff6';
-
-                    ctx.beginPath();
-                    ctx.strokeStyle = lineColor;
-                    ctx.lineWidth = 1;
-                    ctx.moveTo(x - 80, layerY);
-                    ctx.lineTo(x + 80, layerY);
-                    ctx.stroke();
-
-                    ctx.fillStyle = textColor;
-                    ctx.shadowBlur = isUnderwater ? 5 : 0;
-                    ctx.shadowColor = '#000';
-                    ctx.fillText(layer.label, x, layerY - 8);
-                    
-                    ctx.fillStyle = dotColor;
-                    ctx.beginPath();
-                    ctx.arc(x, layerY, 3, 0, Math.PI*2);
-                    ctx.fill();
-                    ctx.shadowBlur = 0;
-                }
-            });
-        }
-
-        function drawWaterLine() {
-            ctx.beginPath();
-            const time = Date.now() / 500;
-            ctx.moveTo(0, cy);
-            for(let i=0; i<=w; i+=20) {
-                ctx.lineTo(i, cy + Math.sin(i*0.01 + time) * 6);
-            }
-            ctx.lineTo(w, h);
-            ctx.lineTo(0, h);
-            
-            const g = ctx.createLinearGradient(0, cy, 0, cy+150);
-            g.addColorStop(0, 'rgba(0, 212, 255, 0.2)');
-            g.addColorStop(1, 'rgba(0,0,0,0)');
-            ctx.fillStyle = g;
-            ctx.fill();
-            
-            ctx.strokeStyle = 'rgba(0, 212, 255, 0.6)';
-            ctx.lineWidth = 2;
-            ctx.stroke();
-        }
-
-        const bubbles = Array.from({length: 50}, () => ({
-            x: Math.random(), y: Math.random(), s: Math.random()*3, v: Math.random()*0.5+0.2
-        }));
-
-        function drawParticles() {
-            ctx.fillStyle = 'rgba(255,255,255,0.4)';
-            bubbles.forEach(b => {
-                b.y -= b.v * 0.005;
-                if(b.y < 0) b.y = 1;
-                const by = b.y * h;
-                if(by > cy) {
-                    ctx.beginPath();
-                    ctx.arc(b.x * w, by, b.s, 0, Math.PI*2);
-                    ctx.fill();
-                }
-            });
-        }
-        
-        animate();
-    })();
-    </script>
 
     <section id="solutions">
         <div class="container">
             <h2>РІШЕННЯ</h2>
-            
-            <div style="position: relative; z-index: 1; background: radial-gradient(circle at 30% 140%, rgba(217, 126, 75, 0.2), transparent 37%), radial-gradient(circle at 50% 310%, rgba(4, 0, 255, 0.15), transparent 78%), linear-gradient(transparent, rgba(13, 10, 25, 0.37)), rgba(31, 25, 42, 0.5); backdrop-filter: blur(22px); border: 2px solid rgba(255, 255, 255, 0.2); border-radius: 24px; padding: 20px; box-shadow: inset 0 1px rgba(255, 142, 93, 0.4), 0 20px 60px rgba(0, 0, 0, 0.4); margin-bottom: 60px;">
-                <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 16px; padding-bottom: 12px; border-bottom: 1px solid rgba(255, 255, 255, 0.1);">
-                    <div style="width: 12px; height: 12px; border-radius: 50%; background: linear-gradient(135deg, #ff5f57, #ff3b30);"></div>
-                    <div style="width: 12px; height: 12px; border-radius: 50%; background: linear-gradient(135deg, #ffbd2e, #ffa500);"></div>
-                    <div style="width: 12px; height: 12px; border-radius: 50%; background: linear-gradient(135deg, #28ca42, #00d084);"></div>
-                    <div style="flex: 1; text-align: center; font-size: 12px; color: #c4bbd3; font-family: 'Source Code Pro', monospace;">AI Support Demo</div>
+
+            <div
+                style="position: relative; z-index: 1; background: radial-gradient(circle at 30% 140%, rgba(217, 126, 75, 0.2), transparent 37%), radial-gradient(circle at 50% 310%, rgba(4, 0, 255, 0.15), transparent 78%), linear-gradient(transparent, rgba(13, 10, 25, 0.37)), rgba(31, 25, 42, 0.5); backdrop-filter: blur(22px); border: 2px solid rgba(255, 255, 255, 0.2); border-radius: 24px; padding: 20px; box-shadow: inset 0 1px rgba(255, 142, 93, 0.4), 0 20px 60px rgba(0, 0, 0, 0.4); margin-bottom: 60px;">
+                <div
+                    style="display: flex; align-items: center; gap: 8px; margin-bottom: 16px; padding-bottom: 12px; border-bottom: 1px solid rgba(255, 255, 255, 0.1);">
+                    <div
+                        style="width: 12px; height: 12px; border-radius: 50%; background: linear-gradient(135deg, #ff5f57, #ff3b30);">
+                    </div>
+                    <div
+                        style="width: 12px; height: 12px; border-radius: 50%; background: linear-gradient(135deg, #ffbd2e, #ffa500);">
+                    </div>
+                    <div
+                        style="width: 12px; height: 12px; border-radius: 50%; background: linear-gradient(135deg, #28ca42, #00d084);">
+                    </div>
+                    <div
+                        style="flex: 1; text-align: center; font-size: 12px; color: #c4bbd3; font-family: 'Source Code Pro', monospace;">
+                        AI Support Demo</div>
                 </div>
-                
+
                 <div style="position: relative; border-radius: 16px; overflow: hidden;">
                     <video autoplay muted loop playsinline style="width: 100%; height: auto; display: block;">
                         <source src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/1014.mp4" type="video/mp4">
                     </video>
-                    <div style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(14, 9, 24, 0.3) 0%, transparent 50%); pointer-events: none;"></div>
+                    <div
+                        style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(14, 9, 24, 0.3) 0%, transparent 50%); pointer-events: none;">
+                    </div>
                 </div>
-                
-                <div style="margin-top: 16px; padding-top: 12px; border-top: 1px solid rgba(255, 255, 255, 0.1); display: flex; align-items: center; justify-content: center; font-size: 13px; color: #c4bbd3;">
+
+                <div
+                    style="margin-top: 16px; padding-top: 12px; border-top: 1px solid rgba(255, 255, 255, 0.1); display: flex; align-items: center; justify-content: center; font-size: 13px; color: #c4bbd3;">
                     <div style="display: flex; align-items: center; gap: 8px;">
-                        <div style="width: 8px; height: 8px; border-radius: 50%; background: linear-gradient(135deg, #00d084, #28ca42); box-shadow: 0 0 8px rgba(0, 208, 132, 0.6);"></div>
+                        <div
+                            style="width: 8px; height: 8px; border-radius: 50%; background: linear-gradient(135deg, #00d084, #28ca42); box-shadow: 0 0 8px rgba(0, 208, 132, 0.6);">
+                        </div>
                         <span>Live AI Agent</span>
                     </div>
                 </div>
             </div>
-            
+
             <div class="solution-block">
                 <h3 style="color: #fff;">💬 Автоматизація підтримки 24/7</h3>
-                <p style="font-size: 18px; margin-bottom: 30px; color: #c4bbd3;">Миттєва відповідь на запити клієнтів. Обробка до 90% типових питань без участі людини.</p>
-                
+                <p style="font-size: 18px; margin-bottom: 30px; color: #c4bbd3;">Миттєва відповідь на запити клієнтів.
+                    Обробка до 90% типових питань без участі людини.</p>
+
                 <div class="chat-demo-container">
                     <div class="chat-phone">
                         <div class="chat-header">AI ПІДТРИМКА 24/7</div>
@@ -453,69 +200,69 @@
                 </div>
 
                 <script>
-                (function() {
-                    const messages = [
-                        { role: "ai", text: "Вітаю! Чим можу допомогти?", delay: 1000 },
-                        { role: "user", text: "Я б хотів дізнатися коли буде доставлено моє замовлення.", delay: 2000, typing: true },
-                        { role: "ai", text: "Звичайно! Для перевірки статусу замовлення мені знадобиться номер замовлення.", delay: 1500 },
-                        { role: "user", text: "Замовлення #12345", delay: 1000, typing: true },
-                        { role: "ai", text: "Перевіряю інформацію по замовленню #12345...", delay: 2000 },
-                        { role: "ai", text: "Ваше замовлення в дорозі! Очікувана дата доставки: завтра, 13 жовтня.", delay: 2500 },
-                        { role: "user", text: "Чудово, дякую!", delay: 1000, typing: true },
-                        { role: "ai", text: "Завжди радий допомогти! Якщо виникнуть питання — я на зв'язку 24/7", delay: 1500 }
-                    ];
+                    (function () {
+                        const messages = [
+                            { role: "ai", text: "Вітаю! Чим можу допомогти?", delay: 1000 },
+                            { role: "user", text: "Я б хотів дізнатися коли буде доставлено моє замовлення.", delay: 2000, typing: true },
+                            { role: "ai", text: "Звичайно! Для перевірки статусу замовлення мені знадобиться номер замовлення.", delay: 1500 },
+                            { role: "user", text: "Замовлення #12345", delay: 1000, typing: true },
+                            { role: "ai", text: "Перевіряю інформацію по замовленню #12345...", delay: 2000 },
+                            { role: "ai", text: "Ваше замовлення в дорозі! Очікувана дата доставки: завтра, 13 жовтня.", delay: 2500 },
+                            { role: "user", text: "Чудово, дякую!", delay: 1000, typing: true },
+                            { role: "ai", text: "Завжди радий допомогти! Якщо виникнуть питання — я на зв'язку 24/7", delay: 1500 }
+                        ];
 
-                    function createMessage(role, text) {
-                        const msg = document.createElement('div');
-                        msg.className = `chat-message ${role}`;
-                        
-                        const avatar = document.createElement('div');
-                        avatar.className = 'message-avatar';
-                        avatar.textContent = role === 'ai' ? 'AI' : 'К';
-                        
-                        const bubble = document.createElement('div');
-                        bubble.className = 'message-bubble';
-                        bubble.textContent = text;
-                        
-                        msg.appendChild(avatar);
-                        msg.appendChild(bubble);
-                        return msg;
-                    }
+                        function createMessage(role, text) {
+                            const msg = document.createElement('div');
+                            msg.className = `chat-message ${role}`;
 
-                    function showTyping() {
-                        const indicator = document.querySelector('.typing-indicator-container');
-                        if (indicator) indicator.style.display = 'flex';
-                    }
+                            const avatar = document.createElement('div');
+                            avatar.className = 'message-avatar';
+                            avatar.textContent = role === 'ai' ? 'AI' : 'К';
 
-                    function hideTyping() {
-                        const indicator = document.querySelector('.typing-indicator-container');
-                        if (indicator) indicator.style.display = 'none';
-                    }
+                            const bubble = document.createElement('div');
+                            bubble.className = 'message-bubble';
+                            bubble.textContent = text;
 
-                    async function typeText(text, element, speed = 80) {
-                        element.textContent = '';
-                        const cursor = document.querySelector('.cursor');
-                        if (cursor) cursor.style.display = 'inline-block';
-                        
-                        for (let i = 0; i < text.length; i++) {
-                            element.textContent += text[i];
-                            await new Promise(resolve => setTimeout(resolve, speed));
+                            msg.appendChild(avatar);
+                            msg.appendChild(bubble);
+                            return msg;
                         }
-                        
-                        await new Promise(resolve => setTimeout(resolve, 500));
-                        if (cursor) cursor.style.display = 'none';
-                    }
 
-                    async function animateChat() {
-                        const chatArea = document.querySelector('.chat-area');
-                        const typingText = document.querySelector('.typing-text');
-                        
-                        if (!chatArea || !typingText) return;
+                        function showTyping() {
+                            const indicator = document.querySelector('.typing-indicator-container');
+                            if (indicator) indicator.style.display = 'flex';
+                        }
 
-                        chatArea.innerHTML = '';
-                        const typingContainer = document.createElement('div');
-                        typingContainer.className = 'typing-indicator-container';
-                        typingContainer.innerHTML = `
+                        function hideTyping() {
+                            const indicator = document.querySelector('.typing-indicator-container');
+                            if (indicator) indicator.style.display = 'none';
+                        }
+
+                        async function typeText(text, element, speed = 80) {
+                            element.textContent = '';
+                            const cursor = document.querySelector('.cursor');
+                            if (cursor) cursor.style.display = 'inline-block';
+
+                            for (let i = 0; i < text.length; i++) {
+                                element.textContent += text[i];
+                                await new Promise(resolve => setTimeout(resolve, speed));
+                            }
+
+                            await new Promise(resolve => setTimeout(resolve, 500));
+                            if (cursor) cursor.style.display = 'none';
+                        }
+
+                        async function animateChat() {
+                            const chatArea = document.querySelector('.chat-area');
+                            const typingText = document.querySelector('.typing-text');
+
+                            if (!chatArea || !typingText) return;
+
+                            chatArea.innerHTML = '';
+                            const typingContainer = document.createElement('div');
+                            typingContainer.className = 'typing-indicator-container';
+                            typingContainer.innerHTML = `
                             <div class="message-avatar">AI</div>
                             <div class="typing-indicator">
                                 <span></span>
@@ -523,64 +270,68 @@
                                 <span></span>
                             </div>
                         `;
-                        chatArea.appendChild(typingContainer);
-                        
-                        for (let i = 0; i < messages.length; i++) {
-                            const msg = messages[i];
-                            await new Promise(resolve => setTimeout(resolve, msg.delay));
-                            
-                            if (msg.role === 'ai') {
-                                showTyping();
-                                await new Promise(resolve => setTimeout(resolve, 1000));
-                                hideTyping();
-                                chatArea.appendChild(createMessage(msg.role, msg.text));
-                            } else if (msg.typing) {
-                                await typeText(msg.text, typingText);
-                                typingText.textContent = '';
-                                chatArea.appendChild(createMessage(msg.role, msg.text));
+                            chatArea.appendChild(typingContainer);
+
+                            for (let i = 0; i < messages.length; i++) {
+                                const msg = messages[i];
+                                await new Promise(resolve => setTimeout(resolve, msg.delay));
+
+                                if (msg.role === 'ai') {
+                                    showTyping();
+                                    await new Promise(resolve => setTimeout(resolve, 1000));
+                                    hideTyping();
+                                    chatArea.appendChild(createMessage(msg.role, msg.text));
+                                } else if (msg.typing) {
+                                    await typeText(msg.text, typingText);
+                                    typingText.textContent = '';
+                                    chatArea.appendChild(createMessage(msg.role, msg.text));
+                                }
+
+                                chatArea.scrollTop = chatArea.scrollHeight;
                             }
-                            
-                            chatArea.scrollTop = chatArea.scrollHeight;
                         }
-                    }
 
-                    // Intersection Observer для запуску анімації при появі на екрані
-                    const chatPhone = document.querySelector('.chat-phone');
-                    let hasAnimated = false;
+                        // Intersection Observer для запуску анімації при появі на екрані
+                        const chatPhone = document.querySelector('.chat-phone');
+                        let hasAnimated = false;
 
-                    const observer = new IntersectionObserver((entries) => {
-                        entries.forEach(entry => {
-                            if (entry.isIntersecting && !hasAnimated) {
-                                hasAnimated = true;
-                                setTimeout(animateChat, 500);
-                                observer.unobserve(entry.target);
-                            }
+                        const observer = new IntersectionObserver((entries) => {
+                            entries.forEach(entry => {
+                                if (entry.isIntersecting && !hasAnimated) {
+                                    hasAnimated = true;
+                                    setTimeout(animateChat, 500);
+                                    observer.unobserve(entry.target);
+                                }
+                            });
+                        }, {
+                            threshold: 0.3 // Запустити коли 30% елемента видно
                         });
-                    }, {
-                        threshold: 0.3 // Запустити коли 30% елемента видно
-                    });
 
-                    if (chatPhone) {
-                        observer.observe(chatPhone);
-                    }
-                })();
+                        if (chatPhone) {
+                            observer.observe(chatPhone);
+                        }
+                    })();
                 </script>
             </div>
 
             <div class="solution-block">
                 <h3 style="color: #fff;">📞 Голосова AI-підтримка</h3>
-                <p style="font-size: 18px; margin-bottom: 30px; color: #c4bbd3;">Автоматизація телефонної підтримки з використанням найновіших голосових моделей Google. Природні діалоги, розпізнавання мови на 50+ мовах.</p>
-                
+                <p style="font-size: 18px; margin-bottom: 30px; color: #c4bbd3;">Автоматизація телефонної підтримки з
+                    використанням найновіших голосових моделей Google. Природні діалоги, розпізнавання мови на 50+
+                    мовах.</p>
+
                 <div class="grid-2">
                     <div class="card">
-                        <div class="card-icon" style="background: linear-gradient(135deg, rgba(7, 122, 199, 0.1), rgba(107, 33, 239, 0.1));">
+                        <div class="card-icon"
+                            style="background: linear-gradient(135deg, rgba(7, 122, 199, 0.1), rgba(107, 33, 239, 0.1));">
                             <span style="font-size: 32px;">📥</span>
                         </div>
                         <h4>Вхідні дзвінки</h4>
                         <p>AI-оператор приймає дзвінки 24/7, відповідає на питання, направляє до спеціалістів</p>
                     </div>
                     <div class="card">
-                        <div class="card-icon" style="background: linear-gradient(135deg, rgba(7, 122, 199, 0.1), rgba(107, 33, 239, 0.1));">
+                        <div class="card-icon"
+                            style="background: linear-gradient(135deg, rgba(7, 122, 199, 0.1), rgba(107, 33, 239, 0.1));">
                             <span style="font-size: 32px;">📤</span>
                         </div>
                         <h4>Вихідні дзвінки</h4>
@@ -591,129 +342,311 @@
                 <div class="premium-block">
                     <h4 style="font-size: 26px; margin-bottom: 25px;">🇺🇦 Особливості для українського ринку</h4>
                     <ul>
-                        <li>✓ <strong>Спеціалізовані NLP моделі</strong> — робота з українською мовою для миттєвого розпізнавання мовлення з високою точністю</li>
-                        <li>✓ <strong>Реалістичні українські голоси</strong> — багато голосів, навчених спеціально для природного звучання українською мовою</li>
-                        <li>✓ <strong>Налаштування тону та стилю</strong> — адаптація відповідей під ваш вид діяльності: від формального банківського до дружелюбного e-commerce</li>
-                        <li>✓ <strong>Контекстне розуміння</strong> — врахування регіональних особливостей та специфіки українського бізнесу</li>
+                        <li>✓ <strong>Спеціалізовані NLP моделі</strong> — робота з українською мовою для миттєвого
+                            розпізнавання мовлення з високою точністю</li>
+                        <li>✓ <strong>Реалістичні українські голоси</strong> — багато голосів, навчених спеціально для
+                            природного звучання українською мовою</li>
+                        <li>✓ <strong>Налаштування тону та стилю</strong> — адаптація відповідей під ваш вид діяльності:
+                            від формального банківського до дружелюбного e-commerce</li>
+                        <li>✓ <strong>Контекстне розуміння</strong> — врахування регіональних особливостей та специфіки
+                            українського бізнесу</li>
                     </ul>
                 </div>
             </div>
 
             <div class="solution-block">
                 <h3 style="color: #fff;">🔗 Омніканальна інтеграція</h3>
-                <p style="font-size: 18px; margin-bottom: 30px; color: #c4bbd3;">Єдина логіка підтримки через веб-сайт, телефон, Telegram, WhatsApp та інші канали.</p>
-                
+                <p style="font-size: 18px; margin-bottom: 30px; color: #c4bbd3;">Єдина логіка підтримки через веб-сайт,
+                    телефон, Telegram, WhatsApp та інші канали.</p>
+
                 <div class="integrations-showcase">
-    <div class="integrations-row row-left">
-        <div class="integration-icon"><img src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/1.svg" alt="Integration" loading="lazy"></div>
-        <div class="integration-icon"><img src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/2.svg" alt="Integration" loading="lazy"></div>
-        <div class="integration-icon"><img src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/3.svg" alt="Integration" loading="lazy"></div>
-        <div class="integration-icon"><img src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/4.svg" alt="Integration" loading="lazy"></div>
-        <div class="integration-icon"><img src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/5.svg" alt="Integration" loading="lazy"></div>
-        <div class="integration-icon"><img src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/6.svg" alt="Integration" loading="lazy"></div>
-        <div class="integration-icon"><img src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/7.svg" alt="Integration" loading="lazy"></div>
-        <div class="integration-icon"><img src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/8.svg" alt="Integration" loading="lazy"></div>
-        <div class="integration-icon"><img src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/9.svg" alt="Integration" loading="lazy"></div>
-        <div class="integration-icon"><img src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/10.svg" alt="Integration" loading="lazy"></div>
-        <div class="integration-icon"><img src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/11.svg" alt="Integration" loading="lazy"></div>
-        <div class="integration-icon"><img src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/12.svg" alt="Integration" loading="lazy"></div>
-        <div class="integration-icon"><img src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/13.svg" alt="Integration" loading="lazy"></div>
-        <div class="integration-icon"><img src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/14.svg" alt="Integration" loading="lazy"></div>
-        <div class="integration-icon"><img src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/15.svg" alt="Integration" loading="lazy"></div>
-        <div class="integration-icon"><img src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/16.svg" alt="Integration" loading="lazy"></div>
-        <div class="integration-icon"><img src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/17.svg" alt="Integration" loading="lazy"></div>
-        <div class="integration-icon"><img src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/18.svg" alt="Integration" loading="lazy"></div>
-        <div class="integration-icon"><img src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/19.svg" alt="Integration" loading="lazy"></div>
-        <div class="integration-icon"><img src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/1.svg" alt="Integration" loading="lazy"></div>
-        <div class="integration-icon"><img src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/2.svg" alt="Integration" loading="lazy"></div>
-        <div class="integration-icon"><img src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/3.svg" alt="Integration" loading="lazy"></div>
-        <div class="integration-icon"><img src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/4.svg" alt="Integration" loading="lazy"></div>
-        <div class="integration-icon"><img src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/5.svg" alt="Integration" loading="lazy"></div>
-        <div class="integration-icon"><img src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/6.svg" alt="Integration" loading="lazy"></div>
-        <div class="integration-icon"><img src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/7.svg" alt="Integration" loading="lazy"></div>
-        <div class="integration-icon"><img src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/8.svg" alt="Integration" loading="lazy"></div>
-        <div class="integration-icon"><img src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/9.svg" alt="Integration" loading="lazy"></div>
-        <div class="integration-icon"><img src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/10.svg" alt="Integration" loading="lazy"></div>
-        <div class="integration-icon"><img src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/11.svg" alt="Integration" loading="lazy"></div>
-        <div class="integration-icon"><img src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/12.svg" alt="Integration" loading="lazy"></div>
-        <div class="integration-icon"><img src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/13.svg" alt="Integration" loading="lazy"></div>
-        <div class="integration-icon"><img src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/14.svg" alt="Integration" loading="lazy"></div>
-        <div class="integration-icon"><img src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/15.svg" alt="Integration" loading="lazy"></div>
-        <div class="integration-icon"><img src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/16.svg" alt="Integration" loading="lazy"></div>
-        <div class="integration-icon"><img src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/17.svg" alt="Integration" loading="lazy"></div>
-        <div class="integration-icon"><img src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/18.svg" alt="Integration" loading="lazy"></div>
-        <div class="integration-icon"><img src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/19.svg" alt="Integration" loading="lazy"></div>
-    </div>
-    
-    <div class="integrations-row row-right">
-        <div class="integration-icon"><img src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/20.svg" alt="Integration" loading="lazy"></div>
-        <div class="integration-icon"><img src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/21.svg" alt="Integration" loading="lazy"></div>
-        <div class="integration-icon"><img src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/22.svg" alt="Integration" loading="lazy"></div>
-        <div class="integration-icon"><img src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/23.svg" alt="Integration" loading="lazy"></div>
-        <div class="integration-icon"><img src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/24.svg" alt="Integration" loading="lazy"></div>
-        <div class="integration-icon"><img src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/25.svg" alt="Integration" loading="lazy"></div>
-        <div class="integration-icon"><img src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/26.svg" alt="Integration" loading="lazy"></div>
-        <div class="integration-icon"><img src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/27.svg" alt="Integration" loading="lazy"></div>
-        <div class="integration-icon"><img src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/28.svg" alt="Integration" loading="lazy"></div>
-        <div class="integration-icon"><img src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/29.svg" alt="Integration" loading="lazy"></div>
-        <div class="integration-icon"><img src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/30.svg" alt="Integration" loading="lazy"></div>
-        <div class="integration-icon"><img src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/31.svg" alt="Integration" loading="lazy"></div>
-        <div class="integration-icon"><img src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/32.svg" alt="Integration" loading="lazy"></div>
-        <div class="integration-icon"><img src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/33.svg" alt="Integration" loading="lazy"></div>
-        <div class="integration-icon"><img src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/34.svg" alt="Integration" loading="lazy"></div>
-        <div class="integration-icon"><img src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/35.svg" alt="Integration" loading="lazy"></div>
-        <div class="integration-icon"><img src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/36.svg" alt="Integration" loading="lazy"></div>
-        <div class="integration-icon"><img src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/37.svg" alt="Integration" loading="lazy"></div>
-        <div class="integration-icon"><img src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/38.svg" alt="Integration" loading="lazy"></div>
-        <div class="integration-icon"><img src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/20.svg" alt="Integration" loading="lazy"></div>
-        <div class="integration-icon"><img src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/21.svg" alt="Integration" loading="lazy"></div>
-        <div class="integration-icon"><img src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/22.svg" alt="Integration" loading="lazy"></div>
-        <div class="integration-icon"><img src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/23.svg" alt="Integration" loading="lazy"></div>
-        <div class="integration-icon"><img src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/24.svg" alt="Integration" loading="lazy"></div>
-        <div class="integration-icon"><img src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/25.svg" alt="Integration" loading="lazy"></div>
-        <div class="integration-icon"><img src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/26.svg" alt="Integration" loading="lazy"></div>
-        <div class="integration-icon"><img src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/27.svg" alt="Integration" loading="lazy"></div>
-        <div class="integration-icon"><img src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/28.svg" alt="Integration" loading="lazy"></div>
-        <div class="integration-icon"><img src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/29.svg" alt="Integration" loading="lazy"></div>
-        <div class="integration-icon"><img src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/30.svg" alt="Integration" loading="lazy"></div>
-        <div class="integration-icon"><img src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/31.svg" alt="Integration" loading="lazy"></div>
-        <div class="integration-icon"><img src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/32.svg" alt="Integration" loading="lazy"></div>
-        <div class="integration-icon"><img src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/33.svg" alt="Integration" loading="lazy"></div>
-        <div class="integration-icon"><img src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/34.svg" alt="Integration" loading="lazy"></div>
-        <div class="integration-icon"><img src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/35.svg" alt="Integration" loading="lazy"></div>
-        <div class="integration-icon"><img src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/36.svg" alt="Integration" loading="lazy"></div>
-        <div class="integration-icon"><img src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/37.svg" alt="Integration" loading="lazy"></div>
-        <div class="integration-icon"><img src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/38.svg" alt="Integration" loading="lazy"></div>
-    </div>
-</div>
+                    <div class="integrations-row row-left">
+                        <div class="integration-icon"><img
+                                src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/1.svg" alt="Integration"
+                                loading="lazy"></div>
+                        <div class="integration-icon"><img
+                                src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/2.svg" alt="Integration"
+                                loading="lazy"></div>
+                        <div class="integration-icon"><img
+                                src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/3.svg" alt="Integration"
+                                loading="lazy"></div>
+                        <div class="integration-icon"><img
+                                src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/4.svg" alt="Integration"
+                                loading="lazy"></div>
+                        <div class="integration-icon"><img
+                                src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/5.svg" alt="Integration"
+                                loading="lazy"></div>
+                        <div class="integration-icon"><img
+                                src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/6.svg" alt="Integration"
+                                loading="lazy"></div>
+                        <div class="integration-icon"><img
+                                src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/7.svg" alt="Integration"
+                                loading="lazy"></div>
+                        <div class="integration-icon"><img
+                                src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/8.svg" alt="Integration"
+                                loading="lazy"></div>
+                        <div class="integration-icon"><img
+                                src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/9.svg" alt="Integration"
+                                loading="lazy"></div>
+                        <div class="integration-icon"><img
+                                src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/10.svg" alt="Integration"
+                                loading="lazy"></div>
+                        <div class="integration-icon"><img
+                                src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/11.svg" alt="Integration"
+                                loading="lazy"></div>
+                        <div class="integration-icon"><img
+                                src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/12.svg" alt="Integration"
+                                loading="lazy"></div>
+                        <div class="integration-icon"><img
+                                src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/13.svg" alt="Integration"
+                                loading="lazy"></div>
+                        <div class="integration-icon"><img
+                                src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/14.svg" alt="Integration"
+                                loading="lazy"></div>
+                        <div class="integration-icon"><img
+                                src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/15.svg" alt="Integration"
+                                loading="lazy"></div>
+                        <div class="integration-icon"><img
+                                src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/16.svg" alt="Integration"
+                                loading="lazy"></div>
+                        <div class="integration-icon"><img
+                                src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/17.svg" alt="Integration"
+                                loading="lazy"></div>
+                        <div class="integration-icon"><img
+                                src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/18.svg" alt="Integration"
+                                loading="lazy"></div>
+                        <div class="integration-icon"><img
+                                src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/19.svg" alt="Integration"
+                                loading="lazy"></div>
+                        <div class="integration-icon"><img
+                                src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/1.svg" alt="Integration"
+                                loading="lazy"></div>
+                        <div class="integration-icon"><img
+                                src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/2.svg" alt="Integration"
+                                loading="lazy"></div>
+                        <div class="integration-icon"><img
+                                src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/3.svg" alt="Integration"
+                                loading="lazy"></div>
+                        <div class="integration-icon"><img
+                                src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/4.svg" alt="Integration"
+                                loading="lazy"></div>
+                        <div class="integration-icon"><img
+                                src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/5.svg" alt="Integration"
+                                loading="lazy"></div>
+                        <div class="integration-icon"><img
+                                src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/6.svg" alt="Integration"
+                                loading="lazy"></div>
+                        <div class="integration-icon"><img
+                                src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/7.svg" alt="Integration"
+                                loading="lazy"></div>
+                        <div class="integration-icon"><img
+                                src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/8.svg" alt="Integration"
+                                loading="lazy"></div>
+                        <div class="integration-icon"><img
+                                src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/9.svg" alt="Integration"
+                                loading="lazy"></div>
+                        <div class="integration-icon"><img
+                                src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/10.svg" alt="Integration"
+                                loading="lazy"></div>
+                        <div class="integration-icon"><img
+                                src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/11.svg" alt="Integration"
+                                loading="lazy"></div>
+                        <div class="integration-icon"><img
+                                src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/12.svg" alt="Integration"
+                                loading="lazy"></div>
+                        <div class="integration-icon"><img
+                                src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/13.svg" alt="Integration"
+                                loading="lazy"></div>
+                        <div class="integration-icon"><img
+                                src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/14.svg" alt="Integration"
+                                loading="lazy"></div>
+                        <div class="integration-icon"><img
+                                src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/15.svg" alt="Integration"
+                                loading="lazy"></div>
+                        <div class="integration-icon"><img
+                                src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/16.svg" alt="Integration"
+                                loading="lazy"></div>
+                        <div class="integration-icon"><img
+                                src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/17.svg" alt="Integration"
+                                loading="lazy"></div>
+                        <div class="integration-icon"><img
+                                src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/18.svg" alt="Integration"
+                                loading="lazy"></div>
+                        <div class="integration-icon"><img
+                                src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/19.svg" alt="Integration"
+                                loading="lazy"></div>
+                    </div>
+
+                    <div class="integrations-row row-right">
+                        <div class="integration-icon"><img
+                                src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/20.svg" alt="Integration"
+                                loading="lazy"></div>
+                        <div class="integration-icon"><img
+                                src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/21.svg" alt="Integration"
+                                loading="lazy"></div>
+                        <div class="integration-icon"><img
+                                src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/22.svg" alt="Integration"
+                                loading="lazy"></div>
+                        <div class="integration-icon"><img
+                                src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/23.svg" alt="Integration"
+                                loading="lazy"></div>
+                        <div class="integration-icon"><img
+                                src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/24.svg" alt="Integration"
+                                loading="lazy"></div>
+                        <div class="integration-icon"><img
+                                src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/25.svg" alt="Integration"
+                                loading="lazy"></div>
+                        <div class="integration-icon"><img
+                                src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/26.svg" alt="Integration"
+                                loading="lazy"></div>
+                        <div class="integration-icon"><img
+                                src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/27.svg" alt="Integration"
+                                loading="lazy"></div>
+                        <div class="integration-icon"><img
+                                src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/28.svg" alt="Integration"
+                                loading="lazy"></div>
+                        <div class="integration-icon"><img
+                                src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/29.svg" alt="Integration"
+                                loading="lazy"></div>
+                        <div class="integration-icon"><img
+                                src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/30.svg" alt="Integration"
+                                loading="lazy"></div>
+                        <div class="integration-icon"><img
+                                src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/31.svg" alt="Integration"
+                                loading="lazy"></div>
+                        <div class="integration-icon"><img
+                                src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/32.svg" alt="Integration"
+                                loading="lazy"></div>
+                        <div class="integration-icon"><img
+                                src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/33.svg" alt="Integration"
+                                loading="lazy"></div>
+                        <div class="integration-icon"><img
+                                src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/34.svg" alt="Integration"
+                                loading="lazy"></div>
+                        <div class="integration-icon"><img
+                                src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/35.svg" alt="Integration"
+                                loading="lazy"></div>
+                        <div class="integration-icon"><img
+                                src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/36.svg" alt="Integration"
+                                loading="lazy"></div>
+                        <div class="integration-icon"><img
+                                src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/37.svg" alt="Integration"
+                                loading="lazy"></div>
+                        <div class="integration-icon"><img
+                                src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/38.svg" alt="Integration"
+                                loading="lazy"></div>
+                        <div class="integration-icon"><img
+                                src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/20.svg" alt="Integration"
+                                loading="lazy"></div>
+                        <div class="integration-icon"><img
+                                src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/21.svg" alt="Integration"
+                                loading="lazy"></div>
+                        <div class="integration-icon"><img
+                                src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/22.svg" alt="Integration"
+                                loading="lazy"></div>
+                        <div class="integration-icon"><img
+                                src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/23.svg" alt="Integration"
+                                loading="lazy"></div>
+                        <div class="integration-icon"><img
+                                src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/24.svg" alt="Integration"
+                                loading="lazy"></div>
+                        <div class="integration-icon"><img
+                                src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/25.svg" alt="Integration"
+                                loading="lazy"></div>
+                        <div class="integration-icon"><img
+                                src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/26.svg" alt="Integration"
+                                loading="lazy"></div>
+                        <div class="integration-icon"><img
+                                src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/27.svg" alt="Integration"
+                                loading="lazy"></div>
+                        <div class="integration-icon"><img
+                                src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/28.svg" alt="Integration"
+                                loading="lazy"></div>
+                        <div class="integration-icon"><img
+                                src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/29.svg" alt="Integration"
+                                loading="lazy"></div>
+                        <div class="integration-icon"><img
+                                src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/30.svg" alt="Integration"
+                                loading="lazy"></div>
+                        <div class="integration-icon"><img
+                                src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/31.svg" alt="Integration"
+                                loading="lazy"></div>
+                        <div class="integration-icon"><img
+                                src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/32.svg" alt="Integration"
+                                loading="lazy"></div>
+                        <div class="integration-icon"><img
+                                src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/33.svg" alt="Integration"
+                                loading="lazy"></div>
+                        <div class="integration-icon"><img
+                                src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/34.svg" alt="Integration"
+                                loading="lazy"></div>
+                        <div class="integration-icon"><img
+                                src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/35.svg" alt="Integration"
+                                loading="lazy"></div>
+                        <div class="integration-icon"><img
+                                src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/36.svg" alt="Integration"
+                                loading="lazy"></div>
+                        <div class="integration-icon"><img
+                                src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/37.svg" alt="Integration"
+                                loading="lazy"></div>
+                        <div class="integration-icon"><img
+                                src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/38.svg" alt="Integration"
+                                loading="lazy"></div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
+    <!-- Chaos to Order Animation Section -->
+    <section id="chaos-animation"
+        style="position: relative; height: 100vh; background: #0e0918; overflow: hidden; display: flex; align-items: center; justify-content: center;">
+        <canvas id="chaosStage"
+            style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1;"></canvas>
+
+        <div id="chaosText"
+            style="position: relative; z-index: 2; text-align: center; opacity: 0; transform: translateY(20px); transition: all 0.8s ease-out; pointer-events: none; margin-top: 300px;">
+            <h2
+                style="font-size: 40px; background: linear-gradient(to right, #fff, #a06ff6); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 20px; filter: drop-shadow(0 0 10px rgba(160, 111, 246, 0.5));">
+                Зробимо із AI хаосу<br>рішення яке працює.
+            </h2>
+        </div>
+    </section>
+    <script src="chaos_animation.js"></script>
+    <script src="hero_animation.js"></script>
+
     <section id="approach" style="background: transparent;">
         <div class="container">
             <div class="premium-block">
-                <h2 style="color: #fff;"><img src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/logo.png" alt="Logo" style="height: 70px; vertical-align: middle; margin-right: 10px;"> НАШ ПІДХІД</h2>
-                
+                <h2 style="color: #fff;"><img src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/logo.png"
+                        alt="Logo" style="height: 70px; vertical-align: middle; margin-right: 10px;"> НАШ ПІДХІД</h2>
+
                 <h3 style="font-size: 28px; margin: 30px 0 20px;">Етапи створення AI-агента</h3>
                 <ul style="list-style: none; padding: 0;">
-                    <li style="padding: 20px; background: rgba(255,255,255,0.05); border-radius: 15px; margin-bottom: 15px; border: 1px solid rgba(255,255,255,0.1);">
+                    <li
+                        style="padding: 20px; background: rgba(255,255,255,0.05); border-radius: 15px; margin-bottom: 15px; border: 1px solid rgba(255,255,255,0.1);">
                         <strong>1. Аналіз даних та аудит</strong><br>
-                        <span style="opacity: 0.8;">Вивчаємо поточну систему підтримки та виявляємо точки зростання</span>
+                        <span style="opacity: 0.8;">Вивчаємо поточну систему підтримки та виявляємо точки
+                            зростання</span>
                     </li>
-                    <li style="padding: 20px; background: rgba(255,255,255,0.05); border-radius: 15px; margin-bottom: 15px; border: 1px solid rgba(255,255,255,0.1);">
+                    <li
+                        style="padding: 20px; background: rgba(255,255,255,0.05); border-radius: 15px; margin-bottom: 15px; border: 1px solid rgba(255,255,255,0.1);">
                         <strong>2. Проєктування діалогових потоків</strong><br>
                         <span style="opacity: 0.8;">Intent & Entity Design для природного спілкування</span>
                     </li>
-                    <li style="padding: 20px; background: rgba(255,255,255,0.05); border-radius: 15px; margin-bottom: 15px; border: 1px solid rgba(255,255,255,0.1);">
+                    <li
+                        style="padding: 20px; background: rgba(255,255,255,0.05); border-radius: 15px; margin-bottom: 15px; border: 1px solid rgba(255,255,255,0.1);">
                         <strong>3. Інтеграція з системами</strong><br>
-                        <span style="opacity: 0.8;">Підключення до CRM, баз даних, ticketing-систем, booking-систем</span>
+                        <span style="opacity: 0.8;">Підключення до CRM, баз даних, ticketing-систем,
+                            booking-систем</span>
                     </li>
-                    <li style="padding: 20px; background: rgba(255,255,255,0.05); border-radius: 15px; margin-bottom: 15px; border: 1px solid rgba(255,255,255,0.1);">
+                    <li
+                        style="padding: 20px; background: rgba(255,255,255,0.05); border-radius: 15px; margin-bottom: 15px; border: 1px solid rgba(255,255,255,0.1);">
                         <strong>4. Тестування</strong><br>
                         <span style="opacity: 0.8;">Перевірка роботи системи та оптимізація діалогових сценаріїв</span>
                     </li>
-                    <li style="padding: 20px; background: rgba(255,255,255,0.05); border-radius: 15px; border: 1px solid rgba(255,255,255,0.1);">
+                    <li
+                        style="padding: 20px; background: rgba(255,255,255,0.05); border-radius: 15px; border: 1px solid rgba(255,255,255,0.1);">
                         <strong>5. Аналітика та оптимізація</strong><br>
                         <span style="opacity: 0.8;">Постійне покращення на основі метрик</span>
                     </li>
@@ -725,20 +658,26 @@
     <section id="contact">
         <div class="container">
             <h2>ЗВ'ЯЗАТИСЯ З НАМИ</h2>
-            
+
             <div style="max-width: 800px; margin: 0 auto; text-align: center;">
                 <div class="premium-block" style="padding: 60px 40px;">
                     <div style="margin-bottom: 30px;">
-                        <div style="width: 100px; height: 100px; margin: 0 auto 30px; background: linear-gradient(135deg, #a06ff6, #6b21ef); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 50px; box-shadow: 0 20px 60px rgba(160, 111, 246, 0.4);">
+                        <div
+                            style="width: 100px; height: 100px; margin: 0 auto 30px; background: linear-gradient(135deg, #a06ff6, #6b21ef); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 50px; box-shadow: 0 20px 60px rgba(160, 111, 246, 0.4);">
                             💬
                         </div>
-                        <h3 style="font-size: 32px; margin-bottom: 20px; color: #fff;">Готові автоматизувати вашу підтримку?</h3>
+                        <h3 style="font-size: 32px; margin-bottom: 20px; color: #fff;">Готові автоматизувати вашу
+                            підтримку?</h3>
                         <p style="font-size: 20px; line-height: 1.6; color: #c4bbd3; margin-bottom: 30px;">
-                            Натисніть на іконку чату в правому нижньому куті та почніть діалог з нашим AI-агентом прямо зараз. 
-                            Ми відповімо на всі ваші запитання та допоможемо підібрати оптимальне рішення для вашого бізнесу.
+                            Натисніть на іконку чату в правому нижньому куті та почніть діалог з нашим AI-агентом прямо
+                            зараз.
+                            Ми відповімо на всі ваші запитання та допоможемо підібрати оптимальне рішення для вашого
+                            бізнесу.
                         </p>
-                        <div style="display: flex; align-items: center; justify-content: center; gap: 15px; margin-top: 40px; padding-top: 30px; border-top: 1px solid rgba(255, 255, 255, 0.1);">
-                            <div style="width: 60px; height: 60px; background: linear-gradient(135deg, #a06ff6, #6b21ef); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 30px; animation: pulse 2s ease-in-out infinite; box-shadow: 0 10px 40px rgba(160, 111, 246, 0.5);">
+                        <div
+                            style="display: flex; align-items: center; justify-content: center; gap: 15px; margin-top: 40px; padding-top: 30px; border-top: 1px solid rgba(255, 255, 255, 0.1);">
+                            <div
+                                style="width: 60px; height: 60px; background: linear-gradient(135deg, #a06ff6, #6b21ef); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 30px; animation: pulse 2s ease-in-out infinite; box-shadow: 0 10px 40px rgba(160, 111, 246, 0.5);">
                                 👉
                             </div>
                             <p style="font-size: 18px; color: #fff; margin: 0;">
@@ -751,20 +690,24 @@
             </div>
         </div>
     </section>
-<div id="elevenlabs-widget-container">
-  <elevenlabs-convai agent-id="agent_7101k7xkwx5gfxrvkzwcg62zw9gj"></elevenlabs-convai>
-</div>
+    <div id="elevenlabs-widget-container">
+        <elevenlabs-convai agent-id="agent_7101k7xkwx5gfxrvkzwcg62zw9gj"></elevenlabs-convai>
+    </div>
 
-<script src="https://unpkg.com/@elevenlabs/convai-widget-embed" async type="text/javascript"></script>
+    <script src="https://unpkg.com/@elevenlabs/convai-widget-embed" async type="text/javascript"></script>
 
-<style>
-  #elevenlabs-widget-container {
-    position: fixed; /* Фиксирует элемент относительно окна браузера */
-    right: 20px;     /* Отступ 20px от правого края */
-    bottom: 20px;    /* Отступ 20px от нижнего края */
-    z-index: 999;    /* Устанавливает высокий приоритет отображения (поверх других элементов) */
-  }
-</style>
+    <style>
+        #elevenlabs-widget-container {
+            position: fixed;
+            /* Фиксирует элемент относительно окна браузера */
+            right: 20px;
+            /* Отступ 20px от правого края */
+            bottom: 20px;
+            /* Отступ 20px от нижнего края */
+            z-index: 999;
+            /* Устанавливает высокий приоритет отображения (поверх других элементов) */
+        }
+    </style>
     <footer>
         <p>© 2025 Aceverse</p>
         <p style="margin-top: 10px;">developed with ❤️</p>
@@ -772,4 +715,5 @@
 
     <script src="interactions.js" defer></script>
 </body>
+
 </html>
