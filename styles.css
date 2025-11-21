@@ -1595,3 +1595,166 @@ footer p {
         transform: translateX(50%);
     }
 }
+
+/* App Animation Section */
+.app-animation-container {
+    position: relative;
+    width: 100%;
+    max-width: 900px;
+    height: 500px;
+    margin: 40px auto;
+    perspective: 1200px;
+    /* Creates 3D space */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.app-scene {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transform: rotateX(20deg) rotateY(-10deg) rotateZ(5deg);
+    /* Tilted perspective */
+    transition: transform 0.5s ease-out;
+}
+
+/* Interactive tilt on hover (optional) */
+.app-animation-container:hover .app-scene {
+    transform: rotateX(15deg) rotateY(-5deg) rotateZ(2deg);
+}
+
+.app-card {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    /* Slightly smaller radius for images */
+    backdrop-filter: blur(10px);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5), inset 0 0 0 1px rgba(255, 255, 255, 0.05);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s ease;
+    overflow: hidden;
+    /* Clip images to border radius */
+}
+
+.app-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Main Dashboard Base */
+.main-dashboard {
+    width: 80%;
+    height: 70%;
+    top: 15%;
+    left: 10%;
+    background: #1a1a1a;
+    /* Fallback background */
+    z-index: 1;
+    transform: translateZ(0);
+}
+
+/* Floating Widgets */
+.floating-widget {
+    z-index: 2;
+    background: #2a2a2a;
+    /* Fallback */
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6), 0 0 20px rgba(160, 111, 246, 0.2);
+    animation: float-card 6s ease-in-out infinite;
+}
+
+.widget-1 {
+    width: 220px;
+    /* Adjusted size for Analytics */
+    height: 150px;
+    top: -10%;
+    right: 0%;
+    transform: translateZ(60px);
+    animation-delay: 0s;
+    border: 2px solid #a06ff6;
+}
+
+.widget-2 {
+    width: 200px;
+    /* Adjusted size for Sheets */
+    height: 130px;
+    bottom: 5%;
+    left: -5%;
+    transform: translateZ(80px);
+    animation-delay: 2s;
+    border: 2px solid #00ff88;
+}
+
+.widget-3 {
+    width: 140px;
+    /* Adjusted size for Zadarma (mobile app look) */
+    height: 240px;
+    bottom: 10%;
+    right: 10%;
+    transform: translateZ(100px);
+    animation-delay: 4s;
+    border: 2px solid #0088ff;
+}
+
+@keyframes float-card {
+
+    0%,
+    100% {
+        transform: translateZ(var(--z-depth, 50px)) translateY(0);
+    }
+
+    50% {
+        transform: translateZ(var(--z-depth, 50px)) translateY(-20px);
+    }
+}
+
+/* Assign specific Z-depths for animation */
+.widget-1 {
+    --z-depth: 60px;
+}
+
+.widget-2 {
+    --z-depth: 80px;
+}
+
+.widget-3 {
+    --z-depth: 100px;
+}
+
+@media (max-width: 768px) {
+    .app-animation-container {
+        height: 350px;
+        perspective: 800px;
+    }
+
+    .main-dashboard {
+        width: 90%;
+        left: 5%;
+    }
+
+    .widget-1 {
+        width: 140px;
+        height: 100px;
+        right: 0;
+    }
+
+    .widget-2 {
+        width: 120px;
+        height: 90px;
+        left: 0;
+        bottom: 5%;
+    }
+
+    .widget-3 {
+        width: 110px;
+        height: 80px;
+        right: 10%;
+        bottom: 15%;
+    }
+}
