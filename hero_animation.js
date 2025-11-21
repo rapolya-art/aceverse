@@ -4,98 +4,72 @@
 
     const ctx = canvas.getContext('2d');
     let width, height;
-    let points = [];
+    let particles = [];
 
     // Configuration
-    const SPACING = 40; // Grid spacing
-    const MOUSE_RADIUS = 200; // Radius of "Order"
-    const CHAOS_AMOUNT = 19; // Almost touching edges (SPACING/2 = 20)
-    const CHAOS_SPEED = 0.008; // Visible, active movement
+    const PARTICLE_COUNT = 400; // Density of the stream
+    const STREAM_SPEED = 2; // Speed of flow
+    const FOV = 250; // Field of view for 3D projection
+    const STAR_SIZE = 2; // Base size of particles
 
-    // Mouse/Touch state
-    let mouse = { x: null, y: null };
-    let time = 0;
+    // Colors Palette
+    // We will use a mix of colors to match the "Chaos to Order" text gradient:
+    // White (#FFFFFF) -> Light Purple -> Purple (#A06FF6)
+    const COLORS = [
+        { r: 255, g: 255, b: 255 }, // White
+        { r: 220, g: 200, b: 255 }, // Very Light Purple
+        { r: 160, g: 111, b: 246 }, // The main Purple (#a06ff6)
+        { r: 130, g: 80, b: 220 }  // Slightly darker purple for depth
+    ];
 
-    class Point {
-        constructor(x, y) {
-            this.baseX = x;
-            this.baseY = y;
-            this.x = x;
-            this.y = y;
-            this.size = 1.5;
-            // Random offsets for chaos
-            this.phaseX = Math.random() * Math.PI * 2;
-            this.phaseY = Math.random() * Math.PI * 2;
-            // Multiple frequencies for less predictable motion
-            this.freq1 = Math.random() * 0.5 + 0.5;
-            this.freq2 = Math.random() * 0.5 + 0.5;
+    class Particle {
+        constructor(isInitial = false) {
+            this.init(isInitial);
+        }
+
+        init(isInitial) {
+            this.x = (Math.random() - 0.5) * width * 2;
+            this.y = (Math.random() - 0.5) * height * 2;
+            this.z = isInitial ? Math.random() * width : width;
+            this.speed = STREAM_SPEED + Math.random() * 0.5;
+            this.opacity = 0;
+
+            // Assign a random color from the palette
+            this.color = COLORS[Math.floor(Math.random() * COLORS.length)];
         }
 
         update() {
-            // 1. Calculate Chaotic Position
-            // Mix two sine waves for more "random" looking drift within bounds
-            // Result is normalized to approx -1 to 1 range then scaled
-            let waveX = Math.sin(time * CHAOS_SPEED * this.freq1 + this.phaseX);
-            let waveY = Math.cos(time * CHAOS_SPEED * this.freq2 + this.phaseY);
-
-            let chaosX = waveX * CHAOS_AMOUNT;
-            let chaosY = waveY * CHAOS_AMOUNT;
-
-            let targetX = this.baseX + chaosX;
-            let targetY = this.baseY + chaosY;
-            let ease = 0.05; // Default slow ease for chaos
-
-            // 2. Interaction (Order)
-            if (mouse.x != null) {
-                let dx = mouse.x - this.baseX; // Check distance to GRID position, not current
-                let dy = mouse.y - this.baseY;
-                let distance = Math.sqrt(dx * dx + dy * dy);
-
-                if (distance < MOUSE_RADIUS) {
-                    // Calculate "Order Factor"
-                    let orderFactor = 1 - (distance / MOUSE_RADIUS);
-
-                    // Use a root power (e.g., 0.2) to keep the factor close to 1 for most of the radius
-                    // This creates a large "plateau" of order that falls off quickly only at the very edge
-                    orderFactor = Math.pow(orderFactor, 0.2);
-
-                    // Interpolate towards base position
-                    targetX = this.baseX + chaosX * (1 - orderFactor);
-                    targetY = this.baseY + chaosY * (1 - orderFactor);
-
-                    // Snappier movement when ordering
-                    ease = 0.2;
-                }
+            this.z -= this.speed;
+            if (this.z <= 0) {
+                this.init(false);
+                this.z = width;
             }
-
-            // 3. Move point towards target (Smooth damping)
-            this.x += (targetX - this.x) * ease;
-            this.y += (targetY - this.y) * ease;
         }
 
         draw() {
-            ctx.fillStyle = 'rgba(160, 111, 246, 0.6)'; // Purple tint
-            ctx.beginPath();
-            ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-            ctx.fill();
+            const scale = FOV / (FOV + this.z);
+            const x2d = (this.x * scale) + width / 2;
+            const y2d = (this.y * scale) + height / 2;
+            const size = STAR_SIZE * scale;
+
+            // Opacity logic
+            let alpha = 1 - (this.z / width);
+            alpha = Math.pow(alpha, 3);
+
+            if (alpha > 0) {
+                ctx.fillStyle = `rgba(${this.color.r}, ${this.color.g}, ${this.color.b}, ${alpha})`;
+                ctx.beginPath();
+                ctx.arc(x2d, y2d, size, 0, Math.PI * 2);
+                ctx.fill();
+            }
         }
     }
 
     function init() {
         resize();
-        points = [];
-
-        // Create grid
-        const cols = Math.ceil(width / SPACING) + 2;
-        const rows = Math.ceil(height / SPACING) + 2;
-
-        const startX = (width - (cols - 1) * SPACING) / 2;
-        const startY = (height - (rows - 1) * SPACING) / 2;
-
-        for (let y = 0; y < rows; y++) {
-            for (let x = 0; x < cols; x++) {
-                points.push(new Point(startX + x * SPACING, startY + y * SPACING));
-            }
+        particles = [];
+        for (let i = 0; i < PARTICLE_COUNT; i++) {
+            particles.push(new Particle(true));
         }
     }
 
@@ -106,9 +80,10 @@
 
     function animate() {
         ctx.clearRect(0, 0, width, height);
-        time += 1;
 
-        points.forEach(p => {
+        particles.sort((a, b) => b.z - a.z);
+
+        particles.forEach(p => {
             p.update();
             p.draw();
         });
@@ -116,49 +91,11 @@
         requestAnimationFrame(animate);
     }
 
-    // Event Listeners
     window.addEventListener('resize', () => {
         resize();
         init();
     });
 
-    // Mouse Events
-    window.addEventListener('mousemove', (e) => {
-        if (e.clientY < height) {
-            mouse.x = e.clientX;
-            mouse.y = e.clientY;
-        } else {
-            mouse.x = null;
-            mouse.y = null;
-        }
-    });
-
-    window.addEventListener('mouseleave', () => {
-        mouse.x = null;
-        mouse.y = null;
-    });
-
-    // Touch Events (Mobile)
-    window.addEventListener('touchstart', (e) => {
-        if (e.touches.length > 0) {
-            mouse.x = e.touches[0].clientX;
-            mouse.y = e.touches[0].clientY;
-        }
-    }, { passive: true });
-
-    window.addEventListener('touchmove', (e) => {
-        if (e.touches.length > 0) {
-            mouse.x = e.touches[0].clientX;
-            mouse.y = e.touches[0].clientY;
-        }
-    }, { passive: true });
-
-    window.addEventListener('touchend', () => {
-        mouse.x = null;
-        mouse.y = null;
-    });
-
-    // Start
     init();
     animate();
 

@@ -10,14 +10,10 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;500;600;700;900&display=swap"
+    <link
+        href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Source+Code+Pro:wght@400;500;600;700;900&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
-    <style>
-        * {
-            font-family: 'Source Code Pro', monospace !important;
-        }
-    </style>
 </head>
 
 <body>
@@ -36,7 +32,16 @@
         <canvas id="heroCanvas"
             style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 0;"></canvas>
         <div class="video-hero-overlay" style="z-index: 1; pointer-events: none;"></div>
-        <h1 style="position: relative; z-index: 2;">AI-агенти для автоматизації<br>підтримки 24/7</h1>
+        <div
+            style="position: relative; z-index: 2; text-align: center; display: flex; flex-direction: column; align-items: center; gap: 20px;">
+            <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 10px;">
+                <img src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/logo.png" alt="Aceverse Logo"
+                    style="height: 60px;">
+                <span style="font-size: 40px; font-weight: 700; color: #fff; letter-spacing: -1px;">Aceverse</span>
+            </div>
+            <h1 style="margin: 0;">AI-агенти для автоматизації<br>підтримки 24/7</h1>
+            <a href="#contact" class="cta-button" style="margin-top: 30px;">Забронювати Демо</a>
+        </div>
     </section>
 
     <section id="home">
@@ -46,19 +51,16 @@
                 оптимізації чатів, дзвінків та зниження витрат. Автоматизуємо до 90% типових запитів за допомогою наших
                 рішень.</p>
 
-            <div class="grid-4">
+            <div class="grid-2">
                 <div class="card">
                     <div class="card-blur-effect">
                         <div class="blob blob-1"></div>
                         <div class="blob blob-2"></div>
                         <div class="blob blob-3"></div>
                     </div>
-                    <div class="card-icon">
-                        <img src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/24_7.png" alt="24/7"
-                            loading="lazy">
-                    </div>
-                    <h3>24/7 Підтримка</h3>
-                    <p style="color: #c4bbd3 !important;">Миттєві відповіді у будь-який час доби</p>
+                    <h3>AI-Автоматизація</h3>
+                    <p style="color: #c4bbd3 !important;">Знижуємо операційні витрати та прискорюємо процеси, делегуючи
+                        рутину надійним цифровим агентам.</p>
                 </div>
                 <div class="card">
                     <div class="card-blur-effect">
@@ -66,12 +68,9 @@
                         <div class="blob blob-3"></div>
                         <div class="blob blob-1"></div>
                     </div>
-                    <div class="card-icon">
-                        <img src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/cost.png" alt="Cost"
-                            loading="lazy">
-                    </div>
-                    <h3>Зниження витрат</h3>
-                    <p style="color: #c4bbd3 !important;">До 70% економії на операційних витратах</p>
+                    <h3>Розумна аналітика</h3>
+                    <p style="color: #c4bbd3 !important;">Трансформуємо хаотичні дані у чіткі прогнози для прийняття
+                        прибуткових управлінських рішень.</p>
                 </div>
                 <div class="card">
                     <div class="card-blur-effect">
@@ -79,12 +78,9 @@
                         <div class="blob blob-1"></div>
                         <div class="blob blob-2"></div>
                     </div>
-                    <div class="card-icon">
-                        <img src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/scale.png" alt="Scale"
-                            loading="lazy">
-                    </div>
-                    <h3>Масштаб</h3>
-                    <p style="color: #c4bbd3 !important;">Нові мови та канали за хвилини</p>
+                    <h3>Екосистемна інтеграція</h3>
+                    <p style="color: #c4bbd3 !important;">Впроваджуємо AI у вашу CRM та сайт для безшовної роботи без
+                        зміни звичних процесів.</p>
                 </div>
                 <div class="card">
                     <div class="card-blur-effect">
@@ -92,12 +88,9 @@
                         <div class="blob blob-3"></div>
                         <div class="blob blob-2"></div>
                     </div>
-                    <div class="card-icon">
-                        <img src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/omni.png" alt="Omni"
-                            loading="lazy">
-                    </div>
-                    <h3>Омніканальність</h3>
-                    <p style="color: #c4bbd3 !important;">Єдина система для всіх каналів зв'язку</p>
+                    <h3>Visual AI</h3>
+                    <p style="color: #c4bbd3 !important;">Створюємо та покращуємо фото і відео контент, що підвищує
+                        конверсію та довіру клієнтів.</p>
                 </div>
             </div>
         </div>
@@ -111,17 +104,18 @@
             <div class="mercury-blob mercury-blob-4"></div>
         </div>
         <div class="container" style="text-align: center; position: relative; z-index: 1;">
-            <h2 class="cta-title">ПРОТЕСТУЙТЕ НАШЕ РІШЕННЯ</h2>
-            <p class="cta-description" style="font-size: 20px; margin-bottom: 30px;">Почніть діалог з нашим AI-агентом
-                прямо зараз. Дізнайтеся, як AI може відповісти на ваші запитання та кваліфікувати ваш проєкт.</p>
+            <h2 class="cta-title">Запитайте у ШІ — голосом чи текстом.</h2>
+            <p class="cta-description" style="font-size: 20px; margin-bottom: 30px;">Не витрачайте час на читання.
+                Зверніться до нашого асистента у зручний спосіб, щоб отримати повну інформацію про наші рішення для
+                вашого бізнесу.</p>
             <div style="display: flex; align-items: center; justify-content: center; gap: 15px; margin-top: 40px;">
                 <div
                     style="width: 60px; height: 60px; background: linear-gradient(135deg, #a06ff6, #6b21ef); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 30px; animation: pulse 2s ease-in-out infinite; box-shadow: 0 10px 40px rgba(160, 111, 246, 0.5);">
                     👉
                 </div>
                 <p style="font-size: 18px; color: #fff; margin: 0;">
-                    <strong>Натисніть на чат-віджет</strong><br>
-                    <span style="opacity: 0.8; font-size: 16px;">Ми на зв'язку 24/7</span>
+                    <strong>Відкрити чат</strong><br>
+                    <span style="opacity: 0.8; font-size: 16px;">Миттєва відповідь</span>
                 </p>
             </div>
         </div>
@@ -324,7 +318,7 @@
                     <div class="card">
                         <div class="card-icon"
                             style="background: linear-gradient(135deg, rgba(7, 122, 199, 0.1), rgba(107, 33, 239, 0.1));">
-                            <span style="font-size: 32px;">📥</span>
+                            <canvas id="inboundCanvas" style="width: 100%; height: 100%;"></canvas>
                         </div>
                         <h4>Вхідні дзвінки</h4>
                         <p>AI-оператор приймає дзвінки 24/7, відповідає на питання, направляє до спеціалістів</p>
@@ -332,7 +326,7 @@
                     <div class="card">
                         <div class="card-icon"
                             style="background: linear-gradient(135deg, rgba(7, 122, 199, 0.1), rgba(107, 33, 239, 0.1));">
-                            <span style="font-size: 32px;">📤</span>
+                            <canvas id="outboundCanvas" style="width: 100%; height: 100%;"></canvas>
                         </div>
                         <h4>Вихідні дзвінки</h4>
                         <p>Автоматичні нагадування, опитування, підтвердження бронювань та замовлень</p>
@@ -340,7 +334,9 @@
                 </div>
 
                 <div class="premium-block">
-                    <h4 style="font-size: 26px; margin-bottom: 25px;">🇺🇦 Особливості для українського ринку</h4>
+                    <h4 style="font-size: 26px; margin-bottom: 25px;">
+                        <div class="flag-ukraine"></div> Особливості для українського ринку
+                    </h4>
                     <ul>
                         <li>✓ <strong>Спеціалізовані NLP моделі</strong> — робота з українською мовою для миттєвого
                             розпізнавання мовлення з високою точністю</li>
@@ -614,6 +610,7 @@
     </section>
     <script src="chaos_animation.js"></script>
     <script src="hero_animation.js"></script>
+    <script src="voice_animation.js"></script>
 
     <section id="approach" style="background: transparent;">
         <div class="container">
