@@ -16,7 +16,7 @@ header {
     background: rgba(31, 25, 42, 0.8);
     backdrop-filter: blur(22px);
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    padding: 20px 40px;
+    padding: 12px 40px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -930,14 +930,14 @@ h3 {
 }
 
 .cta-button:hover {
-    transform: translateY(-4px) scale(1.05);
-    box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.2),
-        0 5px 50px -12px #6b21ef,
-        inset 0 6px 12px rgba(255, 255, 255, 0.12);
+    transform: none;
+    box-shadow: inset 0 0 30px 5px rgba(160, 111, 246, 0.5),
+        0 0 20px rgba(160, 111, 246, 0.3);
+    border-color: rgba(160, 111, 246, 0.6);
 }
 
 .cta-button:hover::after {
-    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.1) -20%, #6b21ef 0%, transparent 100%);
+    opacity: 0;
 }
 
 .cta-button:active {
@@ -1196,7 +1196,7 @@ footer p {
     }
 
     .video-hero {
-        min-height: 50vh;
+        min-height: 100dvh;
     }
 
     .wave-container {
@@ -1641,21 +1641,31 @@ footer p {
     /* Clip images to border radius */
 }
 
+/* Image Styling */
 .app-img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     display: block;
+    border-radius: 8px;
+    /* Match card radius */
+}
+
+/* Specific fix for logos to prevent cropping */
+.widget-1 .app-img,
+.widget-2 .app-img,
+.widget-3 .app-img,
+.widget-4 .app-img {
+    object-fit: contain;
 }
 
 /* Main Dashboard Base */
 .main-dashboard {
-    width: 80%;
-    height: 70%;
-    top: 15%;
-    left: 10%;
+    width: 85%;
+    height: 75%;
+    top: 12%;
+    left: 7.5%;
     background: #1a1a1a;
-    /* Fallback background */
     z-index: 1;
     transform: translateZ(0);
 }
@@ -1664,42 +1674,82 @@ footer p {
 .floating-widget {
     z-index: 2;
     background: #2a2a2a;
-    /* Fallback */
     box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6), 0 0 20px rgba(160, 111, 246, 0.2);
     animation: float-card 6s ease-in-out infinite;
+    border: none;
+    /* Remove colored borders for logos */
 }
 
+/* Widget 1: PostgreSQL (Top Left - Closer) */
 .widget-1 {
-    width: 220px;
-    /* Adjusted size for Analytics */
-    height: 150px;
-    top: -10%;
-    right: 0%;
+    width: 90px;
+    height: 90px;
+    top: 5%;
+    left: 0%;
     transform: translateZ(60px);
     animation-delay: 0s;
-    border: 2px solid #a06ff6;
+    border-radius: 50%;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.9);
 }
 
+/* Widget 2: JavaScript (Top Right - Closer) */
 .widget-2 {
-    width: 200px;
-    /* Adjusted size for Sheets */
-    height: 130px;
-    bottom: 5%;
-    left: -5%;
+    width: 80px;
+    height: 80px;
+    top: 8%;
+    right: 2%;
     transform: translateZ(80px);
     animation-delay: 2s;
+    padding: 5px;
+    background: #f7df1e;
+}
+
+/* Widget 3: Python (Bottom Left - Closer) */
+.widget-3 {
+    width: 100px;
+    height: 100px;
+    bottom: 15%;
+    left: -2%;
+    transform: translateZ(100px);
+    animation-delay: 4s;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 10px;
+}
+
+/* Widget 4: Google Analytics (Bottom Right - Closer) */
+.widget-4 {
+    width: 110px;
+    height: 70px;
+    bottom: 20%;
+    right: 0%;
+    transform: translateZ(90px);
+    animation-delay: 1s;
+    background: #fff;
+    padding: 5px;
+}
+
+/* Widget 5: Google Sheets (Center Top - Overlapping) */
+.widget-5 {
+    width: 160px;
+    height: 100px;
+    top: -5%;
+    left: 45%;
+    transform: translateZ(120px);
+    animation-delay: 3s;
     border: 2px solid #00ff88;
 }
 
-.widget-3 {
-    width: 140px;
-    /* Adjusted size for Zadarma (mobile app look) */
-    height: 240px;
-    bottom: 10%;
-    right: 10%;
-    transform: translateZ(100px);
-    animation-delay: 4s;
-    border: 2px solid #0088ff;
+/* Widget 6: Workflow Automation (Center Bottom - Overlapping) */
+.widget-6 {
+    width: 180px;
+    height: 110px;
+    bottom: -5%;
+    left: 35%;
+    transform: translateZ(110px);
+    animation-delay: 2.5s;
+    border: 2px solid #ff0088;
+    /* Distinct border */
 }
 
 @keyframes float-card {
@@ -1729,32 +1779,155 @@ footer p {
 
 @media (max-width: 768px) {
     .app-animation-container {
-        height: 350px;
+        height: 400px;
+        /* Increased height for better spacing */
         perspective: 800px;
     }
 
     .main-dashboard {
         width: 90%;
         left: 5%;
+        height: 60%;
+        top: 20%;
     }
 
+    /* Postgres - Top Right */
     .widget-1 {
-        width: 140px;
-        height: 100px;
+        width: 90px;
+        height: 90px;
         right: 0;
+        left: auto;
+        top: 0;
     }
 
+    /* JavaScript - Center Right */
     .widget-2 {
-        width: 120px;
+        width: 90px;
         height: 90px;
+        right: 0;
+        left: auto;
+        top: 35%;
+        /* Positioned below Postgres */
+        bottom: auto;
+    }
+
+    /* Python - Bottom Right */
+    .widget-3 {
+        width: 90px;
+        height: 90px;
+        right: 0;
+        left: auto;
+        bottom: 0;
+        top: auto;
+    }
+
+    /* Google Analytics - Top Left */
+    .widget-4 {
+        width: 90px;
+        height: 60px;
+        left: 0;
+        right: auto;
+        top: 5%;
+        bottom: auto;
+    }
+
+    /* Google Sheets - Center Left */
+    .widget-5 {
+        width: 110px;
+        height: 70px;
+        left: 0;
+        top: 40%;
+        transform: translateZ(50px);
+    }
+
+    /* Workflow - Bottom Left */
+    .widget-6 {
+        width: 120px;
+        height: 70px;
         left: 0;
         bottom: 5%;
+        top: auto;
     }
+}
 
-    .widget-3 {
-        width: 110px;
-        height: 80px;
-        right: 10%;
-        bottom: 15%;
-    }
+/* Feature Icons Styling */
+.card-icon-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.feature-icon-svg {
+    width: 40px;
+    height: 40px;
+    filter: drop-shadow(0 0 10px rgba(160, 111, 246, 0.6));
+    transition: transform 0.3s ease;
+}
+
+.feature-icon {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+    filter: drop-shadow(0 0 10px rgba(160, 111, 246, 0.6));
+    transition: transform 0.3s ease;
+}
+
+.card:hover .feature-icon {
+    transform: scale(1.1);
+    filter: drop-shadow(0 0 15px rgba(160, 111, 246, 0.8));
+}
+
+/* Expandable Block Styles */
+.expandable-content {
+    max-height: 360px;
+    /* Increased to show approx 6-7 items */
+    overflow: hidden;
+    position: relative;
+    transition: max-height 0.5s ease-in-out;
+}
+
+.expandable-content.expanded {
+    max-height: 1500px;
+}
+
+.fade-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 120px;
+    background: linear-gradient(to bottom, rgba(13, 13, 13, 0), rgba(13, 13, 13, 1));
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+.expandable-content.expanded .fade-overlay {
+    opacity: 0;
+}
+
+.show-more-btn {
+    display: block;
+    margin: -60px auto 0;
+    /* Negative margin to pull button up */
+    position: relative;
+    z-index: 10;
+    padding: 10px 24px;
+    background: #1a1a1a;
+    /* Solid background */
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 30px;
+    color: #fff;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.show-more-btn:hover {
+    background: #2a2a2a;
+    /* Slightly lighter on hover */
+    border-color: #a06ff6;
+    box-shadow: 0 0 15px rgba(160, 111, 246, 0.4);
 }

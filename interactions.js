@@ -58,4 +58,19 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         });
     }
+    // Expandable Block Logic
+    const showMoreBtns = document.querySelectorAll('.show-more-btn');
+
+    showMoreBtns.forEach(btn => {
+        btn.addEventListener('click', function () {
+            const content = this.previousElementSibling;
+            content.classList.toggle('expanded');
+
+            if (content.classList.contains('expanded')) {
+                this.textContent = 'Приховати';
+            } else {
+                this.textContent = 'Показати все';
+            }
+        });
+    });
 });
