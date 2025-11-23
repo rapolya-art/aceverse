@@ -8,6 +8,14 @@
 
         console.log(`Found ${demoButtons.length} demo buttons.`);
 
+        if (typeof emailjs !== 'undefined') {
+            emailjs.init({
+                publicKey: "Nt6Mh1FjFbCzbX5wT",
+            });
+        } else {
+            console.error('EmailJS library not loaded despite defer!');
+        }
+
         if (!modal || !closeButton || !demoForm) {
             console.error('Demo popup elements not found!');
             return;
