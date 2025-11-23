@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Блог Aceverse: статті про автоматизацію бізнесу, AI-агентів, лідогенерацію та CRM інтеграції.">
+    <title>Блог Aceverse - AI рішення та автоматизація</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Source+Code+Pro:wght@400;500;600;700;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="icon" href="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/logo.png" type="image/png">
+
+    <style>
+        body {
+            background: #0e0918;
+            color: #c4bbd3;
+        }
+
+        .blog-header {
+            padding-top: 120px;
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .blog-header h1 {
+            font-size: 48px;
+            background: linear-gradient(135deg, #ffffff 0%, #a06ff6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 20px;
+        }
+
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+            margin-bottom: 80px;
+        }
+
+        .blog-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .blog-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(160, 111, 246, 0.2);
+            border-color: rgba(160, 111, 246, 0.3);
+        }
+
+        .blog-card-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .blog-card-content {
+            padding: 25px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .blog-card h2 {
+            font-size: 22px;
+            margin-bottom: 15px;
+            color: #fff;
+            line-height: 1.4;
+        }
+
+        .blog-card p {
+            font-size: 15px;
+            color: #c4bbd3;
+            margin-bottom: 20px;
+            flex: 1;
+        }
+
+        .read-more {
+            display: inline-block;
+            color: #a06ff6;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 14px;
+            transition: color 0.3s;
+        }
+
+        .read-more:hover {
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header-visible">
+        <div class="logo"><a href="../index.html" style="text-decoration: none;"><img
+                    src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/logo.png" alt="Aceverse"
+                    style="height: 45px;"></a></div>
+        <nav>
+            <a href="../index.html#home">ГОЛОВНА</a>
+            <a href="../index.html#solutions">РІШЕННЯ</a>
+            <a href="../index.html#approach">ПІДХІД</a>
+            <a href="../index.html#contact">КОНТАКТИ</a>
+        </nav>
+    </header>
+
+    <main class="container">
+        <div class="blog-header">
+            <h1>Блог Aceverse</h1>
+            <p>Інсайти про автоматизацію, AI та ефективний бізнес</p>
+        </div>
+
+        <div class="blog-grid">
+            <!-- Article 1 -->
+            <article class="blog-card">
+                <a href="./lidogeneratsiya-bez-pereplat/index.html" style="text-decoration: none; color: inherit;">
+                    <img src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/Image_202511232027.webp"
+                        alt="Lead Generation" class="blog-card-image">
+                    <div class="blog-card-content">
+                        <h2>Лідогенерація без переплат: Парсинг Google Maps та AI-аутріч</h2>
+                        <p>Як знайти B2B клієнтів без зливу бюджету? Дізнайтеся про збір бази, збагачення даних AI та
+                            стратегію "Кільцевої атаки".</p>
+                        <span class="read-more">Читати далі →</span>
+                    </div>
+                </a>
+            </article>
+        </div>
+    </main>
+
+    <footer
+        style="background: rgba(31, 25, 42, 0.8); backdrop-filter: blur(22px); border-top: 1px solid rgba(255, 255, 255, 0.1); padding: 40px 0; margin-top: 60px;">
+        <div class="container" style="display: flex; justify-content: space-between; flex-wrap: wrap; gap: 30px;">
+            <div style="flex: 1; min-width: 200px;">
+                <div class="logo" style="margin-bottom: 20px; display: inline-block;">Aceverse</div>
+                <p style="color: #c4bbd3; font-size: 14px;">AI рішення для автоматизації бізнесу.</p>
+                <p style="color: #c4bbd3; font-size: 14px; margin-top: 10px;">© 2025 Aceverse</p>
+                <p style="color: #c4bbd3; font-size: 14px;">developed with ❤️</p>
+            </div>
+
+            <div style="flex: 1; min-width: 200px;">
+                <h4 style="color: #fff; margin-bottom: 20px; font-size: 18px;">Блог</h4>
+                <ul style="list-style: none; padding: 0;">
+                    <li style="margin-bottom: 10px;"><a href="/blog/lidogeneratsiya-bez-pereplat/"
+                            style="color: #c4bbd3; text-decoration: none; transition: color 0.3s;">Лідогенерація без
+                            переплат</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
