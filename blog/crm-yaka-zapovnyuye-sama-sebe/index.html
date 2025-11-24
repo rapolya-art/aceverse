@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Досить змушувати менеджерів вбивати дані вручну. Кейс налаштування автоматичного створення угод в NetHunt та KeyCRM через n8n. Економія до 40% часу команди.">
+    <title>CRM, яка заповнює сама себе: Як ми прибрали рутину менеджерів з продажу | Aceverse</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Source+Code+Pro:wght@400;500;600;700;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../../styles.css">
+    <link rel="icon" href="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/logo.png" type="image/png">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "headline": "CRM, яка заповнює сама себе: Як ми прибрали рутину менеджерів з продажу",
+      "image": "https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/In_ai_instead_202511241754.webp",
+      "datePublished": "2025-11-24",
+      "author": {
+        "@type": "Organization",
+        "name": "Aceverse"
+      }
+    }
+    </script>
+    <style>
+        /* Blog specific overrides */
+        body {
+            background: #0e0918;
+            color: #c4bbd3;
+        }
+
+        .blog-content {
+            padding-top: 120px;
+            /* Space for fixed header */
+            max-width: 800px;
+            margin: 0 auto;
+            padding-bottom: 80px;
+        }
+
+        .blog-content h1 {
+            font-size: 42px;
+            margin-bottom: 30px;
+            background: linear-gradient(135deg, #ffffff 0%, #a06ff6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1.2;
+        }
+
+        .blog-date {
+            color: #a06ff6;
+            font-size: 14px;
+            margin-bottom: 20px;
+            display: block;
+            font-weight: 600;
+        }
+
+        .blog-content h2 {
+            font-size: 32px;
+            margin-top: 50px;
+            margin-bottom: 25px;
+            text-align: left;
+        }
+
+        .blog-content p {
+            font-size: 18px;
+            margin-bottom: 20px;
+            line-height: 1.8;
+            color: #e4e4e4;
+        }
+
+        .blog-content ul {
+            margin-bottom: 25px;
+            padding-left: 20px;
+        }
+
+        .blog-content li {
+            font-size: 18px;
+            margin-bottom: 10px;
+            color: #e4e4e4;
+        }
+
+        .blog-content strong {
+            color: #fff;
+        }
+
+        .faq-section {
+            margin-top: 60px;
+            padding-top: 40px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .faq-item {
+            margin-bottom: 20px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .faq-question {
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 10px;
+            font-size: 20px;
+        }
+
+        .faq-answer {
+            color: #c4bbd3;
+        }
+
+        .cta-box {
+            background: radial-gradient(circle at 30% 140%, rgba(217, 126, 75, 0.2), transparent 37%),
+                radial-gradient(circle at 50% 310%, rgba(4, 0, 255, 0.15), transparent 78%),
+                linear-gradient(transparent, rgba(13, 10, 25, 0.37)),
+                rgba(31, 25, 42, 0.5);
+            backdrop-filter: blur(22px);
+            padding: 40px;
+            border-radius: 25px;
+            border: 1px solid rgba(255, 255, 255, 0.16);
+            text-align: center;
+            margin-top: 60px;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header-visible">
+        <div class="logo"><a href="../../index.html" style="text-decoration: none;"><img
+                    src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/logo.png" alt="Aceverse"
+                    style="height: 45px;"></a></div>
+        <nav>
+            <a href="../../index.html#home">ГОЛОВНА</a>
+            <a href="../../index.html#solutions">РІШЕННЯ</a>
+            <a href="../../index.html#approach">ПІДХІД</a>
+            <a href="../../index.html#contact">КОНТАКТИ</a>
+        </nav>
+    </header>
+
+    <main class="container blog-content">
+        <h1>CRM, яка заповнює сама себе: Як ми прибрали рутину менеджерів з продажу</h1>
+        <span class="blog-date">24 листопада 2025</span>
+
+        <img src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/In_ai_instead_202511241754.webp"
+            alt="CRM Automation"
+            style="width: 100%; border-radius: 20px; margin-bottom: 30px; border: 1px solid rgba(255, 255, 255, 0.1);">
+
+        <p>Купівля CRM — це лише пів справи. Головна проблема, з якою стикаються власники бізнесу через місяць після
+            впровадження — саботаж. Менеджери забувають створювати картки, плутають номери телефонів, не пишуть
+            коментарі після дзвінків або просто відкладають заповнення бази "на п'ятницю".</p>
+
+        <p>Як результат: ви бачите порожні звіти, а менеджери витрачають час не на продажі, а на роботу секретаря.</p>
+
+        <p>В Aceverse ми вирішуємо цю проблему радикально: забороняємо ручне введення даних. CRM повинна наповнюватися
+            сама.</p>
+
+        <h2>Як це працює: Технологія Zero-Touch</h2>
+        <p>Ми будуємо архітектуру продажів, де роль менеджера — спілкуватися і тиснути кнопку "Продано". Всю чорнову
+            роботу виконує зв'язка CRM + n8n + ChatGPT</p>
+
+        <p>Ось три сценарії, які ми автоматизуємо найчастіше:</p>
+
+        <h2>1. Вхідний лід — миттєва картка</h2>
+        <p>Забудьте про "копіювати з пошти — вставити в CRM".</p>
+        <p><strong>Як це працює:</strong> Клієнт пише в Telegram, Instagram або заповнює форму на сайті.</p>
+        <p><strong>Автоматика:</strong> n8n миттєво створює картку контакту, підтягує аватарку, ім'я, посилання на
+            соцмережу та джерело (UTM-мітку). Менеджер отримує сповіщення вже з посиланням на готову угоду.</p>
+
+        <h2>2. Розумна телефонія та AI-резюме</h2>
+        <p>Менеджер поговорив 10 хвилин, поклав слухавку і... пішов пити каву, забувши записати суть розмови.</p>
+        <p><strong>Як це працює:</strong> Ми інтегруємо IP-телефонію (Binotel, Ringostat) з CRM.</p>
+        <p><strong>Автоматика:</strong> Запис розмови автоматично кріпиться до картки клієнта. Але ми йдемо далі: ШІ
+            (AI) транскрибує розмову і додає в CRM короткий текстовий підсумок: "Клієнт цікавився оптом, просив знижку
+            5%, передзвонити у вівторок".</p>
+
+        <h2>3. Генерація документів в один клік</h2>
+        <p>Створення рахунку чи договору зазвичай займає 15-20 хвилин (знайти шаблон, змінити реквізити, зберегти в
+            PDF).</p>
+        <p><strong>Автоматика:</strong> Менеджер просто змінює етап воронки на "Виставлення рахунку". Система сама бере
+            реквізити клієнта, генерує PDF-документ з печаткою та підписом, і відправляє його клієнту на пошту або в
+            месенджер.</p>
+
+        <h2>Результат в цифрах</h2>
+        <p>Після впровадження такої автоматизації у наших клієнтів ми фіксуємо:</p>
+        <ul>
+            <li><strong>+30-40% до вільного часу менеджерів</strong> (який тепер йде на дзвінки).</li>
+            <li><strong>100% фіксація всіх вхідних звернень</strong> (жоден лід не губиться).</li>
+            <li><strong>Чиста база:</strong> Дані заповнені за єдиним стандартом, без помилок і дублів.</li>
+        </ul>
+
+        <h2>Висновок</h2>
+        <p>Ваші менеджери повинні продавати, а не займатися "дата-ентрі". Якщо ви хочете, щоб ваша CRM працювала на вас,
+            а не ви на неї — систему треба автоматизувати.</p>
+
+        <div class="faq-section">
+            <h2>Часті запитання (FAQ)</h2>
+            <div class="faq-item">
+                <div class="faq-question">З якими CRM це працює?</div>
+                <div class="faq-answer">Ми працюємо з будь-якими системами, що мають API: NetHunt, KeyCRM, Pipedrive,
+                    HubSpot, Zoho, Salesforce та інші.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">Чи безпечно передавати дані через n8n?</div>
+                <div class="faq-answer">Так. n8n може бути розгорнутий на вашому власному сервері, тому дані не
+                    залишають ваш периметр безпеки.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">Скільки часу займає впровадження?</div>
+                <div class="faq-answer">Базова автоматизація (створення карток, сповіщення) займає 3-5 днів. Складні
+                    сценарії з генерацією документів — до 2 тижнів.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">Чи складно це підтримувати?</div>
+                <div class="faq-answer">Ні. Після налаштування система працює автономно. Якщо зміняться бізнес-процеси,
+                    логіку можна легко адаптувати.</div>
+            </div>
+        </div>
+
+        <div class="cta-box">
+            <h3 style="font-size: 28px; margin-bottom: 20px; color: #fff;">Хочете автоматизувати свою CRM?</h3>
+            <p>Запишіться на консультацію, і ми розберемо ваш кейс.</p>
+            <a href="https://t.me/aceverse_roman" class="cta-button"
+                style="display: inline-block; margin-top: 20px; padding: 15px 30px; background: linear-gradient(90deg, #a06ff6 0%, #7a4bd1 100%); color: #fff; text-decoration: none; border-radius: 30px; font-weight: bold;">Написати
+                в Telegram</a>
+        </div>
+    </main>
+
+    <footer
+        style="background: rgba(31, 25, 42, 0.8); backdrop-filter: blur(22px); border-top: 1px solid rgba(255, 255, 255, 0.1); padding: 40px 0; margin-top: 60px;">
+        <div class="container" style="display: flex; justify-content: space-between; flex-wrap: wrap; gap: 30px;">
+            <div style="flex: 1; min-width: 200px;">
+                <div class="logo" style="margin-bottom: 20px; display: inline-block;">Aceverse</div>
+                <p style="color: #c4bbd3; font-size: 14px;">AI рішення для автоматизації бізнесу.</p>
+                <p style="color: #c4bbd3; font-size: 14px; margin-top: 10px;">© 2025 Aceverse</p>
+                <p style="color: #c4bbd3; font-size: 14px;">developed with ❤️</p>
+            </div>
+
+            <div style="flex: 1; min-width: 200px;">
+                <h4 style="color: #fff; margin-bottom: 20px; font-size: 18px;">Блог</h4>
+                <ul style="list-style: none; padding: 0;">
+                    <li style="margin-bottom: 10px;"><a href="/blog/lidogeneratsiya-bez-pereplat/"
+                            style="color: #c4bbd3; text-decoration: none; transition: color 0.3s;">Лідогенерація без
+                            переплат</a></li>
+                    <li style="margin-bottom: 10px;"><a href="/blog/crm-yaka-zapovnyuye-sama-sebe/"
+                            style="color: #c4bbd3; text-decoration: none; transition: color 0.3s;">CRM, яка заповнює
+                            сама себе</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
