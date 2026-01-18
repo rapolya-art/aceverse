@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Вебінар: Налаштуй голосового AI-секретаря | Aceverse</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Source+Code+Pro:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Comfortaa', cursive;
+            background: #0e0918;
+            color: #c4bbd3;
+            line-height: 1.6;
+        }
+
+        /* Custom scroll animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in-up {
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+
+        .fade-in-up-delay-1 {
+            animation: fadeInUp 0.8s ease-out 0.2s forwards;
+            opacity: 0;
+        }
+
+        .fade-in-up-delay-2 {
+            animation: fadeInUp 0.8s ease-out 0.4s forwards;
+            opacity: 0;
+        }
+
+        /* Waveform animation */
+        @keyframes wave {
+            0%, 100% {
+                transform: scaleY(0.3);
+                opacity: 0.4;
+            }
+            50% {
+                transform: scaleY(1);
+                opacity: 1;
+            }
+        }
+
+        .wave-bar {
+            animation: wave 1.2s ease-in-out infinite;
+        }
+
+        /* Glow effects */
+        .glow-orb {
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(167, 139, 250, 0.3) 0%, transparent 70%);
+            filter: blur(60px);
+            animation: pulse 3s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+                opacity: 0.5;
+            }
+            50% {
+                transform: scale(1.2);
+                opacity: 0.8;
+            }
+        }
+
+        /* Card hover effects */
+        .card-hover {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .card-hover:hover {
+            transform: translateY(-8px);
+        }
+    </style>
+</head>
+<body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+        const { useState, useEffect, useRef } = React;
+        
+        // Icon components using SVG
+        const Icon = ({ children, className = "w-5 h-5", ...props }) => (
+            <svg className={className} fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24" {...props}>
+                {children}
+            </svg>
+        );
+        
+        const Mic = (props) => (
+            <Icon {...props}>
+                <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"></path>
+                <path d="M19 10v2a7 7 0 0 1-14 0v-2"></path>
+                <line x1="12" y1="19" x2="12" y2="23"></line>
+                <line x1="8" y1="23" x2="16" y2="23"></line>
+            </Icon>
+        );
+        
+        const FileText = (props) => (
+            <Icon {...props}>
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                <polyline points="14 2 14 8 20 8"></polyline>
+                <line x1="16" y1="13" x2="8" y2="13"></line>
+                <line x1="16" y1="17" x2="8" y2="17"></line>
+                <polyline points="10 9 9 9 8 9"></polyline>
+            </Icon>
+        );
+        
+        const Rocket = (props) => (
+            <Icon {...props}>
+                <line x1="4.5" y1="16.5" x2="19.5" y2="7.5"></line>
+                <path d="M12 20l-3-3a22 22 0 0 1 6-6l3 3z"></path>
+                <path d="M12 4L9 7a22 22 0 0 1 6 6l3-3z"></path>
+                <circle cx="12" cy="12" r="1"></circle>
+            </Icon>
+        );
+        
+        const Check = (props) => (
+            <Icon {...props}>
+                <polyline points="20 6 9 17 4 12"></polyline>
+            </Icon>
+        );
+        
+        const Play = (props) => {
+            const { fill, ...restProps } = props;
+            return (
+                <Icon {...restProps} style={{ fill: fill || 'none' }}>
+                    <polygon points="5 3 19 12 5 21 5 3" fill={fill || 'currentColor'}></polygon>
+                </Icon>
+            );
+        };
+        
+        const Calendar = (props) => (
+            <Icon {...props}>
+                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                <line x1="16" y1="2" x2="16" y2="6"></line>
+                <line x1="8" y1="2" x2="8" y2="6"></line>
+                <line x1="3" y1="10" x2="21" y2="10"></line>
+            </Icon>
+        );
+
+        // Intersection Observer for scroll animations
+        const useIntersectionObserver = (ref, options = {}) => {
+            const [isIntersecting, setIsIntersecting] = useState(false);
+
+            useEffect(() => {
+                const observer = new IntersectionObserver(([entry]) => {
+                    if (entry.isIntersecting) {
+                        setIsIntersecting(true);
+                    }
+                }, {
+                    threshold: 0.1,
+                    ...options
+                });
+
+                if (ref.current) {
+                    observer.observe(ref.current);
+                }
+
+                return () => {
+                    if (ref.current) {
+                        observer.unobserve(ref.current);
+                    }
+                };
+            }, [ref]);
+
+            return isIntersecting;
+        };
+
+        // Header Component
+        const Header = () => {
+            return (
+                <header className="fixed top-0 left-0 w-full z-50 bg-[rgba(31,25,42,0.8)] backdrop-blur-[22px] border-b border-white/10 py-3 px-10 shadow-[inset_0_1px_rgba(255,142,93,0.4)]">
+                    <div className="max-w-7xl mx-auto">
+                        <div className="text-2xl font-bold font-['Source_Code_Pro'] bg-gradient-to-r from-white to-[#a06ff6] bg-clip-text text-transparent">
+                            Aceverse
+                        </div>
+                    </div>
+                </header>
+            );
+        };
+
+        // Hero Section
+        const HeroSection = () => {
+            const ref = useRef(null);
+            const isVisible = useIntersectionObserver(ref);
+
+            return (
+                <section ref={ref} className="min-h-screen flex items-center justify-center relative overflow-hidden pt-20" style={{
+                    background: 'radial-gradient(circle at 50% 50%, #1a1a2e 0%, #0e0918 100%)'
+                }}>
+                    <div className="glow-orb" style={{ top: '20%', left: '10%' }}></div>
+                    <div className="glow-orb" style={{ bottom: '20%', right: '10%', animationDelay: '1.5s' }}></div>
+                    
+                    <div className={`max-w-4xl mx-auto px-6 text-center ${isVisible ? 'fade-in-up' : 'opacity-0'}`}>
+                        <div className="inline-block mb-6 px-4 py-2 rounded-full bg-gradient-to-r from-[rgba(160,111,246,0.2)] to-[rgba(236,72,153,0.2)] border border-[rgba(160,111,246,0.3)] backdrop-blur-sm">
+                            <span className="text-sm font-semibold text-white">Безкоштовний майстер-клас</span>
+                        </div>
+                        
+                        <h1 className="text-5xl md:text-6xl font-black mb-6 bg-gradient-to-r from-white to-[#a06ff6] bg-clip-text text-transparent leading-tight">
+                            Налаштуй голосового AI-секретаря для прийому дзвінків за 45 хвилин
+                        </h1>
+                        
+                        <p className="text-xl md:text-2xl text-[#c4bbd3] mb-8 max-w-3xl mx-auto">
+                            Без програмування. Без складних схем. Твій бізнес перестане втрачати клієнтів вже сьогодні ввечері.
+                        </p>
+                        
+                        <div className="flex items-center justify-center gap-2 mb-8 text-lg text-[#c4bbd3]">
+                            <Calendar className="w-5 h-5" />
+                            <span>10 Січня | 15:00 (Kyiv Time)</span>
+                        </div>
+                        
+                        <a href="#registration" className="inline-block px-8 py-4 rounded-2xl font-bold text-lg text-white transition-all duration-300 hover:scale-105 hover:shadow-[0_0_30px_rgba(160,111,246,0.5)]"
+                           style={{
+                               background: 'radial-gradient(circle at 30% 140%, rgba(217, 126, 75, 0.3), transparent 37%), radial-gradient(circle at 50% 310%, rgba(4, 0, 255, 0.15), transparent 78%), linear-gradient(transparent, rgba(13, 10, 25, 0.37)), radial-gradient(circle at 50% -30%, rgba(168, 92, 92, 0.2), transparent)',
+                               backdropFilter: 'blur(22px)',
+                               border: '1px solid rgba(255, 255, 255, 0.16)',
+                               boxShadow: 'inset 0 1px rgba(255, 142, 93, 0.4)'
+                           }}>
+                            Зайняти місце безкоштовно
+                        </a>
+                    </div>
+                </section>
+            );
+        };
+
+        // Demo Section with Audio Player
+        const DemoSection = () => {
+            const ref = useRef(null);
+            const isVisible = useIntersectionObserver(ref);
+            const [isPlaying, setIsPlaying] = useState(false);
+
+            const waveformBars = Array.from({ length: 20 }, (_, i) => i);
+
+            return (
+                <section ref={ref} className="py-20 px-6 bg-[#0e0918]">
+                    <div className={`max-w-4xl mx-auto text-center ${isVisible ? 'fade-in-up' : 'opacity-0'}`}>
+                        <h2 className="text-4xl md:text-5xl font-black mb-4 bg-gradient-to-r from-white to-[#a06ff6] bg-clip-text text-transparent">
+                            Послухайте, як він спілкується з клієнтами
+                        </h2>
+                        <p className="text-xl text-[#c4bbd3] mb-12">
+                            Це не жива людина. Це робот, якого ви створите самі.
+                        </p>
+                        
+                        <div className="max-w-md mx-auto p-8 rounded-3xl backdrop-blur-[22px] border border-white/16 shadow-[inset_0_1px_rgba(255,142,93,0.4)] card-hover"
+                             style={{
+                                 background: 'radial-gradient(circle at 30% 140%, rgba(217, 126, 75, 0.3), transparent 37%), radial-gradient(circle at 50% 310%, rgba(4, 0, 255, 0.15), transparent 78%), linear-gradient(transparent, rgba(13, 10, 25, 0.37)), rgba(31, 25, 42, 0.5)'
+                             }}>
+                            <div className="flex items-center justify-center gap-4 mb-6">
+                                <button 
+                                    onClick={() => setIsPlaying(!isPlaying)}
+                                    className="w-16 h-16 rounded-full bg-gradient-to-r from-[#a06ff6] to-[#6b21ef] flex items-center justify-center text-white hover:scale-110 transition-transform shadow-lg"
+                                >
+                                    {!isPlaying && <Play className="w-8 h-8" fill="white" />}
+                                    {isPlaying && (
+                                        <div className="w-6 h-6 flex items-center justify-center gap-1">
+                                            <div className="w-1 h-4 bg-white rounded-full wave-bar" style={{ animationDelay: '0s' }}></div>
+                                            <div className="w-1 h-6 bg-white rounded-full wave-bar" style={{ animationDelay: '0.1s' }}></div>
+                                            <div className="w-1 h-4 bg-white rounded-full wave-bar" style={{ animationDelay: '0.2s' }}></div>
+                                        </div>
+                                    )}
+                                </button>
+                                
+                                <div className="flex-1">
+                                    <div className="flex items-center gap-2 mb-2">
+                                        {waveformBars.map((_, i) => (
+                                            <div
+                                                key={i}
+                                                className={`w-1 rounded-full ${isPlaying ? 'bg-gradient-to-t from-[#a78bfa] via-[#ec4899] to-[#60a5fa]' : 'bg-gray-600'}`}
+                                                style={{
+                                                    height: isPlaying ? `${20 + Math.random() * 40}px` : '8px',
+                                                    animationDelay: isPlaying ? `${i * 0.1}s` : '0s',
+                                                    animation: isPlaying ? 'wave 1.2s ease-in-out infinite' : 'none'
+                                                }}
+                                            ></div>
+                                        ))}
+                                    </div>
+                                    <div className="text-sm text-[#c4bbd3]">0:45</div>
+                                </div>
+                            </div>
+                            <p className="text-sm text-[#c4bbd3]">Приклад: Запис в салон краси</p>
+                        </div>
+                    </div>
+                </section>
+            );
+        };
+
+        // Program Section
+        const ProgramSection = () => {
+            const ref = useRef(null);
+            const isVisible = useIntersectionObserver(ref);
+
+            const programItems = [
+                {
+                    icon: Mic,
+                    title: "Вибір голосу",
+                    description: "Як обрати ідеальний інтонаційний профіль для вашої ніші (Рос/Укр мова)."
+                },
+                {
+                    icon: FileText,
+                    title: "Інструкція (Промпт)",
+                    description: "Пишемо просту інструкцію: 'Ти адміністратор, твоя ціль — записати клієнта'."
+                },
+                {
+                    icon: Rocket,
+                    title: "Запуск",
+                    description: "Отримуємо віртуального співробітника, готового відповідати 24/7."
+                }
+            ];
+
+            return (
+                <section ref={ref} className="py-20 px-6" style={{
+                    background: 'radial-gradient(circle at 30% 140%, rgba(217, 126, 75, 0.1), transparent 37%), radial-gradient(circle at 50% 310%, rgba(4, 0, 255, 0.08), transparent 78%), rgba(31, 25, 42, 0.3)'
+                }}>
+                    <div className={`max-w-6xl mx-auto ${isVisible ? 'fade-in-up' : 'opacity-0'}`}>
+                        <h2 className="text-4xl md:text-5xl font-black mb-16 text-center bg-gradient-to-r from-white to-[#a06ff6] bg-clip-text text-transparent">
+                            Програма інтенсиву
+                        </h2>
+                        
+                        <div className="grid md:grid-cols-3 gap-8">
+                            {programItems.map((item, index) => {
+                                const IconComponent = item.icon;
+                                return (
+                                    <div 
+                                        key={index}
+                                        className={`p-8 rounded-3xl backdrop-blur-[22px] border border-white/16 shadow-[inset_0_1px_rgba(255,142,93,0.4)] text-center card-hover ${isVisible ? `fade-in-up-delay-${index}` : 'opacity-0'}`}
+                                        style={{
+                                            background: 'radial-gradient(circle at 30% 140%, rgba(217, 126, 75, 0.3), transparent 37%), radial-gradient(circle at 50% 310%, rgba(4, 0, 255, 0.15), transparent 78%), linear-gradient(transparent, rgba(13, 10, 25, 0.37)), rgba(31, 25, 42, 0.5)'
+                                        }}
+                                    >
+                                        <div className="w-20 h-20 mx-auto mb-6 rounded-2xl flex items-center justify-center bg-gradient-to-br from-[rgba(99,102,241,0.1)] to-[rgba(139,92,246,0.1)] backdrop-blur-[10px] border border-white/30">
+                                            <IconComponent className="w-10 h-10 text-[#a06ff6]" />
+                                        </div>
+                                        <h3 className="text-2xl font-bold mb-4 bg-gradient-to-r from-white to-[#a06ff6] bg-clip-text text-transparent">
+                                            {item.title}
+                                        </h3>
+                                        <p className="text-[#c4bbd3]">
+                                            {item.description}
+                                        </p>
+                                    </div>
+                                );
+                            })}
+                        </div>
+                    </div>
+                </section>
+            );
+        };
+
+        // Audience Section
+        const AudienceSection = () => {
+            const ref = useRef(null);
+            const isVisible = useIntersectionObserver(ref);
+
+            const audienceItems = [
+                "Малий бізнес (салони, клініки, СТО)",
+                "Експерти та фрілансери",
+                "Ті, хто втомився від втрачених дзвінків"
+            ];
+
+            return (
+                <section ref={ref} className="py-20 px-6 bg-[#0e0918]">
+                    <div className={`max-w-4xl mx-auto ${isVisible ? 'fade-in-up' : 'opacity-0'}`}>
+                        <h2 className="text-4xl md:text-5xl font-black mb-12 text-center bg-gradient-to-r from-white to-[#a06ff6] bg-clip-text text-transparent">
+                            Для кого цей ефір?
+                        </h2>
+                        
+                        <div className="space-y-4">
+                            {audienceItems.map((item, index) => (
+                                <div 
+                                    key={index}
+                                    className={`flex items-center gap-4 p-6 rounded-2xl backdrop-blur-[22px] border border-white/16 ${isVisible ? `fade-in-up-delay-${index}` : 'opacity-0'}`}
+                                    style={{
+                                        background: 'radial-gradient(circle at 30% 140%, rgba(217, 126, 75, 0.2), transparent 37%), rgba(31, 25, 42, 0.5)'
+                                    }}
+                                >
+                                    <div className="w-8 h-8 rounded-full bg-gradient-to-r from-[#a06ff6] to-[#6b21ef] flex items-center justify-center flex-shrink-0">
+                                        <Check className="w-5 h-5 text-white" />
+                                    </div>
+                                    <span className="text-lg text-[#c4bbd3]">{item}</span>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                </section>
+            );
+        };
+
+        // Important Notice Section
+        const ImportantSection = () => {
+            const ref = useRef(null);
+            const isVisible = useIntersectionObserver(ref);
+
+            return (
+                <section ref={ref} className="py-20 px-6" style={{
+                    background: 'radial-gradient(54.44% 97.4% at 54.44% 2.66%, rgba(168, 92, 92, 0.29) 0%, rgba(103, 69, 69, 0.08) 100%), radial-gradient(120% 145% at 50% 100%, rgba(255, 100, 33, 0.3) 0%, rgba(255, 59, 33, 0.04) 50%), linear-gradient(180deg, rgba(14, 9, 24, 0.5), rgba(14, 9, 24, 0.5))'
+                }}>
+                    <div className={`max-w-4xl mx-auto p-8 md:p-12 rounded-3xl backdrop-blur-[50px] border border-[rgba(255,142,93,0.4)] shadow-[inset_0_1px_rgba(255,142,93,0.4),0_12px_24px_rgba(0,0,0,0.26)] ${isVisible ? 'fade-in-up' : 'opacity-0'}`}>
+                        <h3 className="text-3xl font-bold mb-6 bg-gradient-to-r from-white to-[#a06ff6] bg-clip-text text-transparent">
+                            Важливо
+                        </h3>
+                        <p className="text-lg text-[#c4bbd3] leading-relaxed">
+                            На вебінарі ми зробимо базового секретаря, який вміє говорити та консультувати. (Про те, як навчити його самому записувати дані в CRM та Excel — я розповім окремо в кінці ефіру, це рівень PRO).
+                        </p>
+                    </div>
+                </section>
+            );
+        };
+
+        // Registration Form Section
+        const RegistrationSection = () => {
+            const ref = useRef(null);
+            const isVisible = useIntersectionObserver(ref);
+            const [formData, setFormData] = useState({
+                name: '',
+                email: '',
+                phone: ''
+            });
+            const [isSubmitting, setIsSubmitting] = useState(false);
+
+            const handleSubmit = (e) => {
+                e.preventDefault();
+                setIsSubmitting(true);
+                // Here you would typically send the data to your backend
+                setTimeout(() => {
+                    alert('Дякуємо за реєстрацію! Ми зв\'яжемося з вами найближчим часом.');
+                    setIsSubmitting(false);
+                    setFormData({ name: '', email: '', phone: '' });
+                }, 1000);
+            };
+
+            const handleChange = (e) => {
+                setFormData({
+                    ...formData,
+                    [e.target.name]: e.target.value
+                });
+            };
+
+            return (
+                <section id="registration" ref={ref} className="py-20 px-6 bg-[#0e0918]">
+                    <div className={`max-w-2xl mx-auto ${isVisible ? 'fade-in-up' : 'opacity-0'}`}>
+                        <h2 className="text-4xl md:text-5xl font-black mb-4 text-center bg-gradient-to-r from-white to-[#a06ff6] bg-clip-text text-transparent">
+                            Забронюйте місце зараз
+                        </h2>
+                        <p className="text-center text-lg text-[#c4bbd3] mb-12">
+                            Кількість місць обмежена технічними можливостями кімнати.
+                        </p>
+                        
+                        <form onSubmit={handleSubmit} className="p-8 md:p-12 rounded-3xl backdrop-blur-[22px] border border-white/16 shadow-[inset_0_1px_rgba(255,142,93,0.4)]"
+                              style={{
+                                  background: 'radial-gradient(circle at 30% 140%, rgba(217, 126, 75, 0.2), transparent 37%), rgba(31, 25, 42, 0.5)'
+                              }}>
+                            <div className="space-y-6 mb-8">
+                                <div>
+                                    <label className="block mb-2 font-bold text-white">Ім'я</label>
+                                    <input
+                                        type="text"
+                                        name="name"
+                                        value={formData.name}
+                                        onChange={handleChange}
+                                        required
+                                        className="w-full px-4 py-3 rounded-lg border border-white/20 bg-white/5 backdrop-blur-[10px] text-white placeholder-[rgba(196,187,211,0.5)] focus:outline-none focus:border-[rgba(160,111,246,0.5)] focus:bg-white/8 transition-all"
+                                        placeholder="Ваше ім'я"
+                                    />
+                                </div>
+                                
+                                <div>
+                                    <label className="block mb-2 font-bold text-white">Email</label>
+                                    <input
+                                        type="email"
+                                        name="email"
+                                        value={formData.email}
+                                        onChange={handleChange}
+                                        required
+                                        className="w-full px-4 py-3 rounded-lg border border-white/20 bg-white/5 backdrop-blur-[10px] text-white placeholder-[rgba(196,187,211,0.5)] focus:outline-none focus:border-[rgba(160,111,246,0.5)] focus:bg-white/8 transition-all"
+                                        placeholder="your@email.com"
+                                    />
+                                </div>
+                                
+                                <div>
+                                    <label className="block mb-2 font-bold text-white">Телефон</label>
+                                    <input
+                                        type="tel"
+                                        name="phone"
+                                        value={formData.phone}
+                                        onChange={handleChange}
+                                        required
+                                        className="w-full px-4 py-3 rounded-lg border border-white/20 bg-white/5 backdrop-blur-[10px] text-white placeholder-[rgba(196,187,211,0.5)] focus:outline-none focus:border-[rgba(160,111,246,0.5)] focus:bg-white/8 transition-all"
+                                        placeholder="+380 XX XXX XX XX"
+                                    />
+                                </div>
+                            </div>
+                            
+                            <button
+                                type="submit"
+                                disabled={isSubmitting}
+                                className="w-full py-4 rounded-xl font-bold text-lg text-white transition-all duration-300 hover:scale-[1.02] disabled:opacity-70 disabled:cursor-not-allowed"
+                                style={{
+                                    background: 'linear-gradient(141deg, #077ac7, #6b21ef)',
+                                    boxShadow: 'inset 0 1px 1px rgba(255, 255, 255, 0.2), 0 4px 4px rgba(8, 8, 8, 0.08), inset 0 6px 12px rgba(255, 255, 255, 0.12)'
+                                }}
+                            >
+                                {isSubmitting ? 'Відправляється...' : 'Зареєструватися'}
+                            </button>
+                        </form>
+                    </div>
+                </section>
+            );
+        };
+
+        // Footer
+        const Footer = () => {
+            return (
+                <footer className="py-12 px-6 text-center border-t border-white/10" style={{
+                    background: 'radial-gradient(193.87% 204.83% at 32.86% 142.68%, rgba(168, 92, 92, 0.7) 0%, transparent 36.9%), radial-gradient(181% 145.13% at 52.69% 41.32%, rgba(24, 4, 112, 0.15) 0%, transparent 80%), linear-gradient(180deg, transparent, rgba(13, 10, 25, 0.37)), #1f192a'
+                }}>
+                    <p className="text-[#c4bbd3] font-['Source_Code_Pro']">
+                        Copyright 2025. Всі права захищені.
+                    </p>
+                </footer>
+            );
+        };
+
+        // Main App Component
+        const App = () => {
+            return (
+                <div className="min-h-screen">
+                    <Header />
+                    <HeroSection />
+                    <DemoSection />
+                    <ProgramSection />
+                    <AudienceSection />
+                    <ImportantSection />
+                    <RegistrationSection />
+                    <Footer />
+                </div>
+            );
+        };
+
+        // Render the app
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        root.render(<App />);
+    </script>
+</body>
+</html>

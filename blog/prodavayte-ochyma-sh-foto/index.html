@@ -14,8 +14,31 @@
         href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Source+Code+Pro:wght@400;500;600;700;900&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="../../styles.css">
+    <link rel="stylesheet" href="../../shared.css">
     <link rel="icon" href="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/logo.png" type="image/png">
 
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "headline": "Продавайте очима: Як ШІ перетворює нудні фото від виробника на контент, що конвертує",
+      "image": "https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/2.png",
+      "author": {
+        "@type": "Organization",
+        "name": "Aceverse"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Aceverse",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/logo.png"
+        }
+      },
+      "datePublished": "2025-12-01",
+      "description": "Ваші товарні фото не продають? Показуємо реальний кейс, як за допомогою ШІ перетворити звичайне фото від постачальника на студійний знімок та рекламне відео."
+    }
+    </script>
     <style>
         /* Blog specific overrides */
         body {
@@ -103,25 +126,15 @@
     </style>
 </head>
 
-<body>
-    <header class="header-visible">
-        <div class="logo"><a href="../../index.html" style="text-decoration: none;"><img
-                    src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/logo.png" alt="Aceverse"
-                    style="height: 45px;"></a></div>
-        <nav>
-            <a href="../../index.html#home">ГОЛОВНА</a>
-            <a href="../../index.html#solutions">РІШЕННЯ</a>
-            <a href="../../index.html#approach">ПІДХІД</a>
-            <a href="../../index.html#contact">КОНТАКТИ</a>
-        </nav>
-    </header>
+<body data-header="always" data-base="../..">
+    <div data-include="header"></div>
 
     <main class="container blog-content">
         <h1>Продавайте очима: Як ШІ перетворює нудні фото від виробника на контент, що конвертує</h1>
         <span class="blog-date">1 грудня 2025</span>
 
-        <img src="./main_visual.png" alt="AI Product Photography Transformation"
-            style="width: 100%; border-radius: 20px; margin-bottom: 30px; border: 1px solid rgba(255, 255, 255, 0.1);">
+        <img src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/2.png" alt="AI Product Photography Transformation"
+            style="width: 100%; max-width: 400px; display: block; margin: 0 auto 30px auto; border-radius: 20px; border: 1px solid rgba(255, 255, 255, 0.1);">
 
         <p>Уявіть ситуацію: ви запускаєте новий товар. Постачальник надіслав вам фотографії. Ви відкриває файл, а там —
             нудний предмет на білому (або сірому) фоні, знятий зі спалахом "в лоб".</p>
@@ -145,9 +158,9 @@
             запустити таке фото в рекламу у Facebook чи Instagram, CTR (клікабельність) буде мінімальним, бо око
             користувача просто ковзає повз.</p>
 
-        <!-- Placeholder for "Before" image if separate -->
-        <!-- <img src="..." alt="ДО: Звичайне фото від виробника" style="width: 100%; border-radius: 20px; margin-bottom: 10px;"> -->
-        <!-- <span class="img-caption">ДО: Звичайне фото від виробника</span> -->
+        <img src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/1.webp" alt="ДО: Звичайне фото від виробника"
+            style="width: 100%; max-width: 400px; display: block; margin: 0 auto 10px auto; border-radius: 20px; border: 1px solid rgba(255, 255, 255, 0.1);">
+        <span class="img-caption" style="margin-top: 10px;">ДО: Звичайне фото від виробника</span>
 
         <h2>Етап 2. Стало: Студійна якість без студії</h2>
         <p>Ми завантажуємо це фото в наші ШІ-інструменти. Наша задача — помістити цей реальний товар у нове, привабливе
@@ -163,9 +176,16 @@
                 оточення. Товар починає виглядати дорого.</li>
         </ul>
 
-        <!-- Placeholder for "After" image if separate -->
-        <!-- <img src="..." alt="ПІСЛЯ: ШІ-генерація студійної якості" style="width: 100%; border-radius: 20px; margin-bottom: 10px;"> -->
-        <!-- <span class="img-caption">ПІСЛЯ: ШІ-генерація студійної якості</span> -->
+        <div
+            style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-bottom: 10px;">
+            <img src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/2.png" alt="ПІСЛЯ: Варіант 1"
+                style="width: 100%; border-radius: 20px; border: 1px solid rgba(255, 255, 255, 0.1);">
+            <img src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/3.png" alt="ПІСЛЯ: Варіант 2"
+                style="width: 100%; border-radius: 20px; border: 1px solid rgba(255, 255, 255, 0.1);">
+            <img src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/4.png" alt="ПІСЛЯ: Варіант 3"
+                style="width: 100%; border-radius: 20px; border: 1px solid rgba(255, 255, 255, 0.1);">
+        </div>
+        <span class="img-caption" style="margin-top: 10px;">ПІСЛЯ: ШІ-генерація студійної якості</span>
 
         <h2>Етап 3. Магія: Перетворення фото на відео</h2>
         <p>Але ми не зупиняємось на статиці. Соцмережі (TikTok, Reels, YouTube Shorts) вимагають динаміки. Статичні
@@ -181,8 +201,13 @@
         <p>Ми отримали повноцінний рекламний ролик тривалістю 5-10 секунд, маючи на вході лише одну посередню
             фотографію.</p>
 
-        <!-- Placeholder for Video/GIF -->
-        <!-- <img src="..." alt="Відео демонстрація" style="width: 100%; border-radius: 20px; margin-bottom: 10px;"> -->
+        <video controls autoplay loop muted playsinline
+            style="width: 100%; max-width: 400px; display: block; margin: 0 auto 10px auto; border-radius: 20px; border: 1px solid rgba(255, 255, 255, 0.1);">
+            <source src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/5.mov" type="video/quicktime">
+            <source src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/5.mov" type="video/mp4">
+            Ваш браузер не підтримує відео.
+        </video>
+        <span class="img-caption" style="margin-top: 10px;">Відео демонстрація</span>
 
         <h2>Бізнес-результат: Навіщо це все?</h2>
         <p>Ми робимо це не заради краси, а заради цифр:</p>
@@ -210,32 +235,9 @@
 
     </main>
 
-    <footer
-        style="background: rgba(31, 25, 42, 0.8); backdrop-filter: blur(22px); border-top: 1px solid rgba(255, 255, 255, 0.1); padding: 40px 0; margin-top: 60px;">
-        <div class="container" style="display: flex; justify-content: space-between; flex-wrap: wrap; gap: 30px;">
-            <div style="flex: 1; min-width: 200px;">
-                <div class="logo" style="margin-bottom: 20px; display: inline-block;">Aceverse</div>
-                <p style="color: #c4bbd3; font-size: 14px;">AI рішення для автоматизації бізнесу.</p>
-                <p style="color: #c4bbd3; font-size: 14px; margin-top: 10px;">© 2025 Aceverse</p>
-                <p style="color: #c4bbd3; font-size: 14px;">developed with ❤️</p>
-            </div>
+    <div data-include="footer"></div>
 
-            <div style="flex: 1; min-width: 200px;">
-                <h4 style="color: #fff; margin-bottom: 20px; font-size: 18px;">Блог</h4>
-                <ul style="list-style: none; padding: 0;">
-                    <li style="margin-bottom: 10px;"><a href="/blog/prodavayte-ochyma-sh-foto/"
-                            style="color: #c4bbd3; text-decoration: none; transition: color 0.3s;">Продавайте очима:
-                            ШІ-фото</a></li>
-                    <li style="margin-bottom: 10px;"><a href="/blog/lidogeneratsiya-bez-pereplat/"
-                            style="color: #c4bbd3; text-decoration: none; transition: color 0.3s;">Лідогенерація без
-                            переплат</a></li>
-                    <li style="margin-bottom: 10px;"><a href="/blog/crm-yaka-zapovnyuye-sama-sebe/"
-                            style="color: #c4bbd3; text-decoration: none; transition: color 0.3s;">CRM, яка заповнює
-                            сама себе</a></li>
-                </ul>
-            </div>
-        </div>
-    </footer>
+    <script src="../../includes.js" defer></script>
 </body>
 
 </html>

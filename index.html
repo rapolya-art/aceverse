@@ -7,6 +7,7 @@
     <meta name="description"
         content="AI рішення для автоматизації бізнесу, підтримки 24/7. Інтеграція AI для оптимізації чатів, дзвінків та зниження витрат.">
     <title>Aceverse - ШІ рішення для бізнесу.</title>
+    <link rel="stylesheet" href="shared.css">
     <link rel="icon" href="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/logo.png" type="image/png">
     <script type="application/ld+json">
     {
@@ -2107,17 +2108,8 @@
         defer></script>
 </head>
 
-<body>
-    <header>
-        <div class="logo"><img src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/logo.png" alt="PUSHRAISE"
-                style="height: 45px;"></div>
-        <nav>
-            <a href="#home">ГОЛОВНА</a>
-            <a href="#solutions">РІШЕННЯ</a>
-            <a href="#approach">ПІДХІД</a>
-            <a href="#contact">КОНТАКТИ</a>
-        </nav>
-    </header>
+<body data-header="scroll" data-base=".">
+    <div data-include="header"></div>
 
     <section class="video-hero" style="position: relative; overflow: hidden;">
         <canvas id="heroCanvas"
@@ -2286,12 +2278,14 @@
                     </div>
                     <div
                         style="flex: 1; text-align: center; font-size: 12px; color: #c4bbd3; font-family: 'Source Code Pro', monospace;">
-                        AI Support Demo</div>
+                        Автоматизація підтримки 24/7</div>
                 </div>
 
                 <div style="position: relative; border-radius: 16px; overflow: hidden;">
-                    <video autoplay muted loop playsinline style="width: 100%; height: auto; display: block;">
-                        <source src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/1014.mp4" type="video/mp4">
+                    <video id="support-video" muted loop playsinline preload="none"
+                        style="width: 100%; height: auto; display: block;">
+                        <source src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/0117_last.mp4"
+                            type="video/mp4">
                     </video>
                     <div
                         style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(14, 9, 24, 0.3) 0%, transparent 50%); pointer-events: none;">
@@ -2491,243 +2485,6 @@
                         <li>✓ <strong>Контекстне розуміння</strong> — врахування регіональних особливостей та специфіки
                             українського бізнесу</li>
                     </ul>
-                </div>
-            </div>
-
-            <!-- App Animation Section -->
-            <div class="solution-block">
-                <h3 style="color: #fff;">Custom Pro</h3>
-                <p style="font-size: 18px; margin-bottom: 30px; color: #c4bbd3;">Індивідуальні рішення, адаптовані під
-                    ваші унікальні бізнес-процеси</p>
-
-                <div class="app-animation-container">
-                    <div class="app-scene">
-                        <!-- Main Dashboard (Base) -->
-                        <div class="app-card main-dashboard">
-                            <img src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/creatio_new.webp"
-                                alt="Creatio Dashboard" class="app-img">
-                        </div>
-
-                        <!-- Floating Widgets -->
-                        <div class="app-card floating-widget widget-1">
-                            <img src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/logo_postgres.webp"
-                                alt="PostgreSQL" class="app-img">
-                        </div>
-                        <div class="app-card floating-widget widget-2">
-                            <img src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/logo_js.webp" alt="JavaScript"
-                                class="app-img">
-                        </div>
-                        <div class="app-card floating-widget widget-3">
-                            <img src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/logo_python.webp" alt="Python"
-                                class="app-img">
-                        </div>
-                        <div class="app-card floating-widget widget-4">
-                            <img src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/logo_ga.webp"
-                                alt="Google Analytics" class="app-img">
-                        </div>
-                        <div class="app-card floating-widget widget-5">
-                            <img src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/widget_sheets.webp"
-                                alt="Google Sheets" class="app-img">
-                        </div>
-                        <div class="app-card floating-widget widget-6">
-                            <img src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/workflow_automation.webp"
-                                alt="Workflow Automation" class="app-img">
-                        </div>
-                    </div>
-                </div>
-
-                <div class="custom-pro-grid"
-                    style="display: grid; grid-template-columns: 1fr; gap: 30px; margin-top: 60px;">
-                    <!-- Sales & CRM -->
-                    <div class="premium-block" style="margin: 0; padding: 30px;">
-                        <h4 style="font-size: 22px; margin-bottom: 20px;">Sales & CRM (Продажі та Клієнти)</h4>
-                        <div class="expandable-content">
-                            <ul style="font-size: 14px;">
-                                <li style="padding: 15px; background: rgba(255,255,255,0.03);">
-                                    <strong>Збагачення даних про лідів (Lead Enrichment)</strong><br>
-                                    <span style="opacity: 0.8;">Автоматичний пошук інформації про клієнта (LinkedIn,
-                                        сайт компанії) та додавання її в CRM при отриманні email</span>
-                                </li>
-                                <li style="padding: 15px; background: rgba(255,255,255,0.03);">
-                                    <strong>ШІ-кваліфікація лідів (Scoring)</strong><br>
-                                    <span style="opacity: 0.8;">Оцінка перспективності клієнта на основі його поведінки
-                                        та даних, автоматичне присвоєння статусу (Гарячий/Теплий/Холодний)</span>
-                                </li>
-                                <li style="padding: 15px; background: rgba(255,255,255,0.03);">
-                                    <strong>Автоматичні підсумки зустрічей</strong><br>
-                                    <span style="opacity: 0.8;">Транскрибація дзвінка (Zoom/Meet) → Генерація резюме
-                                        (Summary) → Відправка листа клієнту → Оновлення картки в CRM</span>
-                                </li>
-                                <li style="padding: 15px; background: rgba(255,255,255,0.03);">
-                                    <strong>Бот реанімації клієнтів</strong><br>
-                                    <span style="opacity: 0.8;">Автоматична серія повідомлень для "заснулих" лідів через
-                                        30/60/90 днів для відновлення діалогу</span>
-                                </li>
-                                <li style="padding: 15px; background: rgba(255,255,255,0.03);">
-                                    <strong>Маршрутизація вхідних запитів</strong><br>
-                                    <span style="opacity: 0.8;">Класифікація звернень з сайту та миттєвий розподіл на
-                                        відповідного менеджера (Продажі, Підтримка, Партнерство)</span>
-                                </li>
-                                <li style="padding: 15px; background: rgba(255,255,255,0.03);">
-                                    <strong>Автоматичний контроль оплат</strong><br>
-                                    <span style="opacity: 0.8;">Нагадування про оплату інвойсів з адаптацією тону
-                                        повідомлення (від ввічливого до суворого) залежно від терміну затримки</span>
-                                </li>
-                                <li style="padding: 15px; background: rgba(255,255,255,0.03);">
-                                    <strong>Сповіщення про конкурентів</strong><br>
-                                    <span style="opacity: 0.8;">Миттєве повідомлення відділу продажів, якщо лід згадує
-                                        назву конкурента у переписці</span>
-                                </li>
-                            </ul>
-                            <div class="fade-overlay"></div>
-                        </div>
-                        <button class="show-more-btn">Показати все</button>
-                    </div>
-
-                    <!-- Marketing & Content -->
-                    <div class="premium-block" style="margin: 0; padding: 30px;">
-                        <h4 style="font-size: 22px; margin-bottom: 20px;">Маркетинг та Контент (Content & Marketing)
-                        </h4>
-                        <div class="expandable-content">
-                            <ul style="font-size: 14px;">
-                                <li style="padding: 15px; background: rgba(255,255,255,0.03);">
-                                    <strong>Перетворення блогу в соцмережі</strong><br>
-                                    <span style="opacity: 0.8;">Трансформація однієї статті блогу в 5 унікальних постів
-                                        для LinkedIn/Facebook/Twitter</span>
-                                </li>
-                                <li style="padding: 15px; background: rgba(255,255,255,0.03);">
-                                    <strong>Переробка відеоконтенту (Repurposing)</strong><br>
-                                    <span style="opacity: 0.8;">Транскрибація YouTube-відео → створення повноцінної
-                                        статті для блогу та тексту для email-розсилки</span>
-                                </li>
-                                <li style="padding: 15px; background: rgba(255,255,255,0.03);">
-                                    <strong>SEO-автооптимізатор</strong><br>
-                                    <span style="opacity: 0.8;">Аналіз нових сторінок сайту та автоматична генерація
-                                        Meta Title, Description та Alt-текстів для зображень</span>
-                                </li>
-                                <li style="padding: 15px; background: rgba(255,255,255,0.03);">
-                                    <strong>Авто-відповіді на відгуки</strong><br>
-                                    <span style="opacity: 0.8;">Автоматична (або пре-модерована) відповідь на відгуки в
-                                        Google Maps з урахуванням тональності коментаря</span>
-                                </li>
-                                <li style="padding: 15px; background: rgba(255,255,255,0.03);">
-                                    <strong>Персоналізація холодних розсилок</strong><br>
-                                    <span style="opacity: 0.8;">Генерація персоналізованих вступних речень для
-                                        email-розсилок на основі аналізу сайту отримувача</span>
-                                </li>
-                            </ul>
-                            <div class="fade-overlay"></div>
-                        </div>
-                        <button class="show-more-btn">Показати все</button>
-                    </div>
-
-                    <!-- Customer Support -->
-                    <div class="premium-block" style="margin: 0; padding: 30px;">
-                        <h4 style="font-size: 22px; margin-bottom: 20px;">Підтримка клієнтів (Customer Support)</h4>
-                        <div class="expandable-content">
-                            <ul style="font-size: 14px;">
-                                <li style="padding: 15px; background: rgba(255,255,255,0.03);">
-                                    <strong>Агент підтримки 1-ї лінії</strong><br>
-                                    <span style="opacity: 0.8;">ШІ-чатбот на сайті, що самостійно вирішує до 80% типових
-                                        питань (база знань, статус замовлення)</span>
-                                </li>
-                                <li style="padding: 15px; background: rgba(255,255,255,0.03);">
-                                    <strong>Сортування тікетів (Triage)</strong><br>
-                                    <span style="opacity: 0.8;">Аналіз вхідного звернення, визначення терміновості та
-                                        теми, призначення на профільний відділ</span>
-                                </li>
-                                <li style="padding: 15px; background: rgba(255,255,255,0.03);">
-                                    <strong>Аналіз настрою клієнта</strong><br>
-                                    <span style="opacity: 0.8;">Моніторинг повідомлень: якщо виявлено негатив або
-                                        агресію → миттєве сповіщення керівника підтримки</span>
-                                </li>
-                                <li style="padding: 15px; background: rgba(255,255,255,0.03);">
-                                    <strong>Динамічний FAQ</strong><br>
-                                    <span style="opacity: 0.8;">Автоматичне оновлення розділу "Питання та відповіді" на
-                                        основі реальних запитів користувачів за останній період</span>
-                                </li>
-                                <li style="padding: 15px; background: rgba(255,255,255,0.03);">
-                                    <strong>Бот статусу замовлення</strong><br>
-                                    <span style="opacity: 0.8;">Чат-бот, що повідомляє трекінг-номер та статус посилки
-                                        без залучення оператора</span>
-                                </li>
-                            </ul>
-                            <div class="fade-overlay"></div>
-                        </div>
-                        <button class="show-more-btn">Показати все</button>
-                    </div>
-
-                    <!-- Operations -->
-                    <div class="premium-block" style="margin: 0; padding: 30px;">
-                        <h4 style="font-size: 22px; margin-bottom: 20px;">Операційні процеси</h4>
-                        <div class="expandable-content">
-                            <ul style="font-size: 14px;">
-                                <li style="padding: 15px; background: rgba(255,255,255,0.03);">
-                                    <strong>Облік витрат по фото</strong><br>
-                                    <span style="opacity: 0.8;">Фотографування чека → розпізнавання суми та категорії →
-                                        занесення даних у фінансовий звіт</span>
-                                </li>
-                                <li style="padding: 15px; background: rgba(255,255,255,0.03);">
-                                    <strong>Розпізнавання документів (OCR)</strong><br>
-                                    <span style="opacity: 0.8;">Витягування даних із вхідних PDF (інвойси, накладні) та
-                                        імпорт у 1C/ERP систему</span>
-                                </li>
-                                <li style="padding: 15px; background: rgba(255,255,255,0.03);">
-                                    <strong>Прогнозування запасів</strong><br>
-                                    <span style="opacity: 0.8;">ШІ-прогноз залишків на складі на основі історії продажів
-                                        та сезонності</span>
-                                </li>
-                                <li style="padding: 15px; background: rgba(255,255,255,0.03);">
-                                    <strong>Асистент планування зустрічей</strong><br>
-                                    <span style="opacity: 0.8;">ШІ, що узгоджує час зустрічі з клієнтом через email,
-                                        перевіряючи ваш календар</span>
-                                </li>
-                                <li style="padding: 15px; background: rgba(255,255,255,0.03);">
-                                    <strong>Первинний аналіз договорів</strong><br>
-                                    <span style="opacity: 0.8;">ШІ-перевірка договорів контрагентів на наявність
-                                        ризикових пунктів перед підписанням</span>
-                                </li>
-                            </ul>
-                            <div class="fade-overlay"></div>
-                        </div>
-                        <button class="show-more-btn">Показати все</button>
-                    </div>
-
-                    <!-- Analytics & Data -->
-                    <div class="premium-block" style="margin: 0; padding: 30px;">
-                        <h4 style="font-size: 22px; margin-bottom: 20px;">Аналітика та Дані (Analytics & Data)</h4>
-                        <div class="expandable-content">
-                            <ul style="font-size: 14px;">
-                                <li style="padding: 15px; background: rgba(255,255,255,0.03);">
-                                    <strong>Тижневі аналітичні інсайти</strong><br>
-                                    <span style="opacity: 0.8;">Збір даних з Google Analytics, CRM, реклами → формування
-                                        текстового звіту "Головне за тиждень"</span>
-                                </li>
-                                <li style="padding: 15px; background: rgba(255,255,255,0.03);">
-                                    <strong>Виявлення аномалій</strong><br>
-                                    <span style="opacity: 0.8;">Миттєве сповіщення, якщо трафік на сайті або продажі
-                                        різко відхилилися від норми</span>
-                                </li>
-                                <li style="padding: 15px; background: rgba(255,255,255,0.03);">
-                                    <strong>Моніторинг цін конкурентів</strong><br>
-                                    <span style="opacity: 0.8;">Відстеження цін на маркетплейсах у реальному часі для
-                                        динамічного ціноутворення</span>
-                                </li>
-                                <li style="padding: 15px; background: rgba(255,255,255,0.03);">
-                                    <strong>Сегментація клієнтської бази</strong><br>
-                                    <span style="opacity: 0.8;">Автоматична кластеризація клієнтів для точного
-                                        таргетингу (RFM-аналіз)</span>
-                                </li>
-                                <li style="padding: 15px; background: rgba(255,255,255,0.03);">
-                                    <strong>Аналіз "Голосу клієнта"</strong><br>
-                                    <span style="opacity: 0.8;">Обробка записів дзвінків за місяць → виділення топ-5
-                                        проблем продукту чи сервісу</span>
-                                </li>
-                            </ul>
-                            <div class="fade-overlay"></div>
-                        </div>
-                        <button class="show-more-btn">Показати все</button>
-                    </div>
                 </div>
             </div>
 
@@ -3078,6 +2835,8 @@
         </div>
     </section>
 
+
+
     <section id="contact">
         <div class="container">
             <h2>ЗВ'ЯЗАТИСЯ З НАМИ</h2>
@@ -3118,33 +2877,61 @@
             /* Устанавливает высокий приоритет отображения (поверх других элементов) */
         }
     </style>
-    <footer
-        style="background: rgba(31, 25, 42, 0.8); backdrop-filter: blur(22px); border-top: 1px solid rgba(255, 255, 255, 0.1); padding: 40px 0; margin-top: 60px;">
-        <div class="container" style="display: flex; justify-content: space-between; flex-wrap: wrap; gap: 30px;">
-            <div style="flex: 1; min-width: 200px;">
-                <div class="logo" style="margin-bottom: 20px; display: inline-block;">Aceverse</div>
-                <p style="color: #c4bbd3; font-size: 14px;">AI рішення для автоматизації бізнесу.</p>
-                <p style="color: #c4bbd3; font-size: 14px; margin-top: 10px;">© 2025 Aceverse</p>
-                <p style="color: #c4bbd3; font-size: 14px;">developed with ❤️</p>
-            </div>
+    <section id="blog" style="padding: 40px 0 20px;">
+        <div class="container">
+            <h2>Блог Aceverse</h2>
+            <div class="blog-grid">
+                <!-- Article 3 -->
+                <article class="blog-card">
+                    <a href="blog/prodavayte-ochyma-sh-foto/index.html" style="text-decoration: none; color: inherit;">
+                        <img src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/2.png"
+                            alt="AI Product Photography" class="blog-card-image">
+                        <div class="blog-card-content">
+                            <h2>Продавайте очима: Як ШІ перетворює нудні фото від виробника на контент, що конвертує
+                            </h2>
+                            <p>Ваші товарні фото не продають? Показуємо реальний кейс, як за допомогою ШІ перетворити
+                                звичайне фото від постачальника на студійний знімок.</p>
+                            <span class="read-more">Читати далі →</span>
+                        </div>
+                    </a>
+                </article>
+                <!-- Article 2 -->
+                <article class="blog-card">
+                    <a href="blog/crm-yaka-zapovnyuye-sama-sebe/index.html"
+                        style="text-decoration: none; color: inherit;">
+                        <img src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/In_ai_instead_202511241754.webp"
+                            alt="CRM Automation" class="blog-card-image">
+                        <div class="blog-card-content">
+                            <h2>CRM, яка заповнює сама себе: Як ми прибрали рутину менеджерів</h2>
+                            <p>Досить змушувати менеджерів вбивати дані вручну. Кейс налаштування автоматичного
+                                створення
+                                угод в NetHunt та KeyCRM.</p>
+                            <span class="read-more">Читати далі →</span>
+                        </div>
+                    </a>
+                </article>
 
-            <div style="flex: 1; min-width: 200px;">
-                <h4 style="color: #fff; margin-bottom: 20px; font-size: 18px;">Блог</h4>
-                <ul style="list-style: none; padding: 0;">
-                    <li style="margin-bottom: 10px;"><a href="/blog/prodavayte-ochyma-sh-foto/"
-                            style="color: #c4bbd3; text-decoration: none; transition: color 0.3s;">Продавайте очима:
-                            ШІ-фото</a></li>
-                    <li style="margin-bottom: 10px;"><a href="/blog/lidogeneratsiya-bez-pereplat/"
-                            style="color: #c4bbd3; text-decoration: none; transition: color 0.3s;">Лідогенерація без
-                            переплат</a></li>
-                    <li style="margin-bottom: 10px;"><a href="/blog/crm-yaka-zapovnyuye-sama-sebe/"
-                            style="color: #c4bbd3; text-decoration: none; transition: color 0.3s;">CRM, яка заповнює
-                            сама себе</a></li>
-                </ul>
+                <!-- Article 1 -->
+                <article class="blog-card">
+                    <a href="blog/lidogeneratsiya-bez-pereplat/index.html"
+                        style="text-decoration: none; color: inherit;">
+                        <img src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/Image_202511232027.webp"
+                            alt="Lead Generation" class="blog-card-image">
+                        <div class="blog-card-content">
+                            <h2>Лідогенерація без переплат: Парсинг Google Maps та AI-аутріч</h2>
+                            <p>Як знайти B2B клієнтів без зливу бюджету? Дізнайтеся про збір бази, збагачення даних AI
+                                та
+                                стратегія "Кільцевої атаки".</p>
+                            <span class="read-more">Читати далі →</span>
+                        </div>
+                    </a>
+                </article>
             </div>
         </div>
-    </footer>
+    </section>
+    <div data-include="footer"></div>
 
+    <script src="includes.js" defer></script>
     <script src="interactions.js" defer></script>
 </body>
 

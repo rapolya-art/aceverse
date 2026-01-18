@@ -48,8 +48,12 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     // Header scroll visibility logic
-    const header = document.querySelector('header');
-    if (header) {
+    const bindHeaderScroll = () => {
+        const header = document.querySelector('header');
+        if (!header) {
+            return false;
+        }
+
         window.addEventListener('scroll', () => {
             if (window.scrollY > window.innerHeight - 100) { // Show slightly before full scroll
                 header.classList.add('header-visible');
@@ -57,6 +61,16 @@ document.addEventListener('DOMContentLoaded', function () {
                 header.classList.remove('header-visible');
             }
         });
+        return true;
+    };
+
+    if (!bindHeaderScroll()) {
+        const observer = new MutationObserver(() => {
+            if (bindHeaderScroll()) {
+                observer.disconnect();
+            }
+        });
+        observer.observe(document.body, { childList: true, subtree: true });
     }
     // Expandable Block Logic
     const showMoreBtns = document.querySelectorAll('.show-more-btn');
@@ -73,4 +87,22 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         });
     });
+    // Lazy Load Support Video
+    const supportVideo = document.getElementById('support-video');
+    if (supportVideo) {
+        const videoObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    supportVideo.play().catch(error => {
+                        console.log("Video autoplay prevented:", error);
+                    });
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.7
+        });
+
+        videoObserver.observe(supportVideo);
+    }
 });
