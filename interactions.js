@@ -104,5 +104,18 @@ document.addEventListener('DOMContentLoaded', function () {
         });
 
         videoObserver.observe(supportVideo);
+
+        const unmuteBtn = document.getElementById('unmute-btn');
+        if (unmuteBtn) {
+            unmuteBtn.addEventListener('click', () => {
+                supportVideo.muted = false;
+                supportVideo.controls = true; // Enable native controls
+                supportVideo.currentTime = 0;
+                supportVideo.play().then(() => {
+                    unmuteBtn.style.opacity = '0';
+                    setTimeout(() => unmuteBtn.style.display = 'none', 300);
+                }).catch(console.error);
+            });
+        }
     }
 });

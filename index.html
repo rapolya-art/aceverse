@@ -2102,6 +2102,40 @@
             cursor: not-allowed;
             transform: none;
         }
+
+        /* Video Play Button */
+        .video-play-btn {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(14, 9, 24, 0.7);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            color: #fff;
+            padding: 12px 24px;
+            border-radius: 50px;
+            font-family: 'Comfortaa', cursive;
+            font-size: 14px;
+            font-weight: 700;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.3s ease;
+            z-index: 10;
+        }
+
+        .video-play-btn:hover {
+            background: rgba(160, 111, 246, 0.9);
+            transform: translate(-50%, -50%) scale(1.05);
+            box-shadow: 0 0 20px rgba(160, 111, 246, 0.4);
+        }
+
+        .video-play-btn svg {
+            width: 20px;
+            height: 20px;
+        }
     </style>
     <link rel="icon" href="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/logo.png" type="image/png">
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
@@ -2290,6 +2324,15 @@
                     <div
                         style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(14, 9, 24, 0.3) 0%, transparent 50%); pointer-events: none;">
                     </div>
+                    <button id="unmute-btn" class="video-play-btn" aria-label="Play Video with Sound">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M11 5L6 9H2V15H6L11 19V5Z" fill="white" stroke="white" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                            <path d="M19.07 4.93L4.93 19.07" stroke="white" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
+                        <span>Увімкнути звук</span>
+                    </button>
                 </div>
 
                 <div
