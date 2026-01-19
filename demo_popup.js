@@ -8,14 +8,6 @@
 
         console.log(`Found ${demoButtons.length} demo buttons.`);
 
-        if (typeof emailjs !== 'undefined') {
-            emailjs.init({
-                publicKey: "Nt6Mh1FjFbCzbX5wT",
-            });
-        } else {
-            console.error('EmailJS library not loaded despite defer!');
-        }
-
         if (!modal || !closeButton || !demoForm) {
             console.error('Demo popup elements not found!');
             return;
@@ -45,37 +37,42 @@
         // Handle form submission
         demoForm.addEventListener('submit', function (e) {
             e.preventDefault();
-            console.log('Submitting form...');
+            console.log('Submitting form to Telegram Proxy...');
 
             const submitButton = demoForm.querySelector('.submit-button');
             const originalText = submitButton.textContent;
             submitButton.textContent = 'Надсилання...';
             submitButton.disabled = true;
 
-            const templateParams = {
+            const formData = {
                 name: document.getElementById('user_name').value,
-                contact: document.getElementById('user_contact').value
+                company: document.getElementById('company_name').value,
+                phone: document.getElementById('user_phone').value,
+                email: document.getElementById('user_email').value
             };
 
-            if (typeof emailjs === 'undefined') {
-                console.error('EmailJS not loaded!');
-                alert('Помилка: сервіс відправки не завантажено.');
-                submitButton.textContent = originalText;
-                submitButton.disabled = false;
-                return;
-            }
-
-            emailjs.send('service_8anshhg', 'template_sqxta38', templateParams)
-                .then(function () {
-                    console.log('Email sent successfully');
-                    alert('Дякуємо! Ваша заявка успішно надіслана.');
-                    modal.style.display = 'none';
-                    demoForm.reset();
-                    submitButton.textContent = originalText;
-                    submitButton.disabled = false;
-                }, function (error) {
-                    console.error('FAILED...', error);
-                    alert('Виникла помилка при відправці. Спробуйте пізніше.');
+            fetch('/api/telegram-proxy', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(formData)
+            })
+                .then(response => {
+                    if (response.ok) {
+                        console.log('Data sent successfully');
+                        alert('Дякуємо! Ваша заявка успішно надіслана. Ми зв\'яжемося з вами найближчим часом.');
+                        modal.style.display = 'none';
+                        demoForm.reset();
+                    } else {
+                        throw new Error('Network response was not ok');
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    alert('Виникла помилка при відправці. Спробуйте пізніше або напишіть нам у Telegram.');
+                })
+                .finally(() => {
                     submitButton.textContent = originalText;
                     submitButton.disabled = false;
                 });
