@@ -71,19 +71,28 @@
                 },
                 body: JSON.stringify(formData)
             })
-                .then(response => {
+            fetch('/api/telegram-proxy', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(formData)
+            })
+                .then(async response => {
                     if (response.ok) {
                         console.log('Data sent successfully');
                         alert('Дякуємо! Ваша заявка успішно надіслана. Ми зв\'яжемося з вами найближчим часом.');
                         modal.style.display = 'none';
                         demoForm.reset();
                     } else {
-                        throw new Error('Network response was not ok');
+                        const errorText = await response.text();
+                        console.error('Server Error:', response.status, errorText);
+                        throw new Error(`Server responded with ${response.status}: ${errorText}`);
                     }
                 })
                 .catch(error => {
                     console.error('Error:', error);
-                    alert('Виникла помилка при відправці. Спробуйте пізніше або напишіть нам у Telegram.');
+                    alert(`Помилка відправки: ${error.message}`);
                 })
                 .finally(() => {
                     submitButton.textContent = originalText;
