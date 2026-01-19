@@ -51,6 +51,19 @@
                 email: document.getElementById('user_email').value
             };
 
+            // Check if running locally
+            if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1' || window.location.protocol === 'file:') {
+                console.warn('Running locally: mock submission');
+                setTimeout(() => {
+                    alert('Це локальний запуск: форма не може відправити дані без бекенду Cloudflare. Після деплою це запрацює.');
+                    submitButton.textContent = originalText;
+                    submitButton.disabled = false;
+                    modal.style.display = 'none';
+                    demoForm.reset();
+                }, 1000);
+                return;
+            }
+
             fetch('/api/telegram-proxy', {
                 method: 'POST',
                 headers: {
