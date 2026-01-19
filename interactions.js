@@ -87,35 +87,26 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         });
     });
-    // Lazy Load Support Video
+    // Video Play Button Logic
     const supportVideo = document.getElementById('support-video');
-    if (supportVideo) {
-        const videoObserver = new IntersectionObserver((entries, observer) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    supportVideo.play().catch(error => {
-                        console.log("Video autoplay prevented:", error);
-                    });
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, {
-            threshold: 0.7
+    const unmuteBtn = document.getElementById('unmute-btn');
+
+    if (supportVideo && unmuteBtn) {
+        unmuteBtn.addEventListener('click', () => {
+            supportVideo.muted = false;
+            supportVideo.controls = true;
+            supportVideo.loop = true; // Force loop property
+            supportVideo.currentTime = 0;
+            supportVideo.play().then(() => {
+                unmuteBtn.style.opacity = '0';
+                setTimeout(() => unmuteBtn.style.display = 'none', 300);
+            }).catch(console.error);
         });
 
-        videoObserver.observe(supportVideo);
-
-        const unmuteBtn = document.getElementById('unmute-btn');
-        if (unmuteBtn) {
-            unmuteBtn.addEventListener('click', () => {
-                supportVideo.muted = false;
-                supportVideo.controls = true; // Enable native controls
-                supportVideo.currentTime = 0;
-                supportVideo.play().then(() => {
-                    unmuteBtn.style.opacity = '0';
-                    setTimeout(() => unmuteBtn.style.display = 'none', 300);
-                }).catch(console.error);
-            });
-        }
+        // Ensure loop continues even if controls are interacted with
+        supportVideo.addEventListener('ended', function () {
+            this.currentTime = 0;
+            this.play();
+        }, false);
     }
 });

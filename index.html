@@ -2266,30 +2266,7 @@
         </div>
     </section>
 
-    <section class="cta-section">
-        <div class="cta-blur-effect">
-            <div class="mercury-blob mercury-blob-1"></div>
-            <div class="mercury-blob mercury-blob-2"></div>
-            <div class="mercury-blob mercury-blob-3"></div>
-            <div class="mercury-blob mercury-blob-4"></div>
-        </div>
-        <div class="container" style="text-align: center; position: relative; z-index: 1;">
-            <h2 class="cta-title">Запитайте у ШІ — голосом чи текстом</h2>
-            <p class="cta-description" style="font-size: 20px; margin-bottom: 30px;">Не витрачайте час на читання.
-                Зверніться до нашого асистента у зручний спосіб, щоб отримати повну інформацію про наші рішення для
-                вашого бізнесу</p>
-            <div style="display: flex; align-items: center; justify-content: center; gap: 15px; margin-top: 40px;">
-                <div
-                    style="width: 60px; height: 60px; background: linear-gradient(135deg, #a06ff6, #6b21ef); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 30px; animation: pulse 2s ease-in-out infinite; box-shadow: 0 10px 40px rgba(160, 111, 246, 0.5);">
-                    👉
-                </div>
-                <p style="font-size: 18px; color: #fff; margin: 0;">
-                    <strong>Відкрити чат</strong><br>
-                    <span style="opacity: 0.8; font-size: 16px;">Миттєва відповідь</span>
-                </p>
-            </div>
-        </div>
-    </section>
+
 
 
 
@@ -2315,464 +2292,407 @@
                         Автоматизація підтримки 24/7</div>
                 </div>
 
-                <div style="position: relative; border-radius: 16px; overflow: hidden;">
-                    <video id="support-video" muted loop playsinline preload="none"
-                        style="width: 100%; height: auto; display: block;">
-                        <source src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/0117_last.mp4"
-                            type="video/mp4">
-                    </video>
-                    <div
-                        style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(14, 9, 24, 0.3) 0%, transparent 50%); pointer-events: none;">
+                <div style="display: flex; gap: 20px; flex-wrap: wrap;">
+                    <!-- Left Column: Video (70%) -->
+                    <div style="flex: 7; min-width: 300px;">
+                        <div style="position: relative; border-radius: 16px; overflow: hidden; height: 100%;">
+                            <video id="support-video" autoplay muted loop playsinline preload="metadata"
+                                style="width: 100%; height: auto; display: block;">
+                                <source src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/0117_last.mp4"
+                                    type="video/mp4">
+                            </video>
+                            <div
+                                style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(14, 9, 24, 0.3) 0%, transparent 50%); pointer-events: none;">
+                            </div>
+                            <button id="unmute-btn" class="video-play-btn" aria-label="Play Video">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M5 3L19 12L5 21V3Z" fill="white" stroke="white" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                                <span>Дивитись відео</span>
+                            </button>
+                        </div>
                     </div>
-                    <button id="unmute-btn" class="video-play-btn" aria-label="Play Video with Sound">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M11 5L6 9H2V15H6L11 19V5Z" fill="white" stroke="white" stroke-width="2"
-                                stroke-linecap="round" stroke-linejoin="round" />
-                            <path d="M19.07 4.93L4.93 19.07" stroke="white" stroke-width="2" stroke-linecap="round"
-                                stroke-linejoin="round" />
-                        </svg>
-                        <span>Увімкнути звук</span>
-                    </button>
-                </div>
 
-                <div
-                    style="margin-top: 16px; padding-top: 12px; border-top: 1px solid rgba(255, 255, 255, 0.1); display: flex; align-items: center; justify-content: center; font-size: 13px; color: #c4bbd3;">
-                    <div style="display: flex; align-items: center; gap: 8px;">
+                    <!-- Right Column: Menu Items (30%) -->
+                    <div style="flex: 3; min-width: 200px; display: flex; flex-direction: column; gap: 15px;">
                         <div
-                            style="width: 8px; height: 8px; border-radius: 50%; background: linear-gradient(135deg, #00d084, #28ca42); box-shadow: 0 0 8px rgba(0, 208, 132, 0.6);">
+                            style="flex: 1; background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 16px; padding: 20px; display: flex; flex-direction: column; align-items: flex-start; justify-content: center; text-align: left; color: #fff; font-weight: 500; transition: all 0.3s ease;">
+                            <div
+                                style="font-size: 16px; margin-bottom: 8px; background: linear-gradient(90deg, #FFFFFF, #A06FF6); -webkit-background-clip: text; -webkit-text-fill-color: transparent; width: 100%;">
+                                Онлайн рецепціоніст</div>
+                            <div
+                                style="font-size: 13px; color: #c4bbd3; font-weight: 400; display: flex; flex-direction: column; gap: 4px; width: 100%; align-items: flex-start;">
+                                <span>завжди на звʼязку</span>
+                                <span>інтегрован у вашу систему</span>
+                                <span>знає про ваш бізнес все</span>
+                            </div>
                         </div>
-                        <span>Live AI Agent</span>
+                        <div
+                            style="flex: 1; background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 16px; padding: 20px; display: flex; flex-direction: column; align-items: flex-start; justify-content: center; text-align: left; color: #fff; font-weight: 500; transition: all 0.3s ease;">
+                            <div
+                                style="font-size: 16px; margin-bottom: 8px; background: linear-gradient(90deg, #FFFFFF, #A06FF6); -webkit-background-clip: text; -webkit-text-fill-color: transparent; width: 100%;">
+                                Підтвердження замовлень, запис на івенти</div>
+                            <div
+                                style="font-size: 13px; color: #c4bbd3; font-weight: 400; display: flex; flex-direction: column; gap: 4px; width: 100%; align-items: flex-start;">
+                                <span>Моментальна відповідь</span>
+                                <span>Допродажі товарів та послуг</span>
+                            </div>
+                        </div>
+                        <div
+                            style="flex: 1; background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 16px; padding: 20px; display: flex; flex-direction: column; align-items: flex-start; justify-content: center; text-align: left; color: #fff; font-weight: 500; transition: all 0.3s ease;">
+                            <div
+                                style="font-size: 16px; margin-bottom: 8px; background: linear-gradient(90deg, #FFFFFF, #A06FF6); -webkit-background-clip: text; -webkit-text-fill-color: transparent; width: 100%;">
+                                Холодні дзвінки</div>
+                            <div
+                                style="font-size: 13px; color: #c4bbd3; font-weight: 400; display: flex; flex-direction: column; gap: 4px; width: 100%; align-items: flex-start;">
+                                <span>Багатопотокові рішення</span>
+                                <span>Будь яка логіка розмови</span>
+                                <span>Потужна аналітика</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="solution-block">
-                <h3 style="color: #fff;">💬 Автоматизація підтримки 24/7</h3>
-                <p style="font-size: 18px; margin-bottom: 30px; color: #c4bbd3;">Миттєва відповідь на запити клієнтів.
-                    Обробка до 90% типових питань без участі людини</p>
-
-                <div class="chat-demo-container">
-                    <div class="chat-phone">
-                        <div class="chat-header">AI ПІДТРИМКА 24/7</div>
-                        <div class="chat-area">
-                            <div class="typing-indicator-container">
-                                <div class="message-avatar">AI</div>
-                                <div class="typing-indicator">
-                                    <span></span>
-                                    <span></span>
-                                    <span></span>
+                <!-- Footer Row -->
+                <div style="display: flex; gap: 20px; flex-wrap: wrap; margin-top: 16px;">
+                    <div style="flex: 7; min-width: 300px;">
+                        <div
+                            style="padding-top: 12px; border-top: 1px solid rgba(255, 255, 255, 0.1); display: flex; align-items: center; justify-content: center; font-size: 13px; color: #c4bbd3;">
+                            <div style="display: flex; align-items: center; gap: 8px;">
+                                <div
+                                    style="width: 8px; height: 8px; border-radius: 50%; background: linear-gradient(135deg, #00d084, #28ca42); box-shadow: 0 0 8px rgba(0, 208, 132, 0.6);">
                                 </div>
+                                <span>Live AI Agent</span>
                             </div>
-                        </div>
-                        <div class="chat-input-container">
-                            <div class="chat-input-wrapper">
-                                <span class="typing-text"></span>
-                                <span class="cursor"></span>
-                            </div>
-                            <button class="send-button">→</button>
                         </div>
                     </div>
+                    <div style="flex: 3; min-width: 200px;"></div>
                 </div>
-
-                <script>
-                    (function () {
-                        const messages = [
-                            { role: "ai", text: "Вітаю! Чим можу допомогти?", delay: 1000 },
-                            { role: "user", text: "Я б хотів дізнатися коли буде доставлено моє замовлення.", delay: 2000, typing: true },
-                            { role: "ai", text: "Звичайно! Для перевірки статусу замовлення мені знадобиться номер замовлення.", delay: 1500 },
-                            { role: "user", text: "Замовлення #12345", delay: 1000, typing: true },
-                            { role: "ai", text: "Перевіряю інформацію по замовленню #12345...", delay: 2000 },
-                            { role: "ai", text: "Ваше замовлення в дорозі! Очікувана дата доставки: завтра, 13 жовтня.", delay: 2500 },
-                            { role: "user", text: "Чудово, дякую!", delay: 1000, typing: true },
-                            { role: "ai", text: "Завжди радий допомогти! Якщо виникнуть питання — я на зв'язку 24/7", delay: 1500 }
-                        ];
-
-                        function createMessage(role, text) {
-                            const msg = document.createElement('div');
-                            msg.className = `chat-message ${role}`;
-
-                            const avatar = document.createElement('div');
-                            avatar.className = 'message-avatar';
-                            avatar.textContent = role === 'ai' ? 'AI' : 'К';
-
-                            const bubble = document.createElement('div');
-                            bubble.className = 'message-bubble';
-                            bubble.textContent = text;
-
-                            msg.appendChild(avatar);
-                            msg.appendChild(bubble);
-                            return msg;
-                        }
-
-                        function showTyping() {
-                            const indicator = document.querySelector('.typing-indicator-container');
-                            if (indicator) indicator.style.display = 'flex';
-                        }
-
-                        function hideTyping() {
-                            const indicator = document.querySelector('.typing-indicator-container');
-                            if (indicator) indicator.style.display = 'none';
-                        }
-
-                        async function typeText(text, element, speed = 80) {
-                            element.textContent = '';
-                            const cursor = document.querySelector('.cursor');
-                            if (cursor) cursor.style.display = 'inline-block';
-
-                            for (let i = 0; i < text.length; i++) {
-                                element.textContent += text[i];
-                                await new Promise(resolve => setTimeout(resolve, speed));
-                            }
-
-                            await new Promise(resolve => setTimeout(resolve, 500));
-                            if (cursor) cursor.style.display = 'none';
-                        }
-
-                        async function animateChat() {
-                            const chatArea = document.querySelector('.chat-area');
-                            const typingText = document.querySelector('.typing-text');
-
-                            if (!chatArea || !typingText) return;
-
-                            chatArea.innerHTML = '';
-                            const typingContainer = document.createElement('div');
-                            typingContainer.className = 'typing-indicator-container';
-                            typingContainer.innerHTML = `
-                            <div class="message-avatar">AI</div>
-                            <div class="typing-indicator">
-                                <span></span>
-                                <span></span>
-                                <span></span>
-                            </div>
-                        `;
-                            chatArea.appendChild(typingContainer);
-
-                            for (let i = 0; i < messages.length; i++) {
-                                const msg = messages[i];
-                                await new Promise(resolve => setTimeout(resolve, msg.delay));
-
-                                if (msg.role === 'ai') {
-                                    showTyping();
-                                    await new Promise(resolve => setTimeout(resolve, 1000));
-                                    hideTyping();
-                                    chatArea.appendChild(createMessage(msg.role, msg.text));
-                                } else if (msg.typing) {
-                                    await typeText(msg.text, typingText);
-                                    typingText.textContent = '';
-                                    chatArea.appendChild(createMessage(msg.role, msg.text));
-                                }
-
-                                chatArea.scrollTop = chatArea.scrollHeight;
-                            }
-                        }
-
-                        // Intersection Observer для запуску анімації при появі на екрані
-                        const chatPhone = document.querySelector('.chat-phone');
-                        let hasAnimated = false;
-
-                        const observer = new IntersectionObserver((entries) => {
-                            entries.forEach(entry => {
-                                if (entry.isIntersecting && !hasAnimated) {
-                                    hasAnimated = true;
-                                    setTimeout(animateChat, 500);
-                                    observer.unobserve(entry.target);
-                                }
-                            });
-                        }, {
-                            threshold: 0.3 // Запустити коли 30% елемента видно
-                        });
-
-                        if (chatPhone) {
-                            observer.observe(chatPhone);
-                        }
-                    })();
-                </script>
             </div>
+
+
 
             <div class="solution-block">
                 <h3 style="color: #fff;">📞 Голосова AI-підтримка</h3>
                 <p style="font-size: 18px; margin-bottom: 30px; color: #c4bbd3;">Автоматизація телефонної підтримки з
-                    використанням найновіших голосових моделей Google. Природні діалоги, розпізнавання мови на 50+
-                    мовах</p>
+                    використанням найновіших голосових моделей. Природні діалоги, розпізнавання мови на 20+ мовах,
+                    унікальний голос для вашого бізнесу.</p>
 
-                <div class="grid-2">
-                    <div class="card">
+                <!-- Inbound Calls -->
+                <div
+                    style="margin-bottom: 40px; padding: 30px; background: rgba(255,255,255,0.03); border-radius: 20px; border: 1px solid rgba(255,255,255,0.05);">
+                    <div style="display: flex; align-items: start; gap: 30px; flex-wrap: wrap;">
                         <div class="card-icon"
-                            style="background: linear-gradient(135deg, rgba(7, 122, 199, 0.1), rgba(107, 33, 239, 0.1));">
-                            <canvas id="inboundCanvas" style="width: 100%; height: 100%;"></canvas>
+                            style="flex-shrink: 0; margin: 0; width: 120px; height: 120px; background: none; border-radius: 20px; overflow: hidden;">
+                            <img src="assets/Image_202601182105.jpeg" alt="Inbound Calls Icon"
+                                style="width: 100%; height: 100%; object-fit: cover; transform: scale(1.05); transform-origin: top center;">
                         </div>
-                        <h4>Вхідні дзвінки</h4>
-                        <p>AI-оператор приймає дзвінки 24/7, відповідає на питання, направляє до спеціалістів</p>
+                        <div style="flex: 1; min-width: 280px;">
+                            <h4 style="font-size: 24px; margin-bottom: 15px; color: #fff;">Вхідні дзвінки</h4>
+                            <p style="margin-bottom: 20px; color: #c4bbd3;">AI-оператор приймає дзвінки 24/7, відповідає
+                                на питання, записує клієнтів, робить відміни та перенесення.</p>
+                        </div>
                     </div>
-                    <div class="card">
-                        <div class="card-icon"
-                            style="background: linear-gradient(135deg, rgba(7, 122, 199, 0.1), rgba(107, 33, 239, 0.1));">
-                            <canvas id="outboundCanvas" style="width: 100%; height: 100%;"></canvas>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-top: 30px;">
+                        <div
+                            style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.05); border-radius: 12px; padding: 15px; display: flex; align-items: center; justify-content: start; color: #c4bbd3;">
+                            <span style="font-weight: 500;">Жодного пропущеного дзвінка</span>
                         </div>
-                        <h4>Вихідні дзвінки</h4>
-                        <p>Автоматичні нагадування, опитування, підтвердження бронювань та замовлень</p>
+                        <div
+                            style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.05); border-radius: 12px; padding: 15px; display: flex; align-items: center; justify-content: start; color: #c4bbd3;">
+                            <span style="font-weight: 500;">Миттєві відповіді без очікування</span>
+                        </div>
+                        <div
+                            style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.05); border-radius: 12px; padding: 15px; display: flex; align-items: center; justify-content: start; color: #c4bbd3;">
+                            <span style="font-weight: 500;">Повна інтеграція з CRM</span>
+                        </div>
+                        <div
+                            style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.05); border-radius: 12px; padding: 15px; display: flex; align-items: center; justify-content: start; color: #c4bbd3;">
+                            <span style="font-weight: 500;">Розуміння контексту та української мови</span>
+                        </div>
                     </div>
                 </div>
 
-                <div class="premium-block">
-                    <h4 style="font-size: 26px; margin-bottom: 25px;">
-                        <div class="flag-ukraine"></div> Особливості для українського ринку
-                    </h4>
-                    <ul>
-                        <li>✓ <strong>Спеціалізовані NLP моделі</strong> — робота з українською мовою для миттєвого
-                            розпізнавання мовлення з високою точністю</li>
-                        <li>✓ <strong>Реалістичні українські голоси</strong> — багато голосів, навчених спеціально для
-                            природного звучання українською мовою</li>
-                        <li>✓ <strong>Налаштування тону та стилю</strong> — адаптація відповідей під ваш вид діяльності:
-                            від формального банківського до дружелюбного e-commerce</li>
-                        <li>✓ <strong>Контекстне розуміння</strong> — врахування регіональних особливостей та специфіки
-                            українського бізнесу</li>
-                    </ul>
+                <!-- Outbound Calls -->
+                <div
+                    style="padding: 30px; background: rgba(255,255,255,0.03); border-radius: 20px; border: 1px solid rgba(255,255,255,0.05);">
+                    <div style="display: flex; align-items: start; gap: 30px; flex-wrap: wrap;">
+                        <div class="card-icon"
+                            style="flex-shrink: 0; margin: 0; width: 120px; height: 120px; background: none; border-radius: 20px; overflow: hidden;">
+                            <img src="assets/49648bd5-789f-4b9c-b803-5cb145eecc2a.jpeg" alt="Outbound Calls Icon"
+                                style="width: 100%; height: 100%; object-fit: cover; transform: scale(1.3); transform-origin: top center;">
+                        </div>
+                        <div style="flex: 1; min-width: 280px;">
+                            <h4 style="font-size: 24px; margin-bottom: 15px; color: #fff;">Вихідні дзвінки</h4>
+                            <p style="margin-bottom: 20px; color: #c4bbd3;">Автоматичні нагадування, опитування якості,
+                                підтвердження бронювань та замовлень, "холодні" дзвінки.</p>
+                        </div>
+                    </div>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-top: 30px;">
+                        <div
+                            style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.05); border-radius: 12px; padding: 15px; display: flex; align-items: center; justify-content: start; color: #c4bbd3;">
+                            <span style="font-weight: 500;">Висока конверсія та охоплення</span>
+                        </div>
+                        <div
+                            style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.05); border-radius: 12px; padding: 15px; display: flex; align-items: center; justify-content: start; color: #c4bbd3;">
+                            <span style="font-weight: 500;">Реалістичні голоси на 20 мовах</span>
+                        </div>
+                        <div
+                            style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.05); border-radius: 12px; padding: 15px; display: flex; align-items: center; justify-content: start; color: #c4bbd3;">
+                            <span style="font-weight: 500;">Адаптація тону під клієнта та офер</span>
+                        </div>
+                        <div
+                            style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.05); border-radius: 12px; padding: 15px; display: flex; align-items: center; justify-content: start; color: #c4bbd3;">
+                            <span style="font-weight: 500;">Багаторівнева логіка розмови</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="solution-block">
+                    <h3 style="color: #fff;">🔗 Омніканальна інтеграція</h3>
+                    <p style="font-size: 18px; margin-bottom: 30px; color: #c4bbd3;">Єдина логіка підтримки через
+                        веб-сайт,
+                        телефон, Telegram, WhatsApp та інші канали</p>
+
+                    <div class="integrations-showcase">
+                        <div class="integrations-row row-left">
+                            <div class="integration-icon"><img
+                                    src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/1.svg" alt="Integration"
+                                    loading="lazy"></div>
+                            <div class="integration-icon"><img
+                                    src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/2.svg" alt="Integration"
+                                    loading="lazy"></div>
+                            <div class="integration-icon"><img
+                                    src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/3.svg" alt="Integration"
+                                    loading="lazy"></div>
+                            <div class="integration-icon"><img
+                                    src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/4.svg" alt="Integration"
+                                    loading="lazy"></div>
+                            <div class="integration-icon"><img
+                                    src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/5.svg" alt="Integration"
+                                    loading="lazy"></div>
+                            <div class="integration-icon"><img
+                                    src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/6.svg" alt="Integration"
+                                    loading="lazy"></div>
+                            <div class="integration-icon"><img
+                                    src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/7.svg" alt="Integration"
+                                    loading="lazy"></div>
+                            <div class="integration-icon"><img
+                                    src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/8.svg" alt="Integration"
+                                    loading="lazy"></div>
+                            <div class="integration-icon"><img
+                                    src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/9.svg" alt="Integration"
+                                    loading="lazy"></div>
+                            <div class="integration-icon"><img
+                                    src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/10.svg" alt="Integration"
+                                    loading="lazy"></div>
+                            <div class="integration-icon"><img
+                                    src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/11.svg" alt="Integration"
+                                    loading="lazy"></div>
+                            <div class="integration-icon"><img
+                                    src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/12.svg" alt="Integration"
+                                    loading="lazy"></div>
+                            <div class="integration-icon"><img
+                                    src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/13.svg" alt="Integration"
+                                    loading="lazy"></div>
+                            <div class="integration-icon"><img
+                                    src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/14.svg" alt="Integration"
+                                    loading="lazy"></div>
+                            <div class="integration-icon"><img
+                                    src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/15.svg" alt="Integration"
+                                    loading="lazy"></div>
+                            <div class="integration-icon"><img
+                                    src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/16.svg" alt="Integration"
+                                    loading="lazy"></div>
+                            <div class="integration-icon"><img
+                                    src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/17.svg" alt="Integration"
+                                    loading="lazy"></div>
+                            <div class="integration-icon"><img
+                                    src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/18.svg" alt="Integration"
+                                    loading="lazy"></div>
+                            <div class="integration-icon"><img
+                                    src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/19.svg" alt="Integration"
+                                    loading="lazy"></div>
+                            <div class="integration-icon"><img
+                                    src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/1.svg" alt="Integration"
+                                    loading="lazy"></div>
+                            <div class="integration-icon"><img
+                                    src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/2.svg" alt="Integration"
+                                    loading="lazy"></div>
+                            <div class="integration-icon"><img
+                                    src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/3.svg" alt="Integration"
+                                    loading="lazy"></div>
+                            <div class="integration-icon"><img
+                                    src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/4.svg" alt="Integration"
+                                    loading="lazy"></div>
+                            <div class="integration-icon"><img
+                                    src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/5.svg" alt="Integration"
+                                    loading="lazy"></div>
+                            <div class="integration-icon"><img
+                                    src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/6.svg" alt="Integration"
+                                    loading="lazy"></div>
+                            <div class="integration-icon"><img
+                                    src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/7.svg" alt="Integration"
+                                    loading="lazy"></div>
+                            <div class="integration-icon"><img
+                                    src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/8.svg" alt="Integration"
+                                    loading="lazy"></div>
+                            <div class="integration-icon"><img
+                                    src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/9.svg" alt="Integration"
+                                    loading="lazy"></div>
+                            <div class="integration-icon"><img
+                                    src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/10.svg" alt="Integration"
+                                    loading="lazy"></div>
+                            <div class="integration-icon"><img
+                                    src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/11.svg" alt="Integration"
+                                    loading="lazy"></div>
+                            <div class="integration-icon"><img
+                                    src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/12.svg" alt="Integration"
+                                    loading="lazy"></div>
+                            <div class="integration-icon"><img
+                                    src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/13.svg" alt="Integration"
+                                    loading="lazy"></div>
+                            <div class="integration-icon"><img
+                                    src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/14.svg" alt="Integration"
+                                    loading="lazy"></div>
+                            <div class="integration-icon"><img
+                                    src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/15.svg" alt="Integration"
+                                    loading="lazy"></div>
+                            <div class="integration-icon"><img
+                                    src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/16.svg" alt="Integration"
+                                    loading="lazy"></div>
+                            <div class="integration-icon"><img
+                                    src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/17.svg" alt="Integration"
+                                    loading="lazy"></div>
+                            <div class="integration-icon"><img
+                                    src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/18.svg" alt="Integration"
+                                    loading="lazy"></div>
+                            <div class="integration-icon"><img
+                                    src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/19.svg" alt="Integration"
+                                    loading="lazy"></div>
+                        </div>
+
+                        <div class="integrations-row row-right">
+                            <div class="integration-icon"><img
+                                    src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/20.svg" alt="Integration"
+                                    loading="lazy"></div>
+                            <div class="integration-icon"><img
+                                    src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/21.svg" alt="Integration"
+                                    loading="lazy"></div>
+                            <div class="integration-icon"><img
+                                    src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/22.svg" alt="Integration"
+                                    loading="lazy"></div>
+                            <div class="integration-icon"><img
+                                    src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/23.svg" alt="Integration"
+                                    loading="lazy"></div>
+                            <div class="integration-icon"><img
+                                    src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/24.svg" alt="Integration"
+                                    loading="lazy"></div>
+                            <div class="integration-icon"><img
+                                    src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/25.svg" alt="Integration"
+                                    loading="lazy"></div>
+                            <div class="integration-icon"><img
+                                    src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/26.svg" alt="Integration"
+                                    loading="lazy"></div>
+                            <div class="integration-icon"><img
+                                    src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/27.svg" alt="Integration"
+                                    loading="lazy"></div>
+                            <div class="integration-icon"><img
+                                    src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/28.svg" alt="Integration"
+                                    loading="lazy"></div>
+                            <div class="integration-icon"><img
+                                    src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/29.svg" alt="Integration"
+                                    loading="lazy"></div>
+                            <div class="integration-icon"><img
+                                    src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/30.svg" alt="Integration"
+                                    loading="lazy"></div>
+                            <div class="integration-icon"><img
+                                    src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/31.svg" alt="Integration"
+                                    loading="lazy"></div>
+                            <div class="integration-icon"><img
+                                    src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/32.svg" alt="Integration"
+                                    loading="lazy"></div>
+                            <div class="integration-icon"><img
+                                    src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/33.svg" alt="Integration"
+                                    loading="lazy"></div>
+                            <div class="integration-icon"><img
+                                    src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/34.svg" alt="Integration"
+                                    loading="lazy"></div>
+                            <div class="integration-icon"><img
+                                    src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/35.svg" alt="Integration"
+                                    loading="lazy"></div>
+                            <div class="integration-icon"><img
+                                    src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/36.svg" alt="Integration"
+                                    loading="lazy"></div>
+                            <div class="integration-icon"><img
+                                    src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/37.svg" alt="Integration"
+                                    loading="lazy"></div>
+                            <div class="integration-icon"><img
+                                    src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/38.svg" alt="Integration"
+                                    loading="lazy"></div>
+                            <div class="integration-icon"><img
+                                    src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/20.svg" alt="Integration"
+                                    loading="lazy"></div>
+                            <div class="integration-icon"><img
+                                    src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/21.svg" alt="Integration"
+                                    loading="lazy"></div>
+                            <div class="integration-icon"><img
+                                    src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/22.svg" alt="Integration"
+                                    loading="lazy"></div>
+                            <div class="integration-icon"><img
+                                    src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/23.svg" alt="Integration"
+                                    loading="lazy"></div>
+                            <div class="integration-icon"><img
+                                    src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/24.svg" alt="Integration"
+                                    loading="lazy"></div>
+                            <div class="integration-icon"><img
+                                    src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/25.svg" alt="Integration"
+                                    loading="lazy"></div>
+                            <div class="integration-icon"><img
+                                    src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/26.svg" alt="Integration"
+                                    loading="lazy"></div>
+                            <div class="integration-icon"><img
+                                    src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/27.svg" alt="Integration"
+                                    loading="lazy"></div>
+                            <div class="integration-icon"><img
+                                    src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/28.svg" alt="Integration"
+                                    loading="lazy"></div>
+                            <div class="integration-icon"><img
+                                    src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/29.svg" alt="Integration"
+                                    loading="lazy"></div>
+                            <div class="integration-icon"><img
+                                    src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/30.svg" alt="Integration"
+                                    loading="lazy"></div>
+                            <div class="integration-icon"><img
+                                    src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/31.svg" alt="Integration"
+                                    loading="lazy"></div>
+                            <div class="integration-icon"><img
+                                    src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/32.svg" alt="Integration"
+                                    loading="lazy"></div>
+                            <div class="integration-icon"><img
+                                    src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/33.svg" alt="Integration"
+                                    loading="lazy"></div>
+                            <div class="integration-icon"><img
+                                    src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/34.svg" alt="Integration"
+                                    loading="lazy"></div>
+                            <div class="integration-icon"><img
+                                    src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/35.svg" alt="Integration"
+                                    loading="lazy"></div>
+                            <div class="integration-icon"><img
+                                    src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/36.svg" alt="Integration"
+                                    loading="lazy"></div>
+                            <div class="integration-icon"><img
+                                    src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/37.svg" alt="Integration"
+                                    loading="lazy"></div>
+                            <div class="integration-icon"><img
+                                    src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/38.svg" alt="Integration"
+                                    loading="lazy"></div>
+                        </div>
+                    </div>
                 </div>
             </div>
-
-            <div class="solution-block">
-                <h3 style="color: #fff;">🔗 Омніканальна інтеграція</h3>
-                <p style="font-size: 18px; margin-bottom: 30px; color: #c4bbd3;">Єдина логіка підтримки через веб-сайт,
-                    телефон, Telegram, WhatsApp та інші канали</p>
-
-                <div class="integrations-showcase">
-                    <div class="integrations-row row-left">
-                        <div class="integration-icon"><img
-                                src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/1.svg" alt="Integration"
-                                loading="lazy"></div>
-                        <div class="integration-icon"><img
-                                src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/2.svg" alt="Integration"
-                                loading="lazy"></div>
-                        <div class="integration-icon"><img
-                                src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/3.svg" alt="Integration"
-                                loading="lazy"></div>
-                        <div class="integration-icon"><img
-                                src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/4.svg" alt="Integration"
-                                loading="lazy"></div>
-                        <div class="integration-icon"><img
-                                src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/5.svg" alt="Integration"
-                                loading="lazy"></div>
-                        <div class="integration-icon"><img
-                                src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/6.svg" alt="Integration"
-                                loading="lazy"></div>
-                        <div class="integration-icon"><img
-                                src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/7.svg" alt="Integration"
-                                loading="lazy"></div>
-                        <div class="integration-icon"><img
-                                src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/8.svg" alt="Integration"
-                                loading="lazy"></div>
-                        <div class="integration-icon"><img
-                                src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/9.svg" alt="Integration"
-                                loading="lazy"></div>
-                        <div class="integration-icon"><img
-                                src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/10.svg" alt="Integration"
-                                loading="lazy"></div>
-                        <div class="integration-icon"><img
-                                src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/11.svg" alt="Integration"
-                                loading="lazy"></div>
-                        <div class="integration-icon"><img
-                                src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/12.svg" alt="Integration"
-                                loading="lazy"></div>
-                        <div class="integration-icon"><img
-                                src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/13.svg" alt="Integration"
-                                loading="lazy"></div>
-                        <div class="integration-icon"><img
-                                src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/14.svg" alt="Integration"
-                                loading="lazy"></div>
-                        <div class="integration-icon"><img
-                                src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/15.svg" alt="Integration"
-                                loading="lazy"></div>
-                        <div class="integration-icon"><img
-                                src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/16.svg" alt="Integration"
-                                loading="lazy"></div>
-                        <div class="integration-icon"><img
-                                src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/17.svg" alt="Integration"
-                                loading="lazy"></div>
-                        <div class="integration-icon"><img
-                                src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/18.svg" alt="Integration"
-                                loading="lazy"></div>
-                        <div class="integration-icon"><img
-                                src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/19.svg" alt="Integration"
-                                loading="lazy"></div>
-                        <div class="integration-icon"><img
-                                src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/1.svg" alt="Integration"
-                                loading="lazy"></div>
-                        <div class="integration-icon"><img
-                                src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/2.svg" alt="Integration"
-                                loading="lazy"></div>
-                        <div class="integration-icon"><img
-                                src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/3.svg" alt="Integration"
-                                loading="lazy"></div>
-                        <div class="integration-icon"><img
-                                src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/4.svg" alt="Integration"
-                                loading="lazy"></div>
-                        <div class="integration-icon"><img
-                                src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/5.svg" alt="Integration"
-                                loading="lazy"></div>
-                        <div class="integration-icon"><img
-                                src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/6.svg" alt="Integration"
-                                loading="lazy"></div>
-                        <div class="integration-icon"><img
-                                src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/7.svg" alt="Integration"
-                                loading="lazy"></div>
-                        <div class="integration-icon"><img
-                                src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/8.svg" alt="Integration"
-                                loading="lazy"></div>
-                        <div class="integration-icon"><img
-                                src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/9.svg" alt="Integration"
-                                loading="lazy"></div>
-                        <div class="integration-icon"><img
-                                src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/10.svg" alt="Integration"
-                                loading="lazy"></div>
-                        <div class="integration-icon"><img
-                                src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/11.svg" alt="Integration"
-                                loading="lazy"></div>
-                        <div class="integration-icon"><img
-                                src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/12.svg" alt="Integration"
-                                loading="lazy"></div>
-                        <div class="integration-icon"><img
-                                src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/13.svg" alt="Integration"
-                                loading="lazy"></div>
-                        <div class="integration-icon"><img
-                                src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/14.svg" alt="Integration"
-                                loading="lazy"></div>
-                        <div class="integration-icon"><img
-                                src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/15.svg" alt="Integration"
-                                loading="lazy"></div>
-                        <div class="integration-icon"><img
-                                src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/16.svg" alt="Integration"
-                                loading="lazy"></div>
-                        <div class="integration-icon"><img
-                                src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/17.svg" alt="Integration"
-                                loading="lazy"></div>
-                        <div class="integration-icon"><img
-                                src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/18.svg" alt="Integration"
-                                loading="lazy"></div>
-                        <div class="integration-icon"><img
-                                src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/19.svg" alt="Integration"
-                                loading="lazy"></div>
-                    </div>
-
-                    <div class="integrations-row row-right">
-                        <div class="integration-icon"><img
-                                src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/20.svg" alt="Integration"
-                                loading="lazy"></div>
-                        <div class="integration-icon"><img
-                                src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/21.svg" alt="Integration"
-                                loading="lazy"></div>
-                        <div class="integration-icon"><img
-                                src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/22.svg" alt="Integration"
-                                loading="lazy"></div>
-                        <div class="integration-icon"><img
-                                src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/23.svg" alt="Integration"
-                                loading="lazy"></div>
-                        <div class="integration-icon"><img
-                                src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/24.svg" alt="Integration"
-                                loading="lazy"></div>
-                        <div class="integration-icon"><img
-                                src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/25.svg" alt="Integration"
-                                loading="lazy"></div>
-                        <div class="integration-icon"><img
-                                src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/26.svg" alt="Integration"
-                                loading="lazy"></div>
-                        <div class="integration-icon"><img
-                                src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/27.svg" alt="Integration"
-                                loading="lazy"></div>
-                        <div class="integration-icon"><img
-                                src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/28.svg" alt="Integration"
-                                loading="lazy"></div>
-                        <div class="integration-icon"><img
-                                src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/29.svg" alt="Integration"
-                                loading="lazy"></div>
-                        <div class="integration-icon"><img
-                                src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/30.svg" alt="Integration"
-                                loading="lazy"></div>
-                        <div class="integration-icon"><img
-                                src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/31.svg" alt="Integration"
-                                loading="lazy"></div>
-                        <div class="integration-icon"><img
-                                src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/32.svg" alt="Integration"
-                                loading="lazy"></div>
-                        <div class="integration-icon"><img
-                                src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/33.svg" alt="Integration"
-                                loading="lazy"></div>
-                        <div class="integration-icon"><img
-                                src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/34.svg" alt="Integration"
-                                loading="lazy"></div>
-                        <div class="integration-icon"><img
-                                src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/35.svg" alt="Integration"
-                                loading="lazy"></div>
-                        <div class="integration-icon"><img
-                                src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/36.svg" alt="Integration"
-                                loading="lazy"></div>
-                        <div class="integration-icon"><img
-                                src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/37.svg" alt="Integration"
-                                loading="lazy"></div>
-                        <div class="integration-icon"><img
-                                src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/38.svg" alt="Integration"
-                                loading="lazy"></div>
-                        <div class="integration-icon"><img
-                                src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/20.svg" alt="Integration"
-                                loading="lazy"></div>
-                        <div class="integration-icon"><img
-                                src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/21.svg" alt="Integration"
-                                loading="lazy"></div>
-                        <div class="integration-icon"><img
-                                src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/22.svg" alt="Integration"
-                                loading="lazy"></div>
-                        <div class="integration-icon"><img
-                                src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/23.svg" alt="Integration"
-                                loading="lazy"></div>
-                        <div class="integration-icon"><img
-                                src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/24.svg" alt="Integration"
-                                loading="lazy"></div>
-                        <div class="integration-icon"><img
-                                src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/25.svg" alt="Integration"
-                                loading="lazy"></div>
-                        <div class="integration-icon"><img
-                                src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/26.svg" alt="Integration"
-                                loading="lazy"></div>
-                        <div class="integration-icon"><img
-                                src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/27.svg" alt="Integration"
-                                loading="lazy"></div>
-                        <div class="integration-icon"><img
-                                src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/28.svg" alt="Integration"
-                                loading="lazy"></div>
-                        <div class="integration-icon"><img
-                                src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/29.svg" alt="Integration"
-                                loading="lazy"></div>
-                        <div class="integration-icon"><img
-                                src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/30.svg" alt="Integration"
-                                loading="lazy"></div>
-                        <div class="integration-icon"><img
-                                src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/31.svg" alt="Integration"
-                                loading="lazy"></div>
-                        <div class="integration-icon"><img
-                                src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/32.svg" alt="Integration"
-                                loading="lazy"></div>
-                        <div class="integration-icon"><img
-                                src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/33.svg" alt="Integration"
-                                loading="lazy"></div>
-                        <div class="integration-icon"><img
-                                src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/34.svg" alt="Integration"
-                                loading="lazy"></div>
-                        <div class="integration-icon"><img
-                                src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/35.svg" alt="Integration"
-                                loading="lazy"></div>
-                        <div class="integration-icon"><img
-                                src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/36.svg" alt="Integration"
-                                loading="lazy"></div>
-                        <div class="integration-icon"><img
-                                src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/37.svg" alt="Integration"
-                                loading="lazy"></div>
-                        <div class="integration-icon"><img
-                                src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/38.svg" alt="Integration"
-                                loading="lazy"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
     </section>
 
     <!-- Chaos to Order Animation Section -->
@@ -2812,7 +2732,7 @@
         </div>
     </div>
 
-    <script src="voice_animation.js?v=2" defer></script>
+
     <script src="demo_popup.js?v=2" defer></script>
 
     <section id="approach" style="background: transparent;">
