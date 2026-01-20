@@ -72,7 +72,8 @@
             border-bottom: 1px solid rgba(255, 255, 255, 0.1);
             padding: 12px 40px;
             display: flex;
-            justify-content: space-between;
+            justify-content: center;
+            gap: 60px;
             align-items: center;
             position: fixed;
             top: 0;
@@ -2315,22 +2316,7 @@
             <h2>РІШЕННЯ</h2>
 
             <div
-                style="position: relative; z-index: 1; background: radial-gradient(circle at 30% 140%, rgba(217, 126, 75, 0.2), transparent 37%), radial-gradient(circle at 50% 310%, rgba(4, 0, 255, 0.15), transparent 78%), linear-gradient(transparent, rgba(13, 10, 25, 0.37)), rgba(31, 25, 42, 0.5); backdrop-filter: blur(22px); border: 2px solid rgba(255, 255, 255, 0.2); border-radius: 24px; padding: 20px; box-shadow: inset 0 1px rgba(255, 142, 93, 0.4), 0 20px 60px rgba(0, 0, 0, 0.4); margin-bottom: 60px;">
-                <div
-                    style="display: flex; align-items: center; gap: 8px; margin-bottom: 16px; padding-bottom: 12px; border-bottom: 1px solid rgba(255, 255, 255, 0.1);">
-                    <div
-                        style="width: 12px; height: 12px; border-radius: 50%; background: linear-gradient(135deg, #ff5f57, #ff3b30);">
-                    </div>
-                    <div
-                        style="width: 12px; height: 12px; border-radius: 50%; background: linear-gradient(135deg, #ffbd2e, #ffa500);">
-                    </div>
-                    <div
-                        style="width: 12px; height: 12px; border-radius: 50%; background: linear-gradient(135deg, #28ca42, #00d084);">
-                    </div>
-                    <div
-                        style="flex: 1; text-align: center; font-size: 12px; color: #c4bbd3; font-family: 'Source Code Pro', monospace;">
-                        Автоматизація підтримки 24/7</div>
-                </div>
+                style="position: relative; z-index: 1; background: radial-gradient(circle at 30% 140%, rgba(217, 126, 75, 0.2), transparent 37%), radial-gradient(circle at 50% 310%, rgba(4, 0, 255, 0.15), transparent 78%), linear-gradient(transparent, rgba(13, 10, 25, 0.37)), rgba(31, 25, 42, 0.5); backdrop-filter: blur(22px); border: 1px solid rgba(255, 255, 255, 0.16); border-radius: 24px; padding: 20px; box-shadow: inset 0 1px rgba(255, 142, 93, 0.4), 0 20px 60px rgba(0, 0, 0, 0.4); margin-bottom: 60px;">
 
                 <div style="display: flex; gap: 20px; flex-wrap: wrap;">
                     <!-- Left Column: Video (70%) -->
@@ -2395,34 +2381,21 @@
                     </div>
                 </div>
 
-                <!-- Footer Row -->
-                <div style="display: flex; gap: 20px; flex-wrap: wrap; margin-top: 16px;">
-                    <div style="flex: 7; min-width: 300px;">
-                        <div
-                            style="padding-top: 12px; border-top: 1px solid rgba(255, 255, 255, 0.1); display: flex; align-items: center; justify-content: center; font-size: 13px; color: #c4bbd3;">
-                            <div style="display: flex; align-items: center; gap: 8px;">
-                                <div
-                                    style="width: 8px; height: 8px; border-radius: 50%; background: linear-gradient(135deg, #00d084, #28ca42); box-shadow: 0 0 8px rgba(0, 208, 132, 0.6);">
-                                </div>
-                                <span>Live AI Agent</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div style="flex: 3; min-width: 200px;"></div>
-                </div>
+
             </div>
 
 
 
-            <div class="solution-block">
-                <h3 style="color: #fff;">📞 Голосова AI-підтримка</h3>
-                <p style="font-size: 18px; margin-bottom: 30px; color: #c4bbd3;">Автоматизація телефонної підтримки з
+            <div class="solution-block" style="border: none; background: transparent; box-shadow: none; padding: 0;">
+                <h3 style="color: #fff; margin-left: 20px;">📞 Голосова AI-підтримка</h3>
+                <p style="font-size: 16px; margin-bottom: 30px; color: #c4bbd3; margin-left: 20px;">Автоматизація
+                    телефонної підтримки з
                     використанням найновіших голосових моделей. Природні діалоги, розпізнавання мови на 20+ мовах,
                     унікальний голос для вашого бізнесу.</p>
 
                 <!-- Inbound Calls -->
                 <div
-                    style="margin-bottom: 40px; padding: 30px; background: rgba(255,255,255,0.03); border-radius: 20px; border: 1px solid rgba(255,255,255,0.05);">
+                    style="margin-bottom: 40px; padding: 30px; background: rgba(255,255,255,0.03); border-radius: 20px; border: 1px solid rgba(255,255,255,0.16);">
                     <div style="display: flex; align-items: start; gap: 30px; flex-wrap: wrap;">
                         <div class="card-icon"
                             style="flex-shrink: 0; margin: 0; width: 120px; height: 120px; background: none; border-radius: 20px; overflow: hidden;">
@@ -2430,34 +2403,36 @@
                                 style="width: 100%; height: 100%; object-fit: cover; transform: scale(1.05); transform-origin: top center;">
                         </div>
                         <div style="flex: 1; min-width: 280px;">
-                            <h4 style="font-size: 24px; margin-bottom: 15px; color: #fff;">Вхідні дзвінки</h4>
+                            <h4 style="margin-bottom: 15px; color: #fff;">Вхідні дзвінки</h4>
                             <p style="margin-bottom: 20px; color: #c4bbd3;">AI-оператор приймає дзвінки 24/7, відповідає
                                 на питання, записує клієнтів, робить відміни та перенесення.</p>
                         </div>
                     </div>
-                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-top: 30px;">
+                    <div
+                        style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 15px; margin-top: 30px;">
                         <div class="oil-block"
                             style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.05); border-radius: 12px; padding: 15px; display: flex; align-items: center; justify-content: start; color: #c4bbd3;">
-                            <span style="font-weight: 500;">Жодного пропущеного дзвінка</span>
+                            <span style="font-weight: 500; font-size: 15px;">Жодного пропущеного дзвінка</span>
                         </div>
                         <div class="oil-block"
                             style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.05); border-radius: 12px; padding: 15px; display: flex; align-items: center; justify-content: start; color: #c4bbd3;">
-                            <span style="font-weight: 500;">Миттєві відповіді без очікування</span>
+                            <span style="font-weight: 500; font-size: 15px;">Миттєві відповіді без очікування</span>
                         </div>
                         <div class="oil-block"
                             style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.05); border-radius: 12px; padding: 15px; display: flex; align-items: center; justify-content: start; color: #c4bbd3;">
-                            <span style="font-weight: 500;">Повна інтеграція з CRM</span>
+                            <span style="font-weight: 500; font-size: 15px;">Повна інтеграція з CRM</span>
                         </div>
                         <div class="oil-block"
                             style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.05); border-radius: 12px; padding: 15px; display: flex; align-items: center; justify-content: start; color: #c4bbd3;">
-                            <span style="font-weight: 500;">Розуміння контексту та української мови</span>
+                            <span style="font-weight: 500; font-size: 15px;">Розуміння контексту та української
+                                мови</span>
                         </div>
                     </div>
                 </div>
 
                 <!-- Outbound Calls -->
                 <div
-                    style="padding: 30px; background: rgba(255,255,255,0.03); border-radius: 20px; border: 1px solid rgba(255,255,255,0.05);">
+                    style="padding: 30px; background: rgba(255,255,255,0.03); border-radius: 20px; border: 1px solid rgba(255,255,255,0.16);">
                     <div style="display: flex; align-items: start; gap: 30px; flex-wrap: wrap;">
                         <div class="card-icon"
                             style="flex-shrink: 0; margin: 0; width: 120px; height: 120px; background: none; border-radius: 20px; overflow: hidden;">
@@ -2465,274 +2440,499 @@
                                 style="width: 100%; height: 100%; object-fit: cover; transform: scale(1.3); transform-origin: top center;">
                         </div>
                         <div style="flex: 1; min-width: 280px;">
-                            <h4 style="font-size: 24px; margin-bottom: 15px; color: #fff;">Вихідні дзвінки</h4>
+                            <h4 style="margin-bottom: 15px; color: #fff;">Вихідні дзвінки</h4>
                             <p style="margin-bottom: 20px; color: #c4bbd3;">Автоматичні нагадування, опитування якості,
                                 підтвердження бронювань та замовлень, "холодні" дзвінки.</p>
                         </div>
                     </div>
-                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-top: 30px;">
+                    <div
+                        style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 15px; margin-top: 30px;">
                         <div class="oil-block"
                             style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.05); border-radius: 12px; padding: 15px; display: flex; align-items: center; justify-content: start; color: #c4bbd3;">
-                            <span style="font-weight: 500;">Висока конверсія та охоплення</span>
+                            <span style="font-weight: 500; font-size: 15px;">Висока конверсія та охоплення</span>
                         </div>
                         <div class="oil-block"
                             style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.05); border-radius: 12px; padding: 15px; display: flex; align-items: center; justify-content: start; color: #c4bbd3;">
-                            <span style="font-weight: 500;">Реалістичні голоси на 20 мовах</span>
+                            <span style="font-weight: 500; font-size: 15px;">Реалістичні голоси на 20 мовах</span>
                         </div>
                         <div class="oil-block"
                             style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.05); border-radius: 12px; padding: 15px; display: flex; align-items: center; justify-content: start; color: #c4bbd3;">
-                            <span style="font-weight: 500;">Адаптація тону під клієнта та офер</span>
+                            <span style="font-weight: 500; font-size: 15px;">Адаптація тону під клієнта та офер</span>
                         </div>
                         <div class="oil-block"
                             style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.05); border-radius: 12px; padding: 15px; display: flex; align-items: center; justify-content: start; color: #c4bbd3;">
-                            <span style="font-weight: 500;">Багаторівнева логіка розмови</span>
+                            <span style="font-weight: 500; font-size: 15px;">Багаторівнева логіка розмови</span>
                         </div>
                     </div>
                 </div>
 
-                <div class="solution-block">
+                <div class="solution-block" style="display: flex; gap: 30px; align-items: center; flex-wrap: wrap;">
+                    <div style="flex: 1; min-width: 300px;">
+                        <h3 style="color: #fff; margin-bottom: 20px; text-align: center;">Що відбувається коли працює
+                            людина</h3>
+                    </div>
+                    <div style="flex: 1; min-width: 300px;">
+                        <img src="assets/human_role.jpg" alt="Human Role" style="width: 100%; border-radius: 20px;">
+                    </div>
+                </div>
+
+                <!-- AI Capabilities Block -->
+                <div class="solution-block capabilities-block" style="margin-top: 40px; margin-bottom: 40px;">
+                    <h3 style="text-align: center; margin-bottom: 40px;">Що відбувається коли працює штучний інтелект
+                    </h3>
+                    <div class="capabilities-grid"
+                        style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
+
+                        <!-- Left Column: CHANNELS -->
+                        <div class="cap-card"
+                            style="background: linear-gradient(135deg, rgba(23, 20, 33, 0.9) 0%, rgba(23, 20, 33, 0.6) 100%); border: 1px solid rgba(255,255,255,0.1); border-radius: 20px; padding: 30px; display: flex; flex-direction: column; justify-content: center;">
+                            <h4
+                                style="letter-spacing: 2px; text-transform: uppercase; font-size: 14px; margin-bottom: 30px; margin-top: 0; font-weight: 700; background: linear-gradient(90deg, #fff, #a06ff6); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;">
+                                КАНАЛИ</h4>
+                            <ul
+                                style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 20px;">
+                                <li
+                                    style="display: flex; align-items: center; gap: 15px; font-size: 16px; color: #fff; font-weight: 500;">
+                                    <div style="width: 32px; display: flex; justify-content: center; flex-shrink: 0;">
+                                        <svg width="100%" height="auto" viewBox="0 0 24 24" fill="none" stroke="white"
+                                            style="flex-shrink: 0;" stroke-width="2" stroke-linecap="round"
+                                            stroke-linejoin="round">
+                                            <path d="M3 18v-6a9 9 0 0 1 18 0v6"></path>
+                                            <path
+                                                d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z">
+                                            </path>
+                                        </svg>
+                                    </div>
+                                    Приймання та здійснення дзвінків
+                                </li>
+                                <li
+                                    style="display: flex; align-items: center; gap: 15px; font-size: 16px; font-weight: 600; background: linear-gradient(90deg, #fff, #a06ff6); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;">
+                                    <div style="width: 32px; display: flex; justify-content: center; flex-shrink: 0;">
+                                        <svg width="100%" height="auto" viewBox="0 0 24 24" fill="none" stroke="white"
+                                            style="flex-shrink: 0;" stroke-width="2" stroke-linecap="round"
+                                            stroke-linejoin="round">
+                                            <rect x="2" y="4" width="20" height="16" rx="2"></rect>
+                                            <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+                                        </svg>
+                                    </div>
+                                    Читання та написання email-ів
+                                </li>
+                                <li
+                                    style="display: flex; align-items: center; gap: 15px; font-size: 16px; font-weight: 600; background: linear-gradient(90deg, #fff, #a06ff6); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;">
+                                    <div style="width: 32px; display: flex; justify-content: center; flex-shrink: 0;">
+                                        <svg width="100%" height="auto" viewBox="0 0 24 24" fill="none" stroke="#a06ff6"
+                                            style="flex-shrink: 0;" stroke-width="2" stroke-linecap="round"
+                                            stroke-linejoin="round">
+                                            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z">
+                                            </path>
+                                            <line x1="8" y1="10" x2="16" y2="10"></line>
+                                            <line x1="8" y1="14" x2="12" y2="14"></line>
+                                        </svg>
+                                    </div>
+                                    Спілкування в месенджерах
+                                </li>
+                                <li
+                                    style="display: flex; align-items: center; gap: 15px; font-size: 16px; font-weight: 600; background: linear-gradient(90deg, #fff, #a06ff6); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;">
+                                    <div style="width: 32px; display: flex; justify-content: center; flex-shrink: 0;">
+                                        <svg width="100%" height="auto" viewBox="0 0 24 24" fill="none" stroke="#a06ff6"
+                                            style="flex-shrink: 0;" stroke-width="2" stroke-linecap="round"
+                                            stroke-linejoin="round">
+                                            <rect x="1" y="3" width="22" height="18" rx="2" ry="2"></rect>
+                                            <line x1="1" y1="9" x2="23" y2="9"></line>
+                                            <line x1="8" y1="21" x2="8" y2="9"></line>
+                                            <path d="M12 14h6"></path>
+                                            <path d="M12 18h6"></path>
+                                        </svg>
+                                    </div>
+                                    Читання та відповідь на коментарі на сайті та у соцмережах
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- Right Column -->
+                        <div class="cap-column-right" style="display: flex; flex-direction: column; gap: 20px;">
+
+                            <!-- Top: ADVANTAGES -->
+                            <div class="cap-card"
+                                style="background: linear-gradient(135deg, rgba(23, 20, 33, 0.9) 0%, rgba(23, 20, 33, 0.6) 100%); border: 1px solid rgba(255,255,255,0.1); border-radius: 20px; padding: 30px; flex: 1;">
+                                <h4
+                                    style="letter-spacing: 2px; text-transform: uppercase; font-size: 14px; margin-bottom: 25px; margin-top: 0; font-weight: 700; background: linear-gradient(90deg, #fff, #a06ff6); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;">
+                                    ПЕРЕВАГИ</h4>
+                                <ul
+                                    style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 15px;">
+                                    <li
+                                        style="font-size: 18px; font-weight: 600; background: linear-gradient(90deg, #fff, #a06ff6); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;">
+                                        0 секунд час відповіді
+                                    </li>
+                                    <li
+                                        style="font-size: 18px; font-weight: 600; background: linear-gradient(90deg, #fff, #a06ff6); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;">
+                                        Доступність 24/7</li>
+                                    <li
+                                        style="font-size: 18px; font-weight: 600; background: linear-gradient(90deg, #fff, #a06ff6); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;">
+                                        0 днів відпустки</li>
+                                    <li
+                                        style="font-size: 18px; font-weight: 600; background: linear-gradient(90deg, #fff, #a06ff6); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;">
+                                        0 лікарняних</li>
+                                </ul>
+                            </div>
+
+                            <!-- Bottom: FEATURES -->
+                            <div class="cap-card"
+                                style="background: linear-gradient(135deg, rgba(23, 20, 33, 0.9) 0%, rgba(23, 20, 33, 0.6) 100%); border: 1px solid rgba(255,255,255,0.1); border-radius: 20px; padding: 30px; flex: 1;">
+                                <h4
+                                    style="letter-spacing: 2px; text-transform: uppercase; font-size: 14px; margin-bottom: 25px; margin-top: 0; font-weight: 700; background: linear-gradient(90deg, #fff, #a06ff6); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;">
+                                    МОЖЛИВОСТІ</h4>
+                                <div class="features-list" style="display: flex; flex-direction: column; gap: 20px;">
+                                    <div class="feature-item">
+                                        <strong
+                                            style="display: block; margin-bottom: 5px; font-size: 18px; font-weight: 700; background: linear-gradient(90deg, #fff, #a06ff6); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;">Мультимовність</strong>
+                                        <span
+                                            style="font-size: 14px; line-height: 1.4; display: block; background: linear-gradient(90deg, #ddd, #a06ff6); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;">Спілкування
+                                            будь-якою мовою</span>
+                                    </div>
+                                    <div class="feature-item">
+                                        <strong
+                                            style="display: block; margin-bottom: 5px; font-size: 18px; font-weight: 700; background: linear-gradient(90deg, #fff, #a06ff6); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;">Мультиканальність</strong>
+                                        <span
+                                            style="font-size: 14px; line-height: 1.4; display: block; background: linear-gradient(90deg, #ddd, #a06ff6); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;">Робота
+                                            через різні канали зв'язку</span>
+                                    </div>
+                                    <div class="feature-item">
+                                        <strong
+                                            style="display: block; margin-bottom: 5px; font-size: 18px; font-weight: 700; background: linear-gradient(90deg, #fff, #a06ff6); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;">Мультимодальність</strong>
+                                        <span
+                                            style="font-size: 14px; line-height: 1.4; display: block; background: linear-gradient(90deg, #ddd, #a06ff6); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;">Може
+                                            читати, писати, говорити та чути</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="solution-block" style="position: relative; overflow: visible;">
                     <h3 style="color: #fff;">🔗 Омніканальна інтеграція</h3>
-                    <p style="font-size: 18px; margin-bottom: 30px; color: #c4bbd3;">Єдина логіка підтримки через
+                    <p style="font-size: 18px; margin-bottom: 30px; color: #c4bbd3;">Єдина логіка підтримки
+                        через
                         веб-сайт,
                         телефон, Telegram, WhatsApp та інші канали</p>
 
-                    <div class="integrations-showcase">
-                        <div class="integrations-row row-left">
-                            <div class="integration-icon"><img
-                                    src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/1.svg" alt="Integration"
-                                    loading="lazy"></div>
-                            <div class="integration-icon"><img
-                                    src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/2.svg" alt="Integration"
-                                    loading="lazy"></div>
-                            <div class="integration-icon"><img
-                                    src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/3.svg" alt="Integration"
-                                    loading="lazy"></div>
-                            <div class="integration-icon"><img
-                                    src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/4.svg" alt="Integration"
-                                    loading="lazy"></div>
-                            <div class="integration-icon"><img
-                                    src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/5.svg" alt="Integration"
-                                    loading="lazy"></div>
-                            <div class="integration-icon"><img
-                                    src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/6.svg" alt="Integration"
-                                    loading="lazy"></div>
-                            <div class="integration-icon"><img
-                                    src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/7.svg" alt="Integration"
-                                    loading="lazy"></div>
-                            <div class="integration-icon"><img
-                                    src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/8.svg" alt="Integration"
-                                    loading="lazy"></div>
-                            <div class="integration-icon"><img
-                                    src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/9.svg" alt="Integration"
-                                    loading="lazy"></div>
-                            <div class="integration-icon"><img
-                                    src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/10.svg" alt="Integration"
-                                    loading="lazy"></div>
-                            <div class="integration-icon"><img
-                                    src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/11.svg" alt="Integration"
-                                    loading="lazy"></div>
-                            <div class="integration-icon"><img
-                                    src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/12.svg" alt="Integration"
-                                    loading="lazy"></div>
-                            <div class="integration-icon"><img
-                                    src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/13.svg" alt="Integration"
-                                    loading="lazy"></div>
-                            <div class="integration-icon"><img
-                                    src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/14.svg" alt="Integration"
-                                    loading="lazy"></div>
-                            <div class="integration-icon"><img
-                                    src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/15.svg" alt="Integration"
-                                    loading="lazy"></div>
-                            <div class="integration-icon"><img
-                                    src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/16.svg" alt="Integration"
-                                    loading="lazy"></div>
-                            <div class="integration-icon"><img
-                                    src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/17.svg" alt="Integration"
-                                    loading="lazy"></div>
-                            <div class="integration-icon"><img
-                                    src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/18.svg" alt="Integration"
-                                    loading="lazy"></div>
-                            <div class="integration-icon"><img
-                                    src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/19.svg" alt="Integration"
-                                    loading="lazy"></div>
-                            <div class="integration-icon"><img
-                                    src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/1.svg" alt="Integration"
-                                    loading="lazy"></div>
-                            <div class="integration-icon"><img
-                                    src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/2.svg" alt="Integration"
-                                    loading="lazy"></div>
-                            <div class="integration-icon"><img
-                                    src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/3.svg" alt="Integration"
-                                    loading="lazy"></div>
-                            <div class="integration-icon"><img
-                                    src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/4.svg" alt="Integration"
-                                    loading="lazy"></div>
-                            <div class="integration-icon"><img
-                                    src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/5.svg" alt="Integration"
-                                    loading="lazy"></div>
-                            <div class="integration-icon"><img
-                                    src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/6.svg" alt="Integration"
-                                    loading="lazy"></div>
-                            <div class="integration-icon"><img
-                                    src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/7.svg" alt="Integration"
-                                    loading="lazy"></div>
-                            <div class="integration-icon"><img
-                                    src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/8.svg" alt="Integration"
-                                    loading="lazy"></div>
-                            <div class="integration-icon"><img
-                                    src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/9.svg" alt="Integration"
-                                    loading="lazy"></div>
-                            <div class="integration-icon"><img
-                                    src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/10.svg" alt="Integration"
-                                    loading="lazy"></div>
-                            <div class="integration-icon"><img
-                                    src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/11.svg" alt="Integration"
-                                    loading="lazy"></div>
-                            <div class="integration-icon"><img
-                                    src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/12.svg" alt="Integration"
-                                    loading="lazy"></div>
-                            <div class="integration-icon"><img
-                                    src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/13.svg" alt="Integration"
-                                    loading="lazy"></div>
-                            <div class="integration-icon"><img
-                                    src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/14.svg" alt="Integration"
-                                    loading="lazy"></div>
-                            <div class="integration-icon"><img
-                                    src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/15.svg" alt="Integration"
-                                    loading="lazy"></div>
-                            <div class="integration-icon"><img
-                                    src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/16.svg" alt="Integration"
-                                    loading="lazy"></div>
-                            <div class="integration-icon"><img
-                                    src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/17.svg" alt="Integration"
-                                    loading="lazy"></div>
-                            <div class="integration-icon"><img
-                                    src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/18.svg" alt="Integration"
-                                    loading="lazy"></div>
-                            <div class="integration-icon"><img
-                                    src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/19.svg" alt="Integration"
-                                    loading="lazy"></div>
-                        </div>
+                    <div class="omni-layout"
+                        style="display: flex; gap: 0; align-items: center; justify-content: center; flex-wrap: wrap; position: relative;">
+                        <!-- Left: Animation -->
+                        <div style="flex: 1; min-width: 300px; position: relative; z-index: 10;">
 
-                        <div class="integrations-row row-right">
-                            <div class="integration-icon"><img
-                                    src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/20.svg" alt="Integration"
-                                    loading="lazy"></div>
-                            <div class="integration-icon"><img
-                                    src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/21.svg" alt="Integration"
-                                    loading="lazy"></div>
-                            <div class="integration-icon"><img
-                                    src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/22.svg" alt="Integration"
-                                    loading="lazy"></div>
-                            <div class="integration-icon"><img
-                                    src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/23.svg" alt="Integration"
-                                    loading="lazy"></div>
-                            <div class="integration-icon"><img
-                                    src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/24.svg" alt="Integration"
-                                    loading="lazy"></div>
-                            <div class="integration-icon"><img
-                                    src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/25.svg" alt="Integration"
-                                    loading="lazy"></div>
-                            <div class="integration-icon"><img
-                                    src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/26.svg" alt="Integration"
-                                    loading="lazy"></div>
-                            <div class="integration-icon"><img
-                                    src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/27.svg" alt="Integration"
-                                    loading="lazy"></div>
-                            <div class="integration-icon"><img
-                                    src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/28.svg" alt="Integration"
-                                    loading="lazy"></div>
-                            <div class="integration-icon"><img
-                                    src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/29.svg" alt="Integration"
-                                    loading="lazy"></div>
-                            <div class="integration-icon"><img
-                                    src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/30.svg" alt="Integration"
-                                    loading="lazy"></div>
-                            <div class="integration-icon"><img
-                                    src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/31.svg" alt="Integration"
-                                    loading="lazy"></div>
-                            <div class="integration-icon"><img
-                                    src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/32.svg" alt="Integration"
-                                    loading="lazy"></div>
-                            <div class="integration-icon"><img
-                                    src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/33.svg" alt="Integration"
-                                    loading="lazy"></div>
-                            <div class="integration-icon"><img
-                                    src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/34.svg" alt="Integration"
-                                    loading="lazy"></div>
-                            <div class="integration-icon"><img
-                                    src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/35.svg" alt="Integration"
-                                    loading="lazy"></div>
-                            <div class="integration-icon"><img
-                                    src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/36.svg" alt="Integration"
-                                    loading="lazy"></div>
-                            <div class="integration-icon"><img
-                                    src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/37.svg" alt="Integration"
-                                    loading="lazy"></div>
-                            <div class="integration-icon"><img
-                                    src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/38.svg" alt="Integration"
-                                    loading="lazy"></div>
-                            <div class="integration-icon"><img
-                                    src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/20.svg" alt="Integration"
-                                    loading="lazy"></div>
-                            <div class="integration-icon"><img
-                                    src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/21.svg" alt="Integration"
-                                    loading="lazy"></div>
-                            <div class="integration-icon"><img
-                                    src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/22.svg" alt="Integration"
-                                    loading="lazy"></div>
-                            <div class="integration-icon"><img
-                                    src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/23.svg" alt="Integration"
-                                    loading="lazy"></div>
-                            <div class="integration-icon"><img
-                                    src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/24.svg" alt="Integration"
-                                    loading="lazy"></div>
-                            <div class="integration-icon"><img
-                                    src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/25.svg" alt="Integration"
-                                    loading="lazy"></div>
-                            <div class="integration-icon"><img
-                                    src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/26.svg" alt="Integration"
-                                    loading="lazy"></div>
-                            <div class="integration-icon"><img
-                                    src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/27.svg" alt="Integration"
-                                    loading="lazy"></div>
-                            <div class="integration-icon"><img
-                                    src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/28.svg" alt="Integration"
-                                    loading="lazy"></div>
-                            <div class="integration-icon"><img
-                                    src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/29.svg" alt="Integration"
-                                    loading="lazy"></div>
-                            <div class="integration-icon"><img
-                                    src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/30.svg" alt="Integration"
-                                    loading="lazy"></div>
-                            <div class="integration-icon"><img
-                                    src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/31.svg" alt="Integration"
-                                    loading="lazy"></div>
-                            <div class="integration-icon"><img
-                                    src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/32.svg" alt="Integration"
-                                    loading="lazy"></div>
-                            <div class="integration-icon"><img
-                                    src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/33.svg" alt="Integration"
-                                    loading="lazy"></div>
-                            <div class="integration-icon"><img
-                                    src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/34.svg" alt="Integration"
-                                    loading="lazy"></div>
-                            <div class="integration-icon"><img
-                                    src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/35.svg" alt="Integration"
-                                    loading="lazy"></div>
-                            <div class="integration-icon"><img
-                                    src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/36.svg" alt="Integration"
-                                    loading="lazy"></div>
-                            <div class="integration-icon"><img
-                                    src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/37.svg" alt="Integration"
-                                    loading="lazy"></div>
-                            <div class="integration-icon"><img
-                                    src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/38.svg" alt="Integration"
-                                    loading="lazy"></div>
+                            <!-- Orbit Animation Container -->
+                            <div class="orbit-container"
+                                style="position: relative; width: 100%; height: 600px; display: flex; align-items: center; justify-content: center; overflow: visible;">
+                                <style>
+                                    /* Common Orbit Styles */
+                                    .orbit-track {
+                                        position: absolute;
+                                        top: 50%;
+                                        left: 50%;
+                                        transform: translate(-50%, -50%);
+                                        border: 1px dashed rgba(255, 255, 255, 0.1);
+                                        border-radius: 50%;
+                                        /* No animation on the track itself */
+                                    }
+
+                                    .orbit-rotator {
+                                        position: absolute;
+                                        top: 50%;
+                                        left: 50%;
+                                        transform: translate(-50%, -50%);
+                                        /* Centers the rotator */
+                                        border-radius: 50%;
+                                        pointer-events: none;
+                                        /* Let clicks pass through */
+                                    }
+
+                                    .orbit-icon {
+                                        position: absolute;
+                                        width: 44px;
+                                        height: 44px;
+                                        background: rgba(31, 25, 42, 0.95);
+                                        border: 1px solid rgba(255, 255, 255, 0.15);
+                                        border-radius: 50%;
+                                        display: flex;
+                                        align-items: center;
+                                        justify-content: center;
+                                        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+                                        padding: 10px;
+                                    }
+
+                                    .orbit-icon img {
+                                        width: 100%;
+                                        height: 100%;
+                                        object-fit: contain;
+                                    }
+
+                                    /* Central Logo */
+                                    .orbit-center {
+                                        position: absolute;
+                                        z-index: 20;
+                                        width: 70px;
+                                        height: 70px;
+                                        display: flex;
+                                        align-items: center;
+                                        justify-content: center;
+                                    }
+
+                                    .orbit-center img {
+                                        width: 100%;
+                                        height: 100%;
+                                        object-fit: contain;
+                                        filter: drop-shadow(0 0 15px rgba(160, 111, 246, 0.4));
+                                    }
+
+                                    /* Animations */
+                                    @keyframes orbit-rotate-cw {
+                                        0% {
+                                            transform: translate(-50%, -50%) rotate(0deg);
+                                        }
+
+                                        100% {
+                                            transform: translate(-50%, -50%) rotate(360deg);
+                                        }
+                                    }
+
+                                    @keyframes orbit-rotate-ccw {
+                                        0% {
+                                            transform: translate(-50%, -50%) rotate(0deg);
+                                        }
+
+                                        100% {
+                                            transform: translate(-50%, -50%) rotate(-360deg);
+                                        }
+                                    }
+
+                                    /* Counter rotation for icons to maintain upright orientation */
+                                    @keyframes icon-counter-cw {
+                                        0% {
+                                            transform: rotate(0deg);
+                                        }
+
+                                        100% {
+                                            transform: rotate(-360deg);
+                                        }
+                                    }
+
+                                    @keyframes icon-counter-ccw {
+                                        0% {
+                                            transform: rotate(0deg);
+                                        }
+
+                                        100% {
+                                            transform: rotate(360deg);
+                                        }
+                                    }
+
+                                    /* Configuration */
+                                    /* Base: 130px, Step: 75px */
+                                    /* Sizes: 130, 205, 280, 355, 430, 505 */
+
+                                    /* Ring 1 */
+                                    .ring-1,
+                                    .rotator-1 {
+                                        width: 130px;
+                                        height: 130px;
+                                        z-index: 6;
+                                    }
+
+                                    .rotator-1 {
+                                        animation: orbit-rotate-cw 18s linear infinite;
+                                    }
+
+                                    .rotator-1 .icon-1 {
+                                        top: -22px;
+                                        left: 50%;
+                                        margin-left: -22px;
+                                        animation: icon-counter-cw 18s linear infinite;
+                                    }
+
+                                    /* Ring 2 */
+                                    .ring-2,
+                                    .rotator-2 {
+                                        width: 205px;
+                                        height: 205px;
+                                        z-index: 5;
+                                        opacity: 0.9;
+                                    }
+
+                                    .rotator-2 {
+                                        animation: orbit-rotate-ccw 22s linear infinite;
+                                    }
+
+                                    .rotator-2 .icon-1 {
+                                        bottom: 15%;
+                                        right: 15%;
+                                        margin: -22px;
+                                        animation: icon-counter-ccw 22s linear infinite;
+                                    }
+
+                                    /* Ring 3 */
+                                    .ring-3,
+                                    .rotator-3 {
+                                        width: 280px;
+                                        height: 280px;
+                                        z-index: 4;
+                                        opacity: 0.8;
+                                    }
+
+                                    .rotator-3 {
+                                        animation: orbit-rotate-cw 27s linear infinite;
+                                    }
+
+                                    .rotator-3 .icon-1 {
+                                        top: 50%;
+                                        left: -22px;
+                                        margin-top: -22px;
+                                        animation: icon-counter-cw 27s linear infinite;
+                                    }
+
+                                    /* Ring 4 */
+                                    .ring-4,
+                                    .rotator-4 {
+                                        width: 355px;
+                                        height: 355px;
+                                        z-index: 3;
+                                        opacity: 0.7;
+                                    }
+
+                                    .rotator-4 {
+                                        animation: orbit-rotate-ccw 33s linear infinite;
+                                    }
+
+                                    .rotator-4 .icon-1 {
+                                        top: 15%;
+                                        right: 15%;
+                                        margin: -22px;
+                                        animation: icon-counter-ccw 33s linear infinite;
+                                    }
+
+                                    /* Ring 5 */
+                                    .ring-5,
+                                    .rotator-5 {
+                                        width: 430px;
+                                        height: 430px;
+                                        z-index: 2;
+                                        opacity: 0.6;
+                                    }
+
+                                    .rotator-5 {
+                                        animation: orbit-rotate-cw 40s linear infinite;
+                                    }
+
+                                    .rotator-5 .icon-1 {
+                                        bottom: -22px;
+                                        left: 50%;
+                                        margin-left: -22px;
+                                        animation: icon-counter-cw 40s linear infinite;
+                                    }
+
+                                    /* Ring 6 */
+                                    .ring-6,
+                                    .rotator-6 {
+                                        width: 505px;
+                                        height: 505px;
+                                        z-index: 1;
+                                        opacity: 0.5;
+                                    }
+
+                                    .rotator-6 {
+                                        animation: orbit-rotate-ccw 48s linear infinite;
+                                    }
+
+                                    .rotator-6 .icon-1 {
+                                        top: 50%;
+                                        right: -22px;
+                                        margin-top: -22px;
+                                        animation: icon-counter-ccw 48s linear infinite;
+                                    }
+
+                                    /* Mobile Adaptation */
+                                    @media (max-width: 768px) {
+                                        .orbit-container {
+                                            height: 400px !important;
+                                            /* Reduce container height */
+                                            transform: scale(0.6);
+                                            /* Scale down the whole animation */
+                                            transform-origin: center center;
+                                        }
+
+                                        /* Adjust image container spacing */
+                                        .omni-layout>div:nth-child(2) {
+                                            margin-top: -200px;
+                                            /* Pull image up significantly as requested */
+                                        }
+                                    }
+                                </style>
+
+                                <!-- Center -->
+                                <div class="orbit-center">
+                                    <img src="assets/logo_particles.png" alt="Aceverse Logo">
+                                </div>
+
+                                <!-- Ring 1 -->
+                                <div class="orbit-track ring-1"></div>
+                                <div class="orbit-rotator rotator-1">
+                                    <div class="orbit-icon icon-1"><img src="assets/724664.png" alt="Icon"></div>
+                                </div>
+
+                                <!-- Ring 2 -->
+                                <div class="orbit-track ring-2"></div>
+                                <div class="orbit-rotator rotator-2">
+                                    <div class="orbit-icon icon-1"><img
+                                            src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/31.svg" alt="Icon">
+                                    </div>
+                                </div>
+
+                                <!-- Ring 3 -->
+                                <div class="orbit-track ring-3"></div>
+                                <div class="orbit-rotator rotator-3">
+                                    <div class="orbit-icon icon-1"><img
+                                            src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/32.svg" alt="Icon">
+                                    </div>
+                                </div>
+
+                                <!-- Ring 4 -->
+                                <div class="orbit-track ring-4"></div>
+                                <div class="orbit-rotator rotator-4">
+                                    <div class="orbit-icon icon-1"><img
+                                            src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/33.svg" alt="Icon">
+                                    </div>
+                                </div>
+
+                                <!-- Ring 5 -->
+                                <div class="orbit-track ring-5"></div>
+                                <div class="orbit-rotator rotator-5">
+                                    <div class="orbit-icon icon-1"><img
+                                            src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/26.svg" alt="Icon">
+                                    </div>
+                                </div>
+
+                                <!-- Ring 6 -->
+                                <div class="orbit-track ring-6"></div>
+                                <div class="orbit-rotator rotator-6">
+                                    <div class="orbit-icon icon-1"><img
+                                            src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/30.svg" alt="Icon">
+                                    </div>
+                                </div>
+                            </div>
+                        </div> <!-- Close Left Column -->
+                        <!-- Right: Dashboard Image -->
+                        <div
+                            style="flex: 1; min-width: 300px; display: flex; align-items: center; justify-content: center; position: relative; z-index: 1;">
+                            <img src="assets/dashboard.webp" alt="Dashboard"
+                                style="width: 100%; border-radius: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.5); object-fit: contain;">
                         </div>
-                    </div>
-                </div>
-            </div>
+                    </div> <!-- Close omni-layout -->
+                </div> <!-- Close solution-block -->
+
+
+            </div> <!-- Close container -->
     </section>
 
     <!-- Chaos to Order Animation Section -->
@@ -2743,8 +2943,8 @@
 
         <div id="chaosText"
             style="position: relative; z-index: 2; text-align: center; opacity: 0; transform: translateY(20px); transition: all 0.8s ease-out; pointer-events: none; margin-top: 300px;">
-            <h2
-                style="font-size: 40px; background: linear-gradient(to right, #fff, #a06ff6); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 20px; filter: drop-shadow(0 0 10px rgba(160, 111, 246, 0.5));">
+            <h2 class="chaos-title"
+                style="background: linear-gradient(to right, #fff, #a06ff6); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 20px; filter: drop-shadow(0 0 10px rgba(160, 111, 246, 0.5));">
                 Зробимо із хаосу<br>ШІ рішення які працюють на вас.
             </h2>
         </div>
@@ -2813,53 +3013,57 @@
                 <ul style="list-style: none; padding: 0;">
                     <li
                         style="padding: 20px; background: rgba(255,255,255,0.05); border-radius: 15px; margin-bottom: 15px; border: 1px solid rgba(255,255,255,0.1);">
-                        <strong>1. Глибокий AI-аудит процесів</strong><br>
-                        <span style="opacity: 0.8;">Ми не пропонуємо шаблонних рішень. На першому етапі ми занурюємось у
-                            ваші поточні бізнес-процеси, щоб виявити "вузькі місця", які з'їдають час команди<br><br>
-
-                            <strong>Результат:</strong> Карта процесів (Process Map) з виділеними точками для
-                            автоматизації та прогнозом
-                            економії ресурсів</span>
+                        <strong>1. Глибокий аудит процесів компанії</strong><br>
+                        <p style="opacity: 0.8; margin-top: 10px; margin-bottom: 15px;">Ми не пропонуємо шаблонних
+                            рішень. На першому етапі ми занурюємось у
+                            ваші поточні бізнес-процеси, щоб виявити "вузькі місця", які з'їдають час команди</p>
+                        <div class="stage-result"
+                            style="background: rgba(160, 111, 246, 0.1); border-left: 3px solid #a06ff6; padding: 15px; border-radius: 0 10px 10px 0;">
+                            <p style="margin: 0; font-size: 14px; color: #fff;"><strong
+                                    style="color: #a06ff6;">Результат:</strong> Карта процесів (Process Map) з
+                                виділеними точками для автоматизації та прогнозом економії ресурсів</p>
+                        </div>
                     </li>
                     <li
                         style="padding: 20px; background: rgba(255,255,255,0.05); border-radius: 15px; margin-bottom: 15px; border: 1px solid rgba(255,255,255,0.1);">
                         <strong>2. Розробка архітектури та Roadmap</strong><br>
-                        <span style="opacity: 0.8;">Затверджуємо технічний стек (наприклад, n8n, OpenAI, Anthropic) та
-                            сценарії роботи агентів. Ви точно знатимете, як саме ШІ буде взаємодіяти з вашим сайтом чи
-                            CRM<br><br>
-
-                            <strong>Результат:</strong> Технічне завдання та покроковий план впровадження з чіткими
-                            дедлайнами</span>
+                        <p style="opacity: 0.8; margin-top: 10px; margin-bottom: 15px;">Затверджуємо технічний стек та
+                            сценарії роботи агентів. Ви точно
+                            знатимете, як саме ШІ буде взаємодіяти з вашими клієнтами та працівниками</p>
+                        <div class="stage-result"
+                            style="background: rgba(160, 111, 246, 0.1); border-left: 3px solid #a06ff6; padding: 15px; border-radius: 0 10px 10px 0;">
+                            <p style="margin: 0; font-size: 14px; color: #fff;"><strong
+                                    style="color: #a06ff6;">Результат:</strong> Технічне завдання та покроковий план
+                                впровадження з чіткими дедлайнами</p>
+                        </div>
                     </li>
                     <li
                         style="padding: 20px; background: rgba(255,255,255,0.05); border-radius: 15px; margin-bottom: 15px; border: 1px solid rgba(255,255,255,0.1);">
                         <strong>3. Безпечна інтеграція та налаштування доступу</strong><br>
-                        <span style="opacity: 0.8;">Підключаємо наші інструменти до вашої екосистеми. Ми налаштовуємо
+                        <p style="opacity: 0.8; margin-top: 10px; margin-bottom: 15px;">Підключаємо наші інструменти до
+                            вашої екосистеми. Ми налаштовуємо
                             безпечний обмін даними між вашими сервісами (CRM, CMS, месенджери) та AI-моделями,
-                            гарантуючи конфіденційність<br><br>
-
-                            <strong>Результат:</strong> Встановлені конектори та готове середовище для запуску
-                            автоматизацій</span>
-                    </li>
-                    <li
-                        style="padding: 20px; background: rgba(255,255,255,0.05); border-radius: 15px; margin-bottom: 15px; border: 1px solid rgba(255,255,255,0.1);">
-                        <strong>4. Запуск MVP та калібрування моделей</strong><br>
-                        <span style="opacity: 0.8;">Впроваджуємо пілотну версію рішення на реальних даних. Ми "навчаємо"
-                            та калібруємо ШІ-агентів під ваш Tone of Voice та специфіку бізнесу, щоб вони працювали
-                            бездоганно.<br><br>
-                            <strong>Результат:</strong> Працюючий прототип, який вже виконує завдання, але знаходиться
-                            під
-                            нашим пильним наглядом.</span>
+                            гарантуючи конфіденційність</p>
+                        <div class="stage-result"
+                            style="background: rgba(160, 111, 246, 0.1); border-left: 3px solid #a06ff6; padding: 15px; border-radius: 0 10px 10px 0;">
+                            <p style="margin: 0; font-size: 14px; color: #fff;"><strong
+                                    style="color: #a06ff6;">Результат:</strong> Встановлені конектори та готове
+                                середовище для запуску автоматизацій</p>
+                        </div>
                     </li>
                     <li
                         style="padding: 20px; background: rgba(255,255,255,0.05); border-radius: 15px; border: 1px solid rgba(255,255,255,0.1);">
-                        <strong>5. Навчання команди та передача системи</strong><br>
-                        <span style="opacity: 0.8;">ШІ — це інструмент, яким треба вміти керувати. Ми проводимо воркшоп
-                            для ваших співробітників, показуємо, як користуватися новими можливостями в їхніх звичних
-                            інтерфейсах, та передаємо документацію.<br><br>
-
-                            <strong>Результат:</strong> Ваша команда готова до роботи з AI, а система переходить у режим
-                            підтримки</span>
+                        <strong>4. Запуск MVP та калібрування моделей</strong><br>
+                        <p style="opacity: 0.8; margin-top: 10px; margin-bottom: 15px;">Впроваджуємо пілотну версію
+                            рішення на реальних даних. Ми "навчаємо"
+                            та калібруємо ШІ-агентів під ваш Tone of Voice та специфіку бізнесу, щоб вони працювали
+                            бездоганно.</p>
+                        <div class="stage-result"
+                            style="background: rgba(160, 111, 246, 0.1); border-left: 3px solid #a06ff6; padding: 15px; border-radius: 0 10px 10px 0;">
+                            <p style="margin: 0; font-size: 14px; color: #fff;"><strong
+                                    style="color: #a06ff6;">Результат:</strong> Працюючий прототип, який вже виконує
+                                завдання, але знаходиться під нашим пильним наглядом.</p>
+                        </div>
                     </li>
                 </ul>
             </div>
@@ -2906,6 +3110,14 @@
             /* Отступ 20px от нижнего края */
             z-index: 999;
             /* Устанавливает высокий приоритет отображения (поверх других элементов) */
+        }
+
+        @media (max-width: 768px) {
+            #elevenlabs-widget-container {
+                bottom: 80px;
+                /* Raise widget on mobile */
+                right: 15px;
+            }
         }
     </style>
     <section id="blog" style="padding: 40px 0 20px;">
