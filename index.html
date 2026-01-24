@@ -574,6 +574,8 @@
             gap: 15px;
         }
 
+
+
         .chat-input-container {
             padding: 15px 20px;
             background: rgba(31, 25, 42, 0.5);
@@ -1162,23 +1164,7 @@
             transform: translateY(0);
         }
 
-        /* Footer */
-        footer {
-            background: radial-gradient(193.87% 204.83% at 32.86% 142.68%, rgba(168, 92, 92, 0.7) 0%, transparent 36.9%),
-                radial-gradient(181% 145.13% at 52.69% 41.32%, rgba(24, 4, 112, 0.15) 0%, transparent 80%),
-                linear-gradient(180deg, transparent, rgba(13, 10, 25, 0.37)),
-                #1f192a;
-            color: #c4bbd3;
-            padding: 60px 40px;
-            text-align: center;
-            font-family: 'Source Code Pro', monospace;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            box-shadow: inset 0 1px rgba(255, 142, 93, 0.2);
-        }
 
-        footer p {
-            color: #c4bbd3;
-        }
 
         /* Chat Widget */
         .chat-widget {
@@ -2881,13 +2867,15 @@
 
                                     .footer-grid {
                                         display: grid;
-                                        grid-template-columns: 1fr 1fr;
-                                        gap: 60px;
+                                        grid-template-columns: 0.8fr 1.2fr;
+                                        /* Give more space to info column */
+                                        gap: 40px;
                                     }
 
                                     .footer-column h3 {
-                                        font-size: 24px;
-                                        margin-bottom: 30px;
+                                        font-size: 20px;
+                                        /* Slightly smaller title */
+                                        margin-bottom: 25px;
                                         background: linear-gradient(135deg, #ffffff 0%, #a06ff6 100%);
                                         -webkit-background-clip: text;
                                         -webkit-text-fill-color: transparent;
@@ -2902,16 +2890,18 @@
                                     }
 
                                     .footer-links li {
-                                        margin-bottom: 15px;
+                                        margin-bottom: 12px;
                                     }
 
                                     .footer-links a {
                                         color: #c4bbd3;
                                         text-decoration: none;
-                                        font-size: 16px;
+                                        font-size: 14px;
+                                        /* Reduced font size to prevent wrapping */
                                         transition: all 0.3s ease;
                                         display: block;
                                         padding: 5px 0;
+                                        line-height: 1.4;
                                     }
 
                                     .footer-links a:hover {
@@ -2921,8 +2911,10 @@
 
                                     .footer-links .view-all {
                                         color: #a06ff6;
-                                        margin-top: 10px;
+                                        margin-top: 15px;
+                                        /* More space */
                                         font-weight: 600;
+                                        font-size: 14px;
                                     }
 
                                     .footer-links .view-all:hover {
@@ -2941,9 +2933,13 @@
                                         margin-bottom: 20px;
                                     }
 
+                                    .footer-logo .logo {
+                                        font-size: 24px;
+                                    }
+
                                     .footer-desc {
                                         color: #c4bbd3;
-                                        font-size: 15px;
+                                        font-size: 14px;
                                         line-height: 1.6;
                                         margin-bottom: 30px;
                                         max-width: 400px;
@@ -2953,8 +2949,10 @@
 
                                     .footer-contact {
                                         display: flex;
-                                        gap: 20px;
+                                        gap: 15px;
                                         margin-bottom: 30px;
+                                        flex-wrap: wrap;
+                                        /* allow wrapping on small screens */
                                     }
 
                                     .social-link {
@@ -2968,6 +2966,8 @@
                                         color: #fff;
                                         text-decoration: none;
                                         transition: all 0.3s ease;
+                                        gap: 10px;
+                                        font-size: 14px;
                                     }
 
                                     .social-link:hover {
@@ -2976,10 +2976,14 @@
                                         transform: translateY(-2px);
                                     }
 
-                                    .copyright {
-                                        margin-top: auto;
-                                        font-size: 12px;
-                                        color: rgba(196, 187, 211, 0.4);
+                                    /* Force image size with high specificity */
+                                    .social-link img.social-icon,
+                                    img.social-icon {
+                                        width: 24px !important;
+                                        height: 24px !important;
+                                        object-fit: contain;
+                                        display: block;
+                                        flex-shrink: 0;
                                     }
 
                                     /* Mobile Responsiveness */
