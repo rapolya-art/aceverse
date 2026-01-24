@@ -64,17 +64,23 @@
 
         // Mobile/Scroll interaction
         let isVisible = false;
-        const observer = new IntersectionObserver((entries) => {
+        const observerExecutor = (entries) => {
             entries.forEach(entry => {
-                if (entry.isIntersecting) {
+                // console.log('Chaos Scroll Ratio:', entry.intersectionRatio);
+                // Trigger when more than 30% is visible
+                if (entry.intersectionRatio > 0.3) {
                     isVisible = true;
-                    isHovered = true; // Form logo when fully visible
+                    isHovered = true;
                 } else {
                     isVisible = false;
-                    isHovered = false; // Disperse when not fully visible
+                    isHovered = false;
                 }
             });
-        }, { threshold: 0.8 }); // Trigger when 80% visible (almost fully scrolled)
+        };
+
+        const observer = new IntersectionObserver(observerExecutor, {
+            threshold: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0]
+        });
 
         observer.observe(section);
     }
