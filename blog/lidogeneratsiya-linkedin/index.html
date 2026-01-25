@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Кейс автоматизації лідогенерації в LinkedIn за допомогою n8n, Apify та GPT-4. Як побудувати AI-воркфлоу для пошуку B2B клієнтів.">
+    <title>Автоматизація лідогенерації в LinkedIn: AI-воркфлоу | Aceverse</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Source+Code+Pro:wght@400;500;600;700;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../../styles.css">
+    <link rel="stylesheet" href="../../shared.css">
+    <link rel="icon" href="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/logo.png" type="image/png">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "Автоматизація лідогенерації в LinkedIn: як ми побудували AI-воркфлоу",
+      "description": "Кейс автоматизації лідогенерації в LinkedIn за допомогою n8n, Apify та GPT-4 для пошуку B2B клієнтів.",
+      "author": {
+        "@type": "Organization",
+        "name": "Aceverse"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Aceverse",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://aceverse.co/assets/logo.png"
+        }
+      },
+      "datePublished": "2026-01-25"
+    }
+    </script>
+    <style>
+        /* Blog specific overrides */
+        body {
+            background: #0e0918;
+            color: #c4bbd3;
+        }
+
+        .blog-content {
+            padding-top: 120px;
+            /* Space for fixed header */
+            max-width: 800px;
+            margin: 0 auto;
+            padding-bottom: 80px;
+        }
+
+        .blog-content h1 {
+            font-size: 42px;
+            margin-bottom: 30px;
+            background: linear-gradient(135deg, #ffffff 0%, #a06ff6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1.2;
+        }
+
+        .blog-date {
+            color: #a06ff6;
+            font-size: 14px;
+            margin-bottom: 20px;
+            display: block;
+            font-weight: 600;
+        }
+
+        .blog-subtitle {
+            font-size: 20px;
+            color: #a06ff6;
+            margin-bottom: 30px;
+            font-weight: 600;
+        }
+
+        .blog-content h2 {
+            font-size: 32px;
+            margin-top: 50px;
+            margin-bottom: 25px;
+            text-align: left;
+        }
+
+        .blog-content h3 {
+            font-size: 24px;
+            margin-top: 35px;
+            margin-bottom: 15px;
+            color: #fff;
+        }
+
+        .blog-content p {
+            font-size: 18px;
+            margin-bottom: 20px;
+            line-height: 1.8;
+            color: #e4e4e4;
+        }
+
+        .blog-content ul {
+            margin-bottom: 25px;
+            padding-left: 20px;
+            list-style: none;
+        }
+
+        .blog-content li {
+            font-size: 18px;
+            margin-bottom: 15px;
+            color: #e4e4e4;
+            line-height: 1.6;
+        }
+
+        .blog-content li strong {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .blog-content strong {
+            color: #fff;
+        }
+
+        .feature-icon {
+            font-size: 24px;
+            margin-right: 10px;
+        }
+
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin: 30px 0;
+        }
+
+        .tech-item {
+            background: rgba(160, 111, 246, 0.15);
+            border: 1px solid rgba(160, 111, 246, 0.3);
+            padding: 12px 20px;
+            border-radius: 12px;
+            font-size: 16px;
+            color: #fff;
+            font-weight: 600;
+        }
+
+        .result-box {
+            background: rgba(34, 197, 94, 0.1);
+            border: 1px solid rgba(34, 197, 94, 0.3);
+            border-radius: 20px;
+            padding: 30px;
+            margin: 40px 0;
+        }
+
+        .result-box h3 {
+            color: #22c55e;
+            margin-top: 0;
+        }
+
+        .faq-section {
+            margin-top: 60px;
+            padding-top: 40px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .faq-item {
+            margin-bottom: 20px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .faq-question {
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 10px;
+            font-size: 20px;
+        }
+
+        .faq-answer {
+            color: #c4bbd3;
+            line-height: 1.6;
+        }
+
+        .cta-box {
+            background: radial-gradient(circle at 30% 140%, rgba(217, 126, 75, 0.2), transparent 37%),
+                radial-gradient(circle at 50% 310%, rgba(4, 0, 255, 0.15), transparent 78%),
+                linear-gradient(transparent, rgba(13, 10, 25, 0.37)),
+                rgba(31, 25, 42, 0.5);
+            backdrop-filter: blur(22px);
+            padding: 40px;
+            border-radius: 25px;
+            border: 1px solid rgba(255, 255, 255, 0.16);
+            text-align: center;
+            margin-top: 60px;
+        }
+    </style>
+</head>
+
+<body data-header="always" data-base="../..">
+    <div data-include="header"></div>
+
+    <main class="container blog-content">
+        <h1>Автоматизація лідогенерації в LinkedIn: як ми побудували AI-воркфлоу</h1>
+        <div class="blog-subtitle">Кейс: n8n + Apify + GPT-4 для пошуку B2B клієнтів</div>
+        <span class="blog-date">25 січня 2026</span>
+
+        <img src="../../assets/Снимок экрана 2026-01-25 в 22.02.33.png" alt="n8n Workflow для LinkedIn лідогенерації"
+            style="width: 100%; border-radius: 20px; margin-bottom: 30px; border: 1px solid rgba(255, 255, 255, 0.1);">
+
+        <h2>Проблема</h2>
+        <p>Пошук потенційних клієнтів у LinkedIn — це рутинна робота: скролити стрічку, читати пости, аналізувати
+            профілі, писати коментарі. Години роботи на день, які можна автоматизувати.</p>
+
+        <h2>Рішення</h2>
+        <p>Ми створили повністю автоматизований воркфлоу, який виконує всю рутинну роботу:</p>
+
+        <ul>
+            <li>
+                <span class="feature-icon">🔍</span>
+                <strong>Шукає пости по ключовим словам</strong>
+                Беремо список keywords з Google Таблиці — система автоматично знаходить релевантні пости в LinkedIn за
+                останній тиждень чи місяць.
+            </li>
+            <li>
+                <span class="feature-icon">🤖</span>
+                <strong>AI аналізує кожен пост</strong>
+                GPT-4 оцінює автора за шкалою 1-10: чи це потенційний клієнт? Чи варто витрачати час на engagement?
+            </li>
+            <li>
+                <span class="feature-icon">💬</span>
+                <strong>Генерує персоналізовані коментарі</strong>
+                Для кожного якісного ліда (score 7+) AI пише унікальний коментар, який провокує діалог — без нав'язливої
+                реклами.
+            </li>
+            <li>
+                <span class="feature-icon">📊</span>
+                <strong>Зберігає результати</strong>
+                Всі кваліфіковані ліди потрапляють у таблицю з повним контекстом: пост, профіль автора, AI-аналіз,
+                готовий коментар.
+            </li>
+        </ul>
+
+        <h2>Технології</h2>
+        <div class="tech-stack">
+            <div class="tech-item">n8n — оркестрація воркфлоу</div>
+            <div class="tech-item">Apify — скрапінг LinkedIn постів</div>
+            <div class="tech-item">OpenAI GPT-4 — скоринг та генерація контенту</div>
+            <div class="tech-item">Google Sheets — база даних та конфігурація</div>
+        </div>
+
+        <div class="result-box">
+            <h3>Результат</h3>
+            <p>Замість годин ручного пошуку — автоматичний пайплайн, який знаходить та кваліфікує лідів 24/7.
+                Залишається тільки писати коментарі та будувати стосунки.</p>
+        </div>
+
+        <div class="faq-section">
+            <h2>Часті запитання (FAQ)</h2>
+            <div class="faq-item">
+                <div class="faq-question">Чи не заблокує LinkedIn мій акаунт?</div>
+                <div class="faq-answer">Ми використовуємо Apify для скрапінгу публічних постів, а не для автоматичних
+                    дій від вашого імені. Всі коментарі ви пишете вручну — це безпечно для акаунта.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">Скільки лідів можна знайти за день?</div>
+                <div class="faq-answer">Залежить від ніші та ключових слів. В середньому воркфлоу знаходить 50-200
+                    релевантних постів на день, з яких 10-30 отримують високий AI-скоринг (7+).</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">Чи можна налаштувати критерії скорингу?</div>
+                <div class="faq-answer">Так, промпт для GPT-4 повністю кастомізується під ваш ICP (Ideal Customer
+                    Profile). Ви визначаєте, які ознаки важливі: розмір компанії, індустрія, позиція автора тощо.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">Скільки коштує підтримка воркфлоу?</div>
+                <div class="faq-answer">Основні витрати — це Apify (від $49/міс) та OpenAI API (залежить від обсягу).
+                    n8n можна хостити безкоштовно. Ми допомагаємо оптимізувати витрати.</div>
+            </div>
+        </div>
+
+        <div class="cta-box">
+            <h3 style="font-size: 28px; margin-bottom: 20px; color: #fff;">Хочете такий воркфлоу для свого бізнесу?</h3>
+            <p>Налаштуємо автоматизований пошук клієнтів у LinkedIn під ваші задачі.</p>
+            <a href="https://t.me/aceverse_roman" class="cta-button"
+                style="display: inline-block; margin-top: 20px; padding: 15px 30px; background: linear-gradient(90deg, #a06ff6 0%, #7a4bd1 100%); color: #fff; text-decoration: none; border-radius: 30px; font-weight: bold;">Написати
+                в Telegram</a>
+        </div>
+    </main>
+
+    <div data-include="footer"></div>
+
+    <script src="../../includes.js" defer></script>
+</body>
+
+</html>
