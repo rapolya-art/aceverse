@@ -2257,6 +2257,13 @@ footer p {
     transform: translateY(-2px);
 }
 
+.social-icon {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+    margin-right: 8px;
+}
+
 .copyright {
     margin-top: auto;
     font-size: 12px;
