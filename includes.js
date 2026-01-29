@@ -48,6 +48,11 @@ const includePartial = async (selector, url) => {
         if (!href || !href.startsWith('/')) {
             return;
         }
+        // Skip language links or external links that shouldn't be prefixed
+        if (href.startsWith('/en/') || href.startsWith('/ua/')) {
+            return;
+        }
+
         if (!basePath) {
             return;
         }

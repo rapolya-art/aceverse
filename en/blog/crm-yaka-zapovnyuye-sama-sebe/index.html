@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Stop forcing managers to enter data manually. Case of setting up automatic deal creation in NetHunt and KeyCRM via n8n. Saving up to 40% of team time.">
+    <title>CRM That Fills Itself: How We Removed Sales Manager Routine | Aceverse</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Source+Code+Pro:wght@400;500;600;700;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../../styles.css">
+    <link rel="stylesheet" href="../../shared.css">
+    <link rel="icon" href="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/logo.png" type="image/png">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "headline": "CRM That Fills Itself: How We Removed Sales Manager Routine",
+      "image": "https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/In_ai_instead_202511241754.webp",
+      "datePublished": "2025-11-24",
+      "author": {
+        "@type": "Organization",
+        "name": "Aceverse"
+      }
+    }
+    </script>
+    <style>
+        /* Blog specific overrides */
+        body {
+            background: #0e0918;
+            color: #c4bbd3;
+        }
+
+        .blog-content {
+            padding-top: 120px;
+            /* Space for fixed header */
+            max-width: 800px;
+            margin: 0 auto;
+            padding-bottom: 80px;
+        }
+
+        .blog-content h1 {
+            font-size: 42px;
+            margin-bottom: 30px;
+            background: linear-gradient(135deg, #ffffff 0%, #a06ff6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1.2;
+        }
+
+        .blog-date {
+            color: #a06ff6;
+            font-size: 14px;
+            margin-bottom: 20px;
+            display: block;
+            font-weight: 600;
+        }
+
+        .blog-content h2 {
+            font-size: 32px;
+            margin-top: 50px;
+            margin-bottom: 25px;
+            text-align: left;
+        }
+
+        .blog-content p {
+            font-size: 18px;
+            margin-bottom: 20px;
+            line-height: 1.8;
+            color: #e4e4e4;
+        }
+
+        .blog-content ul {
+            margin-bottom: 25px;
+            padding-left: 20px;
+        }
+
+        .blog-content li {
+            font-size: 18px;
+            margin-bottom: 10px;
+            color: #e4e4e4;
+        }
+
+        .blog-content strong {
+            color: #fff;
+        }
+
+        .faq-section {
+            margin-top: 60px;
+            padding-top: 40px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .faq-item {
+            margin-bottom: 20px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .faq-question {
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 10px;
+            font-size: 20px;
+        }
+
+        .faq-answer {
+            color: #c4bbd3;
+        }
+
+        .cta-box {
+            background: radial-gradient(circle at 30% 140%, rgba(217, 126, 75, 0.2), transparent 37%),
+                radial-gradient(circle at 50% 310%, rgba(4, 0, 255, 0.15), transparent 78%),
+                linear-gradient(transparent, rgba(13, 10, 25, 0.37)),
+                rgba(31, 25, 42, 0.5);
+            backdrop-filter: blur(22px);
+            padding: 40px;
+            border-radius: 25px;
+            border: 1px solid rgba(255, 255, 255, 0.16);
+            text-align: center;
+            margin-top: 60px;
+        }
+    </style>
+</head>
+
+<body data-header="always" data-base="../..">
+    <div data-include="header"></div>
+
+    <main class="container blog-content">
+        <h1>CRM That Fills Itself: How We Removed Sales Manager Routine</h1>
+        <span class="blog-date">November 24, 2025</span>
+
+        <img src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/In_ai_instead_202511241754.webp"
+            alt="CRM Automation"
+            style="width: 100%; border-radius: 20px; margin-bottom: 30px; border: 1px solid rgba(255, 255, 255, 0.1);">
+
+        <p>Buying a CRM is only half the battle. The main problem business owners face a month after implementation is
+            sabotage. Managers forget to create cards, confuse phone numbers, don't write comments after calls, or
+            simply put off filling the database "until Friday".</p>
+
+        <p>As a result: you see empty reports, and managers spend time not on sales, but on secretarial work.</p>
+
+        <p>At Aceverse, we solve this problem radically: we forbid manual data entry. The CRM must fill itself.</p>
+
+        <h2>How It Works: Zero-Touch Technology</h2>
+        <p>We build a sales architecture where the manager's role is to communicate and press the "Sold" button. All the
+            grunt work is done by the CRM + n8n + ChatGPT combination.</p>
+
+        <p>Here are three scenarios we automate most often:</p>
+
+        <h2>1. Inbound Lead — Instant Card</h2>
+        <p>Forget "copy from email — paste into CRM".</p>
+        <p><strong>How it works:</strong> The client writes in Telegram, Instagram, or fills out a form on the site.</p>
+        <p><strong>Automation:</strong> n8n instantly creates a contact card, pulls the avatar, name, link to the social
+            network, and source (UTM tag). The manager receives a notification with a link to the ready deal.</p>
+
+        <h2>2. Smart Telephony and AI Summary</h2>
+        <p>The manager talked for 10 minutes, hung up, and... went to drink coffee, forgetting to write down the essence
+            of the conversation.</p>
+        <p><strong>How it works:</strong> We integrate IP telephony (Binotel, Ringostat) with CRM.</p>
+        <p><strong>Automation:</strong> The call recording is automatically attached to the client's card. But we go
+            further: AI transcribes the conversation and adds a short text summary to the CRM: "Client was interested in
+            wholesale, asked for a 5% discount, call back on Tuesday".</p>
+
+        <h2>3. One-Click Document Generation</h2>
+        <p>Creating an invoice or contract usually takes 15-20 minutes (find a template, change details, save as PDF).
+        </p>
+        <p><strong>Automation:</strong> The manager simply changes the funnel stage to "Invoicing". The system itself
+            takes the client's details, generates a PDF document with a seal and signature, and sends it to the client
+            via email or messenger.</p>
+
+        <h2>Result in Numbers</h2>
+        <p>After implementing such automation for our clients, we record:</p>
+        <ul>
+            <li><strong>+30-40% free time for managers</strong> (which now goes to calls).</li>
+            <li><strong>100% fixation of all incoming requests</strong> (no lead is lost).</li>
+            <li><strong>Clean database:</strong> Data is filled out according to a single standard, without errors and
+                duplicates.</li>
+        </ul>
+
+        <h2>Conclusion</h2>
+        <p>Your managers should sell, not do "data entry". If you want your CRM to work for you, and not you for it —
+            the system needs to be automated.</p>
+
+        <div class="faq-section">
+            <h2>FAQ</h2>
+            <div class="faq-item">
+                <div class="faq-question">Which CRMs does this work with?</div>
+                <div class="faq-answer">We work with any systems that have an API: NetHunt, KeyCRM, Pipedrive, HubSpot,
+                    Zoho, Salesforce, and others.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">Is it safe to transfer data via n8n?</div>
+                <div class="faq-answer">Yes. n8n can be deployed on your own server, so data does not leave your
+                    security perimeter.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">How long does implementation take?</div>
+                <div class="faq-answer">Basic automation (card creation, notifications) takes 3-5 days. Complex
+                    scenarios with document generation — up to 2 weeks.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">Is it difficult to maintain?</div>
+                <div class="faq-answer">No. After setup, the system works autonomously. If business processes change,
+                    the logic can be easily adapted.</div>
+            </div>
+        </div>
+
+        <div class="cta-box">
+            <h3 style="font-size: 28px; margin-bottom: 20px; color: #fff;">Want to automate your CRM?</h3>
+            <p>Sign up for a consultation, and we will analyze your case.</p>
+            <a href="https://t.me/aceverse_roman" class="cta-button"
+                style="display: inline-block; margin-top: 20px; padding: 15px 30px; background: linear-gradient(90deg, #a06ff6 0%, #7a4bd1 100%); color: #fff; text-decoration: none; border-radius: 30px; font-weight: bold;">Write
+                in Telegram</a>
+        </div>
+    </main>
+
+    <div data-include="footer"></div>
+
+    <script src="../../includes.js" defer></script>
+</body>
+
+</html>

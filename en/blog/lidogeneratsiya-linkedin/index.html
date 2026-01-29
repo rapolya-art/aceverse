@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Case study of automating LinkedIn lead generation using n8n, Apify, and GPT-4. How to build an AI workflow to find B2B clients.">
+    <title>LinkedIn Lead Generation Automation: AI Workflow | Aceverse</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Source+Code+Pro:wght@400;500;600;700;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../../styles.css">
+    <link rel="stylesheet" href="../../shared.css">
+    <link rel="icon" href="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/logo.png" type="image/png">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "LinkedIn Lead Generation Automation: How We Built an AI Workflow",
+      "description": "Case study of automating LinkedIn lead generation using n8n, Apify, and GPT-4 for finding B2B clients.",
+      "author": {
+        "@type": "Organization",
+        "name": "Aceverse"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Aceverse",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://aceverse.co/assets/logo.png"
+        }
+      },
+      "datePublished": "2026-01-25"
+    }
+    </script>
+    <style>
+        /* Blog specific overrides */
+        body {
+            background: #0e0918;
+            color: #c4bbd3;
+        }
+
+        .blog-content {
+            padding-top: 120px;
+            /* Space for fixed header */
+            max-width: 800px;
+            margin: 0 auto;
+            padding-bottom: 80px;
+        }
+
+        .blog-content h1 {
+            font-size: 42px;
+            margin-bottom: 30px;
+            background: linear-gradient(135deg, #ffffff 0%, #a06ff6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1.2;
+        }
+
+        .blog-date {
+            color: #a06ff6;
+            font-size: 14px;
+            margin-bottom: 20px;
+            display: block;
+            font-weight: 600;
+        }
+
+        .blog-subtitle {
+            font-size: 20px;
+            color: #a06ff6;
+            margin-bottom: 30px;
+            font-weight: 600;
+        }
+
+        .blog-content h2 {
+            font-size: 32px;
+            margin-top: 50px;
+            margin-bottom: 25px;
+            text-align: left;
+        }
+
+        .blog-content h3 {
+            font-size: 24px;
+            margin-top: 35px;
+            margin-bottom: 15px;
+            color: #fff;
+        }
+
+        .blog-content p {
+            font-size: 18px;
+            margin-bottom: 20px;
+            line-height: 1.8;
+            color: #e4e4e4;
+        }
+
+        .blog-content ul {
+            margin-bottom: 25px;
+            padding-left: 20px;
+            list-style: none;
+        }
+
+        .blog-content li {
+            font-size: 18px;
+            margin-bottom: 15px;
+            color: #e4e4e4;
+            line-height: 1.6;
+        }
+
+        .blog-content li strong {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .blog-content strong {
+            color: #fff;
+        }
+
+        .feature-icon {
+            font-size: 24px;
+            margin-right: 10px;
+        }
+
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin: 30px 0;
+        }
+
+        .tech-item {
+            background: rgba(160, 111, 246, 0.15);
+            border: 1px solid rgba(160, 111, 246, 0.3);
+            padding: 12px 20px;
+            border-radius: 12px;
+            font-size: 16px;
+            color: #fff;
+            font-weight: 600;
+        }
+
+        .result-box {
+            background: rgba(34, 197, 94, 0.1);
+            border: 1px solid rgba(34, 197, 94, 0.3);
+            border-radius: 20px;
+            padding: 30px;
+            margin: 40px 0;
+        }
+
+        .result-box h3 {
+            color: #22c55e;
+            margin-top: 0;
+        }
+
+        .faq-section {
+            margin-top: 60px;
+            padding-top: 40px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .faq-item {
+            margin-bottom: 20px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .faq-question {
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 10px;
+            font-size: 20px;
+        }
+
+        .faq-answer {
+            color: #c4bbd3;
+            line-height: 1.6;
+        }
+
+        .cta-box {
+            background: radial-gradient(circle at 30% 140%, rgba(217, 126, 75, 0.2), transparent 37%),
+                radial-gradient(circle at 50% 310%, rgba(4, 0, 255, 0.15), transparent 78%),
+                linear-gradient(transparent, rgba(13, 10, 25, 0.37)),
+                rgba(31, 25, 42, 0.5);
+            backdrop-filter: blur(22px);
+            padding: 40px;
+            border-radius: 25px;
+            border: 1px solid rgba(255, 255, 255, 0.16);
+            text-align: center;
+            margin-top: 60px;
+        }
+    </style>
+</head>
+
+<body data-header="always" data-base="../..">
+    <div data-include="header"></div>
+
+    <main class="container blog-content">
+        <h1>LinkedIn Lead Generation Automation: How We Built an AI Workflow</h1>
+        <div class="blog-subtitle">Case: n8n + Apify + GPT-4 for finding B2B clients</div>
+        <span class="blog-date">January 25, 2026</span>
+
+        <img src="../../assets/Снимок экрана 2026-01-25 в 22.02.33.png" alt="n8n Workflow for LinkedIn lead generation"
+            style="width: 100%; border-radius: 20px; margin-bottom: 30px; border: 1px solid rgba(255, 255, 255, 0.1);">
+
+        <h2>The Problem</h2>
+        <p>Prospecting on LinkedIn is routine work: scrolling the feed, reading posts, analyzing profiles, writing
+            comments. Hours of work per day that can be automated.</p>
+
+        <h2>The Solution</h2>
+        <p>We created a fully automated workflow that handles all the routine work:</p>
+
+        <ul>
+            <li>
+                <span class="feature-icon">🔍</span>
+                <strong>Searches for posts by keywords</strong>
+                We take a list of keywords from a Google Sheet — the system automatically finds relevant posts on
+                LinkedIn for the last week or month.
+            </li>
+            <li>
+                <span class="feature-icon">🤖</span>
+                <strong>AI analyzes every post</strong>
+                GPT-4 scores the author on a scale of 1-10: is this a potential client? Is it worth spending time on
+                engagement?
+            </li>
+            <li>
+                <span class="feature-icon">💬</span>
+                <strong>Generates personalized comments</strong>
+                For every qualified lead (score 7+), AI writes a unique comment that provokes dialogue — without
+                intrusive advertising.
+            </li>
+            <li>
+                <span class="feature-icon">📊</span>
+                <strong>Saves results</strong>
+                All qualified leads go into a spreadsheet with full context: post, author profile, AI analysis, ready
+                comment.
+            </li>
+        </ul>
+
+        <h2>Technologies</h2>
+        <div class="tech-stack">
+            <div class="tech-item">n8n — workflow orchestration</div>
+            <div class="tech-item">Apify — LinkedIn post scraping</div>
+            <div class="tech-item">OpenAI GPT-4 — scoring and content generation</div>
+            <div class="tech-item">Google Sheets — database and configuration</div>
+        </div>
+
+        <div class="result-box">
+            <h3>Result</h3>
+            <p>Instead of hours of manual search — an automated pipeline that finds and qualifies leads 24/7. All that
+                remains is to write comments and build relationships.</p>
+        </div>
+
+        <div class="faq-section">
+            <h2>FAQ</h2>
+            <div class="faq-item">
+                <div class="faq-question">Will LinkedIn block my account?</div>
+                <div class="faq-answer">We use Apify to scrape public posts, not for automated actions on your behalf.
+                    You write all comments manually — this is safe for the account.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">How many leads can be found per day?</div>
+                <div class="faq-answer">Depends on the niche and keywords. On average, the workflow finds 50-200
+                    relevant posts per day, of which 10-30 receive a high AI score (7+).</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">Can I customize the scoring criteria?</div>
+                <div class="faq-answer">Yes, the GPT-4 prompt is fully customizable to your ICP (Ideal Customer
+                    Profile). You determine which features are important: company size, industry, author's position,
+                    etc.</div>
+            </div>
+
+        </div>
+
+        <div class="cta-box">
+            <h3 style="font-size: 28px; margin-bottom: 20px; color: #fff;">Want such a workflow for your business?</h3>
+            <p>We will set up automated client search on LinkedIn for your tasks.</p>
+            <a href="https://t.me/aceverse_roman" class="cta-button"
+                style="display: inline-block; margin-top: 20px; padding: 15px 30px; background: linear-gradient(90deg, #a06ff6 0%, #7a4bd1 100%); color: #fff; text-decoration: none; border-radius: 30px; font-weight: bold;">Write
+                in Telegram</a>
+        </div>
+    </main>
+
+    <div data-include="footer"></div>
+
+    <script src="../../includes.js" defer></script>
+</body>
+
+</html>

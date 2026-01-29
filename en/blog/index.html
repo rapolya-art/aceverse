@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Aceverse Blog: articles about business automation, AI agents, lead generation and CRM integrations.">
+    <title>Aceverse Blog - AI Solutions and Automation</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Source+Code+Pro:wght@400;500;600;700;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../../styles.css">
+    <link rel="stylesheet" href="../../shared.css">
+    <link rel="icon" href="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/logo.png" type="image/png">
+
+    <style>
+        body {
+            background: #0e0918;
+            color: #c4bbd3;
+        }
+
+        .blog-header {
+            padding-top: 120px;
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .blog-header h1 {
+            font-size: 48px;
+            background: linear-gradient(135deg, #ffffff 0%, #a06ff6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 20px;
+        }
+
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+            margin-bottom: 80px;
+        }
+
+        .blog-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .blog-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(160, 111, 246, 0.2);
+            border-color: rgba(160, 111, 246, 0.3);
+        }
+
+        .blog-card-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .blog-card-content {
+            padding: 25px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .blog-card h2 {
+            font-size: 22px;
+            margin-bottom: 15px;
+            color: #fff;
+            line-height: 1.4;
+        }
+
+        .blog-card p {
+            font-size: 15px;
+            color: #c4bbd3;
+            margin-bottom: 20px;
+            flex: 1;
+        }
+
+        .read-more {
+            display: inline-block;
+            color: #a06ff6;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 14px;
+            transition: color 0.3s;
+        }
+
+        .read-more:hover {
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body data-header="always" data-base="..">
+    <div data-include="header"></div>
+
+    <main class="container">
+        <div class="blog-header">
+            <h1>Aceverse Blog</h1>
+            <p>Insights on automation, AI and effective business</p>
+        </div>
+
+        <div class="blog-grid">
+            <!-- Article 4: LinkedIn Automation -->
+            <article class="blog-card">
+                <a href="./lidogeneratsiya-linkedin/index.html" style="text-decoration: none; color: inherit;">
+                    <img src="../../assets/Снимок экрана 2026-01-25 в 22.02.33.png"
+                        alt="LinkedIn Lead Generation Automation" class="blog-card-image">
+                    <div class="blog-card-content">
+                        <h2>LinkedIn Lead Generation Automation: How We Built an AI Workflow</h2>
+                        <p>Case n8n + Apify + GPT-4: automatic post search, AI author scoring and personalized comment
+                            generation for B2B clients.</p>
+                        <span class="read-more">Read more →</span>
+                    </div>
+                </a>
+            </article>
+            <!-- Article 3 -->
+            <article class="blog-card">
+                <a href="./prodavayte-ochyma-sh-foto/index.html" style="text-decoration: none; color: inherit;">
+                    <img src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/2.png" alt="AI Product Photography"
+                        class="blog-card-image">
+                    <div class="blog-card-content">
+                        <h2>Sell with Your Eyes: How AI Transforms Boring Manufacturer Photos into Content That Converts
+                        </h2>
+                        <p>Do your product photos not sell? We show a real case of how to turn an ordinary photo from a
+                            supplier into a studio shot using AI.</p>
+                        <span class="read-more">Read more →</span>
+                    </div>
+                </a>
+            </article>
+            <!-- Article 2 -->
+            <article class="blog-card">
+                <a href="./crm-yaka-zapovnyuye-sama-sebe/index.html" style="text-decoration: none; color: inherit;">
+                    <img src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/In_ai_instead_202511241754.webp"
+                        alt="CRM Automation" class="blog-card-image">
+                    <div class="blog-card-content">
+                        <h2>CRM That Fills Itself: How We Removed Manager Routine</h2>
+                        <p>Stop forcing managers to enter data manually. Case of setting up automatic deal creation in
+                            NetHunt and KeyCRM.</p>
+                        <span class="read-more">Read more →</span>
+                    </div>
+                </a>
+            </article>
+
+            <!-- Article 1 -->
+            <article class="blog-card">
+                <a href="./lidogeneratsiya-bez-pereplat/index.html" style="text-decoration: none; color: inherit;">
+                    <img src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/Image_202511232027.webp"
+                        alt="Lead Generation" class="blog-card-image">
+                    <div class="blog-card-content">
+                        <h2>Lead Generation Without Overpaying: Google Maps Parsing and AI Outreach</h2>
+                        <p>How to find B2B clients without draining the budget? Learn about database collection, AI data
+                            enrichment and "Ring Attack" strategy.</p>
+                        <span class="read-more">Read more →</span>
+                    </div>
+                </a>
+            </article>
+        </div>
+    </main>
+
+    <div data-include="footer"></div>
+
+    <script src="../../includes.js" defer></script>
+</body>
+
+</html>
