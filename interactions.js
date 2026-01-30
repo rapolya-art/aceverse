@@ -109,4 +109,29 @@ document.addEventListener('DOMContentLoaded', function () {
             this.play();
         }, false);
     }
+    // Mobile Menu Logic (Event Delegation for Dynamic Content)
+    document.addEventListener('click', function (e) {
+        const btn = e.target.closest('.mobile-menu-btn');
+        const link = e.target.closest('.nav-menu a');
+
+        if (btn) {
+            const navMenu = document.querySelector('.nav-menu');
+            if (navMenu) {
+                btn.classList.toggle('active');
+                navMenu.classList.toggle('active');
+                document.body.style.overflow = navMenu.classList.contains('active') ? 'hidden' : '';
+            }
+        }
+
+        // Close when link clicked
+        if (link) {
+            const btn = document.querySelector('.mobile-menu-btn');
+            const navMenu = document.querySelector('.nav-menu');
+            if (btn && navMenu) {
+                btn.classList.remove('active');
+                navMenu.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        }
+    });
 });
