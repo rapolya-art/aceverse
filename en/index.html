@@ -9,6 +9,29 @@
     <title>Aceverse - AI Solutions for Business.</title>
     <link rel="stylesheet" href="../styles.css?v=7">
     <link rel="icon" href="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/logo.png" type="image/png">
+
+    <!-- SEO: canonical + hreflang -->
+    <link rel="canonical" href="https://aceverse.co/en/">
+    <link rel="alternate" hreflang="uk" href="https://aceverse.co/ua/">
+    <link rel="alternate" hreflang="en" href="https://aceverse.co/en/">
+    <link rel="alternate" hreflang="x-default" href="https://aceverse.co/en/">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://aceverse.co/en/">
+    <meta property="og:title" content="Aceverse — AI Solutions for Business: Voice Agents, Automation, CRM">
+    <meta property="og:description" content="AI agents for call automation, online receptionists, 24/7 voice support. CRM integration and business process optimization.">
+    <meta property="og:image" content="https://aceverse.co/assets/logo.png">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:locale:alternate" content="uk_UA">
+    <meta property="og:site_name" content="Aceverse">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Aceverse — AI Solutions for Business: Voice Agents, Automation, CRM">
+    <meta name="twitter:description" content="AI agents for call automation, online receptionists, 24/7 voice support.">
+    <meta name="twitter:image" content="https://aceverse.co/assets/logo.png">
+
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -46,6 +69,52 @@
     }
     </script>
 
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "serviceType": "Voice AI Agent",
+      "name": "Voice AI Agent for Business",
+      "description": "Phone support automation using voice AI agents. Online receptionist, 24/7 call handling, client booking, order confirmation, and cold calling.",
+      "provider": {
+        "@type": "Organization",
+        "name": "Aceverse",
+        "url": "https://aceverse.co"
+      },
+      "areaServed": "Worldwide",
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Voice AI Solutions",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Online Receptionist",
+              "description": "AI receptionist for 24/7 inbound call handling, answering questions, booking clients, CRM integration"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Voice AI Support",
+              "description": "Inbound and outbound call automation, order confirmations, reminders, quality surveys"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "AI Cold Calling",
+              "description": "Multi-threaded AI cold calling scenarios, flexible conversation logic, conversion analytics"
+            }
+          }
+        ]
+      }
+    }
+    </script>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -72,8 +141,7 @@
             border-bottom: 1px solid rgba(255, 255, 255, 0.1);
             padding: 12px 40px;
             display: flex;
-            justify-content: center;
-            gap: 60px;
+            justify-content: space-between;
             align-items: center;
             position: fixed;
             top: 0;
@@ -1221,23 +1289,6 @@
                 padding: 0 20px;
             }
 
-            header {
-                padding: 12px 20px;
-            }
-
-            .logo {
-                font-size: 20px;
-            }
-
-            nav {
-                gap: 20px;
-                font-size: 13px;
-            }
-
-            nav a {
-                padding: 5px 0;
-            }
-
             .video-hero {
                 min-height: 100dvh;
             }
@@ -1536,23 +1587,6 @@
             .glow-orb {
                 width: 200px;
                 height: 200px;
-            }
-
-            header {
-                padding: 10px 15px;
-            }
-
-            .logo {
-                font-size: 18px;
-            }
-
-            nav {
-                gap: 12px;
-                font-size: 11px;
-            }
-
-            nav a {
-                padding: 4px 0;
             }
 
             .chat-phone {
@@ -2306,7 +2340,7 @@
 
                 <div style="display: flex; gap: 20px; flex-wrap: wrap;">
                     <!-- Left Column: Video (70%) -->
-                    <div style="flex: 7; min-width: 300px;">
+                    <div style="flex: 7; min-width: min(300px, 100%);">
                         <div style="position: relative; border-radius: 16px; overflow: hidden; height: 100%;">
                             <video id="support-video" autoplay muted loop playsinline preload="metadata"
                                 style="width: 100%; height: auto; display: block;">
@@ -2328,7 +2362,7 @@
                     </div>
 
                     <!-- Right Column: Menu Items (30%) -->
-                    <div style="flex: 3; min-width: 200px; display: flex; flex-direction: column; gap: 15px;">
+                    <div style="flex: 3; min-width: min(200px, 100%); display: flex; flex-direction: column; gap: 15px;">
                         <div class="oil-block"
                             style="flex: 1; background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 16px; padding: 20px; display: flex; flex-direction: column; align-items: flex-start; justify-content: center; text-align: left; color: #fff; font-weight: 500; transition: all 0.3s ease;">
                             <div
@@ -2455,11 +2489,11 @@
                 </div>
 
                 <div class="solution-block" style="display: flex; gap: 30px; align-items: center; flex-wrap: wrap;">
-                    <div style="flex: 1; min-width: 300px;">
+                    <div style="flex: 1; min-width: min(300px, 100%);">
                         <h3 style="color: #fff; margin-bottom: 20px; text-align: center;">What happens when people
                             handle everything manually</h3>
                     </div>
-                    <div style="flex: 1; min-width: 300px;">
+                    <div style="flex: 1; min-width: min(300px, 100%);">
                         <img src="../assets/human_role_en.png" alt="Human Role"
                             style="width: 100%; border-radius: 20px;">
                     </div>
@@ -2609,7 +2643,7 @@
                     <div class="omni-layout"
                         style="display: flex; gap: 0; align-items: center; justify-content: center; flex-wrap: wrap; position: relative;">
                         <!-- Left: Animation -->
-                        <div style="flex: 1; min-width: 300px; position: relative; z-index: 10;">
+                        <div style="flex: 1; min-width: min(300px, 100%); position: relative; z-index: 10;">
 
                             <!-- Orbit Animation Container -->
                             <div class="orbit-container"
@@ -2845,16 +2879,24 @@
                                     @media (max-width: 768px) {
                                         .orbit-container {
                                             height: 400px !important;
-                                            /* Reduce container height */
                                             transform: scale(0.6);
-                                            /* Scale down the whole animation */
                                             transform-origin: center center;
+                                            overflow: hidden;
                                         }
 
-                                        /* Adjust image container spacing */
                                         .omni-layout>div:nth-child(2) {
                                             margin-top: -200px;
-                                            /* Pull image up significantly as requested */
+                                        }
+                                    }
+
+                                    @media (max-width: 480px) {
+                                        .orbit-container {
+                                            height: 300px !important;
+                                            transform: scale(0.45);
+                                        }
+
+                                        .omni-layout>div:nth-child(2) {
+                                            margin-top: -250px;
                                         }
                                     }
 
@@ -3055,7 +3097,7 @@
                         </div> <!-- Close Left Column -->
                         <!-- Right: Dashboard Image -->
                         <div
-                            style="flex: 1; min-width: 300px; display: flex; align-items: center; justify-content: center; position: relative; z-index: 1;">
+                            style="flex: 1; min-width: min(300px, 100%); display: flex; align-items: center; justify-content: center; position: relative; z-index: 1;">
                             <img src="../assets/dashboard.webp" alt="Dashboard"
                                 style="width: 100%; border-radius: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.5); object-fit: contain;">
                         </div>
