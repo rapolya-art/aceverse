@@ -3,13 +3,13 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="refresh" content="0;url=/en/">
+    <meta http-equiv="refresh" content="0;url=/ua/">
     <script>
         var lang = navigator.language || navigator.userLanguage;
-        if (/^(uk|ru)/i.test(lang)) {
-            window.location.href = "/ua/" + window.location.search + window.location.hash;
-        } else {
+        if (/^(en)/i.test(lang)) {
             window.location.href = "/en/" + window.location.search + window.location.hash;
+        } else {
+            window.location.href = "/ua/" + window.location.search + window.location.hash;
         }
     </script>
     <title>Aceverse</title>
