@@ -145,4 +145,37 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         }
     });
+
+    // Desktop dropdown hover with timeout (works with dynamically loaded headers)
+    var dropdownTimeout = null;
+    var initDropdownHover = function () {
+        var dropdowns = document.querySelectorAll('.nav-dropdown');
+        if (!dropdowns.length) return false;
+
+        dropdowns.forEach(function (dropdown) {
+            if (dropdown.dataset.hoverBound) return;
+            dropdown.dataset.hoverBound = '1';
+
+            dropdown.addEventListener('mouseenter', function () {
+                if (window.innerWidth <= 850) return;
+                clearTimeout(dropdownTimeout);
+                dropdown.classList.add('open');
+            });
+
+            dropdown.addEventListener('mouseleave', function () {
+                if (window.innerWidth <= 850) return;
+                dropdownTimeout = setTimeout(function () {
+                    dropdown.classList.remove('open');
+                }, 500);
+            });
+        });
+        return true;
+    };
+
+    if (!initDropdownHover()) {
+        var dropdownObserver = new MutationObserver(function () {
+            if (initDropdownHover()) dropdownObserver.disconnect();
+        });
+        dropdownObserver.observe(document.body, { childList: true, subtree: true });
+    }
 });

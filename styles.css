@@ -2329,7 +2329,8 @@ footer p {
 /* Navigation Dropdown */
 .nav-dropdown {
     position: relative;
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
 }
 
 .nav-dropdown-toggle {
@@ -2339,25 +2340,29 @@ footer p {
     transition: color 0.3s;
     cursor: pointer;
     position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
 }
 
-.nav-dropdown-toggle:hover {
+.nav-dropdown-toggle:hover,
+.nav-dropdown.open .nav-dropdown-toggle {
     color: #fff;
 }
 
-.nav-dropdown-toggle::after {
-    content: '';
-    position: absolute;
-    bottom: -4px;
-    left: 0;
-    width: 0;
-    height: 1px;
-    background: #fff;
-    transition: width 0.3s ease;
+/* Chevron icon */
+.nav-dropdown-toggle .chevron {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-right: 1.5px solid currentColor;
+    border-bottom: 1.5px solid currentColor;
+    transform: rotate(45deg) translateY(-2px);
+    transition: transform 0.3s ease;
 }
 
-.nav-dropdown-toggle:hover::after {
-    width: 100%;
+.nav-dropdown.open .nav-dropdown-toggle .chevron {
+    transform: rotate(-135deg) translateY(-2px);
 }
 
 .nav-dropdown-menu {
@@ -2366,24 +2371,23 @@ footer p {
     top: 100%;
     left: 50%;
     transform: translateX(-50%);
-    background: rgba(31, 25, 42, 0.95);
+    background: rgba(31, 25, 42, 0.97);
     backdrop-filter: blur(22px);
     border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 12px;
-    padding: 8px 0;
-    min-width: 200px;
-    margin-top: 12px;
+    border-radius: 0 0 12px 12px;
+    padding: 12px 0 8px;
+    min-width: 260px;
     z-index: 1002;
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
 }
 
-.nav-dropdown:hover .nav-dropdown-menu {
+.nav-dropdown.open .nav-dropdown-menu {
     display: block;
 }
 
 .nav-dropdown-menu a {
     display: block;
-    padding: 10px 20px;
+    padding: 10px 24px;
     color: #c4bbd3;
     text-decoration: none;
     font-size: 14px;
@@ -2395,6 +2399,10 @@ footer p {
 .nav-dropdown-menu a:hover {
     background: rgba(160, 111, 246, 0.15);
     color: #fff;
+}
+
+.nav-dropdown-menu a:last-child {
+    border-radius: 0 0 12px 12px;
 }
 
 .nav-dropdown-menu a::after {
@@ -2526,15 +2534,12 @@ footer p {
         padding: 10px;
     }
 
-    .nav-dropdown:hover .nav-dropdown-menu {
-        display: none;
-    }
-
     .nav-dropdown-menu {
         display: none;
         flex-direction: column;
         position: static;
         transform: none;
+        top: auto;
         background: none;
         backdrop-filter: none;
         border: none;
