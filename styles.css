@@ -2263,13 +2263,52 @@ footer p {
 
 /* Mobile Responsiveness */
 @media (max-width: 768px) {
+    .site-footer {
+        padding: 50px 0 30px;
+    }
+
     .footer-grid {
         grid-template-columns: 1fr;
-        gap: 50px;
+        gap: 40px;
+    }
+
+    .footer-column {
+        text-align: center;
+    }
+
+    .footer-column h3 {
+        font-size: 20px;
+        margin-bottom: 20px;
+    }
+
+    .footer-links a {
+        font-size: 15px;
+        padding: 4px 0;
+    }
+
+    .footer-links a:hover {
+        transform: none;
+    }
+
+    .info-column {
+        align-items: center;
     }
 
     .footer-desc {
         max-width: 100%;
+        text-align: center;
+    }
+
+    .footer-contact {
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+    }
+
+    .social-link {
+        width: 100%;
+        max-width: 220px;
+        justify-content: center;
     }
 }
 
