@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Голосовий AI-агент для бізнесу: автоматизація дзвінків, прийом заявок 24/7, інтеграція з CRM. Замініть рутину менеджерів на штучний інтелект.">
+    <title>Голосовий AI-агент для бізнесу — автоматизація дзвінків 24/7 | Aceverse</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Source+Code+Pro:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../styles.css">
+    <link rel="stylesheet" href="../../shared.css">
+    <link rel="icon" href="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/logo.png" type="image/png">
+
+    <!-- SEO: canonical + hreflang -->
+    <link rel="canonical" href="https://aceverse.co/ua/voice-ai-agent/">
+    <link rel="alternate" hreflang="uk" href="https://aceverse.co/ua/voice-ai-agent/">
+    <link rel="alternate" hreflang="en" href="https://aceverse.co/en/voice-ai-agent/">
+    <link rel="alternate" hreflang="x-default" href="https://aceverse.co/ua/voice-ai-agent/">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://aceverse.co/ua/voice-ai-agent/">
+    <meta property="og:title" content="Голосовий AI-агент для бізнесу — автоматизація дзвінків 24/7">
+    <meta property="og:description" content="AI-агент приймає дзвінки, записує клієнтів, підтверджує замовлення та інтегрується з CRM. Працює 24/7 без вихідних.">
+    <meta property="og:image" content="https://aceverse.co/assets/logo.png">
+    <meta property="og:locale" content="uk_UA">
+    <meta property="og:site_name" content="Aceverse">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Голосовий AI-агент для бізнесу — автоматизація дзвінків 24/7">
+    <meta name="twitter:description" content="AI-агент приймає дзвінки, записує клієнтів, підтверджує замовлення. Працює 24/7.">
+    <meta name="twitter:image" content="https://aceverse.co/assets/logo.png">
+
+    <!-- JSON-LD: Service -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "serviceType": "Голосовий AI-агент",
+      "name": "Голосовий AI-агент для бізнесу",
+      "description": "Автоматизація телефонних дзвінків за допомогою штучного інтелекту. Прийом вхідних дзвінків, запис клієнтів, підтвердження замовлень, холодні дзвінки та інтеграція з CRM.",
+      "provider": {
+        "@type": "Organization",
+        "name": "Aceverse",
+        "url": "https://aceverse.co"
+      },
+      "areaServed": {
+        "@type": "Country",
+        "name": "Ukraine"
+      },
+      "availableChannel": {
+        "@type": "ServiceChannel",
+        "serviceType": "Phone"
+      }
+    }
+    </script>
+
+    <!-- JSON-LD: FAQPage -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Що таке голосовий AI-агент?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Голосовий AI-агент — це програма на основі штучного інтелекту, яка може приймати та здійснювати телефонні дзвінки, вести природні діалоги з клієнтами, записувати на послуги, підтверджувати замовлення та інтегруватися з CRM-системами. Працює 24/7 без перерв та вихідних."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Скільки коштує голосовий AI-агент?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Вартість залежить від обсягу дзвінків та складності сценаріїв. Базове рішення для малого бізнесу коштує значно менше, ніж утримання штатного оператора. Зв'яжіться з нами для індивідуального розрахунку."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Чи може AI-агент розмовляти українською?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Так, наші голосові AI-агенти підтримують українську мову з глибоким розумінням контексту. Також доступні більше 20 мов, включаючи англійську, польську, німецьку та інші."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Як швидко можна запустити голосового AI-агента?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "MVP голосового агента можна запустити протягом 1-2 тижнів. Це включає аудит процесів, налаштування сценаріїв, інтеграцію з вашими системами та тестування."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Чи замінить AI-агент живих операторів?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "AI-агент бере на себе рутинні дзвінки: запис, підтвердження, FAQ. Складні або емоційні ситуації передаються живому оператору. Це гібридна модель, яка підвищує ефективність команди."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <style>
+        body {
+            background: #0e0918;
+            color: #c4bbd3;
+        }
+
+        .service-content {
+            padding-top: 120px;
+            max-width: 800px;
+            margin: 0 auto;
+            padding-bottom: 80px;
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+
+        .service-content h1 {
+            font-size: 42px;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, #ffffff 0%, #a06ff6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1.2;
+        }
+
+        .service-subtitle {
+            font-size: 20px;
+            color: #c4bbd3;
+            margin-bottom: 40px;
+            line-height: 1.6;
+        }
+
+        .service-content h2 {
+            font-size: 32px;
+            margin-top: 50px;
+            margin-bottom: 25px;
+            text-align: left;
+            color: #fff;
+        }
+
+        .service-content h3 {
+            font-size: 24px;
+            margin-top: 35px;
+            margin-bottom: 15px;
+            color: #fff;
+        }
+
+        .service-content p {
+            font-size: 18px;
+            margin-bottom: 20px;
+            line-height: 1.8;
+        }
+
+        .service-content ul {
+            margin-bottom: 20px;
+            padding-left: 24px;
+        }
+
+        .service-content li {
+            font-size: 17px;
+            margin-bottom: 10px;
+            line-height: 1.7;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .feature-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 24px;
+            transition: border-color 0.3s;
+        }
+
+        .feature-card:hover {
+            border-color: #a06ff6;
+        }
+
+        .feature-card h4 {
+            color: #fff;
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .feature-card p {
+            font-size: 15px;
+            margin-bottom: 0;
+        }
+
+        .use-case {
+            background: rgba(160, 111, 246, 0.08);
+            border-left: 3px solid #a06ff6;
+            padding: 20px 24px;
+            border-radius: 0 12px 12px 0;
+            margin: 20px 0;
+        }
+
+        .use-case h4 {
+            color: #a06ff6;
+            margin-bottom: 8px;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 24px 0;
+        }
+
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+
+        .faq-item h3 {
+            font-size: 20px;
+            margin-top: 0;
+            margin-bottom: 12px;
+            color: #fff;
+        }
+
+        .faq-item p {
+            font-size: 16px;
+            margin-bottom: 0;
+            color: #c4bbd3;
+        }
+
+        .cta-section {
+            text-align: center;
+            padding: 60px 0;
+            margin-top: 40px;
+        }
+
+        .cta-section h2 {
+            text-align: center;
+        }
+
+        .cta-section p {
+            text-align: center;
+            max-width: 500px;
+            margin: 0 auto 30px;
+        }
+
+        @media (max-width: 768px) {
+            .service-content h1 {
+                font-size: 28px;
+            }
+
+            .service-content h2 {
+                font-size: 24px;
+            }
+
+            .feature-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body data-header="always" data-base="..">
+    <div data-include="header"></div>
+
+    <main class="service-content">
+        <h1>Голосовий AI-агент для бізнесу</h1>
+        <p class="service-subtitle">
+            Автоматизуйте телефонні дзвінки за допомогою штучного інтелекту. Ваш AI-агент приймає дзвінки, записує клієнтів, підтверджує замовлення та працює 24/7 — без вихідних, лікарняних та перерв.
+        </p>
+
+        <!-- TODO: Додати аудіо-демо голосового агента -->
+
+        <h2>Що вміє голосовий AI-агент</h2>
+
+        <div class="feature-grid">
+            <div class="feature-card">
+                <h4>Прийом вхідних дзвінків</h4>
+                <p>AI-оператор відповідає на дзвінки 24/7, відповідає на FAQ, записує клієнтів на послуги та передає інформацію в CRM.</p>
+            </div>
+            <div class="feature-card">
+                <h4>Підтвердження замовлень</h4>
+                <p>Автоматичні дзвінки для підтвердження бронювань, замовлень та записів. Миттєво, без затримок.</p>
+            </div>
+            <div class="feature-card">
+                <h4>Вихідні дзвінки</h4>
+                <p>Нагадування про візити, опитування якості, збір зворотного зв'язку та холодні дзвінки з гнучкими сценаріями.</p>
+            </div>
+            <div class="feature-card">
+                <h4>Інтеграція з CRM</h4>
+                <p>Всі дані автоматично потрапляють у вашу CRM: NetHunt, KeyCRM, HubSpot, Bitrix та інші системи.</p>
+            </div>
+        </div>
+
+        <h2>Для кого підходить</h2>
+
+        <div class="use-case">
+            <h4>Салони краси та клініки</h4>
+            <p>Запис клієнтів, підтвердження візитів, нагадування за добу. Жодного пропущеного дзвінка.</p>
+        </div>
+
+        <div class="use-case">
+            <h4>Інтернет-магазини та e-commerce</h4>
+            <p>Підтвердження замовлень, уточнення деталей доставки, допродажі товарів та послуг.</p>
+        </div>
+
+        <div class="use-case">
+            <h4>Сервісні компанії та СТО</h4>
+            <p>Прийом заявок на ремонт, узгодження часу, повідомлення про готовність.</p>
+        </div>
+
+        <div class="use-case">
+            <h4>Ресторани та готелі</h4>
+            <p>Бронювання столиків, підтвердження резервацій, інформація про меню та акції.</p>
+        </div>
+
+        <h2>Як це працює</h2>
+
+        <p>
+            <!-- TODO: Заповнити детальний опис 5-крокового процесу впровадження -->
+        </p>
+        <ol>
+            <li><strong>Аудит процесів</strong> — аналізуємо ваші дзвінки, визначаємо сценарії автоматизації</li>
+            <li><strong>Налаштування голосу та сценаріїв</strong> — обираємо голос, пишемо скрипти діалогів</li>
+            <li><strong>Інтеграція з CRM</strong> — підключаємо до вашої системи управління клієнтами</li>
+            <li><strong>Тестування</strong> — запускаємо MVP, збираємо зворотний зв'язок, калібруємо</li>
+            <li><strong>Запуск та масштабування</strong> — повноцінний запуск з моніторингом та аналітикою</li>
+        </ol>
+
+        <h2>Переваги AI-агента</h2>
+
+        <div class="feature-grid">
+            <div class="feature-card">
+                <h4>0 секунд очікування</h4>
+                <p>Миттєва відповідь на кожен дзвінок. Жодного "залишайтеся на лінії".</p>
+            </div>
+            <div class="feature-card">
+                <h4>24/7 без вихідних</h4>
+                <p>Працює вночі, у свята, на вихідних. Клієнти не чекають до понеділка.</p>
+            </div>
+            <div class="feature-card">
+                <h4>20+ мов</h4>
+                <p>Українська, англійська, польська, німецька та інші мови з природною інтонацією.</p>
+            </div>
+            <div class="feature-card">
+                <h4>Масштабування</h4>
+                <p>100 одночасних дзвінків чи 1 — AI-агент справляється без додаткових витрат.</p>
+            </div>
+        </div>
+
+        <!-- FAQ Section -->
+        <h2>Часті запитання</h2>
+
+        <div class="faq-item">
+            <h3>Що таке голосовий AI-агент?</h3>
+            <p>Голосовий AI-агент — це програма на основі штучного інтелекту, яка може приймати та здійснювати телефонні дзвінки, вести природні діалоги з клієнтами, записувати на послуги, підтверджувати замовлення та інтегруватися з CRM-системами. Працює 24/7 без перерв та вихідних.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>Скільки коштує голосовий AI-агент?</h3>
+            <p>Вартість залежить від обсягу дзвінків та складності сценаріїв. Базове рішення для малого бізнесу коштує значно менше, ніж утримання штатного оператора. Зв'яжіться з нами для індивідуального розрахунку.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>Чи може AI-агент розмовляти українською?</h3>
+            <p>Так, наші голосові AI-агенти підтримують українську мову з глибоким розумінням контексту. Також доступні більше 20 мов, включаючи англійську, польську, німецьку та інші.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>Як швидко можна запустити голосового AI-агента?</h3>
+            <p>MVP голосового агента можна запустити протягом 1-2 тижнів. Це включає аудит процесів, налаштування сценаріїв, інтеграцію з вашими системами та тестування.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>Чи замінить AI-агент живих операторів?</h3>
+            <p>AI-агент бере на себе рутинні дзвінки: запис, підтвердження, FAQ. Складні або емоційні ситуації передаються живому оператору. Це гібридна модель, яка підвищує ефективність команди.</p>
+        </div>
+
+        <!-- CTA Section -->
+        <div class="cta-section">
+            <h2>Готові автоматизувати дзвінки?</h2>
+            <p>Залиште заявку — ми проаналізуємо ваші процеси та запропонуємо рішення протягом 24 годин.</p>
+            <a href="/ua/#contact" class="cta-button">Зв'язатися з нами</a>
+        </div>
+    </main>
+
+    <div data-include="footer"></div>
+    <script src="../../includes.js"></script>
+    <script src="../../interactions.js"></script>
+</body>
+
+</html>

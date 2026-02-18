@@ -123,8 +123,19 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         }
 
-        // Close when link clicked
-        if (link) {
+        // Prevent default on dropdown toggle
+        const dropdownToggle = e.target.closest('.nav-dropdown-toggle');
+        if (dropdownToggle) {
+            e.preventDefault();
+            // On mobile, toggle dropdown visibility
+            const dropdown = dropdownToggle.closest('.nav-dropdown');
+            if (dropdown && window.innerWidth <= 850) {
+                dropdown.classList.toggle('open');
+            }
+        }
+
+        // Close when link clicked (but not dropdown toggle)
+        if (link && !link.classList.contains('nav-dropdown-toggle')) {
             const btn = document.querySelector('.mobile-menu-btn');
             const navMenu = document.querySelector('.nav-menu');
             if (btn && navMenu) {

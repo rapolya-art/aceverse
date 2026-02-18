@@ -1,0 +1,1836 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="AI receptionist for medical clinics and dental offices: patient scheduling, slot availability, SMS reminders, operator escalation. Works 24/7.">
+    <title>AI Receptionist for Clinics & Dental Offices — 24/7 Patient Scheduling | Aceverse</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Source+Code+Pro:wght@400;500;600;700;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../../styles.css">
+    <link rel="stylesheet" href="../../shared.css">
+    <link rel="icon" href="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/logo.png" type="image/png">
+
+    <!-- SEO: canonical + hreflang -->
+    <link rel="canonical" href="https://aceverse.co/en/receptionist-medical/">
+    <link rel="alternate" hreflang="uk" href="https://aceverse.co/ua/receptionist-medical/">
+    <link rel="alternate" hreflang="en" href="https://aceverse.co/en/receptionist-medical/">
+    <link rel="alternate" hreflang="x-default" href="https://aceverse.co/ua/receptionist-medical/">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://aceverse.co/en/receptionist-medical/">
+    <meta property="og:title" content="AI Receptionist for Clinics & Dental Offices — 24/7 Patient Scheduling">
+    <meta property="og:description"
+        content="Voice AI receptionist for medical clinics: automated scheduling, slot checking, SMS confirmations, reminders, call analytics.">
+    <meta property="og:image" content="https://aceverse.co/assets/logo.png">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:site_name" content="Aceverse">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="AI Receptionist for Clinics & Dental Offices — 24/7 Patient Scheduling">
+    <meta name="twitter:description"
+        content="Voice AI for medical clinics: doctor scheduling, SMS reminders, analytics. Works 24/7.">
+    <meta name="twitter:image" content="https://aceverse.co/assets/logo.png">
+
+    <!-- JSON-LD: Service -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "serviceType": "AI Receptionist for Medical Clinics",
+      "name": "Voice AI Receptionist for Clinics & Dental Offices",
+      "description": "Automated patient scheduling for medical clinics and dental offices using voice AI. Slot availability checking, appointment booking, SMS reminders, operator escalation.",
+      "provider": {
+        "@type": "Organization",
+        "name": "Aceverse",
+        "url": "https://aceverse.co"
+      },
+      "areaServed": {
+        "@type": "Country",
+        "name": "Ukraine"
+      }
+    }
+    </script>
+
+    <!-- JSON-LD: FAQPage -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How does the AI receptionist schedule patients with a specific doctor?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The AI receptionist integrates with your scheduling system and sees each doctor's available slots in real time. The patient names the desired doctor or service, and the agent suggests the nearest available times and books the appointment."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can the AI reschedule or cancel an appointment?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. A patient can call and request to reschedule or cancel. The AI finds the current booking, offers alternative times for rescheduling, or confirms the cancellation and updates the schedule."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do SMS reminders work?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "After booking, the patient receives an SMS with visit details: date, time, doctor, clinic address. A reminder SMS is sent 2 hours before the appointment. The AI can also call the patient to confirm."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What happens when the AI can't answer a question?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "If a question is outside the knowledge base or the patient asks to speak with a person, the AI instantly escalates the call to a live operator or clinic administrator."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Comfortaa', cursive;
+            background: #0e0918;
+            color: #c4bbd3;
+            line-height: 1.6;
+        }
+
+        /* Header */
+        header {
+            background: rgba(31, 25, 42, 0.8);
+            backdrop-filter: blur(22px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 12px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: inset 0 1px rgba(255, 142, 93, 0.4);
+            transform: translateY(-100%);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        header.header-visible {
+            transform: translateY(0);
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            font-family: 'Source Code Pro', monospace;
+        }
+
+        nav {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            color: #c4bbd3;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+            position: relative;
+        }
+
+        nav a:hover {
+            color: #fff;
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background: #fff;
+            transition: width 0.3s ease;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Comfortaa', cursive;
+        }
+
+        h2 {
+            font-size: 48px;
+            font-weight: 900;
+            margin-bottom: 50px;
+            text-align: center;
+            background: linear-gradient(135deg, #ffffff 0%, #a06ff6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: -0.02em;
+        }
+
+        h3 {
+            font-size: 32px;
+            font-weight: 900;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, #ffffff 0%, #a06ff6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* Section */
+        section {
+            padding: 80px 0;
+            position: relative;
+        }
+
+        /* Hero */
+        .page-hero {
+            padding-top: 140px;
+            padding-bottom: 80px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .page-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 90%;
+            max-width: 1057px;
+            aspect-ratio: 1057/720;
+            border-radius: 50%;
+            opacity: 0.6;
+            filter: blur(150px);
+            background: radial-gradient(67.82% 89.62% at 86.97% 105.17%, #4006a7 0%, #621f04 100%);
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .page-hero .container {
+            position: relative;
+            z-index: 1;
+        }
+
+        .page-hero h1 {
+            font-size: 56px;
+            font-weight: 900;
+            background: linear-gradient(135deg, #ffffff 0%, #a06ff6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-align: center;
+            letter-spacing: -0.02em;
+            filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.3));
+            margin-bottom: 20px;
+        }
+
+        .page-hero p {
+            font-size: 20px;
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.7;
+        }
+
+        /* Card Styles (from main page) */
+        .card {
+            text-align: center;
+            padding: 40px 30px;
+            background: radial-gradient(circle at 30% 140%, rgba(217, 126, 75, 0.3), transparent 37%),
+                radial-gradient(circle at 50% 310%, rgba(4, 0, 255, 0.15), transparent 78%),
+                linear-gradient(transparent, rgba(13, 10, 25, 0.37)),
+                radial-gradient(circle at 50% -30%, rgba(168, 92, 92, 0.2), transparent),
+                radial-gradient(90% 10% at 50% 0%, rgba(168, 92, 92, 0.05), transparent 90%);
+            backdrop-filter: blur(22px);
+            border: 1px solid rgba(255, 255, 255, 0.16);
+            border-radius: 24px;
+            box-shadow: inset 0 1px rgba(255, 142, 93, 0.4);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+            isolation: isolate;
+        }
+
+        .card::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(0deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.05));
+            border-radius: inherit;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.15s ease-in-out;
+        }
+
+        .card:hover::after {
+            opacity: 1;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: inset 0 1px rgba(255, 142, 93, 0.4),
+                0 12px 24px rgba(0, 0, 0, 0.2);
+        }
+
+        .card > * {
+            position: relative;
+            z-index: 1;
+        }
+
+        .card-blur-effect {
+            position: absolute;
+            pointer-events: none;
+            z-index: 0;
+            filter: blur(60px);
+            opacity: 0;
+            transition: opacity 0.5s ease;
+            will-change: transform;
+        }
+
+        .card:hover .card-blur-effect {
+            opacity: 0.7;
+        }
+
+        .blob {
+            position: absolute;
+            border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
+            animation: morph 8s ease-in-out infinite;
+            filter: blur(40px);
+        }
+
+        .blob-1 {
+            width: 200px;
+            height: 200px;
+            background: linear-gradient(45deg, #a78bfa 0%, #ec4899 100%);
+            animation-delay: 0s;
+        }
+
+        .blob-2 {
+            width: 180px;
+            height: 180px;
+            background: linear-gradient(45deg, #60a5fa 0%, #34d399 100%);
+            animation-delay: 2s;
+        }
+
+        .blob-3 {
+            width: 150px;
+            height: 150px;
+            background: linear-gradient(45deg, #f472b6 0%, #fbbf24 100%);
+            animation-delay: 4s;
+        }
+
+        @keyframes morph {
+            0%, 100% {
+                border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
+                transform: rotate(0deg) scale(1);
+            }
+            25% {
+                border-radius: 70% 30% 50% 50% / 30% 30% 70% 70%;
+                transform: rotate(90deg) scale(1.1);
+            }
+            50% {
+                border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%;
+                transform: rotate(180deg) scale(0.9);
+            }
+            75% {
+                border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+                transform: rotate(270deg) scale(1.05);
+            }
+        }
+
+        .card-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(139, 92, 246, 0.1));
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 20px;
+            box-shadow: inset 0 4.818px 9.635px rgba(255, 255, 255, 0.12),
+                inset 0 0.803px 0.803px rgba(255, 255, 255, 0.2),
+                0 3.212px 3.212px rgba(8, 8, 8, 0.08);
+        }
+
+        .card-icon svg {
+            width: 40px;
+            height: 40px;
+        }
+
+        .card h4 {
+            font-size: 20px;
+            margin: 20px 0 10px;
+            background: linear-gradient(135deg, #ffffff 0%, #a06ff6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .card p {
+            color: #c4bbd3 !important;
+            font-size: 15px;
+        }
+
+        /* Grid */
+        .grid-4 {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            margin: 60px 0;
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin: 60px 0;
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            margin: 30px 0;
+        }
+
+        /* Solution Block */
+        .solution-block {
+            background: radial-gradient(circle at 30% 140%, rgba(217, 126, 75, 0.2), transparent 37%),
+                radial-gradient(circle at 50% 310%, rgba(4, 0, 255, 0.15), transparent 78%),
+                linear-gradient(transparent, rgba(13, 10, 25, 0.37)),
+                rgba(31, 25, 42, 0.5);
+            backdrop-filter: blur(22px);
+            padding: 50px;
+            margin: 40px 0;
+            border: 1px solid rgba(255, 255, 255, 0.16);
+            border-radius: 25px;
+            box-shadow: inset 0 1px rgba(255, 142, 93, 0.4);
+        }
+
+        /* Oil Block */
+        .oil-block {
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .oil-block:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .oil-block::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle at center,
+                    rgba(160, 111, 246, 0.15) 0%,
+                    rgba(255, 100, 150, 0.1) 25%,
+                    rgba(0, 200, 255, 0.1) 50%,
+                    transparent 70%);
+            animation: oil-spread 10s ease-in-out infinite alternate;
+            z-index: -1;
+            filter: blur(30px);
+            opacity: 0.8;
+            pointer-events: none;
+        }
+
+        @keyframes oil-spread {
+            0% { transform: scale(1) rotate(0deg); }
+            25% { transform: scale(1.1) rotate(5deg) translate(10px, 10px); }
+            50% { transform: scale(1.2) rotate(-5deg) translate(-10px, 20px); }
+            75% { transform: scale(1.1) rotate(3deg) translate(10px, -10px); }
+            100% { transform: scale(1) rotate(0deg); }
+        }
+
+        /* Video container */
+        .video-section-inner {
+            max-width: 800px;
+            margin: 0 auto;
+            background: radial-gradient(circle at 30% 140%, rgba(217, 126, 75, 0.2), transparent 37%),
+                radial-gradient(circle at 50% 310%, rgba(4, 0, 255, 0.15), transparent 78%),
+                linear-gradient(transparent, rgba(13, 10, 25, 0.37)),
+                rgba(31, 25, 42, 0.5);
+            backdrop-filter: blur(22px);
+            border: 1px solid rgba(255, 255, 255, 0.16);
+            border-radius: 24px;
+            padding: 16px;
+            box-shadow: inset 0 1px rgba(255, 142, 93, 0.4), 0 20px 60px rgba(0, 0, 0, 0.4);
+        }
+
+        .video-wrapper {
+            position: relative;
+            border-radius: 16px;
+            overflow: hidden;
+            background: #000;
+        }
+
+        .video-wrapper video {
+            width: 100%;
+            display: block;
+        }
+
+        /* Liquid Glass Play Button */
+        .video-play-btn {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 88px;
+            height: 88px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(40px);
+            -webkit-backdrop-filter: blur(40px);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            box-shadow:
+                0 4px 30px rgba(0, 0, 0, 0.4),
+                inset 0 1px 0 rgba(255, 255, 255, 0.25),
+                inset 0 0 20px rgba(255, 255, 255, 0.03);
+            cursor: pointer;
+            z-index: 10;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .video-play-btn::before {
+            content: '';
+            position: absolute;
+            top: 1px;
+            left: 15%;
+            right: 15%;
+            height: 40%;
+            border-radius: 50%;
+            background: linear-gradient(180deg,
+                rgba(255, 255, 255, 0.18) 0%,
+                transparent 100%);
+            pointer-events: none;
+        }
+
+        .video-play-btn:hover {
+            transform: translate(-50%, -50%) scale(1.1);
+            background: rgba(255, 255, 255, 0.12);
+            border-color: rgba(255, 255, 255, 0.28);
+            box-shadow:
+                0 8px 40px rgba(0, 0, 0, 0.45),
+                inset 0 1px 0 rgba(255, 255, 255, 0.35),
+                inset 0 0 24px rgba(255, 255, 255, 0.05);
+        }
+
+        .video-play-btn:active {
+            transform: translate(-50%, -50%) scale(0.95);
+            transition-duration: 0.1s;
+        }
+
+        .video-play-btn svg {
+            width: 32px;
+            height: 32px;
+            fill: rgba(255, 255, 255, 0.85);
+            filter: drop-shadow(0 1px 3px rgba(0, 0, 0, 0.3));
+            position: relative;
+            z-index: 1;
+        }
+
+        .video-play-btn.hidden {
+            opacity: 0;
+            pointer-events: none;
+            transform: translate(-50%, -50%) scale(0.6);
+        }
+
+        /* Image block */
+        .feature-block {
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.16);
+            margin-bottom: 40px;
+        }
+
+        .feature-block-header {
+            display: flex;
+            align-items: start;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .feature-block-image {
+            flex-shrink: 0;
+            width: 120px;
+            height: 120px;
+            border-radius: 20px;
+            overflow: hidden;
+            background: none;
+        }
+
+        .feature-block-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .feature-block-text {
+            flex: 1;
+            min-width: 280px;
+        }
+
+        .feature-block-text h4 {
+            margin-bottom: 15px;
+            color: #fff;
+            font-size: 22px;
+        }
+
+        .feature-block-text p {
+            color: #c4bbd3;
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+
+        .feature-pills {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .feature-pill {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            padding: 15px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: #c4bbd3;
+        }
+
+        .feature-pill svg {
+            width: 20px;
+            height: 20px;
+            flex-shrink: 0;
+            stroke: #a06ff6;
+        }
+
+        .feature-pill span {
+            font-weight: 500;
+            font-size: 15px;
+        }
+
+        /* Human vs AI blocks */
+        .human-block {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .human-block-text {
+            flex: 1;
+            min-width: min(300px, 100%);
+        }
+
+        .human-block-image {
+            flex: 1;
+            min-width: min(300px, 100%);
+        }
+
+        .human-block-image img {
+            width: 100%;
+            border-radius: 20px;
+        }
+
+        .human-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+        }
+
+        .human-list li {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            font-size: 16px;
+            color: #c4bbd3;
+        }
+
+        .human-list li svg {
+            width: 20px;
+            height: 20px;
+            flex-shrink: 0;
+            stroke: #7a6f8a;
+        }
+
+        .ai-caps-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .ai-cap-card {
+            background: linear-gradient(135deg, rgba(23, 20, 33, 0.9) 0%, rgba(23, 20, 33, 0.6) 100%);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 30px;
+        }
+
+        .ai-cap-card h4 {
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-size: 14px;
+            margin-bottom: 24px;
+            margin-top: 0;
+            font-weight: 700;
+            background: linear-gradient(90deg, #fff, #a06ff6);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .ai-cap-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .ai-cap-list li {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            font-size: 16px;
+            font-weight: 500;
+            color: #fff;
+        }
+
+        .ai-cap-list li svg {
+            width: 24px;
+            height: 24px;
+            flex-shrink: 0;
+        }
+
+        .ai-cap-list .gradient-text {
+            font-weight: 600;
+            background: linear-gradient(90deg, #fff, #a06ff6);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .ai-cap-features strong {
+            display: block;
+            margin-bottom: 4px;
+            font-size: 18px;
+            font-weight: 700;
+            background: linear-gradient(90deg, #fff, #a06ff6);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .ai-cap-features span {
+            font-size: 14px;
+            line-height: 1.4;
+            display: block;
+            background: linear-gradient(90deg, #ddd, #a06ff6);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .ai-cap-features {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        /* Steps - flow */
+        .steps-flow {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+            margin: 40px 0;
+            position: relative;
+        }
+
+        .steps-flow::before {
+            content: '';
+            position: absolute;
+            left: 24px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(180deg, rgba(160, 111, 246, 0.4) 0%, rgba(160, 111, 246, 0.1) 100%);
+        }
+
+        .step-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 24px;
+            padding: 28px 0;
+            position: relative;
+        }
+
+        .step-item:not(:last-child) {
+            border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+        }
+
+        .step-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #a06ff6;
+            box-shadow: 0 0 12px rgba(160, 111, 246, 0.5);
+            flex-shrink: 0;
+            margin-top: 6px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .step-dot::after {
+            content: '';
+            position: absolute;
+            inset: -4px;
+            border-radius: 50%;
+            border: 1px solid rgba(160, 111, 246, 0.3);
+        }
+
+        .step-item:first-child .step-dot {
+            width: 16px;
+            height: 16px;
+            margin-top: 4px;
+            box-shadow: 0 0 20px rgba(160, 111, 246, 0.6);
+        }
+
+        .step-item:first-child .step-dot::after {
+            inset: -5px;
+        }
+
+        .step-body h4 {
+            color: #fff;
+            font-size: 18px;
+            margin-bottom: 6px;
+        }
+
+        .step-body p {
+            font-size: 15px;
+            color: #a89bb8;
+            line-height: 1.6;
+        }
+
+        /* FAQ */
+        .faq-item {
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 28px 0;
+        }
+
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+
+        .faq-item h4 {
+            font-size: 20px;
+            margin-bottom: 12px;
+            color: #fff;
+        }
+
+        .faq-item p {
+            font-size: 16px;
+            color: #c4bbd3;
+            line-height: 1.8;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: radial-gradient(193.87% 204.83% at 32.86% 142.68%, rgba(168, 92, 92, 0.7) 0%, transparent 36.9%),
+                radial-gradient(181% 145.13% at 52.69% 41.32%, rgba(24, 4, 112, 0.15) 0%, transparent 80%),
+                linear-gradient(180deg, transparent, rgba(13, 10, 25, 0.37)),
+                radial-gradient(54.81% 97.44% at 54.44% 2.66%, rgba(168, 92, 92, 0.29) 0%, rgba(103, 69, 69, 0.08) 100%);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-button {
+            display: inline-block;
+            position: relative;
+            color: #fff;
+            padding: 20px 50px;
+            border-radius: 24px;
+            font-weight: 700;
+            text-decoration: none;
+            overflow: hidden;
+            z-index: 10;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            background: radial-gradient(circle at 30% 140%, rgba(217, 126, 75, 0.3), transparent 37%),
+                radial-gradient(circle at 50% 310%, rgba(4, 0, 255, 0.15), transparent 78%),
+                linear-gradient(transparent, rgba(13, 10, 25, 0.37)),
+                radial-gradient(circle at 50% -30%, rgba(168, 92, 92, 0.2), transparent),
+                radial-gradient(90% 10% at 50% 0%, rgba(168, 92, 92, 0.05), transparent 90%);
+            backdrop-filter: blur(22px);
+            border: 1px solid rgba(255, 255, 255, 0.16);
+            box-shadow: inset 0 1px rgba(255, 142, 93, 0.4);
+        }
+
+        .cta-button:hover {
+            transform: none;
+            box-shadow: inset 0 0 30px 5px rgba(160, 111, 246, 0.5),
+                0 0 20px rgba(160, 111, 246, 0.3);
+            border-color: rgba(160, 111, 246, 0.6);
+        }
+
+        .cta-button:active {
+            transform: translateY(-2px) scale(1.02);
+        }
+
+        /* Responsive */
+        @media (max-width: 1200px) {
+            .grid-4 {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 20px;
+            }
+
+            .page-hero h1 {
+                font-size: 32px;
+                padding: 0 20px;
+            }
+
+            .page-hero p {
+                font-size: 17px;
+                padding: 0 10px;
+            }
+
+            h2 {
+                font-size: 32px;
+                margin-bottom: 30px;
+            }
+
+            h3 {
+                font-size: 24px;
+            }
+
+            section {
+                padding: 50px 0;
+            }
+
+            .grid-4, .grid-3, .grid-2 {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .card {
+                padding: 30px 20px;
+            }
+
+            .solution-block {
+                padding: 30px 20px;
+                margin: 20px 0;
+            }
+
+            .feature-block {
+                padding: 20px;
+            }
+
+            .feature-block-image {
+                width: 80px;
+                height: 80px;
+            }
+
+            .human-block {
+                flex-direction: column;
+            }
+
+            .ai-caps-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .cta-button {
+                padding: 16px 32px;
+                font-size: 14px;
+            }
+
+        }
+
+
+        @media (max-width: 480px) {
+            .page-hero h1 {
+                font-size: 24px;
+            }
+
+            h2 {
+                font-size: 28px;
+            }
+        }
+
+        /* Nav dropdown for header */
+        .nav-dropdown {
+            position: relative;
+        }
+
+        .nav-dropdown-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: rgba(31, 25, 42, 0.95);
+            backdrop-filter: blur(22px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 8px 0;
+            min-width: 200px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .nav-dropdown:hover .nav-dropdown-menu {
+            display: block;
+        }
+
+        .nav-dropdown-menu a {
+            display: block;
+            padding: 10px 20px;
+            white-space: nowrap;
+        }
+
+        /* Mobile menu */
+        .header-controls {
+            display: none;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+        }
+
+        @media (max-width: 768px) {
+            header {
+                padding: 12px 20px;
+            }
+
+            .header-controls {
+                display: block;
+            }
+
+            .mobile-menu-btn {
+                display: flex;
+                flex-direction: column;
+                gap: 5px;
+                background: none;
+                border: none;
+                cursor: pointer;
+                padding: 5px;
+            }
+
+            .mobile-menu-btn span {
+                width: 24px;
+                height: 2px;
+                background: #fff;
+                border-radius: 2px;
+                transition: 0.3s;
+            }
+
+            nav.nav-menu {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: rgba(31, 25, 42, 0.95);
+                backdrop-filter: blur(22px);
+                flex-direction: column;
+                padding: 20px;
+                gap: 15px;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            }
+
+            nav.nav-menu.open {
+                display: flex;
+            }
+        }
+
+        /* Modal */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(5px);
+            z-index: 9999;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            animation: fadeIn 0.3s forwards;
+        }
+
+        @keyframes fadeIn {
+            to { opacity: 1; }
+        }
+
+        .modal-content {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            padding: 40px;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+            width: 90%;
+            max-width: 400px;
+            position: relative;
+            text-align: center;
+        }
+
+        .close-button {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            font-size: 28px;
+            color: #fff;
+            background: none;
+            border: none;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .close-button:hover {
+            color: #a06ff6;
+        }
+
+        .modal-content h2 {
+            color: #fff;
+            margin-bottom: 15px;
+            font-family: 'Source Code Pro', monospace;
+            -webkit-text-fill-color: #fff;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        .form-group label {
+            display: block;
+            color: #fff;
+            margin-bottom: 8px;
+            font-size: 14px;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 12px;
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            background: rgba(255, 255, 255, 0.05);
+            color: #fff;
+            font-family: 'Comfortaa', sans-serif;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus {
+            outline: none;
+            border-color: #a06ff6;
+        }
+
+        .submit-button {
+            width: 100%;
+            padding: 14px;
+            background: linear-gradient(90deg, #a06ff6 0%, #7a4bd1 100%);
+            color: #fff;
+            border: none;
+            border-radius: 10px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .submit-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(160, 111, 246, 0.4);
+        }
+
+        .submit-button:disabled {
+            opacity: 0.7;
+            cursor: not-allowed;
+            transform: none;
+        }
+    </style>
+</head>
+
+<body data-header="always" data-base="..">
+    <header class="header-visible">
+        <div class="logo">
+            <a href="/en/" style="text-decoration: none;">
+                <img src="https://pub-0c8edf09080540b191d021f3bf02a5a6.r2.dev/logo.png" alt="Aceverse" style="height: 45px;">
+            </a>
+        </div>
+        <div class="header-controls">
+            <button class="mobile-menu-btn" aria-label="Open menu" onclick="document.querySelector('.nav-menu').classList.toggle('open')">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+        <nav class="nav-menu">
+            <a href="#solutions">FEATURES</a>
+            <a href="#analytics">ANALYTICS</a>
+            <a href="#comparison">COMPARISON</a>
+            <a href="#how-it-works">HOW IT WORKS</a>
+            <a href="#pricing">PRICING</a>
+            <a href="#faq">FAQ</a>
+            <a href="/en/" style="color: #a06ff6;">HOME</a>
+        </nav>
+    </header>
+
+    <!-- Hero -->
+    <section class="page-hero">
+        <div class="container">
+            <h1>AI Receptionist for Medical Clinics & Dental Offices</h1>
+            <p>A voice AI agent that answers patient calls, schedules appointments with the right doctor, checks available slots, sends SMS confirmations, and reminds about visits. Works 24/7 — no days off, no breaks, no missed calls.</p>
+        </div>
+    </section>
+
+    <!-- Video Demo -->
+    <section style="padding-top: 0;">
+        <div class="container">
+            <h2>See It in Action</h2>
+            <div class="video-section-inner">
+                <div class="video-wrapper">
+                    <video playsinline preload="metadata" muted>
+                        <source src="../../assets/demo_dental.mp4#t=0.001" type="video/mp4">
+                    </video>
+                    <button class="video-play-btn" aria-label="Play video">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M9.5 4.27L20.5 11.14a1 1 0 0 1 0 1.72L9.5 19.73A1 1 0 0 1 8 18.87V5.13a1 1 0 0 1 1.5-.86z"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Inbound & Outbound blocks -->
+    <section id="solutions">
+        <div class="container">
+            <h2>How the AI Receptionist Works</h2>
+
+            <!-- Inbound calls block -->
+            <div class="feature-block">
+                <div class="feature-block-header">
+                    <div class="feature-block-image">
+                        <img src="../../assets/Image_202601182105.jpeg" alt="AI Receptionist"
+                            style="transform: scale(1.05); transform-origin: top center;">
+                    </div>
+                    <div class="feature-block-text">
+                        <h4>Inbound Patient Calls</h4>
+                        <p>The AI receptionist answers calls 24/7, responds to questions from the knowledge base, schedules patients with the right doctor, and handles cancellations and rescheduling.</p>
+                    </div>
+                </div>
+                <div class="feature-pills">
+                    <div class="oil-block feature-pill">
+                        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                            <line x1="16" y1="2" x2="16" y2="6"></line>
+                            <line x1="8" y1="2" x2="8" y2="6"></line>
+                            <line x1="3" y1="10" x2="21" y2="10"></line>
+                        </svg>
+                        <span>Checks available slots for each doctor</span>
+                    </div>
+                    <div class="oil-block feature-pill">
+                        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                            <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                        </svg>
+                        <span>Books appointments at a specific time</span>
+                    </div>
+                    <div class="oil-block feature-pill">
+                        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="17 1 21 5 17 9"></polyline>
+                            <path d="M3 11V9a4 4 0 0 1 4-4h14"></path>
+                            <polyline points="7 23 3 19 7 15"></polyline>
+                            <path d="M21 13v2a4 4 0 0 1-4 4H3"></path>
+                        </svg>
+                        <span>Reschedules or cancels appointments</span>
+                    </div>
+                    <div class="oil-block feature-pill">
+                        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
+                            <line x1="12" y1="17" x2="12.01" y2="17"></line>
+                        </svg>
+                        <span>Answers any question from the knowledge base</span>
+                    </div>
+                    <div class="oil-block feature-pill">
+                        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                        </svg>
+                        <span>No need to ask for number — detected automatically</span>
+                    </div>
+                    <div class="oil-block feature-pill">
+                        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="12" cy="7" r="4"></circle>
+                        </svg>
+                        <span>Escalation to a live operator</span>
+                    </div>
+                    <div class="oil-block feature-pill">
+                        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"></path>
+                            <path d="M19 10v2a7 7 0 0 1-14 0v-2"></path>
+                            <line x1="12" y1="19" x2="12" y2="23"></line>
+                            <line x1="8" y1="23" x2="16" y2="23"></line>
+                        </svg>
+                        <span>Voice selection & cloning for your brand</span>
+                    </div>
+                    <div class="oil-block feature-pill">
+                        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                        </svg>
+                        <span>Works via text in Telegram, WhatsApp, Instagram, SMS</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Outbound calls block -->
+            <div class="feature-block">
+                <div class="feature-block-header">
+                    <div class="feature-block-image">
+                        <img src="../../assets/49648bd5-789f-4b9c-b803-5cb145eecc2a.jpeg" alt="Outbound calls"
+                            style="transform: scale(1.3); transform-origin: top center;">
+                    </div>
+                    <div class="feature-block-text">
+                        <h4>SMS & Outbound Patient Calls</h4>
+                        <p>The AI automatically sends SMS confirmations after booking, reminds patients 2 hours before their appointment, and can call to confirm the visit.</p>
+                    </div>
+                </div>
+                <div class="feature-pills">
+                    <div class="oil-block feature-pill">
+                        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                            <polyline points="22,6 12,13 2,6"></polyline>
+                        </svg>
+                        <span>SMS with visit details right after booking</span>
+                    </div>
+                    <div class="oil-block feature-pill">
+                        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <polyline points="12 6 12 12 16 14"></polyline>
+                        </svg>
+                        <span>Reminder 2 hours before appointment</span>
+                    </div>
+                    <div class="oil-block feature-pill">
+                        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M15.05 5A5 5 0 0 1 19 8.95M15.05 1A9 9 0 0 1 23 8.94m-1 7.98v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                        </svg>
+                        <span>Confirmation call before visit</span>
+                    </div>
+                    <div class="oil-block feature-pill">
+                        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                            <polyline points="14 2 14 8 20 8"></polyline>
+                            <line x1="16" y1="13" x2="8" y2="13"></line>
+                            <line x1="16" y1="17" x2="8" y2="17"></line>
+                        </svg>
+                        <span>Reduces no-shows by 40-60%</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Analytics -->
+    <section id="analytics">
+        <div class="container">
+            <h2>Analytics & Quality Control</h2>
+            <div class="grid-3">
+                <div class="card">
+                    <div class="card-blur-effect">
+                        <div class="blob blob-1"></div>
+                        <div class="blob blob-2"></div>
+                    </div>
+                    <div class="card-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="#a06ff6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                            <polyline points="14 2 14 8 20 8"></polyline>
+                            <line x1="16" y1="13" x2="8" y2="13"></line>
+                            <line x1="16" y1="17" x2="8" y2="17"></line>
+                            <polyline points="10 9 9 9 8 9"></polyline>
+                        </svg>
+                    </div>
+                    <h4>Transcription</h4>
+                    <p>Every conversation is automatically transcribed. Full communication history with each patient.</p>
+                </div>
+                <div class="card">
+                    <div class="card-blur-effect">
+                        <div class="blob blob-2"></div>
+                        <div class="blob blob-3"></div>
+                    </div>
+                    <div class="card-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="#a06ff6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="18" y1="20" x2="18" y2="10"></line>
+                            <line x1="12" y1="20" x2="12" y2="4"></line>
+                            <line x1="6" y1="20" x2="6" y2="14"></line>
+                        </svg>
+                    </div>
+                    <h4>Call Analytics</h4>
+                    <p>Call statistics, most popular requests, peak hours, call-to-appointment conversion rate.</p>
+                </div>
+                <div class="card">
+                    <div class="card-blur-effect">
+                        <div class="blob blob-3"></div>
+                        <div class="blob blob-1"></div>
+                    </div>
+                    <div class="card-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="#a06ff6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                        </svg>
+                    </div>
+                    <h4>Conversation Scoring</h4>
+                    <p>Automatic quality scoring for each conversation. Identifies problematic dialogues for scenario improvement.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Comparison -->
+    <!-- What happens when a human works -->
+    <section id="comparison">
+        <div class="container">
+            <div class="solution-block human-block">
+                <div class="human-block-text">
+                    <h3 style="color: #fff; margin-bottom: 20px; text-align: center;">What happens when a human handles reception</h3>
+                    <ul class="human-list">
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="15" y1="9" x2="9" y2="15"></line><line x1="9" y1="9" x2="15" y2="15"></line></svg>
+                            Missed calls outside working hours and during lunch
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="15" y1="9" x2="9" y2="15"></line><line x1="9" y1="9" x2="15" y2="15"></line></svg>
+                            Patient waits on hold or hangs up
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="15" y1="9" x2="9" y2="15"></line><line x1="9" y1="9" x2="15" y2="15"></line></svg>
+                            Manual scheduling errors: wrong doctor, wrong time
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="15" y1="9" x2="9" y2="15"></line><line x1="9" y1="9" x2="15" y2="15"></line></svg>
+                            Forgotten reminders — patient doesn't show up
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="15" y1="9" x2="9" y2="15"></line><line x1="9" y1="9" x2="15" y2="15"></line></svg>
+                            Only 1 call at a time, the rest are lost
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="15" y1="9" x2="9" y2="15"></line><line x1="9" y1="9" x2="15" y2="15"></line></svg>
+                            Sick days, vacations, staff turnover
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="15" y1="9" x2="9" y2="15"></line><line x1="9" y1="9" x2="15" y2="15"></line></svg>
+                            No call analytics or inquiry tracking
+                        </li>
+                    </ul>
+                </div>
+                <div class="human-block-image">
+                    <img src="../../assets/human_role.jpg" alt="What happens when a human handles reception">
+                </div>
+            </div>
+
+            <!-- What happens when AI works -->
+            <div class="solution-block" style="margin-top: 40px;">
+                <h3 style="text-align: center; margin-bottom: 40px;">What happens when AI handles reception</h3>
+                <div class="ai-caps-grid">
+
+                    <!-- Channels -->
+                    <div class="ai-cap-card">
+                        <h4>Channels</h4>
+                        <ul class="ai-cap-list">
+                            <li>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18v-6a9 9 0 0 1 18 0v6"></path><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"></path></svg>
+                                Inbound and outbound calls
+                            </li>
+                            <li>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="#a06ff6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path><line x1="8" y1="10" x2="16" y2="10"></line><line x1="8" y1="14" x2="12" y2="14"></line></svg>
+                                <span class="gradient-text">Messenger communication</span>
+                            </li>
+                            <li>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="#a06ff6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg>
+                                <span class="gradient-text">SMS reminders and confirmations</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Advantages -->
+                    <div class="ai-cap-card">
+                        <h4>Advantages</h4>
+                        <ul class="ai-cap-list">
+                            <li><span class="gradient-text" style="font-size: 18px;">0 seconds response time</span></li>
+                            <li><span class="gradient-text" style="font-size: 18px;">Available 24/7/365</span></li>
+                            <li><span class="gradient-text" style="font-size: 18px;">0 sick days or vacations</span></li>
+                            <li><span class="gradient-text" style="font-size: 18px;">Unlimited simultaneous calls</span></li>
+                        </ul>
+                    </div>
+
+                    <!-- Features -->
+                    <div class="ai-cap-card">
+                        <h4>Capabilities</h4>
+                        <div class="ai-cap-features">
+                            <div>
+                                <strong>Book specific doctors</strong>
+                                <span>Sees each doctor's schedule in real time</span>
+                            </div>
+                            <div>
+                                <strong>Full analytics</strong>
+                                <span>Every call transcribed, inquiry reasons tracked, conversion measured</span>
+                            </div>
+                            <div>
+                                <strong>Human escalation</strong>
+                                <span>Instant transfer to a live administrator when needed</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How it works -->
+    <section id="how-it-works">
+        <div class="container">
+            <h2>How It Works</h2>
+            <div class="solution-block">
+                <div class="steps-flow">
+                    <div class="step-item">
+                        <div class="step-dot"></div>
+                        <div class="step-body">
+                            <h4>Clinic Process Audit</h4>
+                            <p>We analyze your calls, identify typical scenarios, and compile a knowledge base — services, prices, doctors, schedule.</p>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-dot"></div>
+                        <div class="step-body">
+                            <h4>Schedule Integration</h4>
+                            <p>We connect the AI to your scheduling system, CRM, or Google Calendar — the agent sees each doctor's open slots in real time.</p>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-dot"></div>
+                        <div class="step-body">
+                            <h4>Scenario & Voice Setup</h4>
+                            <p>We build dialogue scenarios: booking, rescheduling, cancellation, FAQ, escalation. We select or clone a voice for your brand.</p>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-dot"></div>
+                        <div class="step-body">
+                            <h4>Testing with Real Calls</h4>
+                            <p>We launch in test mode, calibrate responses, and verify all scenarios with real-world examples.</p>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-dot"></div>
+                        <div class="step-body">
+                            <h4>Launch & Continuous Improvement</h4>
+                            <p>Full launch with analytics, transcription, and ongoing quality improvement based on data.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing -->
+    <section id="pricing">
+        <div class="container">
+            <h2>Pricing</h2>
+            <div class="grid-2">
+                <!-- Tier 1 -->
+                <div class="card" style="text-align: left;">
+                    <div class="card-blur-effect">
+                        <div class="blob blob-1" style="top: -40px; right: -40px;"></div>
+                        <div class="blob blob-2" style="bottom: -60px; left: -40px;"></div>
+                    </div>
+                    <div style="margin-bottom: 24px;">
+                        <span style="font-size: 14px; text-transform: uppercase; letter-spacing: 2px; color: #a06ff6; font-weight: 700;">Voice Agent</span>
+                    </div>
+                    <div style="margin-bottom: 30px;">
+                        <span style="font-size: 48px; font-weight: 900; color: #fff;">10 000</span>
+                        <span style="font-size: 18px; color: #c4bbd3;"> UAH/mo</span>
+                    </div>
+                    <ul style="list-style: none; padding: 0; margin: 0 0 30px; display: flex; flex-direction: column; gap: 16px;">
+                        <li style="display: flex; align-items: center; gap: 12px; color: #c4bbd3; font-size: 15px;">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#a06ff6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            Inbound patient calls
+                        </li>
+                        <li style="display: flex; align-items: center; gap: 12px; color: #c4bbd3; font-size: 15px;">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#a06ff6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            Doctor scheduling
+                        </li>
+                        <li style="display: flex; align-items: center; gap: 12px; color: #c4bbd3; font-size: 15px;">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#a06ff6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            CRM integration
+                        </li>
+                        <li style="display: flex; align-items: center; gap: 12px; color: #c4bbd3; font-size: 15px;">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#a06ff6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            Clinic knowledge base
+                        </li>
+                        <li style="display: flex; align-items: center; gap: 12px; color: #c4bbd3; font-size: 15px;">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#a06ff6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            Voice selection
+                        </li>
+                        <li style="display: flex; align-items: center; gap: 12px; color: #c4bbd3; font-size: 15px;">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#a06ff6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            Call analytics
+                        </li>
+                    </ul>
+                    <div style="padding: 14px 20px; background: rgba(160, 111, 246, 0.08); border: 1px solid rgba(160, 111, 246, 0.2); border-radius: 12px; text-align: center; margin-bottom: 24px;">
+                        <span style="color: #a06ff6; font-size: 14px; font-weight: 600;">Initial setup & integration — free</span>
+                    </div>
+                    <a href="#" class="cta-button" style="display: block; text-align: center; font-size: 16px; padding: 16px 30px;">Get Started</a>
+                </div>
+
+                <!-- Tier 2 -->
+                <div class="card" style="text-align: left; border-color: rgba(160, 111, 246, 0.35);">
+                    <div class="card-blur-effect">
+                        <div class="blob blob-2" style="top: -40px; left: -40px;"></div>
+                        <div class="blob blob-3" style="bottom: -60px; right: -40px;"></div>
+                    </div>
+                    <div style="margin-bottom: 24px; display: flex; align-items: center; gap: 12px;">
+                        <span style="font-size: 14px; text-transform: uppercase; letter-spacing: 2px; color: #a06ff6; font-weight: 700;">Voice + Text</span>
+                        <span style="font-size: 11px; text-transform: uppercase; letter-spacing: 1px; color: #fff; font-weight: 700; background: linear-gradient(135deg, #a06ff6, #ec4899); padding: 4px 12px; border-radius: 20px;">Popular</span>
+                    </div>
+                    <div style="margin-bottom: 30px;">
+                        <span style="font-size: 48px; font-weight: 900; color: #fff;">20 000</span>
+                        <span style="font-size: 18px; color: #c4bbd3;"> UAH/mo</span>
+                    </div>
+                    <ul style="list-style: none; padding: 0; margin: 0 0 16px; display: flex; flex-direction: column; gap: 16px;">
+                        <li style="display: flex; align-items: center; gap: 12px; color: #c4bbd3; font-size: 15px;">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#a06ff6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            Everything from the previous plan
+                        </li>
+                    </ul>
+                    <div style="height: 1px; background: rgba(255, 255, 255, 0.08); margin: 8px 0 20px;"></div>
+                    <ul style="list-style: none; padding: 0; margin: 0 0 30px; display: flex; flex-direction: column; gap: 16px;">
+                        <li style="display: flex; align-items: center; gap: 12px; color: #fff; font-size: 15px; font-weight: 500;">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#a06ff6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            Text-based patient support
+                        </li>
+                        <li style="display: flex; align-items: center; gap: 12px; color: #fff; font-size: 15px; font-weight: 500;">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#a06ff6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            Telegram, Facebook, Instagram, WhatsApp, SMS
+                        </li>
+                        <li style="display: flex; align-items: center; gap: 12px; color: #fff; font-size: 15px; font-weight: 500;">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#a06ff6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            SMS booking confirmation
+                        </li>
+                        <li style="display: flex; align-items: center; gap: 12px; color: #fff; font-size: 15px; font-weight: 500;">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#a06ff6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            Pre-visit patient call
+                        </li>
+                    </ul>
+                    <div style="padding: 14px 20px; background: rgba(160, 111, 246, 0.08); border: 1px solid rgba(160, 111, 246, 0.2); border-radius: 12px; text-align: center; margin-bottom: 24px;">
+                        <span style="color: #a06ff6; font-size: 14px; font-weight: 600;">Initial setup & integration — free</span>
+                    </div>
+                    <a href="#" class="cta-button" style="display: block; text-align: center; font-size: 16px; padding: 16px 30px;">Get Started</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq">
+        <div class="container">
+            <h2>Frequently Asked Questions</h2>
+            <div class="solution-block">
+                <div class="faq-item">
+                    <h4>How does the AI receptionist schedule patients with a specific doctor?</h4>
+                    <p>The AI integrates with your scheduling system and sees each doctor's available slots in real time. The patient names the desired doctor or service, and the agent suggests the nearest available times and books the appointment.</p>
+                </div>
+                <div class="faq-item">
+                    <h4>Can the AI reschedule or cancel an appointment?</h4>
+                    <p>Yes. A patient can call and request to reschedule or cancel. The AI finds the current booking, offers alternative times for rescheduling, or confirms the cancellation and updates the schedule.</p>
+                </div>
+                <div class="faq-item">
+                    <h4>How do SMS reminders work?</h4>
+                    <p>After booking, the patient receives an SMS with visit details: date, time, doctor, clinic address. A reminder SMS is sent 2 hours before the appointment. The AI can also call the patient to confirm.</p>
+                </div>
+                <div class="faq-item">
+                    <h4>What happens when the AI can't answer a question?</h4>
+                    <p>If a question is outside the knowledge base or the patient asks to speak with a person, the AI instantly escalates the call to a live operator or clinic administrator.</p>
+                </div>
+                <div class="faq-item">
+                    <h4>Does the patient need to provide their phone number?</h4>
+                    <p>No. The AI automatically detects the number from the incoming call and finds the patient in the database. If it's a first-time caller, the AI only asks for their name.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Automate Patient Scheduling at Your Clinic</h2>
+            <p style="font-size: 18px; max-width: 500px; margin: 0 auto 30px; text-align: center;">
+                Free consultation and demo — we'll show you how the AI receptionist works with your specific schedule.
+            </p>
+            <a href="#" class="cta-button">Get a Demo</a>
+        </div>
+    </section>
+
+    <!-- Demo Booking Modal -->
+    <div id="demo-modal" class="modal-overlay" style="display: none;">
+        <div class="modal-content">
+            <button id="close-modal" class="close-button">&times;</button>
+            <h2 style="font-size: 24px; margin-bottom: 20px;">Contact Us</h2>
+            <a href="https://t.me/aceverse_roman" target="_blank" class="submit-button"
+                style="display: flex; align-items: center; justify-content: center; gap: 10px; text-decoration: none; margin-bottom: 20px; background: linear-gradient(90deg, #2AABEE 0%, #229ED9 100%);">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M20.665 3.717L2.977 10.539C1.77 11.024 1.776 11.696 2.755 11.996L7.295 13.413L17.797 6.786C18.293 6.484 18.746 6.65 18.375 6.98L9.873 14.639L9.879 14.636L9.566 19.336C10.024 19.336 10.226 19.126 10.482 18.879L12.66 16.761L17.189 20.106C18.024 20.566 18.625 20.329 18.832 19.333L21.802 5.345C22.106 3.922 21.325 3.277 20.665 3.717Z" fill="white"/>
+                </svg>
+                Message on Telegram
+            </a>
+
+            <div style="display: flex; align-items: center; gap: 15px; margin: 20px 0;">
+                <div style="flex: 1; height: 1px; background: rgba(255,255,255,0.1);"></div>
+                <span style="color: #c4bbd3; font-size: 14px;">or</span>
+                <div style="flex: 1; height: 1px; background: rgba(255,255,255,0.1);"></div>
+            </div>
+
+            <h3 style="color: #fff; font-size: 18px; margin-bottom: 20px; text-align: center; -webkit-text-fill-color: #fff;">Leave a Request</h3>
+
+            <form id="demo-form">
+                <div class="form-group">
+                    <label for="user_name">Your Name</label>
+                    <input type="text" id="user_name" name="name" autocomplete="name" required placeholder="John">
+                </div>
+                <div class="form-group">
+                    <label for="company_name">Company Name</label>
+                    <input type="text" id="company_name" name="organization" autocomplete="organization" placeholder="My Company">
+                </div>
+                <div class="form-group">
+                    <label for="user_phone">Phone</label>
+                    <input type="tel" id="user_phone" name="phone" autocomplete="tel" required placeholder="+380...">
+                </div>
+                <div class="form-group">
+                    <label for="user_email">Email</label>
+                    <input type="email" id="user_email" name="email" autocomplete="email" required placeholder="email@example.com">
+                </div>
+                <button type="submit" class="submit-button" style="margin-top: 10px; width: 100%;">Submit</button>
+            </form>
+        </div>
+    </div>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h3>Services</h3>
+                    <ul class="footer-links">
+                        <li><a href="/en/voice-ai-agent/">Voice AI Agent</a></li>
+                        <li><a href="/en/online-receptionist/">Online AI Receptionist</a></li>
+                        <li><a href="/en/receptionist-medical/">AI for Clinics & Dental Offices</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column info-column">
+                    <div class="footer-logo">
+                        <span class="logo">Aceverse</span>
+                    </div>
+                    <p class="footer-desc">
+                        AI solutions for business automation: AI agent integration, n8n workflows & CRM systems.
+                    </p>
+                    <div class="footer-contact">
+                        <a href="https://t.me/aceverse_roman" target="_blank" class="social-link">
+                            <img src="/assets/Telegram_logo.svg.png" alt="Telegram" class="social-icon">
+                            Telegram
+                        </a>
+                        <a href="https://www.linkedin.com/in/roman-poliashenko-222028242/" target="_blank" class="social-link">
+                            <img src="/assets/LinkedIn_icon.svg.png" alt="LinkedIn" class="social-icon">
+                            LinkedIn
+                        </a>
+                    </div>
+                    <div style="margin-bottom: 20px; font-weight: bold;">
+                        <a href="/ua/receptionist-medical/" style="color: #c4bbd3; text-decoration: none;">UA</a> | <span style="color: #a06ff6;">EN</span>
+                    </div>
+                    <p class="copyright">&copy; 2026 Aceverse. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="../../interactions.js"></script>
+    <script src="../../demo_popup.js" defer></script>
+    <script>
+    document.querySelectorAll('.video-wrapper').forEach(function(wrapper) {
+        var video = wrapper.querySelector('video');
+        var btn = wrapper.querySelector('.video-play-btn');
+        if (!video || !btn) return;
+
+        btn.addEventListener('click', function() {
+            video.muted = false;
+            video.play();
+        });
+
+        video.addEventListener('play', function() {
+            video.setAttribute('controls', '');
+            btn.classList.add('hidden');
+        });
+        video.addEventListener('pause', function() {
+            btn.classList.remove('hidden');
+        });
+        video.addEventListener('ended', function() {
+            btn.classList.remove('hidden');
+        });
+    });
+    </script>
+</body>
+
+</html>
