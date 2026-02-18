@@ -59,6 +59,30 @@
     }
     </script>
 
+    <meta name="robots" content="index, follow">
+
+    <!-- JSON-LD: BreadcrumbList -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Головна",
+          "item": "https://aceverse.co/ua/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "AI-рецепціоніст для клінік та стоматологій",
+          "item": "https://aceverse.co/ua/receptionist-medical/"
+        }
+      ]
+    }
+    </script>
+
     <!-- JSON-LD: FAQPage -->
     <script type="application/ld+json">
     {
@@ -393,7 +417,7 @@
             height: 40px;
         }
 
-        .card h4 {
+        .card h3 {
             font-size: 20px;
             margin: 20px 0 10px;
             background: linear-gradient(135deg, #ffffff 0%, #a06ff6 100%);
@@ -615,7 +639,7 @@
             min-width: 280px;
         }
 
-        .feature-block-text h4 {
+        .feature-block-text h3 {
             margin-bottom: 15px;
             color: #fff;
             font-size: 22px;
@@ -851,7 +875,7 @@
             inset: -5px;
         }
 
-        .step-body h4 {
+        .step-body h3 {
             color: #fff;
             font-size: 18px;
             margin-bottom: 6px;
@@ -885,7 +909,7 @@
             border-bottom: none;
         }
 
-        .faq-item h4 {
+        .faq-item h3 {
             font-size: 20px;
             margin-bottom: 12px;
             color: #fff;
@@ -895,6 +919,97 @@
             font-size: 16px;
             color: #c4bbd3;
             line-height: 1.8;
+        }
+
+        /* Demo Call Section */
+        .demo-call-section {
+            padding-top: 0;
+        }
+
+        .demo-call-block {
+            text-align: center;
+            padding: 60px 40px;
+            border-radius: 24px;
+            background: radial-gradient(ellipse at 50% 0%, rgba(160, 111, 246, 0.15) 0%, transparent 60%),
+                radial-gradient(ellipse at 80% 100%, rgba(168, 92, 92, 0.1) 0%, transparent 50%),
+                rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(10px);
+        }
+
+        .demo-call-icon {
+            width: 64px;
+            height: 64px;
+            margin: 0 auto 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: rgba(160, 111, 246, 0.15);
+            color: #a06ff6;
+        }
+
+        .demo-call-icon svg {
+            width: 28px;
+            height: 28px;
+        }
+
+        .demo-call-section h2 {
+            font-size: 28px;
+            margin-bottom: 12px;
+        }
+
+        .demo-call-subtitle {
+            color: #c4bbd3;
+            font-size: 16px;
+            margin-bottom: 32px;
+        }
+
+        .demo-call-phone {
+            display: inline-block;
+            text-decoration: none;
+            padding: 18px 48px;
+            border-radius: 24px;
+            background: radial-gradient(circle at 30% 140%, rgba(217, 126, 75, 0.3), transparent 37%),
+                radial-gradient(circle at 50% 310%, rgba(4, 0, 255, 0.15), transparent 78%),
+                linear-gradient(transparent, rgba(13, 10, 25, 0.37)),
+                radial-gradient(circle at 50% -30%, rgba(168, 92, 92, 0.2), transparent),
+                radial-gradient(90% 10% at 50% 0%, rgba(168, 92, 92, 0.05), transparent 90%);
+            backdrop-filter: blur(22px);
+            border: 1px solid rgba(255, 255, 255, 0.16);
+            box-shadow: inset 0 1px rgba(255, 142, 93, 0.4);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .demo-call-phone:hover {
+            box-shadow: inset 0 0 30px 5px rgba(160, 111, 246, 0.5),
+                0 0 20px rgba(160, 111, 246, 0.3);
+            border-color: rgba(160, 111, 246, 0.6);
+        }
+
+        .demo-call-phone-number {
+            font-size: 28px;
+            font-weight: 700;
+            color: #fff;
+            letter-spacing: 2px;
+        }
+
+        @media (max-width: 768px) {
+            .demo-call-block {
+                padding: 40px 24px;
+            }
+
+            .demo-call-section h2 {
+                font-size: 22px;
+            }
+
+            .demo-call-phone-number {
+                font-size: 22px;
+            }
+
+            .demo-call-phone {
+                padding: 16px 32px;
+            }
         }
 
         /* CTA Section (from main page) */
@@ -1260,16 +1375,18 @@
         </nav>
     </header>
 
+    <main>
+
     <!-- Hero -->
-    <section class="page-hero">
+    <section class="page-hero" aria-label="AI-рецепціоніст для клінік">
         <div class="container">
             <h1>AI-рецепціоніст для медичних клінік та стоматологій</h1>
-            <p>Голосовий AI-агент, який приймає дзвінки від пацієнтів, записує до потрібного лікаря, перевіряє вільні слоти, надсилає SMS-підтвердження та нагадує про візит. Працює 24/7 — без вихідних, перерв та пропущених дзвінків.</p>
+            <p>Голосовий AI-агент, який приймає дзвінки від пацієнтів, записує до потрібного лікаря, перевіряє вільні слоти, надсилає SMS-підтвердження та нагадує про візит. Працює 24/7 — без вихідних, перерв та пропущених дзвінків</p>
         </div>
     </section>
 
     <!-- Video Demo -->
-    <section style="padding-top: 0;">
+    <section style="padding-top: 0;" aria-label="Демонстрація роботи AI-рецепціоніста">
         <div class="container">
             <h2>Демонстрація роботи</h2>
             <div class="video-section-inner">
@@ -1288,7 +1405,7 @@
     </section>
 
     <!-- Inbound & Outbound blocks with images from main page -->
-    <section id="solutions">
+    <section id="solutions" aria-label="Можливості AI-рецепціоніста">
         <div class="container">
             <h2>Як працює AI-рецепціоніст</h2>
 
@@ -1296,12 +1413,12 @@
             <div class="feature-block">
                 <div class="feature-block-header">
                     <div class="feature-block-image">
-                        <img src="../../assets/Image_202601182105.jpeg" alt="AI-рецепціоніст"
+                        <img src="../../assets/Image_202601182105.jpeg" alt="AI-рецепціоніст приймає дзвінки від пацієнтів у медичній клініці" loading="lazy" width="600" height="400"
                             style="transform: scale(1.05); transform-origin: top center;">
                     </div>
                     <div class="feature-block-text">
-                        <h4>Вхідні дзвінки від пацієнтів</h4>
-                        <p>AI-рецепціоніст приймає дзвінки 24/7, відповідає на запитання з бази знань, записує пацієнтів до потрібного лікаря та обробляє скасування і перенесення.</p>
+                        <h3>Вхідні дзвінки від пацієнтів</h3>
+                        <p>AI-рецепціоніст приймає дзвінки 24/7, відповідає на запитання з бази знань, записує пацієнтів до потрібного лікаря та обробляє скасування і перенесення</p>
                     </div>
                 </div>
                 <div class="feature-pills">
@@ -1373,12 +1490,12 @@
             <div class="feature-block">
                 <div class="feature-block-header">
                     <div class="feature-block-image">
-                        <img src="../../assets/49648bd5-789f-4b9c-b803-5cb145eecc2a.jpeg" alt="Вихідні дзвінки"
+                        <img src="../../assets/49648bd5-789f-4b9c-b803-5cb145eecc2a.jpeg" alt="AI здійснює вихідні дзвінки та SMS-нагадування пацієнтам" loading="lazy" width="600" height="400"
                             style="transform: scale(1.3); transform-origin: top center;">
                     </div>
                     <div class="feature-block-text">
-                        <h4>SMS та вихідні дзвінки пацієнтам</h4>
-                        <p>AI самостійно надсилає SMS-підтвердження після запису, нагадує про візит за 2 години та може зателефонувати пацієнту для підтвердження.</p>
+                        <h3>SMS та вихідні дзвінки пацієнтам</h3>
+                        <p>AI самостійно надсилає SMS-підтвердження після запису, нагадує про візит за 2 години та може зателефонувати пацієнту для підтвердження</p>
                     </div>
                 </div>
                 <div class="feature-pills">
@@ -1416,8 +1533,26 @@
         </div>
     </section>
 
+    <!-- Demo CTA -->
+    <section class="demo-call-section" aria-label="Демо для стоматології">
+        <div class="container">
+            <div class="demo-call-block">
+                <div class="demo-call-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M15.05 5A5 5 0 0 1 19 8.95M15.05 1A9 9 0 0 1 23 8.94m-1 7.98v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                    </svg>
+                </div>
+                <h2>Перевірте як працює наше демо для стоматології</h2>
+                <p class="demo-call-subtitle">Зателефонуйте прямо зараз і поспілкуйтесь з нашим AI-рецепціоністом</p>
+                <a href="tel:0443002406" class="demo-call-phone">
+                    <span class="demo-call-phone-number">044 300 24 06</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
     <!-- Analytics -->
-    <section id="analytics">
+    <section id="analytics" aria-label="Аналітика та контроль якості">
         <div class="container">
             <h2>Аналітика та контроль якості</h2>
             <div class="grid-3">
@@ -1435,8 +1570,8 @@
                             <polyline points="10 9 9 9 8 9"></polyline>
                         </svg>
                     </div>
-                    <h4>Транскрибація</h4>
-                    <p>Кожна розмова автоматично перетворюється на текст. Повна історія комунікації з кожним пацієнтом.</p>
+                    <h3>Транскрибація</h3>
+                    <p>Кожна розмова автоматично перетворюється на текст. Повна історія комунікації з кожним пацієнтом</p>
                 </div>
                 <div class="card">
                     <div class="card-blur-effect">
@@ -1450,8 +1585,8 @@
                             <line x1="6" y1="20" x2="6" y2="14"></line>
                         </svg>
                     </div>
-                    <h4>Аналітика розмов</h4>
-                    <p>Статистика дзвінків, найпопулярніші запити, пікові години, конверсія з дзвінка в запис.</p>
+                    <h3>Аналітика розмов</h3>
+                    <p>Статистика дзвінків, найпопулярніші запити, пікові години, конверсія з дзвінка в запис</p>
                 </div>
                 <div class="card">
                     <div class="card-blur-effect">
@@ -1463,8 +1598,8 @@
                             <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
                         </svg>
                     </div>
-                    <h4>Оцінювання розмов</h4>
-                    <p>Автоматична оцінка якості кожної розмови. Виявлення проблемних діалогів для покращення сценаріїв.</p>
+                    <h3>Оцінювання розмов</h3>
+                    <p>Автоматична оцінка якості кожної розмови. Виявлення проблемних діалогів для покращення сценаріїв</p>
                 </div>
             </div>
         </div>
@@ -1472,7 +1607,7 @@
 
     <!-- Comparison -->
     <!-- What happens when a human works -->
-    <section id="comparison">
+    <section id="comparison" aria-label="Порівняння людини та AI">
         <div class="container">
             <div class="solution-block human-block">
                 <div class="human-block-text">
@@ -1509,7 +1644,7 @@
                     </ul>
                 </div>
                 <div class="human-block-image">
-                    <img src="../../assets/human_role.jpg" alt="Що відбувається коли працює людина">
+                    <img src="../../assets/human_role.jpg" alt="Проблеми ручного запису пацієнтів у клініці — пропущені дзвінки та помилки" loading="lazy" width="600" height="400">
                 </div>
             </div>
 
@@ -1573,7 +1708,7 @@
     </section>
 
     <!-- How it works -->
-    <section id="how-it-works">
+    <section id="how-it-works" aria-label="Етапи підключення AI-рецепціоніста">
         <div class="container">
             <h2>Як це працює</h2>
             <div class="solution-block">
@@ -1581,36 +1716,36 @@
                     <div class="step-item">
                         <div class="step-dot"></div>
                         <div class="step-body">
-                            <h4>Аудит процесів клініки</h4>
-                            <p>Аналізуємо ваші дзвінки, визначаємо типові сценарії, збираємо базу знань — послуги, ціни, лікарі, графік роботи.</p>
+                            <h3>Аудит процесів клініки</h3>
+                            <p>Аналізуємо ваші дзвінки, визначаємо типові сценарії, збираємо базу знань — послуги, ціни, лікарі, графік роботи</p>
                         </div>
                     </div>
                     <div class="step-item">
                         <div class="step-dot"></div>
                         <div class="step-body">
-                            <h4>Інтеграція з розкладом</h4>
-                            <p>Підключаємо AI до вашої системи розкладу, CRM або Google Calendar — агент бачить вільні слоти кожного лікаря в реальному часі.</p>
+                            <h3>Інтеграція з розкладом</h3>
+                            <p>Підключаємо AI до вашої системи розкладу, CRM або Google Calendar — агент бачить вільні слоти кожного лікаря в реальному часі</p>
                         </div>
                     </div>
                     <div class="step-item">
                         <div class="step-dot"></div>
                         <div class="step-body">
-                            <h4>Налаштування сценаріїв та голосу</h4>
-                            <p>Створюємо діалогові сценарії: запис, перенесення, скасування, FAQ, ескалація. Обираємо або клонуємо голос під ваш бренд.</p>
+                            <h3>Налаштування сценаріїв та голосу</h3>
+                            <p>Створюємо діалогові сценарії: запис, перенесення, скасування, FAQ, ескалація. Обираємо або клонуємо голос під ваш бренд</p>
                         </div>
                     </div>
                     <div class="step-item">
                         <div class="step-dot"></div>
                         <div class="step-body">
-                            <h4>Тестування з реальними дзвінками</h4>
-                            <p>Запускаємо в тестовому режимі, калібруємо відповіді, перевіряємо всі сценарії на реальних прикладах.</p>
+                            <h3>Тестування з реальними дзвінками</h3>
+                            <p>Запускаємо в тестовому режимі, калібруємо відповіді, перевіряємо всі сценарії на реальних прикладах</p>
                         </div>
                     </div>
                     <div class="step-item">
                         <div class="step-dot"></div>
                         <div class="step-body">
-                            <h4>Запуск та постійне покращення</h4>
-                            <p>Повноцінний запуск з аналітикою, транскрибацією та регулярним покращенням якості на основі даних.</p>
+                            <h3>Запуск та постійне покращення</h3>
+                            <p>Повноцінний запуск з аналітикою, транскрибацією та регулярним покращенням якості на основі даних</p>
                         </div>
                     </div>
                 </div>
@@ -1619,7 +1754,7 @@
     </section>
 
     <!-- Pricing -->
-    <section id="pricing">
+    <section id="pricing" aria-label="Тарифи AI-рецепціоніста">
         <div class="container">
             <h2>Тарифи</h2>
             <div class="grid-2">
@@ -1717,36 +1852,36 @@
     </section>
 
     <!-- FAQ -->
-    <section id="faq">
+    <section id="faq" aria-label="Часті запитання про AI-рецепціоніста">
         <div class="container">
             <h2>Часті запитання</h2>
             <div class="solution-block">
                 <div class="faq-item">
-                    <h4>Як AI-рецепціоніст записує пацієнтів до конкретного лікаря?</h4>
-                    <p>AI інтегрується з вашою системою розкладу та бачить вільні слоти кожного лікаря в реальному часі. Пацієнт називає бажаного лікаря або послугу — агент пропонує найближчі доступні часи та бронює візит.</p>
+                    <h3>Як AI-рецепціоніст записує пацієнтів до конкретного лікаря?</h3>
+                    <p>AI інтегрується з вашою системою розкладу та бачить вільні слоти кожного лікаря в реальному часі. Пацієнт називає бажаного лікаря або послугу — агент пропонує найближчі доступні часи та бронює візит</p>
                 </div>
                 <div class="faq-item">
-                    <h4>Чи може AI перенести або скасувати запис?</h4>
-                    <p>Так. Пацієнт може зателефонувати та попросити перенести або скасувати візит. AI знаходить поточний запис, пропонує альтернативні часи для перенесення або підтверджує скасування та оновлює розклад.</p>
+                    <h3>Чи може AI перенести або скасувати запис?</h3>
+                    <p>Так. Пацієнт може зателефонувати та попросити перенести або скасувати візит. AI знаходить поточний запис, пропонує альтернативні часи для перенесення або підтверджує скасування та оновлює розклад</p>
                 </div>
                 <div class="faq-item">
-                    <h4>Як працюють SMS-нагадування?</h4>
-                    <p>Після бронювання пацієнт отримує SMS з деталями візиту: дата, час, лікар, адреса. За 2 години до прийому надходить SMS-нагадування. Також AI може зателефонувати пацієнту для підтвердження.</p>
+                    <h3>Як працюють SMS-нагадування?</h3>
+                    <p>Після бронювання пацієнт отримує SMS з деталями візиту: дата, час, лікар, адреса. За 2 години до прийому надходить SMS-нагадування. Також AI може зателефонувати пацієнту для підтвердження</p>
                 </div>
                 <div class="faq-item">
-                    <h4>Що відбувається, коли AI не може відповісти на питання?</h4>
-                    <p>Якщо питання виходить за межі бази знань або пацієнт просить з'єднати з людиною — AI миттєво ескалює дзвінок на живого оператора або адміністратора клініки.</p>
+                    <h3>Що відбувається, коли AI не може відповісти на питання?</h3>
+                    <p>Якщо питання виходить за межі бази знань або пацієнт просить з'єднати з людиною — AI миттєво ескалює дзвінок на живого оператора або адміністратора клініки</p>
                 </div>
                 <div class="faq-item">
-                    <h4>Чи потрібно пацієнту називати свій номер телефону?</h4>
-                    <p>Ні. AI автоматично визначає номер із вхідного дзвінка та знаходить пацієнта в базі. Якщо пацієнт дзвонить вперше — AI запитає лише ім'я.</p>
+                    <h3>Чи потрібно пацієнту називати свій номер телефону?</h3>
+                    <p>Ні. AI автоматично визначає номер із вхідного дзвінка та знаходить пацієнта в базі. Якщо пацієнт дзвонить вперше — AI запитає лише ім'я</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- CTA -->
-    <section class="cta-section">
+    <section class="cta-section" aria-label="Замовити AI-рецепціоніста">
         <div class="container">
             <h2>Автоматизуйте запис пацієнтів у вашій клініці</h2>
             <p style="font-size: 18px; max-width: 500px; margin: 0 auto 30px; text-align: center;">
@@ -1756,12 +1891,14 @@
         </div>
     </section>
 
+    </main>
+
     <!-- Demo Booking Modal -->
     <div id="demo-modal" class="modal-overlay" style="display: none;">
         <div class="modal-content">
             <button id="close-modal" class="close-button">&times;</button>
             <h2 style="font-size: 24px; margin-bottom: 20px;">Звʼязатися з нами</h2>
-            <a href="https://t.me/aceverse_roman" target="_blank" class="submit-button"
+            <a href="https://t.me/aceverse_roman" target="_blank" rel="noopener noreferrer" class="submit-button"
                 style="display: flex; align-items: center; justify-content: center; gap: 10px; text-decoration: none; margin-bottom: 20px; background: linear-gradient(90deg, #2AABEE 0%, #229ED9 100%);">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M20.665 3.717L2.977 10.539C1.77 11.024 1.776 11.696 2.755 11.996L7.295 13.413L17.797 6.786C18.293 6.484 18.746 6.65 18.375 6.98L9.873 14.639L9.879 14.636L9.566 19.336C10.024 19.336 10.226 19.126 10.482 18.879L12.66 16.761L17.189 20.106C18.024 20.566 18.625 20.329 18.832 19.333L21.802 5.345C22.106 3.922 21.325 3.277 20.665 3.717Z" fill="white"/>
@@ -1818,12 +1955,12 @@
                         ШІ-рішення для автоматизації бізнесу: інтеграція AI-агентів, n8n-workflow та CRM-систем.
                     </p>
                     <div class="footer-contact">
-                        <a href="https://t.me/aceverse_roman" target="_blank" class="social-link">
-                            <img src="/assets/Telegram_logo.svg.png" alt="Telegram" class="social-icon">
+                        <a href="https://t.me/aceverse_roman" target="_blank" rel="noopener noreferrer" class="social-link">
+                            <img src="/assets/Telegram_logo.svg.png" alt="Aceverse у Telegram" class="social-icon" loading="lazy" width="24" height="24">
                             Telegram
                         </a>
-                        <a href="https://www.linkedin.com/in/roman-poliashenko-222028242/" target="_blank" class="social-link">
-                            <img src="/assets/LinkedIn_icon.svg.png" alt="LinkedIn" class="social-icon">
+                        <a href="https://www.linkedin.com/in/roman-poliashenko-222028242/" target="_blank" rel="noopener noreferrer" class="social-link">
+                            <img src="/assets/LinkedIn_icon.svg.png" alt="Aceverse у LinkedIn" class="social-icon" loading="lazy" width="24" height="24">
                             LinkedIn
                         </a>
                     </div>
