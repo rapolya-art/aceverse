@@ -970,23 +970,14 @@
         .demo-call-phone {
             display: inline-block;
             text-decoration: none;
-            padding: 18px 48px;
-            border-radius: 24px;
-            background: radial-gradient(circle at 30% 140%, rgba(217, 126, 75, 0.3), transparent 37%),
-                radial-gradient(circle at 50% 310%, rgba(4, 0, 255, 0.15), transparent 78%),
-                linear-gradient(transparent, rgba(13, 10, 25, 0.37)),
-                radial-gradient(circle at 50% -30%, rgba(168, 92, 92, 0.2), transparent),
-                radial-gradient(90% 10% at 50% 0%, rgba(168, 92, 92, 0.05), transparent 90%);
-            backdrop-filter: blur(22px);
-            border: 1px solid rgba(255, 255, 255, 0.16);
-            box-shadow: inset 0 1px rgba(255, 142, 93, 0.4);
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            padding: 10px 0;
+            background: none;
+            border: none;
+            transition: opacity 0.3s ease;
         }
 
         .demo-call-phone:hover {
-            box-shadow: inset 0 0 30px 5px rgba(160, 111, 246, 0.5),
-                0 0 20px rgba(160, 111, 246, 0.3);
-            border-color: rgba(160, 111, 246, 0.6);
+            opacity: 0.7;
         }
 
         .demo-call-phone-number {
@@ -1406,6 +1397,32 @@
         </div>
     </section>
 
+    <!-- Demo CTA -->
+    <section class="demo-call-section" aria-label="Демо для стоматології">
+        <div class="container">
+            <div class="demo-call-block">
+                <div class="demo-call-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M15.05 5A5 5 0 0 1 19 8.95M15.05 1A9 9 0 0 1 23 8.94m-1 7.98v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                    </svg>
+                </div>
+                <h2>Перевірте як працює наше демо для стоматології</h2>
+                <p class="demo-call-subtitle">Зателефонуйте прямо зараз і поспілкуйтесь з нашим AI-рецепціоністом</p>
+                <a href="tel:0443002406" class="demo-call-phone">
+                    <span class="demo-call-phone-number">044 300 24 06</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section style="padding: 60px 0; text-align: center;">
+        <div class="container" style="max-width: 700px;">
+            <h2 style="font-size: 32px; margin-bottom: 30px;">Отримати голосового ШІ рецепціоніста для бізнесу</h2>
+            <a href="#" class="cta-button" style="font-size: 18px; padding: 20px 50px;">Залишити заявку</a>
+        </div>
+    </section>
+
     <!-- Inbound & Outbound blocks with images from main page -->
     <section id="solutions" aria-label="Можливості AI-рецепціоніста">
         <div class="container">
@@ -1468,7 +1485,7 @@
                             <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
                             <circle cx="12" cy="7" r="4"></circle>
                         </svg>
-                        <span>Ескалація на живого оператора</span>
+                        <span>Перемикає на оператора</span>
                     </div>
                     <div class="oil-block feature-pill">
                         <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -1477,7 +1494,7 @@
                             <line x1="12" y1="19" x2="12" y2="23"></line>
                             <line x1="8" y1="23" x2="16" y2="23"></line>
                         </svg>
-                        <span>Вибір та клонування голосу під ваш бренд</span>
+                        <span>Говорить голосом вашого бренду</span>
                     </div>
                     <div class="oil-block feature-pill">
                         <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -1531,24 +1548,6 @@
                         <span>Зменшує неявки на 40-60%</span>
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Demo CTA -->
-    <section class="demo-call-section" aria-label="Демо для стоматології">
-        <div class="container">
-            <div class="demo-call-block">
-                <div class="demo-call-icon">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M15.05 5A5 5 0 0 1 19 8.95M15.05 1A9 9 0 0 1 23 8.94m-1 7.98v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
-                    </svg>
-                </div>
-                <h2>Перевірте як працює наше демо для стоматології</h2>
-                <p class="demo-call-subtitle">Зателефонуйте прямо зараз і поспілкуйтесь з нашим AI-рецепціоністом</p>
-                <a href="tel:0443002406" class="demo-call-phone">
-                    <span class="demo-call-phone-number">044 300 24 06</span>
-                </a>
             </div>
         </div>
     </section>
@@ -1613,98 +1612,216 @@
         <div class="container">
             <div class="solution-block human-block">
                 <div class="human-block-text">
-                    <h3 style="color: #fff; margin-bottom: 20px; text-align: center;">Що відбувається коли працює людина</h3>
-                    <ul class="human-list">
-                        <li>
-                            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="15" y1="9" x2="9" y2="15"></line><line x1="9" y1="9" x2="15" y2="15"></line></svg>
-                            Пропущені дзвінки у неробочий час та на обіді
-                        </li>
-                        <li>
-                            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="15" y1="9" x2="9" y2="15"></line><line x1="9" y1="9" x2="15" y2="15"></line></svg>
-                            Пацієнт чекає на лінії або кладе слухавку
-                        </li>
-                        <li>
-                            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="15" y1="9" x2="9" y2="15"></line><line x1="9" y1="9" x2="15" y2="15"></line></svg>
-                            Помилки при ручному записі: не той лікар, не той час
-                        </li>
-                        <li>
-                            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="15" y1="9" x2="9" y2="15"></line><line x1="9" y1="9" x2="15" y2="15"></line></svg>
-                            Забуті нагадування — пацієнт не приходить
-                        </li>
-                        <li>
-                            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="15" y1="9" x2="9" y2="15"></line><line x1="9" y1="9" x2="15" y2="15"></line></svg>
-                            Лише 1 дзвінок одночасно, решта — втрачені
-                        </li>
-                        <li>
-                            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="15" y1="9" x2="9" y2="15"></line><line x1="9" y1="9" x2="15" y2="15"></line></svg>
-                            Лікарняні, відпустки, плинність кадрів
-                        </li>
-                        <li>
-                            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="15" y1="9" x2="9" y2="15"></line><line x1="9" y1="9" x2="15" y2="15"></line></svg>
-                            Жодної аналітики дзвінків та причин звернень
-                        </li>
-                    </ul>
+                    <h3 style="margin-bottom: 20px; text-align: center; background: linear-gradient(135deg, #ffffff 0%, #a06ff6 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">Що відбувається коли працює людина</h3>
                 </div>
                 <div class="human-block-image">
-                    <img src="../../assets/human_role.jpg" alt="Проблеми ручного запису пацієнтів у клініці — пропущені дзвінки та помилки" loading="lazy" width="600" height="400">
+                    <div style="background: linear-gradient(135deg, #0e0918 0%, #120b20 50%, #0e0918 100%); border-radius: 20px; padding: 30px 10px; overflow: hidden;">
+                        <svg viewBox="0 0 1000 520" xmlns="http://www.w3.org/2000/svg" style="width: 100%; height: auto; display: block;" role="img" aria-label="Хаос ручної роботи рецепціоніста — пропущені дзвінки, помилки, вигоряння">
+                            <defs>
+                                <filter id="htGlow" x="-10%" y="-20%" width="120%" height="140%">
+                                    <feGaussianBlur in="SourceGraphic" stdDeviation="1.5" result="blur"/>
+                                    <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+                                </filter>
+                                <marker id="harw" markerWidth="14" markerHeight="12" refX="13" refY="6" orient="auto" markerUnits="userSpaceOnUse">
+                                    <path d="M0,0 L14,6 L0,12" fill="none" stroke="#b8a0d8" stroke-width="2" stroke-linejoin="round"/>
+                                </marker>
+                            </defs>
+
+                            <!-- ===== MAIN CHAOTIC ARROWS to labels ===== -->
+                            <!-- To Захворів — big sweeping arc up-left -->
+                            <path d="M480,240 C420,220 350,310 280,200 C252,152 225,132 195,115" fill="none" stroke="#b8a0d8" stroke-width="3" marker-end="url(#harw)"/>
+                            <!-- To Відпустка — curves up with a wobble -->
+                            <path d="M490,230 C520,175 490,115 460,88" fill="none" stroke="#b8a0d8" stroke-width="3" marker-end="url(#harw)"/>
+                            <!-- To Неуважність — sweeps far right then up -->
+                            <path d="M540,235 C600,210 650,130 720,100 C742,92 758,75 772,62" fill="none" stroke="#b8a0d8" stroke-width="3" marker-end="url(#harw)"/>
+                            <!-- To Забув — arcs left-up through tangle -->
+                            <path d="M465,245 C430,230 400,280 370,220 C355,190 348,180 340,172" fill="none" stroke="#b8a0d8" stroke-width="3" marker-end="url(#harw)"/>
+                            <!-- To Пропустив — arcs right-up -->
+                            <path d="M530,240 C570,218 600,185 618,162 C630,148 640,142 648,138" fill="none" stroke="#b8a0d8" stroke-width="3" marker-end="url(#harw)"/>
+                            <!-- To Збій — long sweep right with curve -->
+                            <path d="M550,260 C640,255 720,320 800,278 C832,262 860,250 888,242" fill="none" stroke="#b8a0d8" stroke-width="3" marker-end="url(#harw)"/>
+                            <!-- To Втома — big arc left -->
+                            <path d="M445,270 C360,280 260,340 205,318 C185,310 172,306 158,302" fill="none" stroke="#b8a0d8" stroke-width="3" marker-end="url(#harw)"/>
+                            <!-- To Завал — curves down-left -->
+                            <path d="M470,285 C448,308 405,328 375,338 C360,342 348,343 335,342" fill="none" stroke="#b8a0d8" stroke-width="3" marker-end="url(#harw)"/>
+                            <!-- To Форс-мажор — sweeps far down-right -->
+                            <path d="M535,285 C580,340 640,395 695,425 C725,440 752,448 775,452" fill="none" stroke="#b8a0d8" stroke-width="3" marker-end="url(#harw)"/>
+                            <!-- To Вигоряння — sweeps far down-left -->
+                            <path d="M460,290 C410,345 320,405 260,432 C235,444 210,452 185,458" fill="none" stroke="#b8a0d8" stroke-width="3" marker-end="url(#harw)"/>
+
+                            <!-- ===== DENSE CENTER CHAOS ===== -->
+                            <!-- Big loop 1 -->
+                            <path d="M420,190 C540,150 630,290 550,340 C470,390 360,280 420,210" fill="none" stroke="#b8a0d8" stroke-width="2.8" opacity="0.8" marker-end="url(#harw)"/>
+                            <!-- Big loop 2 (opposite direction) -->
+                            <path d="M560,200 C450,160 380,300 460,340 C540,380 630,260 560,220" fill="none" stroke="#b8a0d8" stroke-width="2.5" opacity="0.7"/>
+                            <!-- X crossing 1 -->
+                            <path d="M370,180 C500,350 500,160 650,340" fill="none" stroke="#b8a0d8" stroke-width="2.5" opacity="0.75" marker-end="url(#harw)"/>
+                            <!-- X crossing 2 -->
+                            <path d="M370,340 C500,160 500,350 650,180" fill="none" stroke="#b8a0d8" stroke-width="2.5" opacity="0.75" marker-end="url(#harw)"/>
+                            <!-- Figure-8 -->
+                            <path d="M430,230 C530,160 600,290 510,320 C420,350 480,190 570,260" fill="none" stroke="#b8a0d8" stroke-width="2.5" opacity="0.7" marker-end="url(#harw)"/>
+                            <!-- Tight circle -->
+                            <path d="M480,240 C520,210 550,260 520,290 C490,320 460,275 490,250" fill="none" stroke="#b8a0d8" stroke-width="2.2" opacity="0.65"/>
+                            <!-- Wide swoop crossing -->
+                            <path d="M360,300 C470,180 560,370 660,220" fill="none" stroke="#b8a0d8" stroke-width="2.5" opacity="0.7" marker-end="url(#harw)"/>
+                            <!-- Counter swoop -->
+                            <path d="M360,220 C470,370 560,180 660,310" fill="none" stroke="#b8a0d8" stroke-width="2.5" opacity="0.7"/>
+                            <!-- Inner spiral -->
+                            <path d="M490,250 C520,220 555,265 525,290 C495,315 470,270 500,255" fill="none" stroke="#b8a0d8" stroke-width="2" opacity="0.6"/>
+                            <!-- Another loop -->
+                            <path d="M450,215 C550,280 430,340 530,250" fill="none" stroke="#b8a0d8" stroke-width="2.2" opacity="0.6" marker-end="url(#harw)"/>
+                            <!-- Horizontal S-wave -->
+                            <path d="M380,260 C430,220 480,300 520,240 C560,180 600,300 640,250" fill="none" stroke="#b8a0d8" stroke-width="2.2" opacity="0.65"/>
+                            <!-- Vertical S-wave -->
+                            <path d="M500,180 C460,230 540,270 490,310 C440,350 550,290 510,340" fill="none" stroke="#b8a0d8" stroke-width="2.2" opacity="0.65"/>
+
+                            <!-- ===== TEXT LABELS ===== -->
+                            <g filter="url(#htGlow)">
+                                <text x="120" y="72" text-anchor="middle" fill="#c4bbd3" font-size="26" font-weight="700" font-family="'Comfortaa', sans-serif">Захворів</text>
+                                <text x="430" y="52" text-anchor="middle" fill="#c4bbd3" font-size="26" font-weight="700" font-family="'Comfortaa', sans-serif">Відпустка</text>
+                                <text x="820" y="35" text-anchor="middle" fill="#c4bbd3" font-size="26" font-weight="700" font-family="'Comfortaa', sans-serif">Неуважність</text>
+                                <text x="295" y="138" text-anchor="middle" fill="#c4bbd3" font-size="30" font-weight="700" font-family="'Comfortaa', sans-serif">Забув</text>
+                                <text x="670" y="110" text-anchor="middle" fill="#c4bbd3" font-size="30" font-weight="700" font-family="'Comfortaa', sans-serif">Пропустив</text>
+                                <text x="975" y="232" text-anchor="end" fill="#c4bbd3" font-size="26" font-weight="700" font-family="'Comfortaa', sans-serif">Збій</text>
+                                <text x="25" y="300" text-anchor="start" fill="#c4bbd3" font-size="26" font-weight="700" font-family="'Comfortaa', sans-serif">Втома</text>
+                                <text x="290" y="375" text-anchor="middle" fill="#c4bbd3" font-size="30" font-weight="700" font-family="'Comfortaa', sans-serif">Завал</text>
+                                <text x="820" y="483" text-anchor="middle" fill="#c4bbd3" font-size="28" font-weight="700" font-family="'Comfortaa', sans-serif">Форс-мажор</text>
+                                <text x="125" y="488" text-anchor="middle" fill="#c4bbd3" font-size="26" font-weight="700" font-family="'Comfortaa', sans-serif">Вигоряння</text>
+                            </g>
+                        </svg>
+                    </div>
                 </div>
             </div>
 
             <!-- What happens when AI works -->
             <div class="solution-block" style="margin-top: 40px;">
                 <h3 style="text-align: center; margin-bottom: 40px;">Що відбувається коли працює штучний інтелект</h3>
-                <div class="ai-caps-grid">
 
-                    <!-- Channels -->
-                    <div class="ai-cap-card">
-                        <h4>Канали</h4>
-                        <ul class="ai-cap-list">
-                            <li>
-                                <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18v-6a9 9 0 0 1 18 0v6"></path><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"></path></svg>
-                                Приймання та здійснення дзвінків
-                            </li>
-                            <li>
-                                <svg viewBox="0 0 24 24" fill="none" stroke="#a06ff6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path><line x1="8" y1="10" x2="16" y2="10"></line><line x1="8" y1="14" x2="12" y2="14"></line></svg>
-                                <span class="gradient-text">Спілкування в месенджерах</span>
-                            </li>
-                            <li>
-                                <svg viewBox="0 0 24 24" fill="none" stroke="#a06ff6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg>
-                                <span class="gradient-text">SMS-нагадування та підтвердження</span>
-                            </li>
-                        </ul>
-                    </div>
+                <!-- AI order diagram (SVG) -->
+                <div style="margin-bottom: 50px; background: linear-gradient(135deg, #0e0918 0%, #120b20 50%, #0e0918 100%); border-radius: 20px; padding: 50px 20px; overflow: hidden;">
+                    <svg viewBox="0 0 1000 560" xmlns="http://www.w3.org/2000/svg" style="width: 100%; height: auto; display: block;" role="img" aria-label="AI-рецепціоніст — структурована робота без помилок">
+                        <defs>
+                            <!-- Chip glow filter -->
+                            <filter id="chipGlow" x="-100%" y="-100%" width="300%" height="300%">
+                                <feGaussianBlur in="SourceGraphic" stdDeviation="18" result="blur"/>
+                                <feFlood flood-color="#a06ff6" flood-opacity="0.6" result="color"/>
+                                <feComposite in="color" in2="blur" operator="in" result="glow"/>
+                                <feMerge>
+                                    <feMergeNode in="glow"/>
+                                    <feMergeNode in="SourceGraphic"/>
+                                </feMerge>
+                            </filter>
+                            <!-- Text glow filter -->
+                            <filter id="tGlow" x="-10%" y="-20%" width="120%" height="140%">
+                                <feGaussianBlur in="SourceGraphic" stdDeviation="1.5" result="blur"/>
+                                <feMerge>
+                                    <feMergeNode in="blur"/>
+                                    <feMergeNode in="SourceGraphic"/>
+                                </feMerge>
+                            </filter>
+                            <!-- Arrow marker (auto-orient, filled) -->
+                            <marker id="arw" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto" markerUnits="userSpaceOnUse">
+                                <path d="M0,0.5 L9,4 L0,7.5" fill="none" stroke="#8a7aad" stroke-width="1.5" stroke-linejoin="round"/>
+                            </marker>
+                        </defs>
 
-                    <!-- Advantages -->
-                    <div class="ai-cap-card">
-                        <h4>Переваги</h4>
-                        <ul class="ai-cap-list">
-                            <li><span class="gradient-text" style="font-size: 18px;">0 секунд час відповіді</span></li>
-                            <li><span class="gradient-text" style="font-size: 18px;">Доступність 24/7/365</span></li>
-                            <li><span class="gradient-text" style="font-size: 18px;">0 днів відпустки та лікарняних</span></li>
-                            <li><span class="gradient-text" style="font-size: 18px;">Безлімітні одночасні дзвінки</span></li>
-                        </ul>
-                    </div>
+                        <!-- ===== ARROWS ===== -->
+                        <!-- Left: 1. Приймання та здійснення дзвінків -->
+                        <path d="M432,218 Q375,130 298,78" fill="none" stroke="#8a7aad" stroke-width="2.5" marker-end="url(#arw)"/>
+                        <!-- Left: 2. Спілкування в месенджерах -->
+                        <path d="M422,248 Q345,205 262,178" fill="none" stroke="#8a7aad" stroke-width="2.5" marker-end="url(#arw)"/>
+                        <!-- Left: 3. Нагадування та підтвердження -->
+                        <path d="M418,280 Q330,278 260,285" fill="none" stroke="#8a7aad" stroke-width="2.5" marker-end="url(#arw)"/>
+                        <!-- Left: 4. Бачить розклад у реальному часі -->
+                        <path d="M422,312 Q348,358 268,392" fill="none" stroke="#8a7aad" stroke-width="2.5" marker-end="url(#arw)"/>
+                        <!-- Left: 5. Повна аналітика -->
+                        <path d="M432,342 Q382,435 308,488" fill="none" stroke="#8a7aad" stroke-width="2.5" marker-end="url(#arw)"/>
 
-                    <!-- Features -->
-                    <div class="ai-cap-card">
-                        <h4>Можливості</h4>
-                        <div class="ai-cap-features">
-                            <div>
-                                <strong>Запис до конкретного лікаря</strong>
-                                <span>Бачить розклад кожного лікаря в реальному часі</span>
-                            </div>
-                            <div>
-                                <strong>Повна аналітика</strong>
-                                <span>Транскрибація кожного дзвінка, причини звернень, конверсія</span>
-                            </div>
-                            <div>
-                                <strong>Ескалація на людину</strong>
-                                <span>Миттєве переключення на адміністратора при потребі</span>
-                            </div>
-                        </div>
-                    </div>
+                        <!-- Right: 6. 0 секунд час відповіді -->
+                        <path d="M568,218 Q625,130 702,78" fill="none" stroke="#8a7aad" stroke-width="2.5" marker-end="url(#arw)"/>
+                        <!-- Right: 7. Доступність 24/7/365 -->
+                        <path d="M578,248 Q655,205 738,178" fill="none" stroke="#8a7aad" stroke-width="2.5" marker-end="url(#arw)"/>
+                        <!-- Right: 8. Необмежена кількість одночасних дзвінків -->
+                        <path d="M582,280 Q670,278 740,285" fill="none" stroke="#8a7aad" stroke-width="2.5" marker-end="url(#arw)"/>
+                        <!-- Right: 9. 0 відпусток та лікарняних -->
+                        <path d="M578,312 Q652,358 732,392" fill="none" stroke="#8a7aad" stroke-width="2.5" marker-end="url(#arw)"/>
+                        <!-- Right: 10. Ніколи не забуває -->
+                        <path d="M568,342 Q618,435 692,488" fill="none" stroke="#8a7aad" stroke-width="2.5" marker-end="url(#arw)"/>
 
+                        <!-- ===== AI CHIP (center) ===== -->
+                        <g transform="translate(500,280)" filter="url(#chipGlow)">
+                            <!-- Chip body -->
+                            <rect x="-48" y="-48" width="96" height="96" rx="14" fill="#150d24" stroke="#a06ff6" stroke-width="2.5"/>
+                            <!-- Pins - top (5) -->
+                            <line x1="-30" y1="-48" x2="-30" y2="-62" stroke="#a06ff6" stroke-width="2.5" stroke-linecap="round"/>
+                            <line x1="-15" y1="-48" x2="-15" y2="-62" stroke="#a06ff6" stroke-width="2.5" stroke-linecap="round"/>
+                            <line x1="0" y1="-48" x2="0" y2="-62" stroke="#a06ff6" stroke-width="2.5" stroke-linecap="round"/>
+                            <line x1="15" y1="-48" x2="15" y2="-62" stroke="#a06ff6" stroke-width="2.5" stroke-linecap="round"/>
+                            <line x1="30" y1="-48" x2="30" y2="-62" stroke="#a06ff6" stroke-width="2.5" stroke-linecap="round"/>
+                            <!-- Pins - bottom (5) -->
+                            <line x1="-30" y1="48" x2="-30" y2="62" stroke="#a06ff6" stroke-width="2.5" stroke-linecap="round"/>
+                            <line x1="-15" y1="48" x2="-15" y2="62" stroke="#a06ff6" stroke-width="2.5" stroke-linecap="round"/>
+                            <line x1="0" y1="48" x2="0" y2="62" stroke="#a06ff6" stroke-width="2.5" stroke-linecap="round"/>
+                            <line x1="15" y1="48" x2="15" y2="62" stroke="#a06ff6" stroke-width="2.5" stroke-linecap="round"/>
+                            <line x1="30" y1="48" x2="30" y2="62" stroke="#a06ff6" stroke-width="2.5" stroke-linecap="round"/>
+                            <!-- Pins - left (4) -->
+                            <line x1="-48" y1="-24" x2="-62" y2="-24" stroke="#a06ff6" stroke-width="2.5" stroke-linecap="round"/>
+                            <line x1="-48" y1="-8" x2="-62" y2="-8" stroke="#a06ff6" stroke-width="2.5" stroke-linecap="round"/>
+                            <line x1="-48" y1="8" x2="-62" y2="8" stroke="#a06ff6" stroke-width="2.5" stroke-linecap="round"/>
+                            <line x1="-48" y1="24" x2="-62" y2="24" stroke="#a06ff6" stroke-width="2.5" stroke-linecap="round"/>
+                            <!-- Pins - right (4) -->
+                            <line x1="48" y1="-24" x2="62" y2="-24" stroke="#a06ff6" stroke-width="2.5" stroke-linecap="round"/>
+                            <line x1="48" y1="-8" x2="62" y2="-8" stroke="#a06ff6" stroke-width="2.5" stroke-linecap="round"/>
+                            <line x1="48" y1="8" x2="62" y2="8" stroke="#a06ff6" stroke-width="2.5" stroke-linecap="round"/>
+                            <line x1="48" y1="24" x2="62" y2="24" stroke="#a06ff6" stroke-width="2.5" stroke-linecap="round"/>
+                            <!-- Brain icon -->
+                            <path d="M-18,-8 C-22,-16 -16,-26 -7,-24 C-3,-30 3,-30 7,-24 C16,-26 22,-16 18,-8 C24,-2 24,8 18,12 C20,18 12,24 5,20 C2,24 -2,24 -5,20 C-12,24 -20,18 -18,12 C-24,8 -24,-2 -18,-8 Z" fill="none" stroke="#a06ff6" stroke-width="2.2"/>
+                            <!-- Brain details -->
+                            <line x1="0" y1="-28" x2="0" y2="22" stroke="#a06ff6" stroke-width="1.2" opacity="0.5"/>
+                            <path d="M-16,-4 Q0,2 16,-4" fill="none" stroke="#a06ff6" stroke-width="1.2" opacity="0.5"/>
+                            <path d="M-14,8 Q0,14 14,8" fill="none" stroke="#a06ff6" stroke-width="1.2" opacity="0.5"/>
+                            <!-- AI text -->
+                            <text x="0" y="42" text-anchor="middle" fill="#a06ff6" font-size="18" font-weight="700" font-family="'Comfortaa', sans-serif" letter-spacing="3">AI</text>
+                        </g>
+
+
+                        <!-- ===== TEXT LABELS ===== -->
+                        <!-- Left side -->
+                        <g filter="url(#tGlow)">
+                            <text x="280" y="55" text-anchor="end" fill="#c4bbd3" font-size="21" font-weight="700" font-family="'Comfortaa', sans-serif">Приймання та</text>
+                            <text x="280" y="82" text-anchor="end" fill="#c4bbd3" font-size="21" font-weight="700" font-family="'Comfortaa', sans-serif">здійснення дзвінків</text>
+
+                            <text x="242" y="162" text-anchor="end" fill="#c4bbd3" font-size="21" font-weight="700" font-family="'Comfortaa', sans-serif">Спілкування в</text>
+                            <text x="242" y="189" text-anchor="end" fill="#c4bbd3" font-size="21" font-weight="700" font-family="'Comfortaa', sans-serif">месенджерах</text>
+
+                            <text x="240" y="272" text-anchor="end" fill="#c4bbd3" font-size="21" font-weight="700" font-family="'Comfortaa', sans-serif">Нагадування та</text>
+                            <text x="240" y="299" text-anchor="end" fill="#c4bbd3" font-size="21" font-weight="700" font-family="'Comfortaa', sans-serif">підтвердження</text>
+
+                            <text x="248" y="380" text-anchor="end" fill="#c4bbd3" font-size="21" font-weight="700" font-family="'Comfortaa', sans-serif">Бачить розклад</text>
+                            <text x="248" y="407" text-anchor="end" fill="#c4bbd3" font-size="21" font-weight="700" font-family="'Comfortaa', sans-serif">у реальному часі</text>
+
+                            <text x="290" y="492" text-anchor="end" fill="#c4bbd3" font-size="21" font-weight="700" font-family="'Comfortaa', sans-serif">Повна аналітика</text>
+                        </g>
+
+                        <!-- Right side -->
+                        <g filter="url(#tGlow)">
+                            <text x="720" y="55" text-anchor="start" fill="#c4bbd3" font-size="21" font-weight="700" font-family="'Comfortaa', sans-serif">0 секунд</text>
+                            <text x="720" y="82" text-anchor="start" fill="#c4bbd3" font-size="21" font-weight="700" font-family="'Comfortaa', sans-serif">час відповіді</text>
+
+                            <text x="758" y="162" text-anchor="start" fill="#c4bbd3" font-size="21" font-weight="700" font-family="'Comfortaa', sans-serif">Доступність</text>
+                            <text x="758" y="189" text-anchor="start" fill="#c4bbd3" font-size="21" font-weight="700" font-family="'Comfortaa', sans-serif">24/7/365</text>
+
+                            <text x="760" y="272" text-anchor="start" fill="#c4bbd3" font-size="21" font-weight="700" font-family="'Comfortaa', sans-serif">Необмежена кількість</text>
+                            <text x="760" y="299" text-anchor="start" fill="#c4bbd3" font-size="21" font-weight="700" font-family="'Comfortaa', sans-serif">одночасних дзвінків</text>
+
+                            <text x="752" y="380" text-anchor="start" fill="#c4bbd3" font-size="21" font-weight="700" font-family="'Comfortaa', sans-serif">0 відпусток</text>
+                            <text x="752" y="407" text-anchor="start" fill="#c4bbd3" font-size="21" font-weight="700" font-family="'Comfortaa', sans-serif">та лікарняних</text>
+
+                            <text x="710" y="492" text-anchor="start" fill="#c4bbd3" font-size="21" font-weight="700" font-family="'Comfortaa', sans-serif">Ніколи не забуває</text>
+                        </g>
+                    </svg>
                 </div>
+
             </div>
         </div>
     </section>
@@ -1761,7 +1878,7 @@
             <h2>Тарифи</h2>
             <div class="grid-2">
                 <!-- Tier 1 -->
-                <div class="card" style="text-align: left;">
+                <div class="card" style="text-align: left; display: flex; flex-direction: column;">
                     <div class="card-blur-effect">
                         <div class="blob blob-1" style="top: -40px; right: -40px;"></div>
                         <div class="blob blob-2" style="bottom: -60px; left: -40px;"></div>
@@ -1799,14 +1916,16 @@
                             Аналітика дзвінків
                         </li>
                     </ul>
-                    <div style="padding: 14px 20px; background: rgba(160, 111, 246, 0.08); border: 1px solid rgba(160, 111, 246, 0.2); border-radius: 12px; text-align: center; margin-bottom: 24px;">
-                        <span style="color: #a06ff6; font-size: 14px; font-weight: 600;">Первинна настройка та інтеграція — безкоштовно</span>
+                    <div style="margin-top: auto;">
+                        <div style="text-align: center; margin-bottom: 16px;">
+                            <span style="color: #4ade80; font-size: 16px; font-weight: 700;">Безкоштовно перші 14 днів</span>
+                        </div>
+                        <a href="#" class="cta-button" style="display: block; text-align: center; font-size: 16px; padding: 16px 30px;">Залишити заявку</a>
                     </div>
-                    <a href="#" class="cta-button" style="display: block; text-align: center; font-size: 16px; padding: 16px 30px;">Залишити заявку</a>
                 </div>
 
                 <!-- Tier 2 -->
-                <div class="card" style="text-align: left; border-color: rgba(160, 111, 246, 0.35);">
+                <div class="card" style="text-align: left; border-color: rgba(160, 111, 246, 0.35); display: flex; flex-direction: column;">
                     <div class="card-blur-effect">
                         <div class="blob blob-2" style="top: -40px; left: -40px;"></div>
                         <div class="blob blob-3" style="bottom: -60px; right: -40px;"></div>
@@ -1844,10 +1963,12 @@
                             Телефонування пацієнту перед візитом
                         </li>
                     </ul>
-                    <div style="padding: 14px 20px; background: rgba(160, 111, 246, 0.08); border: 1px solid rgba(160, 111, 246, 0.2); border-radius: 12px; text-align: center; margin-bottom: 24px;">
-                        <span style="color: #a06ff6; font-size: 14px; font-weight: 600;">Первинна настройка та інтеграція — безкоштовно</span>
+                    <div style="margin-top: auto;">
+                        <div style="text-align: center; margin-bottom: 16px;">
+                            <span style="color: #4ade80; font-size: 16px; font-weight: 700;">Безкоштовно перші 14 днів</span>
+                        </div>
+                        <a href="#" class="cta-button" style="display: block; text-align: center; font-size: 16px; padding: 16px 30px;">Залишити заявку</a>
                     </div>
-                    <a href="#" class="cta-button" style="display: block; text-align: center; font-size: 16px; padding: 16px 30px;">Залишити заявку</a>
                 </div>
             </div>
         </div>
