@@ -13,8 +13,10 @@
             return;
         }
 
-        // Open modal
+        // Open modal (skip buttons that link to external URLs)
         demoButtons.forEach(button => {
+            const href = button.getAttribute('href');
+            if (href && href.startsWith('http')) return;
             button.addEventListener('click', (e) => {
                 e.preventDefault();
                 console.log('Demo button clicked');
