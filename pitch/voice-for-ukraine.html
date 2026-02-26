@@ -303,7 +303,7 @@ h3 {
 }
 
 /* ── Language switching ── */
-[data-en], [data-ua] { display: none; }
+body [data-en], body [data-ua] { display: none; }
 [data-lang="en"] [data-en] { display: block; }
 [data-lang="ua"] [data-ua] { display: block; }
 [data-lang="en"] [data-en].inline { display: inline; }
@@ -316,6 +316,8 @@ h3 {
 [data-lang="ua"] [data-ua].ib { display: inline-block; }
 [data-lang="en"] [data-en].table-row-group { display: table-row-group; }
 [data-lang="ua"] [data-ua].table-row-group { display: table-row-group; }
+[data-lang="en"] [data-en].tc { display: table-cell; }
+[data-lang="ua"] [data-ua].tc { display: table-cell; }
 
 /* ══════════════════════════════════════
    SLIDE 1 — TITLE
@@ -984,28 +986,26 @@ h3 {
       <div class="slide-label">Context</div>
       <h2>Voice AI is <span class="gradient-text">transforming</span> how services are delivered worldwide</h2>
       <ul class="bullet-list">
-        <li>Global AI voice agent market projected to reach <strong>$4.5B by 2028</strong></li>
-        <li>Companies like smith.ai, goodcall.com, heyrosie.com charge <strong>$50-999/mo</strong> for AI receptionists</li>
-        <li>US, EU, UK municipal councils already use AI voice bots for citizen services</li>
-        <li>New York State's <strong>ElliQ</strong> AI companion reduced loneliness by <strong>95%</strong> among 800+ elderly users</li>
-        <li>UK government AI chatbot <strong>"Amelia"</strong> processed <strong>1M+</strong> citizen inquiries in first year</li>
+        <li>The global AI voice agent market is growing rapidly</li>
+        <li>Companies worldwide already offer AI receptionists as a service</li>
+        <li>Municipalities in the US, EU, and UK use AI voice bots for citizen services</li>
+        <li>AI companions for the elderly are being piloted across multiple countries</li>
       </ul>
       <div class="callout" style="margin-top:32px;">
-        Ukraine already partnered with ElevenLabs for voice AI in Diia. But Diia requires a smartphone. <strong>7 million elderly Ukrainians cannot use digital services.</strong>
+        A voice interface — via phone or app — remains the most natural way for people to interact. <strong>It can serve the needs of most social groups.</strong>
       </div>
     </div>
     <div data-ua>
       <div class="slide-label">Контекст</div>
       <h2>Голосовий ШІ <span class="gradient-text">трансформує</span> надання послуг у всьому світі</h2>
       <ul class="bullet-list">
-        <li>Глобальний ринок голосових ШІ агентів прогнозується на рівні <strong>$4.5B до 2028 року</strong></li>
-        <li>Компанії, такі як smith.ai, goodcall.com, heyrosie.com стягують <strong>$50-999/міс</strong> за ШІ рецепціоністів</li>
-        <li>Муніципалітети США, ЄС, Великобританії вже використовують голосових ШІ ботів для обслуговування громадян</li>
-        <li>ШІ компаньйон <strong>ElliQ</strong> штату Нью-Йорк знизив самотність на <strong>95%</strong> серед 800+ літніх користувачів</li>
-        <li>ШІ чатбот уряду Великобританії <strong>"Amelia"</strong> обробив <strong>1M+</strong> запитів громадян за перший рік</li>
+        <li>Глобальний ринок голосових ШІ агентів стрімко зростає</li>
+        <li>Компанії по всьому світу вже пропонують ШІ рецепціоністів як сервіс</li>
+        <li>Муніципалітети США, ЄС та Великобританії використовують голосових ШІ ботів для обслуговування громадян</li>
+        <li>ШІ компаньйони для літніх людей пілотуються в багатьох країнах</li>
       </ul>
       <div class="callout" style="margin-top:32px;">
-        Україна вже співпрацює з ElevenLabs для голосового ШІ в Дії. Але Дія потребує смартфон. <strong>7 мільйонів літніх українців не можуть користуватись цифровими сервісами.</strong>
+        Голосовий інтерфейс — через телефон або додаток — залишається найбільш натуральним способом взаємодії для людини. <strong>Він може задовольнити потреби більшості соціальних груп.</strong>
       </div>
     </div>
   </div>
@@ -1016,76 +1016,76 @@ h3 {
   <div class="slide-inner">
     <div data-en>
       <div class="slide-label">Social Impact</div>
-      <h2><span class="gradient-text">15 million</span> Ukrainians need support — voice is the only universal interface</h2>
+      <h2><span class="gradient-text">Millions</span> of Ukrainians need support — voice is the only universal interface</h2>
     </div>
     <div data-ua>
       <div class="slide-label">Соціальний вплив</div>
-      <h2><span class="gradient-text">15 мільйонів</span> українців потребують підтримки — голос є єдиним універсальним інтерфейсом</h2>
+      <h2><span class="gradient-text">Мільйони</span> українців потребують підтримки — голос є єдиним універсальним інтерфейсом</h2>
     </div>
 
-    <div class="niche-grid" data-en>
+    <div class="niche-grid grid" data-en>
       <div class="niche-card">
         <div class="niche-icon">&#x1F9E0;</div>
         <h4>Mental Health</h4>
-        <p>15M people need psychological support. Crisis hotline answers only 60% of calls (40% unanswered). 3.5M veterans need support.</p>
+        <p>Many Ukrainians need psychological support. Crisis hotlines cannot handle the volume of incoming calls. Veterans need accessible support channels.</p>
       </div>
       <div class="niche-card">
         <div class="niche-icon">&#x1F474;</div>
         <h4>Elderly</h4>
-        <p>7M people aged 65+. Most lack smartphones or digital skills. 65% of villages without broadband internet.</p>
+        <p>Large elderly population lacking smartphones or digital skills. Many rural areas without broadband internet.</p>
       </div>
       <div class="niche-card">
         <div class="niche-icon">&#x267F;</div>
         <h4>Disability</h4>
-        <p>3-6M people with disabilities. Single hotline 15-39. Significant accessibility barriers in digital services.</p>
+        <p>People with disabilities face significant accessibility barriers in digital services.</p>
       </div>
       <div class="niche-card">
         <div class="niche-icon">&#x1F3E0;</div>
         <h4>IDPs</h4>
-        <p>3.5M internally displaced persons. Constant need for info about benefits, registration, available services.</p>
+        <p>Internally displaced persons have constant need for info about benefits, registration, available services.</p>
       </div>
       <div class="niche-card">
         <div class="niche-icon">&#x1F30D;</div>
         <h4>Diaspora</h4>
-        <p>6.2M Ukrainian refugees in Europe. Need consular and government services in Ukrainian 24/7 across all time zones.</p>
+        <p>Ukrainian refugees in Europe need consular and government services in Ukrainian 24/7 across all time zones. Also need help navigating local programs — housing assistance, language courses, job placement, healthcare enrollment, children's schooling in host countries.</p>
       </div>
       <div class="niche-card">
         <div class="niche-icon">&#x1F3E5;</div>
         <h4>Healthcare</h4>
-        <p>Only 4.7% use telemedicine. 45% of rural health facilities are offline. Massive gap in medical accessibility.</p>
+        <p>Low telemedicine adoption. Many rural health facilities are offline. Massive gap in medical accessibility.</p>
       </div>
     </div>
 
-    <div class="niche-grid" data-ua>
+    <div class="niche-grid grid" data-ua>
       <div class="niche-card">
         <div class="niche-icon">&#x1F9E0;</div>
         <h4>Психічне здоров'я</h4>
-        <p>15M людей потребують психологічної підтримки. Кризова гаряча лінія відповідає лише на 60% дзвінків (40% без відповіді). 3.5M ветеранів потребують підтримки.</p>
+        <p>Багато українців потребують психологічної підтримки. Кризові гарячі лінії не справляються з обсягом дзвінків. Ветерани потребують доступних каналів підтримки.</p>
       </div>
       <div class="niche-card">
         <div class="niche-icon">&#x1F474;</div>
         <h4>Літні люди</h4>
-        <p>7M людей віком 65+. Більшість не мають смартфонів чи цифрових навичок. 65% сіл без широкосмугового інтернету.</p>
+        <p>Велика кількість літніх людей без смартфонів чи цифрових навичок. Багато сільських районів без широкосмугового інтернету.</p>
       </div>
       <div class="niche-card">
         <div class="niche-icon">&#x267F;</div>
         <h4>Люди з інвалідністю</h4>
-        <p>3-6M людей з інвалідністю. Єдина гаряча лінія 15-39. Суттєві бар'єри доступності в цифрових сервісах.</p>
+        <p>Люди з інвалідністю стикаються зі значними бар'єрами доступності в цифрових сервісах.</p>
       </div>
       <div class="niche-card">
         <div class="niche-icon">&#x1F3E0;</div>
         <h4>ВПО</h4>
-        <p>3.5M внутрішньо переміщених осіб. Постійна потреба в інформації про виплати, реєстрацію, доступні послуги.</p>
+        <p>Внутрішньо переміщені особи мають постійну потребу в інформації про виплати, реєстрацію, доступні послуги.</p>
       </div>
       <div class="niche-card">
         <div class="niche-icon">&#x1F30D;</div>
         <h4>Діаспора</h4>
-        <p>6.2M українських біженців у Європі. Потребують консульських та державних послуг українською 24/7 у всіх часових поясах.</p>
+        <p>Українські біженці в Європі потребують консульських та державних послуг українською 24/7 у всіх часових поясах. Також потребують допомоги з орієнтацією в місцевих програмах — житлова допомога, мовні курси, працевлаштування, медичне страхування, шкільна освіта дітей у країнах перебування.</p>
       </div>
       <div class="niche-card">
         <div class="niche-icon">&#x1F3E5;</div>
         <h4>Охорона здоров'я</h4>
-        <p>Лише 4.7% використовують телемедицину. 45% сільських медичних закладів офлайн. Величезний розрив у доступності медицини.</p>
+        <p>Низький рівень прийняття телемедицини. Багато сільських медичних закладів офлайн. Величезний розрив у доступності медицини.</p>
       </div>
     </div>
   </div>
@@ -1103,7 +1103,7 @@ h3 {
       <h2>Голосові ШІ <span class="gradient-text">контакт-центри</span> для соціальних послуг</h2>
     </div>
 
-    <div class="niche-grid" data-en>
+    <div class="niche-grid grid" data-en>
       <div class="niche-card">
         <div class="niche-icon">&#x1F9E0;</div>
         <h4>Psychological first response</h4>
@@ -1136,7 +1136,7 @@ h3 {
       </div>
     </div>
 
-    <div class="niche-grid" data-ua>
+    <div class="niche-grid grid" data-ua>
       <div class="niche-card">
         <div class="niche-icon">&#x1F9E0;</div>
         <h4>Психологічна перша допомога</h4>
@@ -1246,12 +1246,12 @@ h3 {
       <table class="comp-table">
         <thead>
           <tr>
-            <th data-en>Model</th><th data-ua>Модель</th>
-            <th data-en>Developer</th><th data-ua>Розробник</th>
+            <th data-en class="tc">Model</th><th data-ua class="tc">Модель</th>
+            <th data-en class="tc">Developer</th><th data-ua class="tc">Розробник</th>
             <th>Streaming</th>
-            <th data-en>Ukrainian</th><th data-ua>Українська</th>
+            <th data-en class="tc">Ukrainian</th><th data-ua class="tc">Українська</th>
             <th>WER (uk)</th>
-            <th data-en>Notes</th><th data-ua>Примітки</th>
+            <th data-en class="tc">Notes</th><th data-ua class="tc">Примітки</th>
           </tr>
         </thead>
         <tbody data-en class="table-row-group">
@@ -1261,7 +1261,7 @@ h3 {
           <tr><td>Whisper large-v3</td><td>OpenAI</td><td style="color:#ef4444;">&#10007;</td><td style="color:#22c55e;">&#10003;</td><td>20.5%</td><td>Not streaming, regressed from v2 (13.7%)</td></tr>
           <tr><td>Whisper large-v2</td><td>OpenAI</td><td style="color:#ef4444;">&#10007;</td><td style="color:#22c55e;">&#10003;</td><td>13.7%</td><td>Clean audio only, batch</td></tr>
           <tr><td>NVIDIA FastConformer</td><td>NVIDIA</td><td style="color:#ef4444;">&#10007;</td><td style="color:#22c55e;">&#10003;</td><td class="highlight">5.7%</td><td>Best score but trained on only 153h of clean data</td></tr>
-          <tr><td>Parakeet TDT 0.6B v3</td><td>NVIDIA</td><td style="color:#22c55e;">&#10003;</td><td style="color:#22c55e;">&#10003;</td><td>?</td><td>Only open streaming model with Ukrainian (since Aug 2025)</td></tr>
+          <tr><td>Parakeet TDT 0.6B v3</td><td>NVIDIA</td><td style="color:#22c55e;">&#10003;</td><td style="color:#22c55e;">&#10003;</td><td class="highlight">5.1-6.8%</td><td>Only open streaming model with Ukrainian (since Aug 2025)</td></tr>
         </tbody>
         <tbody data-ua class="table-row-group">
           <tr><td>Voxtral Realtime 4B</td><td>Mistral</td><td style="color:#22c55e;">&#10003;</td><td style="color:#ef4444;">&#10007;</td><td>--</td><td>13 мов вкл. російську, НЕ українську</td></tr>
@@ -1270,7 +1270,7 @@ h3 {
           <tr><td>Whisper large-v3</td><td>OpenAI</td><td style="color:#ef4444;">&#10007;</td><td style="color:#22c55e;">&#10003;</td><td>20.5%</td><td>Не стрімінг, регрес з v2 (13.7%)</td></tr>
           <tr><td>Whisper large-v2</td><td>OpenAI</td><td style="color:#ef4444;">&#10007;</td><td style="color:#22c55e;">&#10003;</td><td>13.7%</td><td>Лише чисте аудіо, batch</td></tr>
           <tr><td>NVIDIA FastConformer</td><td>NVIDIA</td><td style="color:#ef4444;">&#10007;</td><td style="color:#22c55e;">&#10003;</td><td class="highlight">5.7%</td><td>Найкращий показник, але навчена лише на 153г чистих даних</td></tr>
-          <tr><td>Parakeet TDT 0.6B v3</td><td>NVIDIA</td><td style="color:#22c55e;">&#10003;</td><td style="color:#22c55e;">&#10003;</td><td>?</td><td>Єдина відкрита стрімінг модель з українською (з серпня 2025)</td></tr>
+          <tr><td>Parakeet TDT 0.6B v3</td><td>NVIDIA</td><td style="color:#22c55e;">&#10003;</td><td style="color:#22c55e;">&#10003;</td><td class="highlight">5.1-6.8%</td><td>Єдина відкрита стрімінг модель з українською (з серпня 2025)</td></tr>
         </tbody>
       </table>
     </div>
@@ -1298,11 +1298,11 @@ h3 {
       <table class="comp-table">
         <thead>
           <tr>
-            <th data-en>Model</th><th data-ua>Модель</th>
-            <th data-en>Developer</th><th data-ua>Розробник</th>
-            <th data-en>Languages</th><th data-ua>Мови</th>
-            <th data-en>Ukrainian</th><th data-ua>Українська</th>
-            <th data-en>License</th><th data-ua>Ліцензія</th>
+            <th data-en class="tc">Model</th><th data-ua class="tc">Модель</th>
+            <th data-en class="tc">Developer</th><th data-ua class="tc">Розробник</th>
+            <th data-en class="tc">Languages</th><th data-ua class="tc">Мови</th>
+            <th data-en class="tc">Ukrainian</th><th data-ua class="tc">Українська</th>
+            <th data-en class="tc">License</th><th data-ua class="tc">Ліцензія</th>
           </tr>
         </thead>
         <tbody data-en class="table-row-group">
@@ -1475,7 +1475,7 @@ h3 {
       <h2>Що потрібно для створення української <span class="gradient-text">голосової ШІ інфраструктури</span></h2>
     </div>
 
-    <div class="req-list" data-en>
+    <div class="req-list flex" data-en>
       <div class="req-item">
         <div class="req-icon">&#x1F3A4;</div>
         <div class="req-text">
@@ -1487,7 +1487,7 @@ h3 {
         <div class="req-icon">&#x1F4BB;</div>
         <div class="req-text">
           <h4>GPU compute for fine-tuning</h4>
-          <p>NVIDIA A100/H100, ~$10-15K compute budget</p>
+          <p>NVIDIA A100/H100 for training and evaluation</p>
         </div>
       </div>
       <div class="req-item">
@@ -1520,7 +1520,7 @@ h3 {
       </div>
     </div>
 
-    <div class="req-list" data-ua>
+    <div class="req-list flex" data-ua>
       <div class="req-item">
         <div class="req-icon">&#x1F3A4;</div>
         <div class="req-text">
@@ -1532,7 +1532,7 @@ h3 {
         <div class="req-icon">&#x1F4BB;</div>
         <div class="req-text">
           <h4>GPU для файнтюнінгу</h4>
-          <p>NVIDIA A100/H100, бюджет ~$10-15K на обчислення</p>
+          <p>NVIDIA A100/H100 для тренування та оцінки</p>
         </div>
       </div>
       <div class="req-item">
@@ -1579,57 +1579,49 @@ h3 {
       <h2>Створено <span class="gradient-text">Aceverse</span> -- командою з реальним продакшн досвідом</h2>
     </div>
 
-    <div class="feature-grid" data-en>
+    <div class="feature-grid grid" data-en>
       <div class="feature-item">
         <div class="feature-icon">&#x2705;</div>
-        <div class="feature-text"><h4>Working production system</h4><p>AI voice receptionist handling real calls 24/7 for dental clinics in Kyiv</p></div>
+        <div class="feature-text"><h4>Working production system</h4><p>Full self-hosted orchestration and agent management. Database interaction and management. Call pipeline management. Call analytics, summaries, conversation recordings, trigger conversation detection.</p></div>
       </div>
       <div class="feature-item">
         <div class="feature-icon">&#x1F6E0;&#xFE0F;</div>
-        <div class="feature-text"><h4>Full tech stack</h4><p>LiveKit WebRTC, Soniox STT, Llama 4 LLM (Groq), ElevenLabs TTS, &lt;2s latency</p></div>
+        <div class="feature-text"><h4>Full tech stack</h4><p>WebRTC + STT + LLM + TTS = self-hosted</p></div>
       </div>
       <div class="feature-item">
         <div class="feature-icon">&#x1F4CA;</div>
-        <div class="feature-text"><h4>Dashboard</h4><p>Next.js management panel: transcriptions, recordings, analytics, agent configuration</p></div>
-      </div>
-      <div class="feature-item">
-        <div class="feature-icon">&#x1F3D7;&#xFE0F;</div>
-        <div class="feature-text"><h4>Open-source framework</h4><p>Docker-based infrastructure ready for deployment and adaptation</p></div>
+        <div class="feature-text"><h4>Dashboard</h4><p>Next.js management panel: transcriptions, recordings, analytics, agent configuration, pipelines.</p></div>
       </div>
       <div class="feature-item">
         <div class="feature-icon">&#x1F517;</div>
-        <div class="feature-text"><h4>Integrations</h4><p>Google Calendar, SIP telephony, SMS, call forwarding, knowledge base (RAG)</p></div>
+        <div class="feature-text"><h4>Integrations</h4><p>Google Calendar, SIP telephony, SMS, call forwarding, knowledge base (RAG) + CRM, Zendesk and more</p></div>
       </div>
       <div class="feature-item">
         <div class="feature-icon">&#x1F4C8;</div>
-        <div class="feature-text"><h4>Commercial validation</h4><p>Paying clients, real call data, proven product-market fit in healthcare</p></div>
+        <div class="feature-text"><h4>Commercial validation</h4><p>Paying clients, real call data, proven product-market fit</p></div>
       </div>
     </div>
 
-    <div class="feature-grid" data-ua>
+    <div class="feature-grid grid" data-ua>
       <div class="feature-item">
         <div class="feature-icon">&#x2705;</div>
-        <div class="feature-text"><h4>Працююча продакшн система</h4><p>ШІ голосовий рецепціоніст обробляє реальні дзвінки 24/7 для стоматологій у Києві</p></div>
+        <div class="feature-text"><h4>Працююча продакшн система</h4><p>Повноцінна self-hosted оркестрація та управління агентами. Взаємодія та управління базою даних. Управління пайплайнами викликів. Аналітика дзвінків, саммарі, записи розмов, детекція тригерних розмов.</p></div>
       </div>
       <div class="feature-item">
         <div class="feature-icon">&#x1F6E0;&#xFE0F;</div>
-        <div class="feature-text"><h4>Повний технологічний стек</h4><p>LiveKit WebRTC, Soniox STT, Llama 4 LLM (Groq), ElevenLabs TTS, &lt;2с затримка</p></div>
+        <div class="feature-text"><h4>Повний технологічний стек</h4><p>WebRTC + STT + LLM + TTS = self-hosted</p></div>
       </div>
       <div class="feature-item">
         <div class="feature-icon">&#x1F4CA;</div>
-        <div class="feature-text"><h4>Дашборд</h4><p>Next.js панель управління: транскрипції, записи розмов, аналітика, конфігурація агента</p></div>
-      </div>
-      <div class="feature-item">
-        <div class="feature-icon">&#x1F3D7;&#xFE0F;</div>
-        <div class="feature-text"><h4>Open-source фреймворк</h4><p>Docker-based інфраструктура готова до розгортання та адаптації</p></div>
+        <div class="feature-text"><h4>Дашборд</h4><p>Next.js панель управління: транскрипції, записи розмов, аналітика, конфігурація агента, пайплайни.</p></div>
       </div>
       <div class="feature-item">
         <div class="feature-icon">&#x1F517;</div>
-        <div class="feature-text"><h4>Інтеграції</h4><p>Google Calendar, SIP телефонія, SMS, переадресація дзвінків, база знань (RAG)</p></div>
+        <div class="feature-text"><h4>Інтеграції</h4><p>Google Calendar, SIP телефонія, SMS, переадресація дзвінків, база знань (RAG) + CRM, Zendesk та багато іншого</p></div>
       </div>
       <div class="feature-item">
         <div class="feature-icon">&#x1F4C8;</div>
-        <div class="feature-text"><h4>Комерційна валідація</h4><p>Платні клієнти, реальні дані дзвінків, доведений product-market fit у медицині</p></div>
+        <div class="feature-text"><h4>Комерційна валідація</h4><p>Платні клієнти, реальні дані дзвінків, доведений product-market fit</p></div>
       </div>
     </div>
 
@@ -1652,12 +1644,12 @@ h3 {
     <div class="ask-grid">
       <div class="ask-card">
         <div class="ask-icon">&#x1F4B0;</div>
-        <div data-en><h3>Funding ($50-80K)</h3></div><div data-ua><h3>Фінансування ($50-80K)</h3></div>
+        <div data-en><h3>Funding</h3></div><div data-ua><h3>Фінансування</h3></div>
         <ul class="ask-list">
-          <li data-en>GPU compute for fine-tuning ($15K)</li><li data-ua>GPU для файнтюнінгу ($15K)</li>
-          <li data-en>Annotator team for dataset (10-15 people, $25K)</li><li data-ua>Команда анотаторів для датасету (10-15 людей, $25K)</li>
-          <li data-en>ML engineer salaries ($15K)</li><li data-ua>Зарплати ML інженерів ($15K)</li>
-          <li data-en>Infrastructure & testing ($5K)</li><li data-ua>Інфраструктура та тестування ($5K)</li>
+          <li data-en>GPU compute for fine-tuning</li><li data-ua>GPU для файнтюнінгу</li>
+          <li data-en>Annotator team for dataset creation</li><li data-ua>Команда анотаторів для створення датасету</li>
+          <li data-en>ML engineer salaries</li><li data-ua>Зарплати ML інженерів</li>
+          <li data-en>Infrastructure & testing</li><li data-ua>Інфраструктура та тестування</li>
         </ul>
       </div>
       <div class="ask-card">
