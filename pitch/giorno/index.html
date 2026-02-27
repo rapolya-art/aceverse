@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Підтримка — Giorno Dentale × Aceverse</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;600;700&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{--accent:#6b21ef;--accent-soft:rgba(107,33,239,0.07);--text:#1a1035;--muted:#8a82a0;--border:rgba(139,92,246,0.12);--surface:#fff;--bg:#f6f4fb;--teal:#0d9488;--amber:#d97706;--radius:16px}
+html{font-size:16px}
+body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);line-height:1.6;-webkit-font-smoothing:antialiased}
+body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellipse 80% 60% at 20% 10%,rgba(160,111,246,0.05) 0%,transparent 60%),radial-gradient(ellipse 60% 80% at 85% 80%,rgba(255,142,93,0.03) 0%,transparent 60%);pointer-events:none}
+.p{max-width:780px;margin:0 auto;padding:48px 28px 60px;position:relative;z-index:1}
+h1,h2,h3{font-family:'Comfortaa',cursive;line-height:1.25}
+h1{font-size:2rem;font-weight:700;text-align:center;margin-bottom:10px}
+h2{font-size:1.15rem;font-weight:700;margin-bottom:16px}
+.gr{background:linear-gradient(135deg,#a06ff6,#6b21ef);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.wr{background:linear-gradient(135deg,#ff8e5d,#f97316);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+
+/* Header */
+.hdr{text-align:center;margin-bottom:40px;padding-top:32px}
+.logos{display:flex;align-items:center;justify-content:center;gap:14px;margin-bottom:28px}
+.pill{display:inline-flex;align-items:center;gap:8px;padding:8px 16px;border-radius:32px;font-family:'Comfortaa',cursive;font-weight:700;font-size:13px;border:1px solid var(--border);background:var(--surface);box-shadow:0 1px 3px rgba(0,0,0,0.04)}
+.ico{width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:12px;font-weight:700}
+.ico.g{background:linear-gradient(135deg,#0d9488,#14b8a6)}
+.ico.a{background:linear-gradient(135deg,#a06ff6,#6b21ef)}
+.x{font-size:13px;color:var(--muted)}
+.sub{font-size:14px;color:#5c5478;text-align:center;max-width:480px;margin:0 auto}
+.date{text-align:center;margin-top:14px;font-size:11px;color:var(--muted);font-family:'Comfortaa',cursive;letter-spacing:1px}
+
+/* Divider */
+.d{height:1px;background:var(--border);margin:36px 0}
+
+/* Section label */
+.sl{font-family:'Comfortaa',cursive;font-size:9px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:#a06ff6;margin-bottom:12px;display:flex;align-items:center;gap:8px}
+.sl::before{content:'';width:16px;height:2px;background:linear-gradient(135deg,#a06ff6,#6b21ef);border-radius:2px}
+
+/* Agent row */
+.agents{display:flex;flex-direction:column;gap:12px}
+.ag{display:flex;align-items:flex-start;gap:14px;padding:16px 20px;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius)}
+.ag-ico{width:40px;height:40px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0}
+.ag-ico.s{background:var(--accent-soft)}
+.ag-ico.r{background:rgba(217,119,6,0.08)}
+.ag-ico.c{background:rgba(13,148,136,0.08)}
+.ag-t{font-family:'Comfortaa',cursive;font-size:13px;font-weight:700;margin-bottom:3px}
+.ag-d{font-size:12.5px;color:#5c5478;line-height:1.5}
+
+/* Features grid */
+.fg{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:4px}
+.fi{display:flex;align-items:flex-start;gap:12px;padding:14px 18px;background:var(--surface);border:1px solid var(--border);border-radius:12px}
+.fi-ico{font-size:16px;flex-shrink:0;margin-top:1px}
+.fi-t{font-family:'Comfortaa',cursive;font-size:11.5px;font-weight:700;margin-bottom:2px}
+.fi-d{font-size:11.5px;color:#5c5478;line-height:1.45}
+
+/* Channels */
+.ch{display:flex;gap:10px;margin-bottom:12px}
+.ci{flex:1;text-align:center;padding:14px 8px;background:var(--surface);border:1px solid var(--border);border-radius:12px}
+.ci-ico{width:36px;height:36px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:16px;margin:0 auto 6px;color:#fff}
+.ci-ico.tg{background:linear-gradient(135deg,#2AABEE,#229ED9)}
+.ci-ico.wa{background:linear-gradient(135deg,#25D366,#128C7E)}
+.ci-ico.wb{background:linear-gradient(135deg,#a06ff6,#6b21ef)}
+.ci-ico.em{background:linear-gradient(135deg,#f97316,#ea580c)}
+.ci-n{font-family:'Comfortaa',cursive;font-size:11px;font-weight:600}
+
+/* Demo CTA */
+.cta{text-align:center;padding:28px;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);margin-top:8px}
+.cta p{font-size:13px;color:#5c5478;margin-bottom:16px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 28px;background:linear-gradient(135deg,#a06ff6,#6b21ef);color:#fff;border:none;border-radius:40px;font-family:'Comfortaa',cursive;font-size:13px;font-weight:600;cursor:pointer;text-decoration:none;box-shadow:0 4px 16px rgba(107,33,239,0.25);transition:transform .2s,box-shadow .2s}
+.btn:hover{transform:translateY(-1px);box-shadow:0 6px 24px rgba(107,33,239,0.35)}
+
+/* Footer */
+.ft{text-align:center;padding-top:28px;font-size:12px;color:var(--muted)}
+.ft a{color:var(--accent);text-decoration:none}
+
+@media print{
+  body{background:#fff}
+  body::before{display:none}
+  .p{padding:24px 16px;max-width:100%}
+  .ag,.fi,.ci,.cta{box-shadow:none;border:1px solid #e5e5e5;break-inside:avoid}
+  .btn{box-shadow:none}
+  .d{margin:24px 0}
+}
+@media(max-width:600px){
+  .fg{grid-template-columns:1fr}
+  .ch{flex-wrap:wrap}
+  .ch .ci{flex:1 1 45%}
+  .logos{flex-direction:column;gap:8px}
+}
+</style>
+</head>
+<body>
+
+<div class="p">
+
+  <div class="hdr">
+    <div class="logos">
+      <div class="pill"><div class="ico g">G</div>Giorno Dentale</div>
+      <span class="x">×</span>
+      <div class="pill"><div class="ico a">A</div>Aceverse</div>
+    </div>
+    <h1>AI Підтримка для <span class="gr">Giorno Dentale</span></h1>
+    <p class="sub">Голосові дзвінки, текстові чати та контроль якості операторів — автоматизовані штучним інтелектом</p>
+    <div class="date">Лютий 2026</div>
+  </div>
+
+  <div class="d"></div>
+
+  <!-- 3 Agents -->
+  <div class="sl">Що реалізуємо</div>
+  <h2>Три AI агенти для клініки</h2>
+
+  <div class="agents">
+    <div class="ag">
+      <div class="ag-ico s">🎧</div>
+      <div>
+        <div class="ag-t">Агент підтримки</div>
+        <div class="ag-d">Відповідає на вхідні дзвінки та чати 24/7. Консультує щодо послуг і цін, записує на прийом, перевіряє вільні слоти. Передає оператору за потреби.</div>
+      </div>
+    </div>
+    <div class="ag">
+      <div class="ag-ico r">🔔</div>
+      <div>
+        <div class="ag-t">Агент нагадувань</div>
+        <div class="ag-d">Автоматично дзвонить пацієнтам за день до візиту. Підтверджує або переносить запис. Зменшує no-show.</div>
+      </div>
+    </div>
+    <div class="ag">
+      <div class="ag-ico c">📞</div>
+      <div>
+        <div class="ag-t">Агент активації бази</div>
+        <div class="ag-d">Обдзвонює пацієнтів, які не відвідували клініку 6+ місяців. Пропонує профілактичний огляд або акцію, записує на прийом.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="d"></div>
+
+  <!-- Channels -->
+  <div class="sl">Канали</div>
+  <h2>Єдине вікно для всіх звернень</h2>
+
+  <div class="ch">
+    <div class="ci"><div class="ci-ico tg">✈</div><div class="ci-n">Telegram</div></div>
+    <div class="ci"><div class="ci-ico wa">◉</div><div class="ci-n">WhatsApp</div></div>
+    <div class="ci"><div class="ci-ico wb">●</div><div class="ci-n">Сайт</div></div>
+    <div class="ci"><div class="ci-ico em">✉</div><div class="ci-n">Email</div></div>
+  </div>
+
+  <!-- Features -->
+  <div class="fg">
+    <div class="fi">
+      <div class="fi-ico">🔄</div>
+      <div>
+        <div class="fi-t">Human-in-the-loop</div>
+        <div class="fi-d">Оператор бачить всі розмови і може перехопити в один клік</div>
+      </div>
+    </div>
+    <div class="fi">
+      <div class="fi-ico">🎯</div>
+      <div>
+        <div class="fi-t">AI контроль якості</div>
+        <div class="fi-d">Автооцінка кожної розмови: привітання, конверсія, заперечення</div>
+      </div>
+    </div>
+    <div class="fi">
+      <div class="fi-ico">📊</div>
+      <div>
+        <div class="fi-t">Аналітика операторів</div>
+        <div class="fi-d">Рейтинг, зауваження AI, рекомендації для покращення</div>
+      </div>
+    </div>
+    <div class="fi">
+      <div class="fi-ico">🎧</div>
+      <div>
+        <div class="fi-t">Записи та транскрипції</div>
+        <div class="fi-d">Всі розмови записуються та транскрибуються автоматично</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="d"></div>
+
+  <!-- Demo CTA -->
+  <div class="cta">
+    <p>Інтерактивне демо панелі управління клінікою</p>
+    <a href="demo.html" class="btn" target="_blank">Переглянути демо →</a>
+  </div>
+
+  <div class="d"></div>
+
+  <div class="ft">
+    <strong style="font-family:'Comfortaa',cursive"><span class="gr">Aceverse</span></strong> — AI рішення для бізнесу<br>
+    <a href="https://aceverse.co">aceverse.co</a>
+  </div>
+
+</div>
+</body>
+</html>
