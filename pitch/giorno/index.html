@@ -17,15 +17,12 @@ h1,h2,h3{font-family:'Comfortaa',cursive;line-height:1.25}
 h1{font-size:2rem;font-weight:700;text-align:center;margin-bottom:10px}
 h2{font-size:1.15rem;font-weight:700;margin-bottom:16px}
 .gr{background:linear-gradient(135deg,#a06ff6,#6b21ef);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-.wr{background:linear-gradient(135deg,#ff8e5d,#f97316);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
 
 /* Header */
 .hdr{text-align:center;margin-bottom:40px;padding-top:32px}
-.logos{display:flex;align-items:center;justify-content:center;gap:14px;margin-bottom:28px}
-.pill{display:inline-flex;align-items:center;gap:8px;padding:8px 16px;border-radius:32px;font-family:'Comfortaa',cursive;font-weight:700;font-size:13px;border:1px solid var(--border);background:var(--surface);box-shadow:0 1px 3px rgba(0,0,0,0.04)}
-.ico{width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:12px;font-weight:700}
-.ico.g{background:linear-gradient(135deg,#0d9488,#14b8a6)}
-.ico.a{background:linear-gradient(135deg,#a06ff6,#6b21ef)}
+.logos{display:flex;align-items:center;justify-content:center;gap:18px;margin-bottom:28px}
+.logo-img{height:36px;object-fit:contain}
+.logo-img.ace{height:40px}
 .x{font-size:13px;color:var(--muted)}
 .sub{font-size:14px;color:#5c5478;text-align:center;max-width:480px;margin:0 auto}
 .date{text-align:center;margin-top:14px;font-size:11px;color:var(--muted);font-family:'Comfortaa',cursive;letter-spacing:1px}
@@ -55,20 +52,33 @@ h2{font-size:1.15rem;font-weight:700;margin-bottom:16px}
 .fi-d{font-size:11.5px;color:#5c5478;line-height:1.45}
 
 /* Channels */
-.ch{display:flex;gap:10px;margin-bottom:12px}
-.ci{flex:1;text-align:center;padding:14px 8px;background:var(--surface);border:1px solid var(--border);border-radius:12px}
-.ci-ico{width:36px;height:36px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:16px;margin:0 auto 6px;color:#fff}
-.ci-ico.tg{background:linear-gradient(135deg,#2AABEE,#229ED9)}
-.ci-ico.wa{background:linear-gradient(135deg,#25D366,#128C7E)}
-.ci-ico.wb{background:linear-gradient(135deg,#a06ff6,#6b21ef)}
-.ci-ico.em{background:linear-gradient(135deg,#f97316,#ea580c)}
+.ch{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:12px}
+.ci{flex:1;min-width:0;text-align:center;padding:14px 8px;background:var(--surface);border:1px solid var(--border);border-radius:12px}
 .ci-n{font-family:'Comfortaa',cursive;font-size:11px;font-weight:600}
+
+/* Pricing */
+.pricing{display:flex;flex-direction:column;gap:12px}
+.price-card{padding:20px 24px;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius)}
+.price-card.main{border:2px solid rgba(107,33,239,0.25);background:linear-gradient(135deg,rgba(160,111,246,0.04),rgba(107,33,239,0.02))}
+.price-row{display:flex;align-items:baseline;justify-content:space-between;gap:16px}
+.price-label{font-size:13px;color:#5c5478;flex:1}
+.price-val{font-family:'Comfortaa',cursive;font-weight:700;font-size:1.3rem;white-space:nowrap}
+.price-val.accent{color:var(--accent)}
+.price-note{font-size:11.5px;color:var(--muted);margin-top:6px;line-height:1.45}
 
 /* Demo CTA */
 .cta{text-align:center;padding:28px;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);margin-top:8px}
 .cta p{font-size:13px;color:#5c5478;margin-bottom:16px}
 .btn{display:inline-flex;align-items:center;gap:8px;padding:12px 28px;background:linear-gradient(135deg,#a06ff6,#6b21ef);color:#fff;border:none;border-radius:40px;font-family:'Comfortaa',cursive;font-size:13px;font-weight:600;cursor:pointer;text-decoration:none;box-shadow:0 4px 16px rgba(107,33,239,0.25);transition:transform .2s,box-shadow .2s}
 .btn:hover{transform:translateY(-1px);box-shadow:0 6px 24px rgba(107,33,239,0.35)}
+
+/* Contact */
+.contact{display:flex;align-items:center;gap:16px;padding:20px 24px;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius)}
+.contact-avatar{width:48px;height:48px;border-radius:50%;object-fit:cover;border:2px solid var(--border)}
+.contact-name{font-family:'Comfortaa',cursive;font-size:13px;font-weight:700;margin-bottom:2px}
+.contact-handle{font-size:12.5px;color:var(--accent);text-decoration:none}
+.contact-handle:hover{text-decoration:underline}
+.contact-role{font-size:11.5px;color:var(--muted);margin-top:2px}
 
 /* Footer */
 .ft{text-align:center;padding-top:28px;font-size:12px;color:var(--muted)}
@@ -78,15 +88,17 @@ h2{font-size:1.15rem;font-weight:700;margin-bottom:16px}
   body{background:#fff}
   body::before{display:none}
   .p{padding:24px 16px;max-width:100%}
-  .ag,.fi,.ci,.cta{box-shadow:none;border:1px solid #e5e5e5;break-inside:avoid}
+  .ag,.fi,.ci,.cta,.price-card,.contact{box-shadow:none;border:1px solid #e5e5e5;break-inside:avoid}
+  .price-card.main{border:2px solid #c4b5fd}
+  .gr{-webkit-text-fill-color:#6b21ef;background:none;color:#6b21ef}
   .btn{box-shadow:none}
   .d{margin:24px 0}
 }
 @media(max-width:600px){
   .fg{grid-template-columns:1fr}
-  .ch{flex-wrap:wrap}
-  .ch .ci{flex:1 1 45%}
+  .ch .ci{flex:1 1 30%}
   .logos{flex-direction:column;gap:8px}
+  .price-row{flex-direction:column;gap:4px}
 }
 </style>
 </head>
@@ -96,9 +108,9 @@ h2{font-size:1.15rem;font-weight:700;margin-bottom:16px}
 
   <div class="hdr">
     <div class="logos">
-      <div class="pill"><div class="ico g">G</div>Giorno Dentale</div>
-      <span class="x">×</span>
-      <div class="pill"><div class="ico a">A</div>Aceverse</div>
+      <img src="image.png" alt="Giorno Dentale" class="logo-img">
+      <span class="x">&times;</span>
+      <img src="../../assets/logo_particles.png" alt="Aceverse" class="logo-img ace">
     </div>
     <h1>AI Підтримка для <span class="gr">Giorno Dentale</span></h1>
     <p class="sub">Голосові дзвінки, текстові чати та контроль якості операторів — автоматизовані штучним інтелектом</p>
@@ -142,10 +154,11 @@ h2{font-size:1.15rem;font-weight:700;margin-bottom:16px}
   <h2>Єдине вікно для всіх звернень</h2>
 
   <div class="ch">
-    <div class="ci"><div class="ci-ico tg">✈</div><div class="ci-n">Telegram</div></div>
-    <div class="ci"><div class="ci-ico wa">◉</div><div class="ci-n">WhatsApp</div></div>
-    <div class="ci"><div class="ci-ico wb">●</div><div class="ci-n">Сайт</div></div>
-    <div class="ci"><div class="ci-ico em">✉</div><div class="ci-n">Email</div></div>
+    <div class="ci"><div class="ci-n">Telegram</div></div>
+    <div class="ci"><div class="ci-n">WhatsApp</div></div>
+    <div class="ci"><div class="ci-n">Instagram</div></div>
+    <div class="ci"><div class="ci-n">Сайт</div></div>
+    <div class="ci"><div class="ci-n">Email</div></div>
   </div>
 
   <!-- Features -->
@@ -182,16 +195,58 @@ h2{font-size:1.15rem;font-weight:700;margin-bottom:16px}
 
   <div class="d"></div>
 
+  <!-- Pricing -->
+  <div class="sl">Вартість</div>
+  <h2>Умови співпраці</h2>
+
+  <div class="pricing">
+    <div class="price-card main">
+      <div class="price-row">
+        <div class="price-label">Розробка та інтегрування всіх систем</div>
+        <div class="price-val accent">80 000 грн</div>
+      </div>
+      <div class="price-note">Єдиноразова плата — налаштування AI агентів, підключення каналів, інтеграція з CRM клініки, навчання системи</div>
+    </div>
+    <div class="price-card">
+      <div class="price-row">
+        <div class="price-label">Щомісячна підтримка</div>
+        <div class="price-val">~10 000 грн</div>
+      </div>
+      <div class="price-note">AI, сервер, оновлення, технічна підтримка. *Залежить від кількості розмов і звернень.</div>
+    </div>
+    <div class="price-card">
+      <div class="price-row">
+        <div class="price-label">Допрацювання та дорозробка</div>
+        <div class="price-val">800 грн/год</div>
+      </div>
+      <div class="price-note">За потреби — додаткові інтеграції, нові функції, кастомізація</div>
+    </div>
+  </div>
+
+  <div class="d"></div>
+
   <!-- Demo CTA -->
   <div class="cta">
     <p>Інтерактивне демо панелі управління клінікою</p>
-    <a href="demo.html" class="btn" target="_blank">Переглянути демо →</a>
+    <a href="https://aceverse.co/pitch/giorno/demo" class="btn" target="_blank">Переглянути демо &rarr;</a>
+  </div>
+
+  <div class="d"></div>
+
+  <!-- Contact -->
+  <div class="sl">Контакт</div>
+  <div class="contact">
+    <img src="../../assets/logo_particles.png" alt="Aceverse" class="contact-avatar">
+    <div>
+      <div class="contact-name">Роман</div>
+      <a href="https://t.me/aceverse_roman" class="contact-handle">@aceverse_roman</a>
+      <div class="contact-role">Aceverse — AI рішення для бізнесу</div>
+    </div>
   </div>
 
   <div class="d"></div>
 
   <div class="ft">
-    <strong style="font-family:'Comfortaa',cursive"><span class="gr">Aceverse</span></strong> — AI рішення для бізнесу<br>
     <a href="https://aceverse.co">aceverse.co</a>
   </div>
 
